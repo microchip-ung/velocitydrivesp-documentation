@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Hardware :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li>Management</li>
+    <li><a href="doc-cg-mgmt-hw.html">Hardware</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Hardware</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>VelocityDRIVE-SP supports the ietf-hardware.yang module, which is a standardized
+data model developed by the Internet Engineering Task Force (IETF) for managing
+and representing hardware components in network devices.</p>
+</div>
+<div class="paragraph">
+<p>This model provides a structured and consistent way to describe hardware inventory,
+capabilities, and status.</p>
+</div>
+<div class="paragraph">
+<p>VelocityDRIVE-SP supports the YANG tree shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>module: ietf-hardware
+  +--ro hardware
+     +--ro component* [name]
+        +--ro name              string
+        +--ro class             identityref
+        +--ro description?      string
+        +--ro parent?           -&gt; ../../component/name
+        +--ro hardware-rev?     string
+        +--ro firmware-rev?     string
+        +--ro serial-num?       string
+        +--ro mfg-name?         string
+        +--ro model-name?       string
+        +--ro sensor-data {hardware-sensor}?
+           +--ro value?               sensor-value
+           +--ro value-type?          sensor-value-type
+           +--ro value-scale?         sensor-value-scale
+           +--ro value-precision?     sensor-value-precision
+           +--ro oper-status?         sensor-status
+           +--ro units-display?       string
+           +--ro value-update-rate?   uint32</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The relation to the YANG model and the VelocityDRIVE-SP hardware is illustrated in the figure below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>class: chassis, name: Board
+  +--class: module, name: Switch
+     +--class: sensor, name: SwTmp
+     +--class: module, name: Phy1
+        +--class: sensor, name: PhyTmp1
+        +--class: port, name: Port1
+        +--class: port, name: Port2
+        +--class: port, name: Port3
+        +--class: port, name: Port4
+     +--class: module, name: Phy2
+        +--class: sensor, name: PhyTmp2
+        +--class: port, name: Port5
+        +--class: port, name: Port6
+        +--class: port, name: Port7
+        +--class: port, name: Port8
+
+     +--class: module, name: Phy3
+        +--class: sensor, name: PhyTmp3
+        +--class: port, name: Port9
+
+     +--class: container, name: Sfp10
+        +--class: port, name: Port10
+     +--class: container, name: Sfp11
+        +--class: port, name: Port11</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_hardware_components"><a class="anchor" href="#_hardware_components"></a>1. Hardware components</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The hardware components can be queried as shown below:</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- /ietf-hardware:hardware</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-hardware:hardware":
+    component:
+    - name: Board
+      class: iana-hardware:chassis
+      firmware-rev: VelocitySP-DEV-1988-d0a52f34e-250304095248
+      serial-num: '0'
+      mfg-name: Microchip Technology Inc.
+      model-name: LAN969x - ev23x71a (pcb8398)
+    - name: Switch
+      class: iana-hardware:module
+      parent: Board
+      hardware-rev: '0'
+      model-name: LAN9696RED
+    - name: SwTmp
+      class: iana-hardware:sensor
+      parent: Switch
+      sensor-data:
+        value: 72
+        value-type: celsius
+        value-scale: units
+        value-precision: 0
+        oper-status: ok
+        units-display: C
+        value-update-rate: 0
+    - name: Phy1
+      class: iana-hardware:module
+      parent: Switch
+      hardware-rev: '3'
+      model-name: '8814'
+    - name: Port1
+      class: iana-hardware:port
+      parent: Phy1
+    - name: Port2
+      class: iana-hardware:port
+      parent: Phy1
+    - name: Port3
+      class: iana-hardware:port
+      parent: Phy1
+    - name: Port4
+      class: iana-hardware:port
+      parent: Phy1
+    - name: Phy2
+      class: iana-hardware:module
+      parent: Switch
+      hardware-rev: '3'
+      model-name: '8814'
+    - name: Port5
+      class: iana-hardware:port
+      parent: Phy2
+    - name: Port6
+      class: iana-hardware:port
+      parent: Phy2
+    - name: Port7
+      class: iana-hardware:port
+      parent: Phy2
+    - name: Port8
+      class: iana-hardware:port
+      parent: Phy2
+    - name: Phy3
+      class: iana-hardware:module
+      parent: Switch
+      hardware-rev: '3'
+      model-name: '8814'
+    - name: Port9
+      class: iana-hardware:port
+      parent: Phy3
+    - name: Port10
+      class: iana-hardware:port
+      parent: Phy3
+    - name: Port11
+      class: iana-hardware:port
+      parent: Phy3
+    - name: Port12
+      class: iana-hardware:port
+      parent: Phy3
+    - name: Phy4
+      class: iana-hardware:module
+      parent: Switch
+      hardware-rev: '3'
+      model-name: '8814'
+    - name: Port13
+      class: iana-hardware:port
+      parent: Phy4
+    - name: Port14
+      class: iana-hardware:port
+      parent: Phy4
+    - name: Port15
+      class: iana-hardware:port
+      parent: Phy4
+    - name: Port16
+      class: iana-hardware:port
+      parent: Phy4
+    - name: Phy5
+      class: iana-hardware:module
+      parent: Switch
+      hardware-rev: '3'
+      model-name: '8814'
+    - name: Port17
+      class: iana-hardware:port
+      parent: Phy5
+    - name: Port18
+      class: iana-hardware:port
+      parent: Phy5
+    - name: Port19
+      class: iana-hardware:port
+      parent: Phy5
+    - name: Port20
+      class: iana-hardware:port
+      parent: Phy5
+    - name: Phy6
+      class: iana-hardware:module
+      parent: Switch
+      hardware-rev: '3'
+      model-name: '8814'
+    - name: Port21
+      class: iana-hardware:port
+      parent: Phy6
+    - name: Port22
+      class: iana-hardware:port
+      parent: Phy6
+    - name: Port23
+      class: iana-hardware:port
+      parent: Phy6
+    - name: Port24
+      class: iana-hardware:port
+      parent: Phy6
+    - name: Sfp25
+      class: iana-hardware:container
+      parent: Switch
+    - name: Port25
+      class: iana-hardware:port
+      parent: Sfp25
+    - name: Sfp26
+      class: iana-hardware:container
+      parent: Switch
+    - name: Port26
+      class: iana-hardware:port
+      parent: Sfp26
+    - name: Sfp27
+      class: iana-hardware:container
+      parent: Switch
+    - name: Sfp28
+      class: iana-hardware:container
+      parent: Switch</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Component "Board" has no parent, which indicates that it is the root component.<br>
+Component "Switch" has "Board" as parent and is a LAN9696RED 66G Ethernet switch.<br>
+Component "SwTmp" has "Switch" as parent and the switch temperature is 72&deg; Celsius.<br>
+Component "Phy1" has "Switch" as parent and is a LAN8814 4-port Gigabit Ethernet PHY.<br>
+Components "Port1", "Port2", "Port3" and "Port4" have "Phy1" as parent.<br>
+Component "Sfp25" has "Switch" as parent and "Port25" as child.<br>
+Component "Sfp27" has "Switch" as parent and currently no port inserted.<br>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

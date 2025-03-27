@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Technology: YANG :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li>Technology</li>
+    <li><a href="doc-tech-yang.html">YANG</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Technology: YANG</h1>
+<div class="sect1">
+<h2 id="_introduction_to_yang_rfc_7950"><a class="anchor" href="#_introduction_to_yang_rfc_7950"></a>1. Introduction to YANG (RFC 7950)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>YANG, which stands for "Yet Another Next Generation," is a data modeling language
+defined in RFC 7950 by the Internet Engineering Task Force (IETF). It is designed
+to model configuration and state data manipulated by the Network Configuration
+Protocol (NETCONF), as well as other network management protocols such as RESTCONF
+Protocol and CoAP Management Interface (CORECONF). YANG provides a standardized way
+to model the operational and configuration data of network devices, enabling more
+efficient and consistent network management.</p>
+</div>
+<div class="sect2">
+<h3 id="_purpose_and_scope"><a class="anchor" href="#_purpose_and_scope"></a>1.1. Purpose and Scope</h3>
+<div class="paragraph">
+<p>The primary purpose of YANG is to provide a formalized language for defining the
+structure of network data. This includes configuration data, state data, Remote
+Procedure Calls (RPCs), and notifications. By using YANG, network operators and
+developers can create data models that are both human-readable and machine-processable,
+facilitating automation and reducing the potential for errors in network management.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_key_features"><a class="anchor" href="#_key_features"></a>1.2. Key Features</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Hierarchical Data Modeling</strong>: YANG models data in a tree structure, which
+mirrors the hierarchical nature of network configurations. This makes it intuitive
+to represent complex configurations and relationships between different network elements.</p>
+</li>
+<li>
+<p><strong>Extensibility</strong>: YANG supports the definition of modules, allowing
+for modular and reusable data models. Modules can even augment data into other modules.
+This extensibility ensures that YANG can adapt to evolving network technologies and requirements.</p>
+</li>
+<li>
+<p><strong>Data Types and Constraints</strong>: YANG provides a rich set of built-in data types,
+such as integers, strings, and enumerations, as well as the ability to define custom
+types. It also supports constraints like range limits and pattern matching, ensuring
+data validity and consistency.</p>
+</li>
+<li>
+<p><strong>RPCs and Notifications</strong>: YANG allows the definition of RPCs for executing operations
+on network devices and notifications for asynchronous event reporting. This capability
+is crucial for dynamic and real-time network management.</p>
+</li>
+<li>
+<p><strong>Interoperability</strong>: YANG is designed to work seamlessly with NETCONF, a protocol
+for network configuration and management. However, it is also compatible with other
+protocols, such as CORECONF, making it versatile for various network management scenarios.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_structure_of_yang_modules"><a class="anchor" href="#_structure_of_yang_modules"></a>1.3. Structure of YANG Modules</h3>
+<div class="paragraph">
+<p>A YANG module is a self-contained data model that defines a specific set of data
+and operations. Each module consists of several key components:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Namespace</strong>: A unique identifier for the module, ensuring no conflicts with other modules.</p>
+</li>
+<li>
+<p><strong>Prefix</strong>: A shorthand reference for the module, used within the module and by other modules that import it.</p>
+</li>
+<li>
+<p><strong>Data Nodes</strong>: Elements that represent configuration and state data, organized hierarchically.</p>
+</li>
+<li>
+<p><strong>Typedefs</strong>: Custom data types defined within the module.</p>
+</li>
+<li>
+<p><strong>Groupings</strong>: Reusable sets of data nodes that can be included in multiple places within the module or other modules.</p>
+</li>
+<li>
+<p><strong>RPCs and Notifications</strong>: Definitions for operations and event reporting.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_benefits_of_using_yang"><a class="anchor" href="#_benefits_of_using_yang"></a>1.4. Benefits of Using YANG</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Consistency</strong>: YANG provides a standardized way to model network data, ensuring
+consistency across different devices and vendors.</p>
+</li>
+<li>
+<p><strong>Automation</strong>: The machine-readable nature of YANG models facilitates automation in
+network configuration and management, reducing manual intervention and the risk of human error.</p>
+</li>
+<li>
+<p><strong>Interoperability</strong>: By adhering to a common modeling language, YANG promotes
+interoperability between different network management tools and devices.</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: The modular and extensible design of YANG allows it to scale with
+the growing complexity of modern networks.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In conclusion, YANG (RFC 7950) is a powerful and versatile data modeling language that
+plays a crucial role in modern network management. Its ability to provide a standardized,
+extensible, and interoperable framework for modeling network data makes it an essential tool
+for network operators and developers aiming to achieve efficient and reliable network operations.</p>
+</div>
+<div class="paragraph">
+<p>A YANG file uses the filename extension <code>.yang</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_yang_deviations"><a class="anchor" href="#_yang_deviations"></a>2. YANG Deviations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>YANG deviations are a mechanism in the YANG data modeling language that allows a module
+to specify modifications to the definitions in another YANG module. This is particularly
+useful when a device or implementation does not fully comply with the standard definitions
+provided in a base YANG module. Deviations enable vendors or network operators to document
+and manage these differences in a standardized way.</p>
+</div>
+<div class="paragraph">
+<p>Key aspects of YANG deviations include:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Deviation Statement</strong>: This is used within a YANG module to indicate that it is deviating
+from another module. The deviation statement specifies the target module and the specific
+nodes within that module that are being altered.</p>
+</li>
+<li>
+<p><strong>Deviation Types</strong>: Common types of deviations include:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Not-supported</strong>: Indicates that a particular node defined in the base module is not supported by the implementation.</p>
+</li>
+<li>
+<p><strong>Add</strong>: Adds new constraints or properties to an existing node.</p>
+</li>
+<li>
+<p><strong>Replace</strong>: Replaces existing properties or constraints of a node with new ones.</p>
+</li>
+<li>
+<p><strong>Delete</strong>: Removes certain properties or constraints from a node.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Use Cases</strong>: Deviations are used in scenarios where:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>A device does not support certain features or capabilities defined in a standard YANG module.</p>
+</li>
+<li>
+<p>A vendor needs to extend or modify standard YANG models to fit their specific implementation.</p>
+</li>
+<li>
+<p>Customizations are required for specific deployments or operational environments.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Documentation and Management</strong>: By using deviations, vendors and network operators can
+clearly document the differences between their implementation and the standard YANG models.
+This helps in maintaining consistency, understanding the capabilities and limitations of devices,
+and ensuring interoperability.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>An example of a deviation might look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yang hljs" data-lang="yang">deviation /example-module:container/example-leaf {
+    deviate not-supported;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the deviation indicates that the <code>example-leaf</code> node within the <code>example-module</code>
+is not supported by the implementation.</p>
+</div>
+<div class="paragraph">
+<p>Overall, YANG deviations provide a structured way to handle variations and ensure that these
+differences are well-documented and managed within the network management ecosystem.</p>
+</div>
+<div class="paragraph">
+<p>Deviation files in VelocityDRIVE-SP follow the following conventions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One deviation file per YANG file.</p>
+</li>
+<li>
+<p>In VelocityDRIVE-SP, the deviation filename is constructed by adding <code>-dev</code> after the basename.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I.e. the deviation filename for <code>example-interfaces.yang</code> becomes <code>example-interfaces-dev.yang</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_yang_tree"><a class="anchor" href="#_yang_tree"></a>3. YANG Tree</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A YANG tree is a hierarchical representation of the data model defined by a YANG module.
+It visually depicts the structure of the data, including the organization of containers,
+lists, leaf nodes, and other elements. This tree structure helps users understand
+the relationships and dependencies between different parts of the data model.</p>
+</div>
+<div class="paragraph">
+<p>The YANG tree is defined in <a href="https://www.rfc-editor.org/rfc/rfc8340.html">RFC 8340 - 'YANG Tree Diagrams'</a>.</p>
+</div>
+<div class="paragraph">
+<p>Key components of a YANG tree include:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Root Node</strong>: The top-level node of the tree, which typically represents the module
+itself or a top-level container within the module.</p>
+</li>
+<li>
+<p><strong>Containers</strong>: These are organizational nodes that can group related data nodes together.
+Containers can contain other containers, lists, leaf nodes, and other elements.</p>
+</li>
+<li>
+<p><strong>Lists</strong>: These are ordered collections of entries, where each entry is a complex type
+that can contain multiple data nodes. Lists are used to represent repeating elements,
+such as interfaces or routes.</p>
+</li>
+<li>
+<p><strong>Leaf Nodes</strong>: These are the actual data elements that hold values. Leaf nodes are the
+endpoints of the tree and do not contain other nodes. They can be of various data types,
+such as integers, strings, or booleans.</p>
+</li>
+<li>
+<p><strong>Leaf-Lists</strong>: These are similar to lists but contain simple data types rather than complex
+structures. A leaf-list is an unordered collection of leaf nodes.</p>
+</li>
+<li>
+<p><strong>Choices and Cases</strong>: These are used to define conditional structures within the data model.
+A choice node represents a decision point, and each case node represents a possible option.</p>
+</li>
+<li>
+<p><strong>Augmentations</strong>: These allow additional nodes to be added to an existing data model,
+extending its structure.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of a simple YANG tree for a module that models network interfaces:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">module: example-interfaces
+  +--rw interfaces
+     +--rw interface* [name]
+        +--rw name          string
+        +--rw description?  string
+        +--rw type          identityref
+        +--rw enabled?      boolean
+        +--ro oper-status   enumeration
+        +--ro last-change?  yang:date-and-time</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The root node is the <code>example-interfaces</code> module.</p>
+</li>
+<li>
+<p>The <code>interfaces</code> container groups all interface-related data.</p>
+</li>
+<li>
+<p>The <code>interface</code> list represents multiple interface entries, each identified by a <code>name</code>.</p>
+</li>
+<li>
+<p>Each <code>interface</code> entry contains several leaf nodes, such as <code>name</code>, <code>description</code>,
+<code>type</code>, <code>enabled</code>, <code>oper-status</code>, and <code>last-change</code>.</p>
+</li>
+<li>
+<p>Configuration data nodes are prefixed with <code>rw</code> (read-write) and status/state data
+nodes are prefixed with <code>ro</code> (read-only).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The full description of the node representation can be found
+<a href="https://www.rfc-editor.org/rfc/rfc8340.html#section-2.6">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>The YANG tree provides a clear and organized way to visualize the structure of the data model,
+making it easier for developers and network operators to understand and work with the data.</p>
+</div>
+<div class="paragraph">
+<p>A YANG tree file uses the filename extension <code>.tree</code> and shows the resulting tree after any
+deviations have been applied.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_yang_sid_files"><a class="anchor" href="#_yang_sid_files"></a>4. YANG SID Files</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A YANG SID (Schema Item Identifier) file is a JSON-formatted file that maps YANG schema nodes
+to unique numeric identifiers called SIDs. These identifiers are used in protocols like CoAP
+(Constrained Application Protocol) and CBOR (Concise Binary Object Representation) to
+efficiently represent YANG data models in constrained environments.</p>
+</div>
+<div class="paragraph">
+<p>The YANG SIDs are defined in
+<a href="https://www.rfc-editor.org/rfc/rfc9595.html">RFC 9595 - 'YANG Schema Item iDentifier (YANG SID)'</a>.</p>
+</div>
+<div class="paragraph">
+<p>Key aspects of a YANG SID file include:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>SID Allocation</strong>: Each YANG schema node (e.g., modules, containers, lists, leafs) is assigned
+a unique SID. This helps in reducing the size of the data representation by using numeric
+identifiers instead of long textual names.<br>
+As many of the YANG modules we use in VelocityDRIVE-SP have not yet been assigned a permanent
+SID range, the current allocations are expected to change going forward.</p>
+</li>
+<li>
+<p><strong>JSON Structure</strong>: The SID file is structured in JSON format, making it easy to parse and use
+in various applications. The file typically includes mappings for all nodes in a YANG module.</p>
+</li>
+<li>
+<p><strong>Fields in a SID File</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>assignment-ranges</strong>: Starting point and number of allocated SIDs for this module.</p>
+</li>
+<li>
+<p><strong>module-name</strong>: The name of the YANG module.</p>
+</li>
+<li>
+<p><strong>module-revision</strong>: The revision date of the YANG module.</p>
+</li>
+<li>
+<p><strong>items</strong>: An array of objects, each representing a schema node with its corresponding SID.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Example</strong>: Here is an example of a YANG SID file corresponding to the YANG tree in the previous section:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "assignment-ranges": [
+    {
+      "entry-point": 1000,
+      "size": 50
+    }
+  ],
+  "module-name": "example-interfaces",
+  "module-revision": "2025-01-01",
+  "items": [
+    {
+      "namespace": "module",
+      "identifier": "example-interfaces",
+      "status": "unstable",
+      "sid": 1000
+    },
+    {
+      "namespace": "data",
+      "identifier": "/example-interfaces:interfaces",
+      "status": "unstable",
+      "sid": 1005
+    },
+    {
+      "namespace": "data",
+      "identifier": "/example-interfaces:interfaces/interface",
+      "status": "unstable",
+      "sid": 1006
+    },
+    {
+      "namespace": "data",
+      "identifier": "/example-interfaces:interfaces/interface/description",
+      "status": "unstable",
+      "sid": 1007
+    },
+    {
+      "namespace": "data",
+      "identifier": "/example-interfaces:interfaces/interface/enabled",
+      "status": "unstable",
+      "sid": 1008
+    },
+    {
+      "namespace": "data",
+      "identifier": "/example-interfaces:interfaces/interface/last-change",
+      "status": "unstable",
+      "sid": 1009
+    },
+    {
+      "namespace": "data",
+      "identifier": "/example-interfaces:interfaces/interface/name",
+      "status": "unstable",
+      "sid": 1010
+    },
+    {
+      "namespace": "data",
+      "identifier": "/example-interfaces:interfaces/interface/oper-status",
+      "status": "unstable",
+      "sid": 1011
+    },
+    {
+      "namespace": "data",
+      "identifier": "/example-interfaces:interfaces/interface/type",
+      "status": "unstable",
+      "sid": 1012
+    }
+  ]
+}</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>In this example:
+- The `module-name` is "example-interfaces".
+- The `module-revision` is "2025-01-01".
+- The `items` array contains mappings of schema nodes to their SIDs.</pre>
+</div>
+</div>
+</li>
+<li>
+<p><strong>Usage</strong>: SIDs are used in constrained environments to optimize the encoding and transmission
+of YANG-modeled data. By using numeric identifiers, the data size is reduced, which is crucial
+for devices with limited resources.</p>
+</li>
+<li>
+<p><strong>Management</strong>: SIDs are typically managed by a central authority or registry to ensure uniqueness
+and avoid conflicts. This ensures that each SID is globally unique and can be reliably used across
+different implementations and devices.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In summary, a YANG SID file provides a compact and efficient way to represent YANG schema nodes
+using numeric identifiers, facilitating the use of YANG data models in resource-constrained environments.</p>
+</div>
+<div class="paragraph">
+<p>A YANG SID file uses the filename extension <code>.sid</code> and includes the module revision as part of the basename.
+The SID file name for example-interfaces.yang then becomes <a href="mailto:example-interfaces@2025-01-01.sid">example-interfaces@2025-01-01.sid</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_yang_catalog"><a class="anchor" href="#_yang_catalog"></a>5. YANG Catalog</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The term "YANG Catalog" refers to a repository or database that contains YANG data models.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-tech-cc.html#yang-catalog" class="xref page">here</a> for more information about "YANG Catalog" in VelocityDRIVE-SP.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tech-yang-rfc7951"><a class="anchor" href="#tech-yang-rfc7951"></a>6. YANG and JSON/YAML</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Although using payload encoded as binary CBOR is useful and necessary in a constrained environment,
+it is not especially user-friendly.</p>
+</div>
+<div class="paragraph">
+<p>It is possible to use <a href="https://www.rfc-editor.org/rfc/rfc8949.html#name-diagnostic-notation">CBOR Diagnostic Notation</a>
+towards the user and let the client tool handle the conversion from CBOR Diagnostic Notation to binary CBOR and vice versa.
+This approach has the disadvantage that the user will need to know the numerical SIDs and must be mentally
+capable of connecting these numbers to a YANG model.</p>
+</div>
+<div class="paragraph">
+<p>To make it easier for the user, Microchip has developed a few CLI tools that enable the user to query
+and configure a VelocityDRIVE-SP device using <a href="https://www.json.org/json-en.html">JSON</a> or <a href="https://yaml.org">YAML</a> encoded data as payload:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>mvdct</strong> - CLI part of the <a href="doc-sup-ct.html" class="xref page">VelocityDRIVE-CT</a> package - supports JSON only</p>
+</li>
+<li>
+<p><strong>mup1cc</strong> - part of <a href="doc-sup-gh.html" class="xref page">this</a> package - supports both JSON and YAML</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both of these tools make use of the YANG Catalog in order to convert between JSON/YAML and CBOR.</p>
+</div>
+<div class="paragraph">
+<p>The connection between JSON and YANG is defined in
+<a href="https://www.rfc-editor.org/rfc/rfc7951.html">RFC 7951 - 'JSON Encoding of Data Modeled with YANG'</a>,
+and because YAML is considered to be a superset of JSON, it is possible to use YAML as long as
+YAML is supported by the client tool.</p>
+</div>
+<div class="paragraph">
+<p>How to encode YANG data to CBOR is defined in
+<a href="https://www.rfc-editor.org/rfc/rfc9254.html">RFC 9254 - 'Encoding of Data Modeled with YANG in the Concise Binary Object Representation (CBOR)'</a>.
+Note that this only covers the data syntax and not how requests and responses should look.
+See the <a href="#yaml-examples">Examples</a> below on how to use YAML in requests and responses.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example of using YAML versus CBOR Diagnostic Notation to specify a YANG instance identifier
+to get the type of interface "1" using a CoAP FETCH method.</p>
+</div>
+<div class="paragraph">
+<p>YAML request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/type"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>YAML response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+- "/ietf-interfaces:interfaces/interface/type": iana-if-type:ethernetCsmacd</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>CBOR Diagnostic Notation request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">[_ 2061, "1"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>CBOR Diagnostic Notation response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">{_ 2061: 3088}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It should be pretty obvious to see which of the formats that are most oriented towards the YANG model.</p>
+</div>
+<div class="sect2">
+<h3 id="yaml-examples"><a class="anchor" href="#yaml-examples"></a>6.1. Examples of YAML requests and responses</h3>
+<div class="paragraph">
+<p>These examples are intended to show how to create a valid YAML request for different CoAP methods,
+and not to explain what a specific request will do on a VelocityDRIVE-SP device.</p>
+</div>
+<div class="paragraph">
+<p>For information about the different features in a VelocityDRIVE-SP device, please see the
+<a href="doc-cg.html" class="xref page">Configuration Guides</a> section.</p>
+</div>
+<div class="paragraph">
+<p>In YAML it is possible to break a string over multiple lines by ending a line with '\' and continue on the next line.
+This is used in the examples to prevent the need for a horizontal scrollbar.</p>
+</div>
+<div class="paragraph">
+<p>The FETCH and iPATCH methods support multiple requests in a single method and this is why a request
+must always be specified as a YAML sequence (aka array), even if there is only a single request.
+A YAML sequence starts with a dash and space ("- ").</p>
+</div>
+<div class="paragraph">
+<p>The FETCH and iPATCH methods use instance identifiers as specified in
+<a href="https://www.rfc-editor.org/rfc/rfc7951.html#section-6.11">RFC7951-6.11</a>.</p>
+</div>
+<div class="paragraph">
+<p>All parent keys must be present in an instance identifier.</p>
+</div>
+<div class="paragraph">
+<p>The examples use YANG objects from
+<a href="_attachments/yang-catalog.html#docs/sw_refs/yang/ieee802-dot1q-bridge.tree" class="xref attachment">ieee802-dot1q-bridge.tree</a> and
+<a href="_attachments/yang-catalog.html#docs/sw_refs/yang/ietf-interfaces.tree" class="xref attachment">ietf-interfaces.tree</a></p>
+</div>
+<div class="sect3">
+<h4 id="_fetch"><a class="anchor" href="#_fetch"></a>6.1.1. FETCH</h4>
+<div class="paragraph">
+<p>A FETCH request consists of an instance identifier that includes all parent keys.</p>
+</div>
+<div class="listingblock">
+<div class="title">FETCH request of a YANG list with two parent keys 'b0' and 'c0':</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/vlan-registration-entry"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">FETCH response:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+- "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+   vlan-registration-entry":
+  - database-id: 0
+    vids: '1'
+    entry-type: static
+    port-map:
+    - port-ref: 1
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged
+    - port-ref: 2
+      static-vlan-registration-entries:
+        vlan-transmitted: tagged
+  - database-id: 0
+    vids: '10'
+    entry-type: static
+    port-map:
+    - port-ref: 3
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged
+    - port-ref: 4
+      static-vlan-registration-entries:
+        vlan-transmitted: tagged</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the response consists of a sequence of two entries.
+When fetching a list without including the list&#8217;s own keys, a sequence of all entries is returned.</p>
+</div>
+<div class="listingblock">
+<div class="title">FETCH request of YANG list as above, but now also including the list&#8217;s own keys:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/vlan-registration-entry[database-id='0'][vids='1']"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">FETCH response:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
+- "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+   vlan-registration-entry":
+    database-id: 0
+    vids: '1'
+    entry-type: static
+    port-map:
+    - port-ref: 1
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged
+    - port-ref: 2
+      static-vlan-registration-entries:
+        vlan-transmitted: tagged</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the response consists of a single entry.
+When fetching a list and including the list&#8217;s own keys, only a single entry is returned.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ipatch"><a class="anchor" href="#_ipatch"></a>6.1.2. iPATCH</h4>
+<div class="paragraph">
+<p>An iPATCH request consists of an instance identifier that includes all parent keys and a value.</p>
+</div>
+<div class="paragraph">
+<p>We use complex keys in all examples as we think they are more readable.</p>
+</div>
+<div class="paragraph">
+<p>A complex key is preceded by a question mark and space ("? ") and the corresponding value is defined on the
+next line and preceded by a colon and space (": ").</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of a YAML object using a complex key:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "key"
+  : "value"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The YANG object, specified by the instance identifier, is deleted if the value is empty or null.</p>
+</div>
+<div class="paragraph">
+<p>Deleting is supported on containers and lists but not on leaves and leaf-lists.</p>
+</div>
+<div class="listingblock">
+<div class="title">iPATCH request for deleting a specific entry in a YANG list:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry[database-id='0'][vids='1']"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the list&#8217;s own keys are specified in the instance identifier. The only place where the
+list&#8217;s own keys are allowed in the instance identifier is in a delete operation like this.
+Also note that the value is empty.</p>
+</div>
+<div class="listingblock">
+<div class="title">iPATCH request for deleting all entries in a YANG list:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that none of the list&#8217;s own keys are specified in the instance identifier.</p>
+</div>
+<div class="listingblock">
+<div class="title">iPATCH request for deleting a YANG container:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that in most circumstances it makes no sense to delete a container, as it will
+only be reset to a system-defined default content.</p>
+</div>
+<div class="listingblock">
+<div class="title">iPATCH request for creating a vlan-registration-entry:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry"
+  : database-id: 0
+    vids: '1'
+    entry-type: static
+    port-map:
+    - port-ref: 1
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged
+    - port-ref: 2
+      static-vlan-registration-entries:
+        vlan-transmitted: tagged</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that none of the list&#8217;s own keys must be specified in the instance identifier.
+Also note that the value is a YAML map which corresponds to a YANG container.
+When a container is added to a list, only the container is added (or replaced).
+Previous entries in the list are left as they were before the iPATCH operation.</p>
+</div>
+<div class="listingblock">
+<div class="title">iPATCH request for creating a vlan-registration-entry:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry"
+  : - database-id: 0
+      vids: '10'
+      entry-type: static
+      port-map:
+      - port-ref: 3
+        static-vlan-registration-entries:
+          vlan-transmitted: untagged
+      - port-ref: 4
+        static-vlan-registration-entries:
+          vlan-transmitted: tagged
+    - database-id: 0
+      vids: '11'
+      entry-type: static
+      port-map:
+      - port-ref: 1
+        static-vlan-registration-entries:
+          vlan-transmitted: untagged
+      - port-ref: 2
+        static-vlan-registration-entries:
+          vlan-transmitted: tagged</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that none of the list&#8217;s own keys must be specified in the instance identifier.
+Also note that the value is a YAML sequence (aka array), which corresponds to a YANG list.
+When a list is added to a list, the original list is replaced with the new list.
+Previous entries in the list are now gone.</p>
+</div>
+<div class="listingblock">
+<div class="title">iPATCH request for setting a single leaf, vlan-transmitted, to tagged:</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry[database-id='0'][vids='1']/\
+     port-map[port-ref='1']/static-vlan-registration-entries/vlan-transmitted"
+  : tagged</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that all parent keys must be specified in the instance identifier.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

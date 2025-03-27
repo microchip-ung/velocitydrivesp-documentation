@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Debug Register Access :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-dbg-regaccess.html">Debug Register Access</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Debug Register Access</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes how to read and write registers directly in hardware.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_tool"><a class="anchor" href="#_the_tool"></a>2. The tool</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To support the register access the tool 'dbgreg' can be used.</p>
+</div>
+<div class="paragraph">
+<p>Execute to see the help:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -h
+dbgreg - Register access debug tool
+
+Usage:
+  dbgreg [options] miim [c22|c45]  (&lt;PORT&gt;[:&lt;MMD&gt;]:&lt;REG_ADDR&gt;[=VAL])...
+
+Options:
+  -h --help                  Show this screen.
+  -d --device &lt;URL&gt;          IP based terminal device to connect to.
+                             Ex: termhub://10.0.0.2:4000
+
+Command details:
+  dbgreg [options] miim|sw [(c22|c45)] (&lt;PORT&gt;[:&lt;MMD&gt;]:&lt;REG_ADDR&gt;[=VAL])...
+  Do a MIIM or Switch read or write request</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Key word 'miim' means PHY register access.<br>
+Key word 'sw' means Switch register access.<br>
+If [=VAL] is present it is register write otherwise it is register read.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_access_to_phy_register"><a class="anchor" href="#_access_to_phy_register"></a>3. Access to PHY register.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Reading registers in the PHY can be done like this:<br>
+The PHY is supporting Clause 22 registers.<br>
+The Port number is 1.<br>
+The register is 0.</p>
+</div>
+<div class="paragraph">
+<p>Command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -d termhub://10.205.27.92:4113 miim c22 rd 1:0
+mup1ct -d termhub://10.205.27.92:4101 coap post /dbg/reg --content-type 60 --accept 60
+Status: 0, stderr: RESPONSE-CODE: class 2 detail 5 Success Content
+, got 14 bytes
+[{0=&gt;0, 4=&gt;1, 2=&gt;0, 3=&gt;4416}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The register content is 4416 or 0x1140.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_access_to_switch_register"><a class="anchor" href="#_access_to_switch_register"></a>4. Access to SWITCH register.</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_calculating_register_address_on_lan969x"><a class="anchor" href="#_calculating_register_address_on_lan969x"></a>4.1. Calculating Register address on LAN969X</h3>
+<div class="paragraph">
+<p>In order to calculate register offsets, information from some code source files is required.
+The files can be found here:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>https://github.com/microchip-ung/mesa/tree/master/base/fa</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In file 'vtss_fa_cil.h' this function is defined:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>static inline u32 __ioreg(int t, int o, int gi, int gw, int ri, int rw, int gc, int rc)
+{
+    return (t + (o) + ((gi) * (gw)) + (ri) + (rw));
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is calculating the register offset based on a parameter set, that is given by macro&#8217;s defined in 'vtss_fa_regs.h'.</p>
+</div>
+<div class="paragraph">
+<p>Example is register DEVCPU_GCB:CHIP_REGS:CHIP_ID<br>
+The parameter set for '__ioreg()' is given by this macro:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>#define VTSS_DEVCPU_GCB_CHIP_ID   __REG(VTSS_TO_DEVCPU_GCB,0,0,0,0,0,1,1)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This code is calculating the result offset = '8404992'</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>u32 offset = __ioreg(VTSS_DEVCPU_GCB_CHIP_ID);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To calculate offsets to any register, information and macro&#8217;s can be found in 'vtss_fa_regs.h'.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reading_the_chip_id_register_on_lan969x"><a class="anchor" href="#_reading_the_chip_id_register_on_lan969x"></a>4.2. Reading the Chip ID register on LAN969X.</h3>
+<div class="paragraph">
+<p>Reading registers in the SWITCH can be done like this:<br>
+The register is '8404992' (DEVCPU_GCB:CHIP_REGS:CHIP_ID).</p>
+</div>
+<div class="paragraph">
+<p>Command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -d termhub://10.205.27.92:4101 sw 8404992
+"[{0:4,2:8404992}]"
+mup1ct -d termhub://10.205.27.92:4101 coap post /dbg/reg --content-type 60 --accept 60
+Status: 0, stderr: RESPONSE-CODE: class 2 detail 5 Success Content
+, got 18 bytes
+[{0=&gt;4, 2=&gt;8404992, 3=&gt;157922373}]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The DEVCPU_GCB:CHIP_REGS:CHIP_I register content is 157922373 or 0x969B445.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

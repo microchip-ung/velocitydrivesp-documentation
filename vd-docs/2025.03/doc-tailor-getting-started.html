@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SW Tailoring Getting Started :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-tailor.html">SW Tailoring</a></li>
+    <li><a href="doc-tailor-getting-started.html">Getting Started</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">SW Tailoring Getting Started</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The best way to get started with SW/Board tailoring is to look at the
+VelocityDRIVE-SP Binary packet and build the images for the supported Microchip
+EVBs.</p>
+</div>
+<div class="paragraph">
+<p>This guide will walk you through the velocitydrivesp-lan969x-bin packet.
+The <code>velocitydrivesp-lan966x-bin</code> (notice lan966x instead of lan969x) is very
+similar, and users of this packet should use this guide as well.</p>
+</div>
+<div class="paragraph">
+<p>The board tailoring is assumed to be done in a Linux environment capable of
+running Docker images. This can either be a native Linux environment, WSL, or a
+virtual machine. See the
+<a href="doc-getting-started.html#prepare-of-pc-env" class="xref page">Prepare of PC environment</a> for
+guidance on how to install <code>dr</code> and how to setup Docker.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_docker_preparation"><a class="anchor" href="#_docker_preparation"></a>1. Docker preparation</h2>
+<div class="sectionbody">
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The Docker image used here is not available on any public Docker
+registry and needs to be manually downloaded and imported. The <code>dr</code> command
+will attempt to lazy download if the Docker image is not found locally. This
+lazy download will not work from outside the Microchip network.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Download the <code>build-env-&lt;VERSION&gt;.docker.gz</code> Docker image from
+<a href="http://mscc-ent-open-source.s3-website-eu-west-1.amazonaws.com/?prefix=public_root/velocitydrivesp/docker">here</a></p>
+</div>
+<div class="paragraph">
+<p>Extract and load the image into your Docker daemon:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ gunzip -c build-env-&lt;VERSION&gt;.docker.gz | docker load</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, the Docker image should be imported and ready to use by the <code>dr</code>
+command.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_extract_and_build_evbs"><a class="anchor" href="#_extract_and_build_evbs"></a>2. Extract and build EVBs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With the Docker image in place, we can download the binary packet, extract it,
+and enter the folder containing the files:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ tar -xzf velocitydrivesp-lan969x-bin-&lt;VERSION&gt;.tar.gz
+$ cd velocitydrivesp-lan969x-bin-&lt;VERSION&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Test that the <code>dr</code> command is working and that the Docker image has been loaded
+correctly:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ dr ls -lagG
+total 408
+drwxr-xr-x 10    340 Mar 11 15:29 .
+drwxrwxrwt  3     60 Mar 11 15:29 ..
+drwxr-xr-x  4    100 Mar 11 14:49 build-lan969x
+drwxr-xr-x  2     60 Mar 11 14:45 .cmake
+-rw-r--r--  1   1450 Mar 11 14:45 CMakeLists.txt
+-rw-r--r--  1    969 Mar 11 14:45 CMakePresets.json
+-rw-r--r--  1   1016 Mar 11 14:45 .deps.json
+-rw-r--r--  1     64 Mar 11 15:29 .docker-container-id
+-rw-r--r--  1   1271 Mar 11 14:45 .docker.env
+drwxr-xr-x  3     60 Mar 11 14:45 docs
+drwxr-xr-x  4     80 Mar 11 14:45 extmod
+drwxr-xr-x  6    120 Mar 11 14:45 support
+drwxr-xr-x  3     80 Mar 11 14:45 target
+drwxr-xr-x  3     60 Mar 11 14:45 third-party
+drwxr-xr-x  5    160 Mar 11 14:45 utils
+-rw-r--r--  1 390994 Mar 11 14:46 .velocitysp-yang-mods-cache
+-rw-r--r--  1    318 Mar 11 14:45 .version.yaml</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Build the firmware image files for the EVBs supported in the given packet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ rm -rf build-lan969x
+$ dr cmake --workflow --preset lan969x
+Executing workflow step 1 of 2: configure preset "lan969x"
+
+Preset CMake variables:
+
+  CMAKE_BUILD_TYPE:STRING="RelWithDebInfo"
+  CMAKE_TOOLCHAIN_FILE:FILEPATH="/tmp/velocitydrivesp-lan969x-bin-a40143b6b/target/lan969x/toolchainfile.cmake"
+  LM_PRESET:STRING="lan969x"
+
+-- The C compiler identification is GNU 11.4.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /usr/bin/aarch64-linux-gnu-gcc
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/aarch64-linux-gnu-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Target family: lan969x, Preset: lan969x
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/velocitydrivesp-lan969x-bin-a40143b6b/build-lan969x
+
+Executing workflow step 2 of 2: build preset "lan969x"
+
+[14/22] lan969x_extmod_gen
+Generating module file from input: lan969x_extmod
+[19/22] Generating lan969x_EV89P81A.img, lan969x_EV89P81A.fip
+  VDSP_BIN_LAN969x_no_cbor.bin            764kb (limit: 800kb/95%)
+  lan969x_EV89P81A.cbor                     1kb (limit: 16kb/9%)
+  lan969x_EV89P81A-secure.fip              91kb (limit: 120kb/76%)
+  lan969x_EV89P81A.fip                    887kb (limit: 896kb/99%)
+[20/22] Generating lan969x_EV23X71A.img, lan969x_EV23X71A.fip
+  VDSP_BIN_LAN969x_no_cbor.bin            764kb (limit: 800kb/95%)
+  lan969x_EV23X71A.cbor                     1kb (limit: 16kb/11%)
+  lan969x_EV23X71A-secure.fip              91kb (limit: 120kb/76%)
+  lan969x_EV23X71A.fip                    887kb (limit: 896kb/99%)
+[21/22] Generating lan969x_EV09P11A_AUTO.img, lan969x_EV09P11A_AUTO.fip
+  VDSP_BIN_LAN969x_AUTO_no_cbor.bin       764kb (limit: 800kb/95%)
+  lan969x_EV09P11A_auto.cbor                1kb (limit: 16kb/7%)
+  lan969x_EV09P11A_AUTO-secure.fip         91kb (limit: 120kb/76%)
+  lan969x_EV09P11A_AUTO.fip               887kb (limit: 896kb/99%)
+[22/22] Generating lan969x_EV89P81A_AUTO.img, lan969x_EV89P81A_AUTO.fip
+  VDSP_BIN_LAN969x_AUTO_no_cbor.bin       764kb (limit: 800kb/95%)
+  lan969x_EV89P81A_auto.cbor                1kb (limit: 16kb/9%)
+  lan969x_EV89P81A_AUTO-secure.fip         91kb (limit: 120kb/76%)
+  lan969x_EV89P81A_AUTO.fip               887kb (limit: 896kb/99%)
+$</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the generated output files:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ ls -1 build-lan969x/target/lan969x/*.img
+build-lan969x/target/lan969x/lan969x_EV09P11A_AUTO.img
+build-lan969x/target/lan969x/lan969x_EV23X71A.img
+build-lan969x/target/lan969x/lan969x_EV89P81A_AUTO.img
+build-lan969x/target/lan969x/lan969x_EV89P81A.img</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_add_a_custom_board"><a class="anchor" href="#_add_a_custom_board"></a>3. Add a custom board</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Adding a new board is a matter of creating a configuration file describing the
+board, and then adding a build target compiling this configuration file.</p>
+</div>
+<div class="paragraph">
+<p>The recommended way to do this is to copy the configuration file from one of
+the EVBs (the one being most similar) and then edit it to reflect the changes
+from the EVB to the custom board.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">cp target/lan969x/board-config/lan9698TSN-ev89p81a.yaml \
+   target/lan969x/board-config/lan9698TSN-custom.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add the board in <code>target/lan969x/CMakeLists.txt</code> by doing the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add another call of the <code>lm_board_config_to_cbor</code> macro to convert the YAML
+file (the one we just copied) to CBOR.</p>
+</li>
+<li>
+<p>Add another call of the <code>LAN969X_IMAGE</code> macro to combine the executable and
+the CBOR file from above, and generate image files.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>In this step, VelocityDRIVE-SP variant is also selected. In the case of LAN969x,
+the choice is between the automotive and the non-automotive variant.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The changes needed to be done are shown in the diff below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-diff hljs" data-lang="diff">diff --git a/target/lan969x/CMakeLists.txt b/target/lan969x/CMakeLists.txt
+index 6469f33..a95c179 100644
+--- a/target/lan969x/CMakeLists.txt
++++ b/target/lan969x/CMakeLists.txt
+@@ -35,6 +35,10 @@ lm_board_config_to_cbor(TARGET   board_config_lan9698TSN_ev89p81a
+                         CBOR_OUT ${CMAKE_CURRENT_BINARY_DIR}/lan969x_EV89P81A.cbor
+                         YAML_IN  ${CMAKE_CURRENT_SOURCE_DIR}/board-config/lan9698TSN-ev89p81a.yaml)
+
++lm_board_config_to_cbor(TARGET   board_config_lan9698TSN_custom
++                        CBOR_OUT ${CMAKE_CURRENT_BINARY_DIR}/lan969x_custom.cbor
++                        YAML_IN  ${CMAKE_CURRENT_SOURCE_DIR}/board-config/lan9698TSN-custom.yaml)
++
+ lm_board_config_to_cbor(TARGET   board_config_lan9698TSN_ev89p81a_auto
+                         CBOR_OUT ${CMAKE_CURRENT_BINARY_DIR}/lan969x_EV89P81A_auto.cbor
+                         YAML_IN  ${CMAKE_CURRENT_SOURCE_DIR}/board-config/lan9698TSN-ev89p81a.yaml
+@@ -70,3 +74,4 @@ LAN969X_IMAGE(TARGET EV23X71A          BIN VDSP_BIN_LAN969x          CBOR board_
+ LAN969X_IMAGE(TARGET EV09P11A_AUTO     BIN VDSP_BIN_LAN969x_AUTO     CBOR board_config_lan9692VAO_ev09p11a_auto)
+ LAN969X_IMAGE(TARGET EV89P81A          BIN VDSP_BIN_LAN969x          CBOR board_config_lan9698TSN_ev89p81a)
+ LAN969X_IMAGE(TARGET EV89P81A_AUTO     BIN VDSP_BIN_LAN969x_AUTO     CBOR board_config_lan9698TSN_ev89p81a_auto)
++LAN969X_IMAGE(TARGET custom-board      BIN VDSP_BIN_LAN969x_AUTO     CBOR board_config_lan9698TSN_custom)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Build again, and confirm the new image is being built:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dr cmake --workflow --preset lan969x
+Executing workflow step 1 of 2: configure preset "lan969x"
+
+Preset CMake variables:
+
+  CMAKE_BUILD_TYPE:STRING="RelWithDebInfo"
+  CMAKE_TOOLCHAIN_FILE:FILEPATH="/tmp/velocitydrivesp-lan969x-bin-a40143b6b/target/lan969x/toolchainfile.cmake"
+  LM_PRESET:STRING="lan969x"
+
+-- Target family: lan969x, Preset: lan969x
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/velocitydrivesp-lan969x-bin-a40143b6b/build-lan969x
+
+Executing workflow step 2 of 2: build preset "lan969x"
+
+[2/2] Generating lan969x_custom-board.img, lan969x_custom-board.fip
+  VDSP_BIN_LAN969x_AUTO_no_cbor.bin       764kb (limit: 800kb/95%)
+  lan969x_custom.cbor                       1kb (limit: 16kb/9%)
+  lan969x_custom-board-secure.fip          91kb (limit: 120kb/76%)
+  lan969x_custom-board.fip                887kb (limit: 896kb/99%)
+
+$ ls -1 build-lan969x/target/lan969x/*custom*
+build-lan969x/target/lan969x/lan969x_custom-board.bin
+build-lan969x/target/lan969x/lan969x_custom-board.crt
+build-lan969x/target/lan969x/lan969x_custom-board.fip
+build-lan969x/target/lan969x/lan969x_custom-board.img
+build-lan969x/target/lan969x/lan969x_custom-board-secure.fip
+build-lan969x/target/lan969x/lan969x_custom.cbor</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

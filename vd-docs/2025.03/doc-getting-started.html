@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-getting-started.html">Getting Started</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Getting Started</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document will help new users get started using the support tool to
+interact with an EVB running VelocityDRIVE-SP.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The tools covered in this section are command-line tools, running in
+a Linux environment (can run under Windows if using WSL or VirtualBox).
+Microchip also offers a Windows GUI tool which can be used to interact with
+switches running VelocityDRIVE-SP. Many users may find it easier to get started
+using the GUI tools. To get access to this tool, contact your sales or support
+representatives from Microchip and ask for VelocityDRIVE-CT.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Users who decide to use VelocityDRIVE-CT instead of the command-line
+tools described here can still benefit from reading the
+<a href="doc-cg.html" class="xref page">configuration guides</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The basic setup should look like this:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/intro-pc-dut.svg" alt="intro pc dut" width="50%">
+</div>
+</div>
+<div class="paragraph">
+<p>As a prerequisite to this document, the following is needed:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A supported evaluation board with VelocityDRIVE-SP</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Check the list of VelocityDRIVE-SP supported EVBs <a href="doc-evb.html" class="xref page">here</a></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>A PC capable of providing a Linux environment</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Either a native Linux PC, VirtualBox hosting a Linux installation, or WSL</p>
+</li>
+<li>
+<p>Certain tools need to be installed which will require root access</p>
+</li>
+<li>
+<p>Access to serial ports (UART/tty) from the Linux environment</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_booting"><a class="anchor" href="#_booting"></a>1. Booting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To get started with a new evaluation board, it is a good idea to start by
+confirming the basic UART connectivity. To do this, add power to the board and
+connect the USB console to the host PC, and open the UART using a terminal
+emulation program like minicom, picocom, putty, or teraterm.</p>
+</div>
+<div class="paragraph">
+<p>The UART/serial settings must be configured as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>flowcontrol    : none
+baudrate       : 115200
+parity         : none
+databits       : 8
+stopbits       : 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here we will use picocom to connect to <code>/dev/ttyACM0</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ picocom -b 115200 /dev/ttyACM0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The VelocityDRIVE-SP firmware will only print an announce frame once at boot,
+and after this, it will remain silent until a request is received or a trace
+message is issued. To see if VelocityDRIVE-SP is loaded on the board and capable of
+running, it is easiest to hit the reset button while your terminal emulation
+application of choice is still running.</p>
+</div>
+<div class="paragraph">
+<p>Doing so should result in the following message being seen in the console:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt;AVelocitySP-v2024.12 0 300 2
+                             &lt;&lt;dfd3</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This looks strange at first, but this is expected. The console is not used to
+implement a traditional human-friendly CLI, but rather a machine interface
+called MUP1, which facilitates client software to communicate with the device. Go to
+the <a href="doc-tech-mup1.html" class="xref page">mup1</a> technology document if the full set of
+details is of interest.</p>
+</div>
+<div class="paragraph">
+<p>For casual users, it is enough to understand that all MUP1 frames start with a
+<code>&gt;</code> marker. The character following the start-of-frame marker is a <code>type</code> field,
+and here <code>A</code> means announcement. The end-of-frame marker is marked by a <code>&lt;</code> then
+an optional padding byte and then a 4-digit checksum.</p>
+</div>
+<div class="paragraph">
+<p>The text seen between the start/end of frame markers is the firmware version
+along with MUP1 settings.</p>
+</div>
+<div class="paragraph">
+<p>It is also possible to manually issue a MUP1-Ping which can be used to
+determine if the DUT is still there.</p>
+</div>
+<div class="paragraph">
+<p>To do this, paste in the <code>&gt;p&lt;&lt;8553</code> message in the console, and watch out for
+the ping response which should look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&gt;PVelocitySP-v2024.12 80553 300 2&lt;ab69</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Beyond this, it is practically impossible to use the MUP1 interface along with a
+classical terminal emulator. The following part of the getting started guide
+will provide the instructions to get started with the tools called <code>mup1cc</code> and
+<code>mup1ct</code> which are client applications supporting MUP1.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Remember to quit the terminal application before moving on, as only
+one application can use the UART at a time in Linux.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If things are working, skip the troubleshooting section to proceed with this
+guide.</p>
+</div>
+<div class="sect2">
+<h3 id="_troubleshooting"><a class="anchor" href="#_troubleshooting"></a>1.1. Troubleshooting</h3>
+<div class="paragraph">
+<p>If the announce message and/or the ping-response is not seen on the console,
+then it is a good idea to troubleshoot this before moving on. Here is a bit of
+guidance:</p>
+</div>
+<div class="sect3">
+<h4 id="_ttyacm0_is_not_there_andor_is_silent"><a class="anchor" href="#_ttyacm0_is_not_there_andor_is_silent"></a>1.1.1. ttyACM0 is not there and/or is silent</h4>
+<div class="paragraph">
+<p>Several things can result in this behavior. But to debug this, it is useful to
+have a basic understanding of how most of the evaluation boards are designed with
+regards to the USB console interface. This is illustrated here:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/intro-usb-uart.svg" alt="intro usb uart">
+</div>
+</div>
+<div class="paragraph">
+<p>As shown in the figure, the USB-2-UART converter is a separate component on the
+board. This means that the USB device will not appear if the cable is not
+properly connected.</p>
+</div>
+<div class="paragraph">
+<p>It is also worth noticing that the USB-to-UART converter is powered by USB. On
+some (smaller) boards, USB is powering the entire board, and others need an
+external power supply. But the UART-LED(s) can show activity even if the board
+requires external power. This is because the USB-2-UART converter is a USB
+powered device, and the switch-core may not be that.</p>
+</div>
+<div class="paragraph">
+<p>With this information, let&#8217;s check a few things that can go wrong.</p>
+</div>
+<div class="sect4">
+<h5 id="_power_issues"><a class="anchor" href="#_power_issues"></a>1.1.1.1. Power Issues</h5>
+<div class="paragraph">
+<p>The USB cable must be connected to a PC and the board, and the LED with the
+power-label on the EVB must be on.</p>
+</div>
+<div class="paragraph">
+<p>If this is not the case, check if the board needs external power in addition to
+the USB power driving the UART converter.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_unexpected_console_activity"><a class="anchor" href="#_unexpected_console_activity"></a>1.1.1.2. Unexpected Console Activity</h5>
+<div class="paragraph">
+<p>Most of the evaluation boards support specific software packages, and it could
+be that the board has been prepared with a different software package. In this case, the
+board may be booting into UBoot instead of VelocityDRIVE-SP.</p>
+</div>
+<div class="paragraph">
+<p>The first thing to check is the boot media controlled by a DIP switch. The DIP
+switch must be configured to boot from NOR. Both the <code>LAN966x</code> and <code>LAN969x</code>
+families of chips must have the DIP switches controlling power set as follows to
+boot from NOR:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>         NOR With Bootloader Trace  | NOR Without Bootloader Trace
+------------------------------------+-----------------------------
+VCORE0:                         ON  |                          OFF
+VCORE1:                        OFF  |                          OFF
+VCORE2:                        OFF  |                           ON
+VCORE3:                        OFF  |                          OFF</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is recommended to start with traces, and once things are working, change to
+the setting without the bootloader traces.</p>
+</div>
+<div class="paragraph">
+<p>The following image shows how to set the DIP switches to boot from NOR with
+traces:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dip-1.jpg" alt="dip 1" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>The following image shows how to set the DIP switches to boot from NOR without
+traces:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/dip-4.jpg" alt="dip 4" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p>After changing the DIP switches, reset the board and see if it helps.</p>
+</div>
+<div class="paragraph">
+<p>If strapping was set correctly and/or if the board is still not booting (fatal
+error from the bootrom) or booting into UBoot, then it is necessary to follow
+the de-brick procedure described in the EVB section. The LAN969x de-brick
+procedure can be found <a href="doc-evb-lan969x-debrick.html" class="xref page">here</a>. To follow this
+procedure, one will need to have a firmware image to program on the board. If
+you do not have this, reach out to your Microchip contact to get that.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_device_naming"><a class="anchor" href="#_device_naming"></a>1.1.1.3. Device Naming</h5>
+<div class="paragraph">
+<p>The USB serial device may be called something else. Different Linux
+distributions use different naming conventions for the devices, and if multiple
+serial devices are connected, then a sequence number is typically incremented
+(e.g., it may be called <code>ttyACM1</code>).</p>
+</div>
+<div class="paragraph">
+<p>To check what it is called, it is easiest to check the kernel log (requires root
+access) while connecting the device. Here is the procedure to follow:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Disconnect the device</p>
+</li>
+<li>
+<p>Run the <code>sudo dmesg -w</code> command as shown below</p>
+</li>
+<li>
+<p>Wait for output to settle</p>
+</li>
+<li>
+<p>Connect the device, and see what events are generated</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo dmesg -w
+[2355481.783627] usb 1-10: new full-speed USB device number 102 using xhci_hcd
+[2355481.930538] usb 1-10: New USB device found, idVendor=04d8, idProduct=00dd, bcdDevice= 1.00
+[2355481.930546] usb 1-10: New USB device strings: Mfr=1, Product=2, SerialNumber=0
+[2355481.930549] usb 1-10: Product: MCP2221 USB-I2C/UART Combo
+[2355481.930551] usb 1-10: Manufacturer: Microchip Technology Inc.
+[2355481.934864] cdc_acm 1-10:1.0: ttyACM0: USB ACM device
+[2355481.936096] mcp2221 0003:04D8:00DD.0053: USB HID v1.11 Device [Microchip Technology Inc. MCP2221 USB-I2C/UART Combo] on usb-0000:00:14.0-10/input2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the kernel log message above, we can see the <code>ttyACM0</code> meaning that the newly
+connected board can be accessed at <code>/dev/ttyACM0</code>.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, it is also possible to check changes in the content of the <code>/dev</code>
+folder:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ # Disconnect the device
+$ ls /dev &gt; /tmp/before
+$ # Connect the device
+$ ls /dev &gt; /tmp/after
+$ diff /tmp/before /tmp/after # to see what changed
+20a21
+&gt; gpiochip1
+37a39
+&gt; i2c-3
+151a154
+&gt; ttyACM0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If no devices can be identified using these methods, then check the cables,
+and/or if the Linux machine being used has the needed drivers.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Some distributions install all kernel drivers as modules. If the system
+has been updated, and a new kernel has been installed, and the system has not
+been rebooted, then it is likely the modules belonging to the running kernel have
+been deleted, and cannot be loaded. In this case, some <code>dmesg</code> messages are seen,
+but no device is attached. To fix this, remember to reboot the system after kernel
+updates.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>All the following examples will use <code>/dev/ttyACM0</code>. Make sure to use the
+correct name on your system.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_permission_related_error_message"><a class="anchor" href="#_permission_related_error_message"></a>1.1.2. Permission-Related Error Message</h4>
+<div class="paragraph">
+<p>When opening the terminal emulation application, a permission-related error is
+printed.</p>
+</div>
+<div class="paragraph">
+<p>In this case, check the permission of the serial port device and the credentials
+of your current user:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ ls -la /dev/ttyACM0  # check serial port permissions
+crw-rw---- 1 root uucp 166, 0 Jan 29 14:10 /dev/ttyACM0
+$ id # check credentials of current user
+uid=1000(user) gid=1000(user) groups=1000(user),5(tty),100(users),971(docker),986(uucp)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here the serial port is owned by the <code>root</code> user, and the <code>uucp</code> group. Access
+should work as the current user is a member of the <code>uucp</code> group.</p>
+</div>
+<div class="paragraph">
+<p>If permissions are not set up correctly, the easiest solution is often to give
+everybody access:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo chmod a+rw /dev/ttyACM0
+$ ls -la /dev/ttyACM0
+crw-rw-rw- 1 root uucp 166, 0 Jan 29 14:10 /dev/ttyACM0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After this, all users with access to the system have access to the UART.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="prepare-of-pc-env"><a class="anchor" href="#prepare-of-pc-env"></a>2. Prepare the PC Environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The majority of this guide will use tools from the
+<a href="https://github.com/microchip-ung/velocitydrivesp-support">velocitydrivesp-support</a>
+repository. Let&#8217;s start by cloning this repository:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ git clone https://github.com/microchip-ung/velocitydrivesp-support
+$ cd velocitydrivesp-support</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The easiest and recommended way to use the tools just cloned is to run them
+through a small script called <code>dr</code> which will simply start a docker container,
+run the requested command, and then stop the docker container again.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If for some reason it is not desired to use <code>dr</code> and docker, then it is
+still possible to use the scripts in this repository. But the majority of the
+scripts are written in Ruby and have various dependencies. To prepare a PC to
+run these examples without docker, then use the <code>dockerfile</code>
+<a href="https://github.com/microchip-ung/velocitydrivesp-support/blob/main/support/docker/support.Dockerfile">here</a>
+to see the list of packages installed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To install <code>dr</code>, run the following command (to learn more about <code>dr</code>, check the
+readme file <a href="https://github.com/microchip-ung/docker-run/tree/main">here</a>).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo curl -o /usr/local/bin/dr https://raw.githubusercontent.com/microchip-ung/docker-run/refs/heads/main/dr
+$ sudo chmod +x /usr/local/bin/dr</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The next step is to confirm that docker is installed, running, and working.</p>
+</div>
+<div class="sect2">
+<h3 id="docker-installation"><a class="anchor" href="#docker-installation"></a>2.1. Docker Installation</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ docker images</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This should print a (possibly empty) list of images. If it does so, skip the
+rest of this session. If you see any kind of error, then continue.</p>
+</div>
+<div class="paragraph">
+<p>The following steps will show how to install docker on a Fedora 40 workstation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console"># On Fedora 41
+$ sudo dnf install docker-cli docker-ce containerd
+# On Fedora 40
+$ sudo dnf install moby-engine containerd</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docker needs a backend service running, let&#8217;s start that:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo systemctl enable --now docker</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add the current user to the docker group:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ sudo usermod -aG docker $USER</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Logout and login again to have the list of groups updated (or run <code>newgrp
+docker</code> to join the group in the current session without logging out and in again).</p>
+</div>
+<div class="paragraph">
+<p>Now let&#8217;s repeat the command to list images and see if it works:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ docker images</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If this is still not successful, then please seek help to get docker working
+properly before continuing.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_first_use_of_dr"><a class="anchor" href="#_first_use_of_dr"></a>2.2. First Use of <code>dr</code></h3>
+<div class="paragraph">
+<p>Now that docker is installed and working, we are ready to use <code>dr</code> for the
+first time. The <code>dr</code> script will look for a file called <code>.docker.env</code> and if the
+configured docker image is not downloaded, it will start by downloading it. Let&#8217;s
+invoke a simple command to check this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ dr ls</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If running for the first time, then you will see some docker output downloading
+the image. Depending on network speed, this will take from a few minutes to hours
+to complete. Once the download has completed, then the <code>ls</code> command will run and
+the content of the folder should be listed.</p>
+</div>
+<div class="paragraph">
+<p>When using the <code>dr</code> command after this, the docker image will be cached, and
+it should only take a second or two to bring up the docker image where the
+command is invoked.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+It is possible to run <code>dr bash</code> to open a long-lived interactive bash
+shell within the docker image. This can be faster if using a small PC where it
+takes a long time to spin up an image, or if using a std-in/out/err
+redirection which can also be confusing when using the <code>dr</code> command.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_basic_management_using_coreconf_over_mup1"><a class="anchor" href="#_basic_management_using_coreconf_over_mup1"></a>3. Basic Management Using CORECONF over MUP1</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>With docker fully configured, and a board confirmed to run VelocityDRIVE-SP, we
+are ready to do some basic management of the board.</p>
+</div>
+<div class="paragraph">
+<p>This section will present some <em>copy-paste&#8217;able</em> commands/examples which we
+encourage new users to try out. All the examples here will be using the <code>mup1cc</code>
+tool which is part of the docker image.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Most of the examples in this section will start by preparing a request
+message which is written to a file, and then use this file in the following
+command. To do this, we use the
+<a href="https://tldp.org/LDP/abs/html/here-docs.html">here document</a> syntax and
+pipe the content into a file. This is just a convenient way to make the commands
+copy-paste&#8217;able, but at the end of the day, it does not matter how the content in
+the file is written - as long as it is written correctly.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start by confirming that the script can run, by invoking the script with the
+help option (output has been truncated):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ dr mup1cc --help
+Usage: /home/m31684/work/sw-lmstax4/support/scripts/mup1cc [options]
+    -h, --help                       The MUP1CC help
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <code>mup1cc</code> tool can be used to access the CORECONF resources over MUP1, and
+when doing so, it will convert between the CBOR encoding which is what it does on
+the wire, and a variant of RFC7951 encoding which is used as input and output
+for this tool. For a more in-depth description of CORECONF, CBOR, and RFC7951,
+please reference the documents in the technology section.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This tool only works if no other process has opened the serial
+device. Make sure to close any open terminal emulators.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>As a first step, let&#8217;s get the running configuration along with the status and
+counters of the entire switch. To do this, the serial device must be specified
+using the <code>-d</code> flag, and the CoAP method must be set to <code>get</code> using the <code>-m</code>
+flag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ dr mup1cc -d /dev/ttyACM0 -m get
+Opening serial port at /dev/ttyACM0
+---
+ietf-interfaces:interfaces:
+  interface:
+  - name: '1'
+    type: iana-if-type:ethernetCsmacd
+    enabled: true
+    oper-status: down
+    if-index: 1
+    phys-address: 22-94-0D-28-97-01
+    statistics:
+      in-octets: '0'
+      in-unicast-pkts: '0'
+      in-broadcast-pkts: '0'
+...</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s try to get the interface status of port 1 and 2:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ cat &lt;&lt;-EOF &gt; fetch-req-port-get.yaml
+- "/ietf-interfaces:interfaces/interface[name='1']"
+- "/ietf-interfaces:interfaces/interface[name='2']"
+EOF
+$ dr mup1cc -d /dev/ttyACM0 -m fetch -i fetch-req-port-get.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Try running the command to see the actual output.</p>
+</div>
+<div class="sect2">
+<h3 id="ip-conf"><a class="anchor" href="#ip-conf"></a>3.1. IP Address Configuration</h3>
+<div class="paragraph">
+<p>As an alternative to the designated point-to-point UART/serial-based
+communication, it is also possible to do in-band management using an IPv4
+network. To do this, we need to create an L3 interface and assign an IP address.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For a full explanation of how the IP configuration ties into the VLAN
+configuration, see the document on <a href="doc-cg-mgmt-ip.html" class="xref page">IP based
+management.</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The RFC7951 encoded CORECONF ipatch request below will create a new L3 interface
+called <code>L3V1</code>, and it will assign the <code>ip</code> and <code>prefix-length</code> attributes to
+<code>"10.0.0.1"</code> and <code>24</code> respectively:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ cat &lt;&lt;-EOF &gt; ipatch-req-set-ip.yaml
+- ? "/ietf-interfaces:interfaces/interface[name='L3V1']"
+  : name: "L3V1"
+    ietf-ip:ipv4:
+      address:
+      - ip: "10.0.0.1"
+        prefix-length: 24
+EOF
+$ dr mup1cc -d /dev/ttyACM0 -m ipatch -i ipatch-req-set-ip.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once this is done, it would be possible to do a simple ping test (remember to
+connect and configure the host PC accordingly).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_dtls"><a class="anchor" href="#_disable_dtls"></a>3.2. Disable DTLS</h3>
+<div class="paragraph">
+<p>The firmware is designed to be secure by default, which is a great help to do secure
+installations, but if the setup is being used for development, it can be
+desirable to start without the security layer enabled.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As of VelocityDRIVE-CT-2024.12 release, DTLS is not supported in the Windows
+tool. It is a roadmap item which we are working on, but for now, it is also
+required to disable DTLS if using VelocityDRIVE-CT to manage the DUT over an IPv4
+network.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Setting security mode to <code>no-sec</code> also disables authentication
+entirely. This configuration should only be used in an environment which is
+secured by other means, or where security and authentication are not needed.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The request below simply sets the security mode to <code>no-sec</code> which means that DTLS
+is disabled.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ cat &lt;&lt;-EOF &gt; ipatch-req-no-sec.yaml
+- "/mchp-velocitysp-system:coap-server/config/security-mode": "no-sec"
+EOF
+$ dr mup1cc -d /dev/ttyACM0 -m ipatch -i ipatch-req-no-sec.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the request is completed, the configuration must be saved in
+startup-config, and the device needs to be reset to apply the new security
+configuration. This is the only configuration change which requires a reboot; all
+other configurations are applied directly.</p>
+</div>
+<div class="paragraph">
+<p>To save the configuration, an RPC needs to be triggered as shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ cat &lt;&lt;-EOF &gt; rpc-req-save-running.yaml
+- "/mchp-velocitysp-system:save-config":
+EOF
+$ dr mup1cc -d /dev/ttyACM0 -m post -i rpc-req-save-running.yaml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We can now finally reboot the device and connect to it over IP without DTLS:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ cat &lt;&lt;-EOF &gt; rpc-req-restart.yaml
+- "/ietf-system:system-restart":
+EOF
+$ dr mup1cc -d /dev/ttyACM0 -m post -i rpc-req-restart.yaml</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

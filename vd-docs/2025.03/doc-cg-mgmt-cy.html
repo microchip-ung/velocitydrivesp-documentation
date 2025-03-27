@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CORECONF Yang :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li>Management</li>
+    <li><a href="doc-cg-mgmt-cy.html">CORECONF Yang</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">CORECONF Yang</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>VelocityDRIVE-SP supports the ietf-constrained-yang-library module, which is a standardized data model developed by the Internet Engineering Task Force (IETF) that provides information about the YANG modules, datastores, and datastore schemas used by a CORECONF server. The purpose is to enable a client to query the YANG modules implemented by the firmware, including the exact revisions and deviations that apply to those modules.</p>
+</div>
+<div class="paragraph">
+<p>The structure and representation of the library in YANG Tree format is:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>module: ietf-constrained-yang-library
+  +--ro yang-library
+     +--ro module-set* [index]
+     |  +--ro index                 uint8
+     |  +--ro module* [identifier]
+     |  |  +--ro identifier    sid:sid
+     |  |  +--ro revision?     revision-identifier
+     |  |  +--ro deviation*    -&gt; ../../module/identifier
+     |  +--ro import-only-module* [identifier revision]
+     |     +--ro identifier    sid:sid
+     |     +--ro revision      union
+     +--ro schema* [index]
+     |  +--ro index         uint8
+     |  +--ro module-set*   -&gt; ../../module-set/index
+     +--ro datastore* [identifier]
+     |  +--ro identifier    ds:datastore-ref
+     |  +--ro schema        -&gt; ../../schema/index
+     +--ro checksum      binary</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example"><a class="anchor" href="#_example"></a>1. Example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The entire YANG library can be queried as shown below:</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-yang-library" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-constrained-yang-library:yang-library"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-yang-library" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-constrained-yang-library:yang-library"
+  : module-set:
+    - index: 0
+      module:
+      - identifier: '31149'
+        revision: ICUDMQ==
+        deviation: []
+      - identifier: '31050'
+        revision: IBgDEw==
+        deviation:
+        - '31149'
+      - identifier: '39000'
+        revision: ICUDMQ==
+        deviation: []
+      - identifier: '19999'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '12999'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '18999'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '2999'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '29399'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '7999'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '24999'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '11999'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '15999'
+        revision: ICQEEg==
+        deviation: []
+      - identifier: '29300'
+        revision: IBkDKA==
+        deviation:
+        - '29399'
+      - identifier: '24000'
+        revision: ICESCA==
+        deviation:
+        - '24999'
+      - identifier: '21000'
+        revision: ICQIAg==
+        deviation: []
+      - identifier: '20000'
+        revision: ICMQGQ==
+        deviation: []
+      - identifier: '15000'
+        revision: ICIIMA==
+        deviation:
+        - '15999'
+      - identifier: '19000'
+        revision: IBQIBg==
+        deviation:
+        - '19999'
+      - identifier: '11000'
+        revision: ICIDFQ==
+        deviation:
+        - '11999'
+      - identifier: '7000'
+        revision: ICMEFw==
+        deviation:
+        - '7999'
+      - identifier: '2000'
+        revision: IBgCIA==
+        deviation:
+        - '2999'
+      import-only-module:
+      - identifier: '31000'
+        revision: ''
+      - identifier: '38400'
+        revision: ''
+      - identifier: '38000'
+        revision: ''
+      - identifier: '30000'
+        revision: ''
+      - identifier: '29200'
+        revision: ''
+      - identifier: '29000'
+        revision: ''
+      - identifier: '29100'
+        revision: ''
+      - identifier: '27000'
+        revision: ''
+      - identifier: '26000'
+        revision: ''
+      - identifier: '25000'
+        revision: ''
+      - identifier: '24899'
+        revision: ''
+      - identifier: '23100'
+        revision: ''
+      - identifier: '23000'
+        revision: ''
+      - identifier: '16000'
+        revision: ''
+      - identifier: '18000'
+        revision: ''
+      - identifier: '17000'
+        revision: ''
+      - identifier: '14000'
+        revision: ''
+      - identifier: '13000'
+        revision: ''
+      - identifier: '10000'
+        revision: ''
+      - identifier: '8000'
+        revision: ''
+      - identifier: '6000'
+        revision: ''
+      - identifier: '5000'
+        revision: ''
+      - identifier: '4000'
+        revision: ''
+      - identifier: '3000'
+        revision: ''
+      - identifier: '9000'
+        revision: ''
+      - identifier: '1000'
+        revision: ''
+      - identifier: '950'
+        revision: ''
+    schema:
+    - index: 0
+      module-set:
+      - 0
+    datastore:
+    - identifier: ietf-datastores:startup
+      schema: 0
+    - identifier: ietf-datastores:running
+      schema: 0
+    - identifier: ietf-datastores:operational
+      schema: 0
+    checksum: tC8LFMd9iiRIZlSVpWLyCA==</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will notice that the module identifiers are integers encoded as strings.
+The string encoding comes from <a href="https://datatracker.ietf.org/doc/html/rfc7951#section-6.1">RFC 7951 encoding of 64-bit integers</a>.
+The integers themselves are the SIDs of the YANG modules.
+To accurately map the identifiers to YANG modules, the YANG and SID files used by the firmware must be retrieved.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_checksum"><a class="anchor" href="#_checksum"></a>2. Checksum</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The checksum is a hash of the YANG and SID files used in a particular firmware release.</p>
+</div>
+<div class="paragraph">
+<p>The checksum names an archive hosted at <code><a href="https://artifacts.microchip.com/artifactory/UNGE-generic-local/lmstax/yang-by-sha/&lt;sha&gt;.tar.gz" class="bare">https://artifacts.microchip.com/artifactory/UNGE-generic-local/lmstax/yang-by-sha/&lt;sha&gt;.tar.gz</a></code> where <code>&lt;sha&gt;</code> is the hash written in hex.
+The checksum leaf is a CBOR byte string encoded in base64, per RFC 7951. For example, a checksum of <code>tC8LFMd9iiRIZlSVpWLyCA==</code> corresponds to the URL <code><a href="https://artifacts.microchip.com/artifactory/UNGE-generic-local/lmstax/yang-by-sha/b42f0b14c77d8a2448665495a562f208.tar.gz" class="bare">https://artifacts.microchip.com/artifactory/UNGE-generic-local/lmstax/yang-by-sha/b42f0b14c77d8a2448665495a562f208.tar.gz</a></code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_module_and_deviation_identifiers"><a class="anchor" href="#_module_and_deviation_identifiers"></a>3. Module and deviation identifiers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One can search in the downloaded SID files and discover that e.g. 2000 is the ietf-interfaces.yang module:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>grep -R '"sid": 2000$'</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ietf-interfaces@2018-02-20.sid:      "sid": 2000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The deviation leaf lists the SIDs of all modules that have deviations that apply to this module.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_revision"><a class="anchor" href="#_revision"></a>4. Revision</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The revision leaf is a date written in hex and encoded as base64. The revision <code>IBgCIA==</code> is <code>20180220</code> in hex, corresponding to revision 2018-02-20 of the ietf-interfaces module used by a particular firmware release.</p>
+</div>
+<div class="paragraph">
+<p>Revision values in the import-only-module list can be empty. This means the module is imported without caring which revision is used.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

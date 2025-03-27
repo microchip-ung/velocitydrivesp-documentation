@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Technology: CORECONF :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li>Technology</li>
+    <li><a href="doc-tech-cc.html">CORECONF</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Technology: CORECONF</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><style> .cc_vscroll_10 { height: 10lh; overflow-x: hidden; overflow-y: auto; } </style></p>
+</div>
+<div class="paragraph">
+<p>The CoAP Management Interface (CORECONF) is used to access datastore and data
+node resources in a VelocityDRIVE-SP device. It is documented in <a href="https://www.ietf.org/archive/id/draft-ietf-core-comi-19.html">RFC TBD - 'CoAP Management Interface (CORECONF)'</a>.</p>
+</div>
+<div class="paragraph">
+<p>CORECONF uses CoAP/UDP as a transport protocol and CBOR as a payload format
+<a href="https://www.rfc-editor.org/rfc/rfc8949.html">RFC 8949</a>.</p>
+</div>
+<div class="paragraph">
+<p>The connection to the CoAP server can either be made via <a href="doc-tech-mup1.html" class="xref page">MUP1</a> or IP
+and with or without DTLS (See <a href="doc-cg-mgmt-coap.html" class="xref page">Securing CoAP</a> for additional
+details).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_coreconf_datastores"><a class="anchor" href="#_coreconf_datastores"></a>1. CORECONF Datastores</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>VelocityDRIVE-SP uses a datastore model similar to the NMDA model as defined in
+<a href="https://www.rfc-editor.org/rfc/rfc8342.html">REF-RFC8342 - 'Network Management Datastore Architecture (NMDA)'</a>
+as shown in this drawing:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cc-ds.svg" alt="cc ds">
+</div>
+</div>
+<div class="paragraph">
+<p>It consists of four datastores:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;running&gt;</p>
+</li>
+<li>
+<p>&lt;operational&gt;</p>
+</li>
+<li>
+<p>&lt;startup&gt;</p>
+</li>
+<li>
+<p>&lt;factory-defaults&gt;</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_running"><a class="anchor" href="#_running"></a>1.1. &lt;running&gt;</h3>
+<div class="paragraph">
+<p>The &lt;running&gt; datastore contains the current configuration of the device.<br>
+This datastore is writable and accessed through the CoAP path <code>/c</code> via the CoAP methods PUT, DELETE, and iPATCH.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operational"><a class="anchor" href="#_operational"></a>1.2. &lt;operational&gt;</h3>
+<div class="paragraph">
+<p>The &lt;operational&gt; datastore contains the &lt;running&gt; datastore and status data such as state and counters.<br>
+This datastore is read-only and accessed through the CoAP path <code>/c</code> via the CoAP methods GET and FETCH.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_startup"><a class="anchor" href="#_startup"></a>1.3. &lt;startup&gt;</h3>
+<div class="paragraph">
+<p>The &lt;startup&gt; datastore is stored persistently in non-volatile memory. It contains configuration data only and
+has the same structure as the &lt;running&gt; datastore.<br>
+It is accessed through the CoAP path <code>/startup-config</code> via the CoAP methods GET, PUT, and DELETE.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_factory_defaults"><a class="anchor" href="#_factory_defaults"></a>1.4. &lt;factory-defaults&gt;</h3>
+<div class="paragraph">
+<p>The &lt;factory-defaults&gt; datastore is located in the flash image. It contains configuration data only and
+has the same structure as the &lt;running&gt; datastore.</p>
+</div>
+<div class="paragraph">
+<p>The &lt;factory-defaults&gt; datastore cannot be accessed via CoAP and therefore has no CoAP path.<br>
+It is stored in the flash image and can only be modified during a firmware update.</p>
+</div>
+<div class="paragraph">
+<p>If no &lt;startup&gt; datastore is present at boot time, &lt;factory-defaults&gt; is copied to &lt;running&gt; during boot as shown in this drawing:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/cc-boot.svg" alt="cc boot">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concise_binary_object_representation_cbor"><a class="anchor" href="#_concise_binary_object_representation_cbor"></a>2. Concise Binary Object Representation (CBOR)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CORECONF uses CBOR in all requests and responses.</p>
+</div>
+<div class="paragraph">
+<p>CBOR is a binary data serialization format that is loosely based on JSON and is defined in
+<a href="https://www.rfc-editor.org/rfc/rfc8949.html">RFC 8949</a>.</p>
+</div>
+<div class="paragraph">
+<p>CBOR is designed for use in constrained environments and the main design goals are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Small code size</p>
+</li>
+<li>
+<p>Small message size</p>
+</li>
+<li>
+<p>Support for conversion to and from JSON</p>
+</li>
+<li>
+<p>Extensibility without the need for version negotiation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The length of each CBOR data item is normally encoded in the item itself.
+However, byte strings, text strings, arrays, and maps can be encoded with an indefinite length,
+using a "break" stop code to terminate the item. This is useful if a constrained device needs
+to start transmitting an item before the total length is known.</p>
+</div>
+<div class="paragraph">
+<p>The VelocityDRIVE-SP device understands both kinds of encoding but will normally encode arrays
+and maps as indefinite length items.</p>
+</div>
+<div class="paragraph">
+<p>CORECONF uses the YANG-to-CBOR mapping to encode request and response payloads,
+as documented in <a href="https://www.rfc-editor.org/rfc/rfc9254.html">RFC 9254 - 'CBOR Encoding of Data Modeled with YANG'</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cbor_sequence_format"><a class="anchor" href="#_cbor_sequence_format"></a>3. CBOR Sequence Format</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CORECONF makes use of CBOR sequences in some of the request and response payloads.</p>
+</div>
+<div class="paragraph">
+<p>A CBOR sequence is simply a concatenation of independent CBOR items and is documented in
+<a href="https://www.rfc-editor.org/rfc/rfc8742.html#name-cbor-sequence-format">RFC 8742 -
+'Concise Binary Object Representation (CBOR) Sequences'</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cbor_diagnostic_notation"><a class="anchor" href="#_cbor_diagnostic_notation"></a>4. CBOR Diagnostic Notation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.rfc-editor.org/rfc/rfc8949.html#name-diagnostic-notation">CBOR diagnostic notation</a>
+is used in CBOR examples as it is readable unlike the binary CBOR format.</p>
+</div>
+<div class="paragraph">
+<p>Examples of CBOR Diagnostic Notation converted to CBOR HEX Notation using both implicit length
+and indefinite length notation:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25.641%;">
+<col style="width: 38.4615%;">
+<col style="width: 35.8975%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Diag Notation</th>
+<th class="tableblock halign-left valign-top">CBOR HEX Notation</th>
+<th class="tableblock halign-left valign-top">Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>[ "foo", "bar" ]</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>82           # array(2)
+   63        # text(3)
+      666F6F # "foo"
+   63        # text(3)
+      626172 # "bar"</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implicit length array of text strings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>[_ "foo", "bar" ]</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>9F           # array(*)
+   63        # text(3)
+      666F6F # "foo"
+   63        # text(3)
+      626172 # "bar"
+   FF        # primitive(*)</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indefinite length array of text strings.<br>
+Note the use of '[_' instead of '[' and the FF primitive at the end.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>{
+  1: 42,
+  2: "foo"
+}</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>A2           # map(2)
+   01        # unsigned(1)
+   18 2A     # unsigned(42)
+   02        # unsigned(2)
+   63        # text(3)
+      666F6F # "foo"</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Implicit length map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>{_
+  1: 42,
+  2: "foo"
+}</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="literalblock">
+<div class="content">
+<pre>BF           # map(*)
+   01        # unsigned(1)
+   18 2A     # unsigned(42)
+   02        # unsigned(2)
+   63        # text(3)
+      666F6F # "foo"
+   FF        # primitive(*)</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indefinite length map.<br>
+Note the use of '{_' instead of '{' and the FF primitive at the end.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The examples above are created with this <a href="https://cbor.me/">online tool</a>.</p>
+</div>
+<div class="paragraph">
+<p>The <a href="doc-getting-started.html#docker-installation" class="xref page">Docker image</a> contains the
+<a href="https://github.com/cabo/cbor-diag">CBOR diagnostic utilities</a>, which makes it possible
+to generate the same examples using the command line:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ dr 'echo "[ \"foo\", \"bar\"]" | diag2pretty.rb'
+82           # array(2)
+   63        # text(3)
+      666f6f # "foo"
+   63        # text(3)
+      626172 # "bar"</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ dr 'echo "[_ \"foo\", \"bar\"]" | diag2pretty.rb'
+9f           # array(*)
+   63        # text(3)
+      666f6f # "foo"
+   63        # text(3)
+      626172 # "bar"
+   ff        # primitive(*)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ dr 'echo "{ 1:42, 2: \"foo\"}" | diag2pretty.rb'
+bf           # map(*)
+   01        # unsigned(1)
+   18 2a     # unsigned(42)
+   02        # unsigned(2)
+   63        # text(3)
+      666f6f # "foo"
+   ff        # primitive(*)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ dr 'echo "{_ 1:42, 2: \"foo\"}" | diag2pretty.rb'
+a2           # map(2)
+   01        # unsigned(1)
+   18 2a     # unsigned(42)
+   02        # unsigned(2)
+   63        # text(3)
+      666f6f # "foo"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use diag2cbor.rb to generate the binary CBOR and save it in a file for later use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ dr 'echo "[ \"foo\", \"bar\"]" | diag2cbor.rb &gt; tmp.cbor'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Use cbor2diag.rb to show the content of the binary CBOR file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"> $ dr 'cat tmp.cbor | cbor2diag.rb'
+["foo", "bar"]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_yang_schema_item_identifier_sid"><a class="anchor" href="#_yang_schema_item_identifier_sid"></a>5. YANG Schema Item iDentifier (SID)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to be more compact, CORECONF uses globally unique identifiers instead of text strings,
+as used in the YANG specification.
+These identifiers are unsigned 63-bit integers and are called YANG Schema Item iDentifier or just SID.</p>
+</div>
+<div class="paragraph">
+<p>To ensure that SIDs are globally unique, the SIDs must be allocated via
+<a href="https://www.iana.org/">The Internet Assigned Numbers Authority (IANA)</a>.</p>
+</div>
+<div class="paragraph">
+<p>The allocation process and other details like .sid file format are documented in
+<a href="https://www.rfc-editor.org/rfc/rfc9595.html">RFC 9595 - 'YANG Schema Item iDentifier (YANG SID)'</a></p>
+</div>
+<div class="paragraph">
+<p>SIDs are allocated in ranges for each YANG module and the currently assigned ranges are documented in
+<a href="https://www.iana.org/assignments/yang-sid/yang-sid.xhtml">YANG SIDs</a>.</p>
+</div>
+<div class="paragraph">
+<p>Note that some of the YANG modules used in VelocityDRIVE-SP have not yet been assigned an official range.
+It is, therefore, expected that the temporarily assigned SID ranges will change in the future.</p>
+</div>
+<div class="paragraph">
+<p>How to get the currently assigned SIDs for a specific firmware version of VelocityDRIVE-SP is explained
+<a href="#yang-catalog">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>When used as keys in a CBOR map, they are encoded using deltas, except for the outermost map:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  1000 : {        // SID 1000
+       1 : 100,   // SID 1001
+      20 : 101    // SID 1020
+  }
+}</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_yang_and_sid_files"><a class="anchor" href="#_yang_and_sid_files"></a>5.1. .yang and .sid files</h3>
+<div class="paragraph">
+<p>The currently assigned SIDs for a single .yang file are stored in the corresponding .sid file.</p>
+</div>
+<div class="paragraph">
+<p>The naming convention is as follows using ietf-interfaces.yang as an example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ietf-interfaces.yang -&gt; ietf-interfaces@2018-02-20.sid</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The date part of the .sid filename corresponds to the newest revision found in the .yang file.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to create an initial .sid file for ietf-interfaces.yang using entry point 1500 and size 100:</div>
+<div class="content">
+<pre>dr pyang --sid-generate-file 1500:100 ietf-interfaces.yang</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will generate the .sid file ietf-interfaces@2018-02-20.sid, where SIDs are numbered from 1500 and up.</p>
+</div>
+<div class="paragraph">
+<p>If ietf-interfaces.yang is modified and the revision is changed to e.g. 2025-01-01, then the .sid file
+must be updated without modifying the existing SID values.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to update a .sid file when ietf-interfaces.yang has been modified:</div>
+<div class="content">
+<pre>dr pyang --sid-update-file ietf-interfaces@2018-02-20.sid ietf-interfaces.yang</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the existing .sid file is used as input.</p>
+</div>
+<div class="paragraph">
+<p>This will generate a new .sid file ietf-interfaces@2025-01-01.sid, where the previous SID values
+have been retained and the new SID values have been added.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="yang-catalog"><a class="anchor" href="#yang-catalog"></a>5.2. YANG Catalog</h3>
+<div class="paragraph">
+<p>When working with SIDs it is important to know the relationship between the SIDs and the corresponding YANG paths.</p>
+</div>
+<div class="paragraph">
+<p>Each and every VelocityDRIVE-SP software release has a corresponding YANG catalog, which is a compressed file in
+tar.gz format that contains all relevant .yang and .sid files.</p>
+</div>
+<div class="paragraph">
+<p>The filename is the checksum of the content followed by '.tar.gz', e.g.:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>4e600dde441af320f35d89194ffd99fc.tar.gz</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These YANG catalogs are stored at <a href="http://mscc-ent-open-source.s3-website-eu-west-1.amazonaws.com/?prefix=public_root/velocitydrivesp/yang-by-sha/">Microchips Open Source distribution on Amazon AWS</a>
+and can be downloaded freely by anyone.</p>
+</div>
+<div class="paragraph">
+<p>For instructions on how to read the checksum used in the filename, see <a href="#cc-checksum">here</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_media_types"><a class="anchor" href="#_media_types"></a>6. Media types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CORECONF uses three different variants of CBOR encoding in the CoAP payload.
+Each variant is defined as a CoAP Content Type (string) and an ID (numeric range 0-65535):</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6668%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Content Type</th>
+<th class="tableblock halign-left valign-top">ID</th>
+<th class="tableblock halign-left valign-top">CoAP Method</th>
+<th class="tableblock halign-left valign-top">Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="140">application/yang-data+cbor; id=sid</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-data+cbor; id=sid">140</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET, PUT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.rfc-editor.org/rfc/rfc9254#name-content-types">RFC 9254</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="141">application/yang-identifiers+cbor-seq</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-identifiers+cbor-seq">141</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FETCH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.ietf.org/archive/id/draft-ietf-core-comi-19.html#section-2.3-3.2.1">RFC TBD</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="142">application/yang-instances+cbor-seq</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-instances+cbor-seq">142</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST, iPATCH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://www.ietf.org/archive/id/draft-ietf-core-comi-19.html#section-2.3-3.8.1">RFC TBD</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that ID <abbr title="application/yang-identifiers+cbor-seq">141</abbr> and <abbr title="application/yang-instances+cbor-seq">142</abbr> have not yet been officially assigned by IANA and might change in the future.</p>
+</div>
+<div class="paragraph">
+<p>All currently defined CoAP Content-Formats are listed <a href="https://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats">here</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_applicationyang_datacbor_idsid"><a class="anchor" href="#_applicationyang_datacbor_idsid"></a>6.1. <abbr title="140">application/yang-data+cbor; id=sid</abbr></h3>
+<div class="paragraph">
+<p>The content is a <a href="https://www.rfc-editor.org/rfc/rfc9254.html#name-content-types">CBOR map</a>, mapping SIDs into instance values:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  1000 : {        // SID 1000
+       1 : 100,   // SID 1001
+      20 : 101    // SID 1020
+  },
+  2000 : {        // SID 2000
+       1 : "foo", // SID 2001
+      20 : "bar"  // SID 2020
+      22 : 42     // SID 2022
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_applicationyang_identifierscbor_seq"><a class="anchor" href="#_applicationyang_identifierscbor_seq"></a>6.2. <abbr title="141">application/yang-identifiers+cbor-seq</abbr></h3>
+<div class="paragraph">
+<p>The content is a <a href="https://www.rfc-editor.org/rfc/rfc8742#name-cbor-sequence-format">CBOR sequence</a> of
+<a href="https://www.rfc-editor.org/rfc/rfc9254#section-6.13.1">instance-identifiers</a>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">1000,                // Item one: SID 1000
+[2000, "foo", "bar"] // Item two: SID 2000 with YANG keys "foo" and "bar"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_applicationyang_instancescbor_seq"><a class="anchor" href="#_applicationyang_instancescbor_seq"></a>6.3. <abbr title="142">application/yang-instances+cbor-seq</abbr></h3>
+<div class="paragraph">
+<p>The content is a <a href="https://www.rfc-editor.org/rfc/rfc8742#name-cbor-sequence-format">CBOR sequence</a>, where each item
+is a CBOR map carrying an instance-identifier and its associated instance-value:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  1000 : 200                    // Item one: SID 1000
+},
+{
+  [2000, "foo", "bar"] : null   // Item two: SID 2000 with keys "foo" and "bar"
+},
+{
+  2000 : {                      // Item three: SID 2000
+    1 : "foo",                  //   YANG key  SID 2001
+   20 : "bar",                  //   YANG key  SID 2020
+   22 : 84                      //   YANG leaf SID 2022
+  }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_coap_methods"><a class="anchor" href="#_coap_methods"></a>7. CoAP methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CoAP methods supported by CORECONF are:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 62.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">CoAP method</th>
+<th class="tableblock halign-left valign-top">CoAP<br>
+request Content ID</th>
+<th class="tableblock halign-left valign-top">CoAP<br>
+response Content ID</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-data+cbor; id=sid">140</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve the datastore resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-instances+cbor-seq">142</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-instances+cbor-seq">142</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Invoke an RPC or action</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-data+cbor; id=sid">140</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create or replace a datastore resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DELETE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete a datastore resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FETCH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-identifiers+cbor-seq">141</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-instances+cbor-seq">142</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retrieve specific data nodes within a datastore resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iPATCH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><abbr title="application/yang-instances+cbor-seq">142</abbr></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n/a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Create, replace and delete data node(s) within a datastore resource</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Event streams (notifications) are not currently supported.</p>
+</div>
+<div class="sect2">
+<h3 id="_get"><a class="anchor" href="#_get"></a>7.1. GET</h3>
+<div class="paragraph">
+<p><code>GET</code> is used to retrieve a whole datastore and operates on the &lt;operational&gt; and &lt;startup&gt; datastores.</p>
+</div>
+<div class="paragraph">
+<p>The <code>c</code> and <code>d</code> <a href="https://www.ietf.org/archive/id/draft-ietf-core-comi-19.html#name-data-retrieval">query parameters</a> are supported in
+connection with the &lt;operational&gt; datastore.</p>
+</div>
+<div class="paragraph">
+<p>The returned success response code is 2.05 Content.</p>
+</div>
+<div class="listingblock">
+<div class="title">FORMAT:</div>
+<div class="content">
+<pre>REQ:  GET &lt;datastore resource&gt;
+
+RES:  2.05 Content (Content-Format: application/yang-data+cbor; id=sid)
+      CBOR map of one or more SIDs, instance-values</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>GET</code> the &lt;operational&gt; datastore</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  GET &lt;/c&gt;
+
+RES:  2.05 Content (Content-Format: application/yang-data+cbor; id=sid)
+See <a href="_attachments/doc-tech-cc-ds-all.txt" class="xref attachment">response</a> data</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>GET</code> the &lt;operational&gt; datastore with configuration nodes only</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  GET &lt;/c?c=c&gt;
+
+RES:  2.05 Content (Content-Format: application/yang-data+cbor; id=sid)
+See <a href="_attachments/doc-tech-cc-ds-cfg.txt" class="xref attachment">response</a> data</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>GET</code> the &lt;startup&gt; datastore</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  GET &lt;/startup-config&gt;
+
+RES:  2.05 Content (Content-Format: application/yang-data+cbor; id=sid)
+See <a href="_attachments/doc-tech-cc-ds-cfg.txt" class="xref attachment">response</a> data</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_post"><a class="anchor" href="#_post"></a>7.2. POST</h3>
+<div class="paragraph">
+<p><code>POST</code> is used to invoke an RPC or action.</p>
+</div>
+<div class="paragraph">
+<p>The returned success response code is 2.04 Changed.</p>
+</div>
+<div class="listingblock">
+<div class="title">FORMAT:</div>
+<div class="content">
+<pre>REQ:  POST &lt;datastore resource&gt;
+      (Content-Format: application/yang-instances+cbor-seq)
+      CBOR sequence of CBOR maps of instance-identifier, instance-value
+
+RES:  2.04 Changed
+      (Content-Format: application/yang-instances+cbor-seq)
+      CBOR sequence of CBOR maps of instance-identifier, instance-value</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example invokes the <code>system-restart</code> RPC (SID 19018) from ietf-system.yang:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  POST &lt;/c&gt;
+      (Content-Format: application/yang-instances+cbor-seq)
+{_ 19018:
+  null
+}
+
+RES:  2.04 Changed
+      (Content-Format: application/yang-instances+cbor-seq)
+{_ 19018:
+  null
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example invokes the <code>save-config</code> RPC (SID 21007) from mchp-velocitysp-system.yang,
+to copy the &lt;running&gt; datastore to the &lt;startup&gt; datastore:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  POST &lt;/c&gt;
+      (Content-Format: application/yang-instances+cbor-seq)
+{_ 21007:
+  null
+}
+
+RES:  2.04 Changed
+      (Content-Format: application/yang-instances+cbor-seq)
+{_ 21007:
+  null
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example invokes the <code>fdb-flush</code> action (SID 30001) from mchp-velocitysp-bridge.yang,
+to flush the filtering database for VID 100, port 2 entries:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  POST &lt;/c&gt;
+      (Content-Format: application/yang-instances+cbor-seq)
+{_ [_ 30001, "b0", "c0" ]:
+  {_
+    2 : 100,
+    1 : 2
+  }
+}
+
+RES:  2.04 Changed
+      (Content-Format: application/yang-instances+cbor-seq)
+{ 30001:
+  null
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_put"><a class="anchor" href="#_put"></a>7.3. PUT</h3>
+<div class="paragraph">
+<p><code>PUT</code> is used to create or replace a whole datastore and operates on the &lt;running&gt; and &lt;startup&gt; datastores.</p>
+</div>
+<div class="paragraph">
+<p>The returned success response code is 2.04 Changed.</p>
+</div>
+<div class="listingblock">
+<div class="title">FORMAT:</div>
+<div class="content">
+<pre>REQ:  PUT &lt;datastore resource&gt;
+      (Content-Format: application/yang-data+cbor; id=sid)
+      CBOR map of one or more SIDs, instance-values
+
+RES:  2.04 Changed</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>PUT</code> into the &lt;running&gt; datastore</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  PUT &lt;/c&gt;
+      (Content-Format: application/yang-data+cbor; id=sid)
+See <a href="_attachments/doc-tech-cc-ds-cfg.txt" class="xref attachment">request</a> data
+
+RES:  2.04 Changed</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>PUT</code> into the &lt;startup&gt; datastore</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  PUT &lt;/startup-config&gt;
+      (Content-Format: application/yang-data+cbor; id=sid)
+See <a href="_attachments/doc-tech-cc-ds-cfg.txt" class="xref attachment">request</a> data
+
+RES:  2.04 Changed</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete"><a class="anchor" href="#_delete"></a>7.4. DELETE</h3>
+<div class="paragraph">
+<p><code>DELETE</code> is used to delete a whole datastore and operates on the &lt;running&gt; and &lt;startup&gt; datastores.</p>
+</div>
+<div class="paragraph">
+<p>The returned success response code is 2.02 Deleted.</p>
+</div>
+<div class="listingblock">
+<div class="title">FORMAT:</div>
+<div class="content">
+<pre>REQ:  DELETE &lt;datastore resource&gt;
+
+RES:  2.02 Deleted</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>DELETE</code> the &lt;running&gt; datastore</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  DELETE &lt;/c&gt;
+
+RES:  2.02 Deleted</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>DELETE</code> the &lt;startup&gt; datastore</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">REQ:  DELETE &lt;/startup-config&gt;
+
+RES:  2.02 Deleted</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fetch"><a class="anchor" href="#_fetch"></a>7.5. FETCH</h3>
+<div class="paragraph">
+<p><code>FETCH</code> is used to retrieve one or more instance-values, which can be either a container,
+a list, a leaf or a leaf-list.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> operates on the &lt;operational&gt; datastore and the <code>c</code> and <code>d</code>
+<a href="https://www.ietf.org/archive/id/draft-ietf-core-comi-19.html#name-data-retrieval">query parameters</a> are supported.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question has one or more lists as parents, then the instance-identifier
+must include all keys needed to point out the specific instance.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question is a list and none of the list&#8217;s own keys are included, then a list
+containing all entries is returned in the response.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question is a list and all of the list&#8217;s own keys are included, then a single
+entry is returned in the response.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question is not found, then the value <code>null</code> is returned in the response.</p>
+</div>
+<div class="listingblock">
+<div class="title">FORMAT:</div>
+<div class="content">
+<pre>REQ:  FETCH &lt;datastore resource&gt;
+      (Content-Format: application/yang-identifiers+cbor-seq)
+      CBOR sequence of instance-identifiers
+
+RES:  2.05 Content
+      (Content-Format: application/yang-instances+cbor-seq)
+      CBOR sequence of CBOR maps of SID, instance-value</pre>
+</div>
+</div>
+<div id="cc-checksum" class="listingblock">
+<div class="title">Example of how to <code>FETCH</code> the <code>checksum</code> leaf (SID 29304) from ietf-constrained-yang-library.yang</div>
+<div class="content">
+<pre>REQ:  FETCH &lt;/c&gt;
+      (Content-Format: application/yang-identifiers+cbor-seq)
+29304
+
+RES:  2.05 Content
+      (Content-Format: application/yang-instances+cbor-seq)
+      CBOR sequence of CBOR maps of SID, instance-value
+{_
+  29304: h'4E600DDE441AF320F35D89194FFD99FC'
+}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>FETCH</code> the <code>phys-address</code> leaf (SID 2044) of port 1 from ietf-interfaces.yang</div>
+<div class="content">
+<pre>REQ:  FETCH &lt;/c&gt;
+      (Content-Format: application/yang-identifiers+cbor-seq)
+[_ 2044, "1" ]
+
+RES:  2.05 Content
+      (Content-Format: application/yang-instances+cbor-seq)
+      CBOR sequence of CBOR maps of SID, instance-value
+{_
+  2044: "12-4C-AE-C0-BC-01"
+}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to <code>FETCH</code> the two leaves above in a single operation</div>
+<div class="content">
+<pre>REQ:  FETCH &lt;/c&gt;
+      (Content-Format: application/yang-identifiers+cbor-seq)
+29304,
+[_ 2044, "1" ]
+
+RES:  2.05 Content
+      (Content-Format: application/yang-instances+cbor-seq)
+      CBOR sequence of CBOR maps of SID, instance-value
+{_
+  29304: h'4E600DDE441AF320F35D89194FFD99FC'
+},
+{_
+  2044: "12-4C-AE-C0-BC-01"
+}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of an attempt to <code>FETCH</code> the <code>phys-address</code> leaf (SID 2044) of a non-existing port 100</div>
+<div class="content">
+<pre>REQ:  FETCH &lt;/c&gt;
+      (Content-Format: application/yang-identifiers+cbor-seq)
+[_ 2044, "100" ]
+
+RES:  2.05 Content
+      (Content-Format: application/yang-instances+cbor-seq)
+      CBOR sequence of CBOR maps of SID, instance-value
+{_
+  2044: null
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ipatch"><a class="anchor" href="#_ipatch"></a>7.6. iPATCH</h3>
+<div class="paragraph">
+<p><code>iPATCH</code> is used to create, replace, and delete one or more instance-values, which can be either a container,
+a list, a leaf or a leaf-list.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> operates on the &lt;running&gt; datastore.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question has one or more lists as parents, then the instance-identifier
+must include all keys needed to point out the specific instance.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question is a list and the instance value is <code>non-null</code>, it is not allowed to include any
+of the list&#8217;s own keys in the instance identifier.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question is a list and the instance value is <code>null</code>, then it is a delete request,
+and all of the list&#8217;s own keys must be included.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question is a list and the instance value is a container, then the new container is either added
+to the list or replaces the existing instance in the list.</p>
+</div>
+<div class="paragraph">
+<p>If the instance in question is a list and the instance value is a list, then the new list replaces the old list,
+i.e. all old entries in the list will be deleted.</p>
+</div>
+<div class="listingblock">
+<div class="title">FORMAT:</div>
+<div class="content">
+<pre>REQ:  iPATCH &lt;datastore resource&gt;
+      (Content-Format: application/yang-instances+cbor-seq)
+      CBOR sequence of CBOR maps of instance-identifier, instance-value
+
+RES:  2.04 Changed</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to use <code>iPATCH</code> to add a static entry into the filtering database</div>
+<div class="content">
+<pre>REQ:  IPATCH &lt;/c&gt;
+      (Content-Format: application/yang-instances+cbor-seq)
+
+{_
+    [_ 7083, "b0", "c0"]: {_
+        2: 0,
+        1: "00-00-00-00-00-11",
+        21: "42",
+        3: 0,
+        4: [_ {_ 15: 1}]
+    }
+}
+
+RES:  2.04 Changed</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In the example above the instance in question is a list (SID 7083) and the instance value is a container.
+This will add or replace the instance value in the list.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to use <code>iPATCH</code> to replace the filtering database with new static entries</div>
+<div class="content">
+<pre>REQ:  IPATCH &lt;/c&gt;
+      (Content-Format: application/yang-instances+cbor-seq)
+
+{_
+    [_ 7083, "b0", "c0"]: [_
+        {_
+            2: 0,
+            1: "00-00-00-00-00-11",
+            21: "42",
+            3: 0,
+            4: [_ {_ 15: 1}]
+        },
+        {_
+            2: 0,
+            1: "00-00-00-00-00-22",
+            21: "42",
+            3: 0,
+            4: [_ {_ 15: 2}]
+        }
+    ]
+}
+
+RES:  2.04 Changed</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In the example above the instance in question is a list (SID 7083) and the instance value is also a list.
+This will replace the existing list with the new list.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Example of how to use <code>iPATCH</code> to delete a static entry from the filtering database</div>
+<div class="content">
+<pre>REQ:  IPATCH &lt;/c&gt;
+      (Content-Format: application/yang-instances+cbor-seq)
+
+{_
+    [_ 7083, "b0", "c0", 0, "42", "00-00-00-00-00-11"]: null
+}
+
+RES:  2.04 Changed</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

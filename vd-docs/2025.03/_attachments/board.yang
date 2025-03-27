@@ -1,0 +1,828 @@
+module board {
+  yang-version 1.1;
+  namespace urn:microchip:velocitysp:velocitysp-board;
+  prefix "board";
+
+  organization "microchip";
+  contact
+    "tbd";
+  description
+    "This YANG module defines the data structure of board components which VelocitySP
+     uses to initilize the needed drivers to get the board up and running.
+     The purpose is similar to 'device tree' for linux";
+
+  revision 2025-03-31 {
+    description "1) Added dummy phy leaf
+                 2) Added watchdog container
+                 3) Added phy_chip leaf
+                 4) Added manufacturer
+                 5) Added PHY/Base-port leaf";
+  }
+
+  revision 2024-12-31 {
+    description "Initial revision.";
+  }
+
+  typedef phy_mode {
+    type enumeration {
+      enum rgmii;
+      enum rgmii_txid;
+      enum sgmii;
+      enum qsgmii;
+      enum 10gbase-r;
+      enum serdes;
+    }
+    description "Phy-mode enumeration for port";
+  }
+
+  typedef pin_function {
+    type enumeration {
+      enum gpio_in;
+      enum gpio_out;
+      enum alt1;
+      enum alt2;
+      enum alt3;
+      enum alt4;
+      enum alt5;
+      enum alt6;
+    }
+    description "Alternate modes of the GPIOs";
+  }
+
+  typedef active {
+    type enumeration {
+      enum high;
+      enum low;
+    }
+    description "Active state enumeration for GPIO pins";
+  }
+
+  typedef phy_role {
+    type enumeration {
+      enum auto;
+      enum master;
+      enum slave;
+    }
+    description "Master/slave mode of the phy";
+  }
+
+  typedef phy_led_id {
+    type enumeration {
+      enum led0;
+      enum led1;
+      enum led2;
+      enum led3;
+    }
+  }
+
+  typedef phy_led_mode {
+    type enumeration {
+      enum link_activity {
+        value 4; // MEPA_GPIO_MODE_LED_LINK_ACTIVITY
+      }
+      enum link1000_activity;
+      enum link100_activity;
+      enum link10_activity;
+      enum link100_1000_activity;
+      enum link10_1000_activity;
+      enum link10_100_activity;
+      enum link100base_fx_1000base_x_activity;
+      enum duplex_collision;
+      enum collision;
+      enum activity;
+      enum base100_fx_1000base_x_fiber_activity;
+      enum autonegotiation_fault;
+      enum link1000base_x_activity;
+      enum link100base_fx_activity;
+      enum base1000_activity;
+      enum base100_fx_activity;
+      enum force_led_off;
+      enum force_led_on;
+      enum fast_link_fail;
+      enum link_tx;
+      enum link_rx;
+      enum link_fault;
+      enum link_no_act_any_speed;
+      enum local_rxer_status;
+      enum remote_rxer_status;
+      enum negotiated_speed;
+      enum master_slave_mode;
+      enum pcs_tx_err_status;
+      enum pcs_rx_err_status;
+      enum pcs_tx_activity;
+      enum pcs_rx_activity;
+      enum wake_on_lan;
+      enum disable_extended;
+    }
+  }
+
+  typedef gpio_direction {
+    type enumeration {
+      enum GPIO_DIR_IN;
+      enum GPIO_DIR_OUT;
+      enum GPIO_DIR_INOUT;
+    }
+    description "GPIO direction";
+  }
+
+  // Typedefs for instances and references
+  typedef dev_uart {
+    type enumeration {
+      enum DEV_UART_0;
+      enum DEV_UART_1;
+      enum DEV_UART_2;
+      enum DEV_UART_3;
+      enum DEV_UART_4;
+    }
+  }
+
+  typedef dev_i2c {
+    type enumeration {
+      enum DEV_I2C_0;
+      enum DEV_I2C_1;
+      enum DEV_I2C_2;
+      enum DEV_I2C_3;
+      enum DEV_I2C_4;
+    }
+  }
+
+  typedef dev_spi {
+    type enumeration {
+      enum DEV_SPI_0;
+      enum DEV_SPI_1;
+      enum DEV_SPI_2;
+      enum DEV_SPI_3;
+      enum DEV_SPI_4;
+    }
+  }
+
+  typedef dev_sgpio_bank {
+    type enumeration {
+      enum DEV_SGPIO_BANK_0;
+      enum DEV_SGPIO_BANK_1;
+      enum DEV_SGPIO_BANK_2;
+      enum DEV_SGPIO_BANK_3;
+      enum DEV_SGPIO_BANK_4;
+    }
+  }
+
+  typedef dev_pin_group {
+    type enumeration {
+      enum DEV_PIN_GROUP_0;
+      enum DEV_PIN_GROUP_1;
+      enum DEV_PIN_GROUP_2;
+      enum DEV_PIN_GROUP_3;
+      enum DEV_PIN_GROUP_4;
+    }
+  }
+
+  typedef dev_i2c_mux {
+    type enumeration {
+      enum DEV_MUX_0;
+      enum DEV_MUX_1;
+      enum DEV_MUX_2;
+      enum DEV_MUX_3;
+      enum DEV_MUX_4;
+      enum DEV_MUX_5;
+      enum DEV_MUX_6;
+      enum DEV_MUX_7;
+      enum DEV_MUX_8;
+      enum DEV_MUX_9;
+    }
+  }
+
+  typedef port_mux_mode {
+    type enumeration {
+      enum port_mux_mode_lan966x_0 {
+        description "2xQSGMII (LAN9668)";
+      }
+      enum port_mux_mode_lan966x_1 {
+        description "2xCu + 2x2.5G (+ 1xQSGMII for LAN9668)";
+      }
+      enum port_mux_mode_lan966x_2 {
+        description "2xCu + 1x2.5G + 2xRGMII";
+      }
+      enum port_mux_mode_lan966x_3 {
+        description "Not currently used";
+      }
+      enum port_mux_mode_lan966x_4 {
+        description "Not currently used";
+      }
+      enum port_mux_mode_lan966x_5 {
+        description "2xCu + 3x1G (LAN9668)";
+      }
+    }
+  }
+
+  typedef target_chip_type {
+    // vtss_target_type_t
+    type enumeration {
+      enum lan9662 {
+        value 38498; // 0x9662
+        description "LAN9662 switch";
+      }
+      enum lan9668 {
+        value 38504; // 0x9668
+        description "LAN9668 switch";
+      }
+      enum lan9694 {
+        value 38548; // 0x9694
+        description "Laguna-40: +40G Ethernet switch";
+      }
+      enum lan9691vao {
+        value 38545; // 0x9691
+        description "Laguna-40-VAO: +40G Automotive TSN Ethernet switch";
+      }
+      enum lan9694tsn {
+        value 38549; // 0x9695
+        description "Laguna-40-TSN: +40G TSN Ethernet switch";
+      }
+      enum lan9694red {
+        value 38554; // 0x969A
+        description "Laguna-40-RED: +40G TSN Ethernet switch with PRP/HSR";
+      }
+      enum lan9696 {
+        value 38550; // 0x9696
+        description "Laguna-60: +60G Ethernet switch";
+      }
+      enum lan9692vao {
+        value 38546; // 0x9692
+        description "Laguna-65-VAO: +65G Automotive TSN Ethernet switch";
+      }
+      enum lan9696tsn {
+        value 38551; // 0x9697
+        description "Laguna-60-TSN: +60G TSN Ethernet switch";
+      }
+      enum lan9696red {
+        value 38555; // 0x969B
+        description "Laguna-60-RED: +60G TSN Ethernet switch with PRP/HSR";
+      }
+      enum lan9698 {
+        value 38552; // 0x9698
+        description "Laguna-100: +80G Ethernet switch";
+      }
+      enum lan9693vao {
+        value 38547; // 0x9693
+        description "Laguna-100-VAO: +80G Automotive TSN Ethernet switch";
+      }
+      enum lan9698tsn {
+        value 38553; // 0x9699
+        description "Laguna-100-TSN: +80G TSN Ethernet switch";
+      }
+      enum lan9698red {
+        value 38556; // 0x969C
+        description "Laguna-100-RED: +80G TSN Ethernet switch with PRP/HSR";
+      }
+    }
+  }
+
+  typedef miim_bus {
+    type enumeration {
+      enum MIIM_BUS_0;
+      enum MIIM_BUS_1;
+    }
+  }
+
+  container drivers {
+
+    grouping pin_ctrl_tmpl {
+      leaf-list pins {
+        type uint32;
+        description "Pin index";
+      }
+
+      leaf pin_function {
+        type pin_function;
+        mandatory true;
+        description "Pin function";
+      }
+    }
+
+    //  inst = lmd_gpio_bank_dev_alloc(&sgpio_bank, pool, 129, LMD_GPIO_DIR_OUT);
+    grouping gpio_tmpl {
+      description "GPIO configuration";
+
+      choice ref {
+        mandatory true;
+
+        container sgpio {
+          leaf ref_sgpio_bank {
+            type dev_sgpio_bank;
+            mandatory true;
+            description "SGPIO bank reference";
+          }
+
+          leaf port {
+            type uint8;
+            mandatory true;
+            description "Port index within the bank";
+          }
+
+          leaf bit {
+            type uint8;
+            mandatory true;
+            description "Bit index within the port";
+          }
+        }
+
+        leaf gpio {
+          type uint32;
+          description "GPIO index within the bank";
+        }
+      }
+
+      leaf direction {
+        type gpio_direction;
+        mandatory true;
+        description "GPIO direction";
+      }
+
+      leaf active_state {
+        type active;
+        description "Active state of the GPIO pin";
+      }
+    }
+
+     // lmd_gpio_bank_serial_init(&sgpio_bank, pool, &sgpio_conf, LAN969X_GCB_BASE);
+     // lmd_pinctrl_mode_set(&pinctrl, 5, LMD_GPIO_ALT_1);
+    container sgpio_banks {
+      description "SGPIO bank configuration";
+      list sgpio_bank {
+        key "sgpio_bank";
+        description "SGPIO bank instance (group)";
+
+        leaf sgpio_bank {
+          type dev_sgpio_bank;
+          mandatory true;
+          description "SGPIO bank reference";
+        }
+
+        leaf bit_count {
+          type uint32;
+          mandatory true;
+          description "Number of SGPIO bits used";
+        }
+
+        leaf port_mask {
+          type uint32;
+          mandatory true;
+          description "32 bit mask of SGPIO ports enabled";
+        }
+
+        leaf clock_div {
+          type uint32;
+          description "SGPIO controller clock freq. Divide the system clk with this number";
+        }
+
+        container pin_ctrl {
+          uses pin_ctrl_tmpl;
+        }
+      }
+    }
+
+    // lmd_i2c_flexcom_init(&i2c_dev, pool, &i2c_conf,
+    //                      (uint32_t)PERIPHERAL_CLK, entry.base_addr);
+    // lmd_pinctrl_mode_set(&pinctrl, 55, LMD_GPIO_ALT_2);
+    container flexcoms {
+      description "Flexcom configuration";
+
+      list flexcom {
+        max-elements 5;
+        key "hw_instance";
+        description "Flexcom instances";
+
+        leaf hw_instance {
+          type uint32;
+          description "Flexcom instance number";
+        }
+
+        leaf uart {
+          type dev_uart;
+          description "Configure the given FLEXCOM as an UART at the given instance";
+        }
+
+        leaf i2c {
+          type dev_i2c;
+          description "Configure the given FLEXCOM as an I2C at the given instance";
+        }
+
+        leaf spi {
+          type dev_spi;
+          description "Configure the given FLEXCOM as an SPI at the given instance";
+        }
+
+        container pin_ctrl {
+          uses pin_ctrl_tmpl;
+        }
+      }
+    }
+
+    // gpio_pin_grp = lmd_gpio_pin_group_create(pool, 3U, 10U);
+    // gpio_pin_grp->gpios[0] = GPIO_instance_1
+    // gpio_pin_grp->gpios[1] = GPIO_instance_2
+    // gpio_pin_grp->gpios[2] = GPIO_instance_3
+
+    container pin_groups {
+      list pin_group {
+        key "pin_group";
+        description "Pin group instances";
+
+        leaf pin_group {
+          type dev_pin_group;
+          mandatory true;
+          description "Pin group instance id";
+        }
+
+        leaf sleep {
+          type uint32;
+          mandatory true;
+          description "Ms to sleep until the pins are active";
+        }
+
+        list mux_pins {
+          config false;
+          description "GPIOs that forms the group";
+          uses gpio_tmpl;
+        }
+      }
+    }
+
+    // lmd_i2c_gpio_muxed_init(&i2c_mux_1, pool, 0U, gpio_pin_grp, &i2c_dev);
+    // lmd_i2c_gpio_muxed_init(&i2c_mux_2, pool, 1U, gpio_pin_grp, &i2c_dev);
+    // lmd_i2c_gpio_muxed_init(&i2c_mux_3, pool, 2U, gpio_pin_grp, &i2c_dev);
+    // lmd_i2c_gpio_muxed_init(&i2c_mux_4, pool, 3U, gpio_pin_grp, &i2c_dev);
+
+    container i2c_muxs {
+      list i2c_mux {
+        key "i2c_mux";
+        description "i2c instance";
+
+        leaf i2c_mux {
+          type dev_i2c_mux;
+          mandatory true;
+          description "I2C mux instance (&i2c_mux_1)";
+        }
+
+        leaf ref_parent {
+          type dev_i2c;
+          mandatory true;
+          description "Parent I2C device (&i2c_dev)";
+        }
+
+        leaf ref_pin_group {
+          type dev_pin_group;
+          mandatory true;
+          description "GPIO Group used to contol the MUX settings (gpio_pin_grp)";
+        }
+
+        leaf gpio_mask {
+          type uint32;
+          mandatory true;
+          description "MUX GPIO Mask (0U)";
+        }
+      }
+    }
+
+
+// typedef struct {
+//     uint32_t           port_no;   // Switch port
+//     lmd_gpio_dev_t    *los;       // SFP loss of signal, IN
+//     lmd_gpio_dev_t    *tx_fault;  // SFP Tx Fault, IN
+//     lmd_gpio_dev_t    *present;   // SFP module present, IN
+//     lmd_gpio_dev_t    *tx_enable; // SFP Tx signal enable, OUT
+//     lm_os_sfp_status_t invert;    // SFP signal is inverted
+// } lmd_sfp_gpio_map_t;
+//   sfp_gpio_dev = lmd_sfp_gpio_create(sfp_cnt, sfp_gpio_map);
+    container sfps {
+      description "SFP GPIO pins and port mapping";
+      list sfp {
+        key "portno";
+        description "SFP instance";
+
+        container los {
+          description "Loss of signal gpio";
+          uses gpio_tmpl;
+        }
+
+        container tx_fault {
+          description "Transmit fault gpio";
+          uses gpio_tmpl;
+        }
+
+        container present {
+          description "Module detect gpio";
+          uses gpio_tmpl;
+        }
+
+        container tx_enable {
+          description "Transmit enable gpio";
+          uses gpio_tmpl;
+        }
+
+        leaf portno {
+          type uint32;
+          description "Map to switch port";
+        }
+
+        leaf ref_i2c_mux {
+          type dev_i2c_mux;
+          description "Reference to SFP i2c mux";
+          // sfp_i2c_entries[idx].dev = &i2c_mux_1;
+          // sfp_i2c_entries[idx].port_no = port;
+        }
+      }
+    }
+
+    container mdios {
+      list mdio {
+        key miim_bus;
+
+        leaf miim_bus {
+          type miim_bus;
+          description "MIIM/MDIO bus instance";
+        }
+
+        container pin_ctrl {
+          description "MIIM/MDIO pin ctrl";
+          uses pin_ctrl_tmpl;
+        }
+
+        leaf frequency {
+          type uint32;
+          description "MIIM bus frequency in Hz";
+        }
+      }
+    }
+
+    container mup1 {
+      description "MUP1 configuration";
+      leaf ref_uart {
+        type dev_uart;
+        description "Device UART reference";
+      }
+    }
+
+    container gpio_restart {
+      description "GPIO configuration for restart";
+      uses gpio_tmpl;
+    }
+
+    container gpio_reset {
+      description "GPIO configuration for factory reset";
+      uses gpio_tmpl;
+    }
+
+    container status_led {
+      description "GPIO configuration for status LED";
+      uses gpio_tmpl;
+    }
+
+    container phy_reset {
+      description "GPIO configuration for PHY reset";
+      uses gpio_tmpl;
+    }
+
+    container watchdog {
+      description "System watchdog";
+      leaf timeout {
+        type enumeration {
+          enum timeout_none;
+          enum timeout_100ms {
+            value 100;
+          }
+          enum timeout_1000ms {
+            value 1000;
+          }
+          enum timeout_2000ms {
+            value 2000;
+          }
+        }
+      }
+    }
+
+    container port_leds {
+      description "GPIO configuration for port LEDs";
+      list port_led {
+        key "portno";
+        description "Port LED instance";
+
+        leaf portno {
+          type uint32;
+          description "Map to switch port";
+          mandatory true;
+        }
+
+        container led_green {
+          uses gpio_tmpl;
+          description "GPIO configuration for green LED";
+        }
+
+        container led_second {
+          uses gpio_tmpl;
+          description "GPIO configuration for secondary LED";
+        }
+      }
+    }
+
+    container bridge {
+      description "Bridge related configuration";
+
+      leaf mux_mode {
+        type port_mux_mode;
+        // TODO(bd): Consider if-feature lan966x;
+        description "Port mux configuration. Required on LAN966X";
+      }
+
+      leaf target_chip {
+        type target_chip_type;
+        mandatory true;
+        description "SoC installed on the board";
+      }
+
+      container eth_ports {
+        description "Ethernet ports setup";
+        list eth_port {
+          key "port_dev";
+          description "Ethernet port instance";
+
+          leaf port_dev {
+            type uint32;
+            mandatory true;
+            description "Chip port device identifier";
+          }
+
+          leaf phy_mode {
+            type phy_mode;
+            mandatory true;
+            description "Interface mode to the phy/host";
+          }
+
+          leaf phy_chip {
+            type int32;
+            description
+              "The PHY chip this port is associated with.
+               Used in the implementation of the ietf-hardware.yang to
+               associate different ports with the same physical PHY.
+
+               If this leaf is zero or not present, the port is not
+               included in the component list in ietf-hardware.yang.
+               This can be used to exclude CPU ports from the list.
+
+               The value -1 denotes that the PHY is located inside the
+               switch and the PHY is not included in the component
+               list in ietf-hardware.yang.";
+          }
+
+          leaf in_band_aneg {
+            type boolean;
+            description "In-band auto-negotiation";
+            default "false";
+          }
+
+          leaf bandwidth {
+            type uint32;
+            description "Max bandwidth allocated to this port";
+            default 0;
+          }
+
+          container phy {
+            leaf ref_miim_bus {
+              type miim_bus;
+              mandatory true;
+              description "MIIM bus reference";
+            }
+
+            leaf miim_addr {
+              type uint32;
+              mandatory true;
+              description "PHY address";
+            }
+
+            leaf dummy {
+              type boolean;
+              description "Dummy SW PHY, can be used to simulate phy access or support MAC-2-MAC connection";
+            }
+
+            leaf base_port {
+              type uint32;
+              description "Base port (API port idx) in quad phys, used for shared resources";
+            }
+
+            container fixed_link {
+              leaf speed {
+                type uint32;
+                description "Forced speed";
+              }
+
+              leaf role {
+                type phy_role;
+                description "Role of the PHY";
+              }
+            }
+
+            list led {
+              key "id";
+
+              leaf id {
+                type phy_led_id;
+                description "PHY LED ID";
+              }
+
+              leaf mode {
+                type phy_led_mode;
+                mandatory true;
+                description "PHY LED mode";
+              }
+            }
+          }
+        }
+      }
+    }
+
+    container ptp {
+      description "Pin configuration of PTP functions";
+
+      list pins {
+        description "GPIO to PTP mapping. On LAN969X PTP_Sync_4 must be used for 1PPS output.";
+        config false;
+
+        container pin_ctrl {
+          uses pin_ctrl_tmpl;
+        }
+      }
+    }
+  }
+
+  container capabilities {
+    leaf manufacturer {
+      type string;
+      mandatory true;
+      description "Manufacturer name";
+    }
+
+    leaf model {
+      type string;
+      mandatory true;
+      description "Model name";
+    }
+
+    leaf l3_count {
+      type uint32;
+      description "Number of L3 interfaces";
+    }
+
+    leaf ltc_count {
+      type uint32;
+      description "Number of LTC(local time counter) also known as PHC(Physical hardware clock)";
+    }
+
+    leaf ltc_pin_count {
+      type uint8;
+      description "Number of pins that belong to the LTC";
+    }
+
+    leaf phy_timestamping {
+      type boolean;
+      description "Bool value to enable/disable PHY timestamping";
+    }
+
+    leaf stream_count {
+      type uint32;
+      description "Number of streams";
+    }
+
+    leaf coap_session_count {
+      type uint32;
+      description "Number of Allowed Simultaneous CoAP Sessions";
+    }
+
+    leaf arp_count {
+      type uint32;
+      description "Number of ARP entries";
+    }
+
+    leaf ipv4_route_count {
+      type uint32;
+      description "Number of static IPv4 routes";
+    }
+  }
+
+  anydata factory_default_config {
+    description "Factory default YANG datastore";
+  }
+
+  container extmod {
+    description "Extension module loaded at boot-time";
+
+    leaf text {
+      type binary;
+      description "The binary object code and initialized data implementing the module.";
+    }
+
+    leaf data_offset {
+      type uint32;
+      description "Mark the offset where the executable code is stopping, and
+                   where the initialized data starts (in the text blob above)";
+    }
+  }
+}

@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Switch ACL :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li><a href="doc-cg-l2.html">L2 Forwarding</a></li>
+    <li><a href="doc-cg-l2-acl.html">ACL</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Switch ACL</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes frame filtering configuration and retrieval of status information.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acl_rule_filtering"><a class="anchor" href="#_acl_rule_filtering"></a>2. ACL rule filtering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Access Control List</p>
+</div>
+<div class="paragraph">
+<p>Advanced frame processing can be set up using the Access Control List (ACL) of the switch.
+Each rule in the list is called an Access Control Entry (ACE). For each frame received on an ingress port,
+the ACL is searched until an ACE matching the ingress port and frame properties is found.
+The action of the first matching ACE determines the forwarding of the frame. If no matching ACE is found,
+the default action (section 'Port ACL default actions') of the ingress port is used.</p>
+</div>
+<div class="paragraph">
+<p>By default, the ACL is empty and the default port actions allow forwarding of frames.</p>
+</div>
+<div class="paragraph">
+<p>An ACE is divided into two parts - the matching key and the action.<br>
+The matching key has some common parameters and some parameters that are related to the frame type selected.<br>
+The action parameters are common, independent of the selected frame type.<br>
+Some parameters xxx have a related xxx-mask parameter. In this xxx-mask, any bit position with a '0' is matched as
+a 'don&#8217;t-care', meaning both '0' and '1' in this position generate a match.
+All parameters for an ACE can be found described in the mchp-velocitysp-acl.yang file.</p>
+</div>
+<div class="sect2">
+<h3 id="_check_initial_acl_rule_list_is_empty"><a class="anchor" href="#_check_initial_acl_rule_list_is_empty"></a>2.1. Check initial ACL rule list is empty</h3>
+<div class="paragraph">
+<p>First, let&#8217;s see that the ACL rule list is empty:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : []</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_any_frame"><a class="anchor" href="#_add_an_ace_matching_any_frame"></a>2.2. Add an ACE matching any frame</h3>
+<div class="paragraph">
+<p>Let&#8217;s make a simple ACE that matches any frame received on a set of ports.
+The frame will have one egress port as a possible forwarding port.</p>
+</div>
+<div class="paragraph">
+<p>The ingress ports are '1' and '2'.<br>
+The possible egress port is '3'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-any" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 1
+    ingress-port-list:
+    - '1'
+    - '2'
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-0" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-0" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 1
+    ingress-port-list:
+    - '1'
+    - '2'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-00
+    smac-mask: 00-00-00-00-00-00
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '3'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_a_specific_mac"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac"></a>2.3. Add an ACE matching a specific MAC</h3>
+<div class="paragraph">
+<p>Let&#8217;s make an ACE that matches any frame type received on a specific port with a specific SMAC.
+The frame will have two egress ports as possible forwarding ports.</p>
+</div>
+<div class="paragraph">
+<p>The ingress port is '1'.<br>
+The SMAC is 00-00-00-00-00-01. It is an exact match as the <code>smac-mask</code> is all '1'.<br>
+The possible egress ports are '2' and '3'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-any-smac" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 2
+    ingress-port-list:
+    - '1'
+    smac: 00-00-00-00-00-01
+    smac-mask: FF-FF-FF-FF-FF-FF
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='2']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 2
+    ingress-port-list:
+    - '1'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-01
+    smac-mask: FF-FF-FF-FF-FF-FF
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_a_specific_frame_type"><a class="anchor" href="#_add_an_ace_matching_a_specific_frame_type"></a>2.4. Add an ACE matching a specific frame type</h3>
+<div class="paragraph">
+<p>The ingress port is '2'.<br>
+The SMAC is 00-00-00-00-00-01.<br>
+The frame type is C-Tagged - '8100'.<br>
+The possible egress ports are '1' and '3'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-etype-smac" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 3
+    ingress-port-list:
+    - '2'
+    smac: 00-00-00-00-00-01
+    smac-mask: FF-FF-FF-FF-FF-FF
+    frame-etype:
+      etype: 33024
+      etype-mask: 65535
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='3']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 3
+    ingress-port-list:
+    - '2'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-01
+    smac-mask: FF-FF-FF-FF-FF-FF
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-etype:
+      etype: 33024
+      etype-mask: 65535
+      data: 0
+      data-mask: 0
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '3'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_an_ipv4_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_frame"></a>2.5. Add an ACE matching an IPv4 frame</h3>
+<div class="paragraph">
+<p>The ingress port is '3'.<br>
+The IPv4 SIP is 1.2.3.4/16.<br>
+The possible egress ports are '1' and '2'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-ipv4-sip" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 4
+    ingress-port-list:
+    - '3'
+    frame-ipv4:
+      sip: 1.2.3.4/16
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '2'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='4']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 4
+    ingress-port-list:
+    - '3'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-00
+    smac-mask: 00-00-00-00-00-00
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-ipv4:
+      fragment: any
+      options: any
+      sip: 1.2.3.4/16
+      dip: 0.0.0.0/0
+      ttl: any
+      proto: 0
+      proto-mask: 0
+      ds: 0
+      ds-mask: 0
+      data: 0
+      data-mask: 0
+      sport-min: 0
+      sport-max: 0
+      dport-min: 0
+      dport-max: 0
+      tcp-fin: any
+      tcp-syn: any
+      tcp-rst: any
+      tcp-psh: any
+      tcp-ack: any
+      tcp-urg: any
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '2'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_an_ipv4_udp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_udp_frame"></a>2.6. Add an ACE matching an IPv4 UDP frame</h3>
+<div class="paragraph">
+<p>The ingress port is '1'.<br>
+The IPv4 SIP is 1.2.3.4/16.<br>
+The UDP SPORT range is 10-20.<br>
+The possible egress ports are '2' and '3'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-ipv4-udp" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 5
+    ingress-port-list:
+    - '1'
+    frame-ipv4:
+      proto: 17
+      proto-mask: 255
+      sip: 1.2.3.4/16
+      sport-min: 10
+      sport-max: 20
+    forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-4" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='5']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-4" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 5
+    ingress-port-list:
+    - '1'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-00
+    smac-mask: 00-00-00-00-00-00
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-ipv4:
+      fragment: any
+      options: any
+      sip: 1.2.3.4/16
+      dip: 0.0.0.0/0
+      ttl: any
+      proto: 17
+      proto-mask: 255
+      ds: 0
+      ds-mask: 0
+      data: 0
+      data-mask: 0
+      sport-min: 10
+      sport-max: 20
+      dport-min: 0
+      dport-max: 0
+      tcp-fin: any
+      tcp-syn: any
+      tcp-rst: any
+      tcp-psh: any
+      tcp-ack: any
+      tcp-urg: any
+    forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_an_ipv4_tcp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_tcp_frame"></a>2.7. Add an ACE matching an IPv4 TCP frame</h3>
+<div class="paragraph">
+<p>The ingress port is '2'.<br>
+The IPv4 SIP is 1.2.3.4/16.<br>
+The possible egress ports are '1' and '3'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-ipv4-tcp" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 6
+    ingress-port-list:
+    - '2'
+    frame-ipv4:
+      proto: 6
+      proto-mask: 255
+      sip: 1.2.3.4/16
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-5" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='6']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-5" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 6
+    ingress-port-list:
+    - '2'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-00
+    smac-mask: 00-00-00-00-00-00
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-ipv4:
+      fragment: any
+      options: any
+      sip: 1.2.3.4/16
+      dip: 0.0.0.0/0
+      ttl: any
+      proto: 6
+      proto-mask: 255
+      ds: 0
+      ds-mask: 0
+      data: 0
+      data-mask: 0
+      sport-min: 0
+      sport-max: 0
+      dport-min: 0
+      dport-max: 0
+      tcp-fin: any
+      tcp-syn: any
+      tcp-rst: any
+      tcp-psh: any
+      tcp-ack: any
+      tcp-urg: any
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '3'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_a_specific_vidpcp_in_a_tagged_frame"><a class="anchor" href="#_add_an_ace_matching_a_specific_vidpcp_in_a_tagged_frame"></a>2.8. Add an ACE matching a specific VID/PCP in a Tagged frame</h3>
+<div class="paragraph">
+<p>The ingress port is '3'.<br>
+The TAG VID is 200.<br>
+The TAG PCP is 4.<br>
+The possible egress ports are '1' and '2'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-vid" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 7
+    ingress-port-list:
+    - '3'
+    tagged: zero
+    vid: 200
+    vid-mask: 4095
+    pcp: 4
+    pcp-mask: 7
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '2'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-6" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='7']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-6" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 7
+    ingress-port-list:
+    - '3'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-00
+    smac-mask: 00-00-00-00-00-00
+    tagged: zero
+    vid: 200
+    vid-mask: 4095
+    pcp: 4
+    pcp-mask: 7
+    dei: any
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '2'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_an_un_tagged_frame"><a class="anchor" href="#_add_an_ace_matching_an_un_tagged_frame"></a>2.9. Add an ACE matching an Un-Tagged frame</h3>
+<div class="paragraph">
+<p>The ingress port is '3'.<br>
+The possible egress ports are '1' and '2'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-untagged" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 8
+    ingress-port-list:
+    - '3'
+    tagged: one
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '2'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-7" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='8']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-7" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 8
+    ingress-port-list:
+    - '3'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-00
+    smac-mask: 00-00-00-00-00-00
+    tagged: one
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '1'
+    - '2'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_a_specific_mac_and_dropping_it"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac_and_dropping_it"></a>2.10. Add an ACE matching a specific MAC and dropping it</h3>
+<div class="paragraph">
+<p>If the forwarding type is <code>filter</code> and the <code>egress-port-list</code> is empty, the frame is dropped.</p>
+</div>
+<div class="paragraph">
+<p>The ingress port is '1'.<br>
+The SMAC is 00-00-00-00-00-01.<br>
+The possible egress ports are none.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-any-drop" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 9
+    ingress-port-list:
+    - '1'
+    smac: 00-00-00-00-00-01
+    smac-mask: FF-FF-FF-FF-FF-FF
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list: []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-8" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='9']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-8" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 9
+    ingress-port-list:
+    - '1'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-01
+    smac-mask: FF-FF-FF-FF-FF-FF
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list: []
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_a_specific_mac_and_policing_it"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac_and_policing_it"></a>2.11. Add an ACE matching a specific MAC and policing it</h3>
+<div class="paragraph">
+<p>An ACE can point to an ACL policer as an action. So first, the ACL policer instance must be created.</p>
+</div>
+<div class="paragraph">
+<p>The policer index is 0.<br>
+The Frame Rate is 1000 frames/s.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-acl-policer" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-policers/policer-list[index='0']/frame-rate"
+  : 1000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL policer is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-policer" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-policers/policer-list[index='0']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-policer" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-policers/policer-list"
+  : index: 0
+    frame-rate: 1000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we create the ACE that points to the ACL policer.</p>
+</div>
+<div class="paragraph">
+<p>The ingress port is '1'.<br>
+The SMAC is 00-00-00-00-00-01.<br>
+No forwarding filtering.<br>
+The ACL police index is '0'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-policer" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 10
+    ingress-port-list:
+    - '1'
+    smac: 00-00-00-00-00-01
+    smac-mask: FF-FF-FF-FF-FF-FF
+    frame-any:
+      any:
+      -
+    forwarding: none
+    policer-enable: true
+    policer-index: 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-9" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='10']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-9" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 10
+    ingress-port-list:
+    - '1'
+    dmac: 00-00-00-00-00-00
+    dmac-mask: 00-00-00-00-00-00
+    smac: 00-00-00-00-00-01
+    smac-mask: FF-FF-FF-FF-FF-FF
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-any:
+      any:
+      -
+    forwarding: none
+    egress-port-list: []
+    policer-enable: true
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_ace_matching_a_range_of_destination_macs"><a class="anchor" href="#_add_an_ace_matching_a_range_of_destination_macs"></a>2.12. Add an ACE matching a range of destination MACs</h3>
+<div class="paragraph">
+<p>Let&#8217;s make an ACE that matches any frame type received on a specific port with a range of DMACs.
+The frame will have two egress ports as possible forwarding ports.</p>
+</div>
+<div class="paragraph">
+<p>The ingress port is '1'.<br>
+The DMAC range is 00-00-00-00-00-01 to 00-00-00-00-00-FF.<br>
+The possible egress ports are '2' and '3'.</p>
+</div>
+<div class="paragraph">
+<p>NOTE that the dmac-mask has the value '01' in the least significant byte. Bit '0' means don&#8217;t-care,
+so the least significant bit must be '1' and all other bits are don&#8217;t-care. The DMAC 00-00-00-00-00-00
+does not match.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-dmac-range" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 11
+    ingress-port-list:
+    - '1'
+    dmac: 00-00-00-00-00-01
+    dmac-mask: FF-FF-FF-FF-FF-01
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-10" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='11']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-10" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+  : id: 11
+    ingress-port-list:
+    - '1'
+    dmac: 00-00-00-00-00-01
+    dmac-mask: FF-FF-FF-FF-FF-01
+    smac: 00-00-00-00-00-00
+    smac-mask: 00-00-00-00-00-00
+    tagged: any
+    vid: 0
+    vid-mask: 0
+    pcp: 0
+    pcp-mask: 0
+    dei: any
+    frame-any:
+      any:
+      -
+    forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_read_the_ace_rx_counter"><a class="anchor" href="#_read_the_ace_rx_counter"></a>2.13. Read the ACE RX counter</h3>
+<div class="paragraph">
+<p>When there is a match on an ACE, the related RX counter is incremented.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s read the RX counter of ACE id 1:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-cnt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']/rx-count"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-cnt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list/rx-count"
+  : 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clear_the_ace_rx_counter"><a class="anchor" href="#_clear_the_ace_rx_counter"></a>2.14. Clear the ACE RX counter</h3>
+<div class="paragraph">
+<p>The ACE related RX counter can be cleared.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s clear the RX counter of ACE id 1:</p>
+</div>
+<div class="paragraph">
+<p><code>POST</code> request message:</p>
+</div>
+<div id="cg-post-req-acl-rule-list-cnt-clear" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']/clear"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>POST</code> response message:</p>
+</div>
+<div id="cg-post-res-acl-rule-list-cnt-clear" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']/clear":</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_port_acl_default_actions"><a class="anchor" href="#_port_acl_default_actions"></a>3. Port ACL default actions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Port based Access Control</p>
+</div>
+<div class="paragraph">
+<p>Per port, there is a default action used if no ACE is matching in the ACL.
+The possible actions are an egress port list and a policer pointer.</p>
+</div>
+<div class="sect2">
+<h3 id="_check_initial_default_actions"><a class="anchor" href="#_check_initial_default_actions"></a>3.1. Check initial default actions</h3>
+<div class="paragraph">
+<p>Verify that by default, no actions are active.<br>
+When <code>forwarding</code> is <code>none</code>, it means "No frame forwarding change."</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-port-acl" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-acl:acl-port"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-port-acl" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port"
+  : forwarding: none
+    egress-port-list: []
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enable_forwarding_to_a_port_list"><a class="anchor" href="#_enable_forwarding_to_a_port_list"></a>3.2. Enable forwarding to a port list</h3>
+<div class="paragraph">
+<p>Configure the default action to forward to a list of ports.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'.<br>
+The possible egress ports are '2' and '3'.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-port-acl-port" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-acl:acl-port"
+  : forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the Port ACL is changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-port-acl-0" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-acl:acl-port"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-port-acl-0" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port"
+  : forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_forwarding"><a class="anchor" href="#_disable_forwarding"></a>3.3. Disable forwarding</h3>
+<div class="paragraph">
+<p>Configure the default action to disable forwarding from the port.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'.<br>
+The possible egress ports list is empty.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-port-acl-forwarding" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-acl:acl-port"
+  : forwarding: filter
+    egress-port-list: []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the Port ACL is changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-port-acl-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-acl:acl-port"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-port-acl-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port"
+  : forwarding: filter
+    egress-port-list: []
+    policer-enable: false
+    policer-index: 0
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enable_policing"><a class="anchor" href="#_enable_policing"></a>3.4. Enable policing</h3>
+<div class="paragraph">
+<p>Configure the default action to point to a policer.</p>
+</div>
+<div class="paragraph">
+<p>First, the ACL policer instance must be created.<br>
+The policer index is 1.<br>
+The Frame Rate is 1000 frames/s.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-port-acl-policer" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-policers/policer-list[index='1']/frame-rate"
+  : 1000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we configure the default action to point to the ACL policer.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'.<br>
+The possible egress ports are '2' and '3'.<br>
+The policer index is 1.<br></p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-port-acl-police" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-acl:acl-port"
+  : forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'
+    policer-enable: true
+    policer-index: 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the Port ACL is changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-port-acl-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-acl:acl-port"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-port-acl-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port"
+  : forwarding: filter
+    egress-port-list:
+    - '2'
+    - '3'
+    policer-enable: true
+    policer-index: 1
+    rx-count: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_read_the_rx_counter"><a class="anchor" href="#_read_the_rx_counter"></a>3.5. Read the RX counter</h3>
+<div class="paragraph">
+<p>When the default action is used, the related RX counter is incremented.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-port-acl-cnt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-acl:acl-port/rx-count"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-port-acl-cnt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port/\
+     rx-count"
+  : 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clear_the_rx_counter"><a class="anchor" href="#_clear_the_rx_counter"></a>3.6. Clear the RX counter</h3>
+<div class="paragraph">
+<p>The default action RX counter can be cleared.</p>
+</div>
+<div class="paragraph">
+<p><code>POST</code> request message:</p>
+</div>
+<div id="cg-post-req-port-acl-cnt-clear" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-acl:acl-port/clear"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>POST</code> response message:</p>
+</div>
+<div id="cg-post-res-port-acl-cnt-clear" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/mchp-velocitysp-acl:acl-port/clear":</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

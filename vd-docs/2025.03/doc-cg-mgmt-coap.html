@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Securing CoAP :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li>Management</li>
+    <li><a href="doc-cg-mgmt-coap.html">Securing CoAP</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Securing CoAP</h1>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section gives examples of how to get and set various security options that are available to CoAP servers.
+These security options only apply when "security-mode" is set to "raw-public-key" and the client is connecting
+over UDP/IP. Currently accessing CoAP over MUP1 is considered trusted, and therefor by passes the
+security layer.</p>
+</div>
+<div class="paragraph">
+<p>Section 9 of RFC7252 explains various methods of securing or not securing CoAP.
+VelocitySP supports modes "NoSec" and "RawPublicKey" with "RawPublicKey" being set by default.</p>
+</div>
+<div class="paragraph">
+<p>When "RawPublicKey" mode is configured then CoAP is accessible after proving authorization over
+DTLS which is available on UDP port 5684. Initially this mode has no authorized users, and therefor
+must be provision to recognize the administrator. After provisioning then the administrator can
+access all CoAP servers through DTLS. See below for more information about provisioning.</p>
+</div>
+<div class="paragraph">
+<p>When "NoSec" (no security) mode is configured then CoAP servers are accessible directly on UDP port 5683.
+In this mode no authorization or encryption is performed.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_security_modes"><a class="anchor" href="#_security_modes"></a>2. Security Modes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By default VelocitySP is configured for "raw-public-key" mode.
+To verify this perform the following request.</p>
+</div>
+<div class="sect2">
+<h3 id="_get_security_mode"><a class="anchor" href="#_get_security_mode"></a>2.1. Get Security Mode</h3>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-get-security-mode-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:coap-server/config/security-mode"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-get-security-mode-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:coap-server/config/security-mode"
+  : raw-public-key</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_security_mode_to_no_sec_no_security"><a class="anchor" href="#_set_security_mode_to_no_sec_no_security"></a>2.2. Set Security Mode to 'no-sec' (no security)</h3>
+<div class="paragraph">
+<p>You can disable the security layer by following these steps.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message</p>
+</div>
+<div id="cg-ipatch-req-set-security-mode-nosec" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:coap-server/config/security-mode"
+  : no-sec</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can verify that 'no-sec" was configure by getting the security mode.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-get-security-mode-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:coap-server/config/security-mode"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-get-security-mode-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:coap-server/config/security-mode"
+  : no-sec</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Before this mode takes effect you need to save the runtime config
+to the startup config, and reboot the device.</p>
+</div>
+<div class="paragraph">
+<p>Save to startup config with</p>
+</div>
+<div class="paragraph">
+<p><code>POST</code> request message</p>
+</div>
+<div id="cg-post-req-save-config-nosec" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:save-config"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now reboot the device and it will start in "no-sec" mode.</p>
+</div>
+<div class="paragraph">
+<p>After restarting the device verify "no-sec" mode by getting security mode again.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-get-security-mode-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:coap-server/config/security-mode"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-get-security-mode-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:coap-server/config/security-mode"
+  : no-sec</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point the security layer (DTLS) has been disabled,
+and all coap servers are accessible on UDP port 5683.
+Any attempt to authorize a client through DTLS on UDP port 5684 is now blocked.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_security_mode_to_raw_public_key"><a class="anchor" href="#_set_security_mode_to_raw_public_key"></a>2.3. Set Security Mode to 'raw-public-key'</h3>
+<div class="paragraph">
+<p>If the security layer is disabled, you can re-enable it by following these steps</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message</p>
+</div>
+<div id="cg-ipatch-req-set-security-mode-raw-public-key" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:coap-server/config/security-mode"
+  : raw-public-key</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can verify that "raw-public-key" was configured by getting the security mode.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-get-security-mode-4" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:coap-server/config/security-mode"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-get-security-mode-4" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:coap-server/config/security-mode"
+  : raw-public-key</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Before this mode takes effect you need to save the runtime config
+to the startup config, and reboot the device.</p>
+</div>
+<div class="paragraph">
+<p>Save to startup config with</p>
+</div>
+<div class="paragraph">
+<p><code>POST</code> request message</p>
+</div>
+<div id="cg-post-req-save-config-raw-public-key" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:save-config"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now reboot the device and it will start in "raw-public-key" mode.</p>
+</div>
+<div class="paragraph">
+<p>After restarting the device verify "raw-public-key" mode by getting security mode again.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-get-security-mode-5" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:coap-server/config/security-mode"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-get-security-mode-5" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:coap-server/config/security-mode"
+  : raw-public-key</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>At this point the security layer (DTLS) has been enabled,
+and all coap servers are accessible after authorization through DTLS on UDP port 5684.
+Direct to CoAP access on UDP port 5683 is now blocked.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_authentication"><a class="anchor" href="#_authentication"></a>3. Authentication</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Assuming that the security mode is set to 'raw-public-key' then all client access to CoAP must
+be authenticated. VelocitySP maintains a short list of authorized client keys.</p>
+</div>
+<div class="paragraph">
+<p>However, at first startup there are no authorized client keys listed.
+You can check this with the following command.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-get-user-keys-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-system:system/authentication"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-get-user-keys-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-system:system/authentication"
+  : user: []</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_provisioning"><a class="anchor" href="#_provisioning"></a>3.1. Provisioning</h3>
+<div class="paragraph">
+<p>As you can see, initially, there are no authorized users, and VelocitySP is considered non-provisioned.
+In this state, all secured CoAP servers are blocked until after the provisioning process
+has been completed.</p>
+</div>
+<div class="paragraph">
+<p>Before we continue, lets review the current state. Security mode is set to 'raw-public-key' which means direct
+to CoAP on UDP port 5683 is blocked, and DTLS to CoAP is enabled on UDP port 5684. Also VelocitySP is
+in the 'non-provisioned' state which means normal CoAP server URI_PATHs (such as '/c') are blocked. And only
+the provisioning URI_PATH is enabled at '/p'. Additionally, in this 'non-provisioned' state
+authentication checks are disabled. Which means any client may provision itself as the admin client.
+But this can only be done once. After VelocitySP has the admin client key, then it is 'provisioned',
+authentication checking is enabled in DTLS, and normal CoAP server URI_PATHs are enabled.</p>
+</div>
+<div class="paragraph">
+<p>Now lets proceed to provision the device. This is done by simply issuing a CoAPS GET request on '/p', through DTLS on UDP port 5684.
+You can do this using openssl and libcoap&#8217;s coap_client tool.</p>
+</div>
+<div class="paragraph">
+<p>First generate your admin client key using openssl.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>openssl ecparam -name prime256v1 -genkey -noout -out admin_keys.pem</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then using your new admin key, initiate the provisioning with the following.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>coap-client -m get -M admin_keys.pem coaps://&lt;device_ip_address&gt;/p</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If successful you should see the content returned is "PROVISIONED"</p>
+</div>
+<div class="paragraph">
+<p>During the DTLS handshake, the client key is stored, and when CoAP processes the get request on '/p'
+it saves the client key as the admin key.</p>
+</div>
+<div class="paragraph">
+<p>To verify the new admin key is saved issue the following request</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-get-user-keys-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-system:system/authentication"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-get-user-keys-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-system:system/authentication"
+  : user:
+    - name: admin
+      mchp-velocitysp-system:coap-authorized-key:
+      - name: admin
+        key-data: rKpMtVOxomldA11CKrVJtEAh0Pc1ztYugYfpe0lFf0kzk29u10whRF5SU/E2ztXMqUp8SXXbONYJstAFTcmMqg==
+        access-control:
+          cc-rights: read-write
+          startup-config-rights: read-write
+          fw-rights: read-write
+          dbg-rights: read-write
+          well-known-rights: read-write</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Obviously your key-data will be different, but notice the admin key has read-write access to all CoAP servers.
+Therefor you can now use admin_keys.pem with your coap_client to access all available servers.</p>
+</div>
+<div class="paragraph">
+<p>For example, to get the full runtime config in cbor do the following.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>coap-client -m get -M admin_keys.pem coaps://&lt;device_ip_address&gt;/c</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_a_new_authorized_user_key"><a class="anchor" href="#_add_a_new_authorized_user_key"></a>3.2. Add a New Authorized User Key</h3>
+<div class="paragraph">
+<p>VelocitySP maintains a short list of authorized users and keys. Currently it is limited to 2 users, with 2 keys per user.</p>
+</div>
+<div class="paragraph">
+<p>If you would like to add a new user and key that has limited access rights you can issue the following iPatch request.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message</p>
+</div>
+<div id="cg-ipatch-req-add-new-user" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-system:system/authentication/user"
+  : name: ccreader
+    mchp-velocitysp-system:coap-authorized-key:
+    - name: ccreader
+      key-data: XYa1F+fUzIM1xVfqHzeWFxE/NVYiTAFA1GdZ4LYfgzo6mzedPGaRsFADNs7cvdRp7EsxBZxlHS1LkAK8k22TTA==
+      access-control:
+        cc-rights: read-only</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that key-data is the base64 encoding of the public x key concatinated with the public y key.
+And make sure this base64 encoded data does not include any new line "\n" characters, as some
+base64 encoders will add new lines to long strings.</p>
+</div>
+<div class="paragraph">
+<p>You can confirm this change by getting the user key list again.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-get-user-keys-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-system:system/authentication"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-get-user-keys-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-system:system/authentication"
+  : user:
+    - name: admin
+      mchp-velocitysp-system:coap-authorized-key:
+      - name: admin
+        key-data: rKpMtVOxomldA11CKrVJtEAh0Pc1ztYugYfpe0lFf0kzk29u10whRF5SU/E2ztXMqUp8SXXbONYJstAFTcmMqg==
+        access-control:
+          cc-rights: read-write
+          startup-config-rights: read-write
+          fw-rights: read-write
+          dbg-rights: read-write
+          well-known-rights: read-write
+    - name: ccreader
+      mchp-velocitysp-system:coap-authorized-key:
+      - name: ccreader
+        key-data: XYa1F+fUzIM1xVfqHzeWFxE/NVYiTAFA1GdZ4LYfgzo6mzedPGaRsFADNs7cvdRp7EsxBZxlHS1LkAK8k22TTA==
+        access-control:
+          cc-rights: read-only
+          startup-config-rights: no-access
+          fw-rights: no-access
+          dbg-rights: no-access
+          well-known-rights: no-access</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As you can see there are now two users, each with one key. The admin user was created by provisioning,
+and has read-write access to all servers. The ccreader was created with read-only access to the cc (CORECONF) server.
+Notice in the IPATCH request above, we did not specify the access rights of other servers, and therefor they have defaulted
+to no-access.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

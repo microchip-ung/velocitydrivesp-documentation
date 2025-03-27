@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quality Of Service :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li>Interface</li>
+    <li><a href="doc-cg-if-qos.html">QoS</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Quality Of Service</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes QoS-related configuration and retrieval of status information.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_the_default_priority_on_a_port"><a class="anchor" href="#_set_the_default_priority_on_a_port"></a>2. Set the default priority on a port.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The interface (port) name is '1'<br>
+The default priority is set to 3.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-default-prio" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/default-priority"
+  : 3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the default priority indeed has been changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-default-prio" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/default-priority"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-default-prio" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     default-priority"
+  : 3</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_the_pcp_decoding_map_on_a_port"><a class="anchor" href="#_set_the_pcp_decoding_map_on_a_port"></a>3. Set the PCP decoding map on a port.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is the 'pcp-decoding-map/priority-map' that does the mapping of
+TAG PCP value to priority (queue) and drop eligibility.<br>
+By default, there is no 'priority-map' meaning mapping is not enabled, meaning the frame
+is assigned the port default priority.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'<br></p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start by showing that the 'pcp-decoding-map' is empty:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-decoding-map-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/pcp-decoding-table/pcp-decoding-map"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-decoding-map-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     pcp-decoding-table/pcp-decoding-map"
+  : []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create an empty 'priority-map' meaning mapping is enabled and do default mapping as defined in 802.1.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>PCP 0 -&gt; (Prio 1 - dei false)
+PCP 1 -&gt; (Prio 0 - dei false)
+PCP 2 -&gt; (Prio 2 - dei false)
+PCP 3 -&gt; (Prio 3 - dei false)
+PCP 4 -&gt; (Prio 4 - dei false)
+PCP 5 -&gt; (Prio 5 - dei false)
+PCP 6 -&gt; (Prio 6 - dei false)
+PCP 7 -&gt; (Prio 7 - dei false)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-decoding-map" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/pcp-decoding-table/pcp-decoding-map"
+  : pcp: 8P0D</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The FETCH will only return elements in 'priority-map' that are NOT default.<br>
+Show that the 'priority-map' is empty:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-decoding-map-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/pcp-decoding-table/pcp-decoding-map"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-decoding-map-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     pcp-decoding-table/pcp-decoding-map"
+  : - pcp: 8P0D
+      priority-map: []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>PATCH an element in 'priority-map' that is not default:<br>
+PCP 2 &#8594; (Prio 7 - dei false)</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-decoding-priority-map" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/pcp-decoding-table/\
+     pcp-decoding-map[pcp='8P0D']/priority-map"
+  : priority-code-point: 2
+    priority: 7
+    drop-eligible: false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that an element in 'priority-map' is as expected (NOT default):</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-decoding-map-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/pcp-decoding-table/pcp-decoding-map"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-decoding-map-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     pcp-decoding-table/pcp-decoding-map"
+  : - pcp: 8P0D
+      priority-map:
+      - priority-code-point: 2
+        priority: 7
+        drop-eligible: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_the_pcp_encoding_map_on_a_port"><a class="anchor" href="#_set_the_pcp_encoding_map_on_a_port"></a>4. Set the PCP encoding map on a port.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is the 'pcp-encoding-map/priority-map' that does the mapping of
+priority (queue) and drop eligibility to egress TAG PCP value.<br>
+By default, there is no 'priority-map' meaning mapping is not enabled, meaning the egress TAG PCP value
+is assigned to the ingress TAG PCP (classified PCP).</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'<br></p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start by showing that the 'pcp-encoding-map' is empty:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-encoding-map-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/pcp-encoding-table/pcp-encoding-map"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-encoding-map-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     pcp-encoding-table/pcp-encoding-map"
+  : []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create an empty 'priority-map' meaning mapping is enabled and do default mapping as defined in 802.1.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>(Prio 0 - dei false) -&gt; PCP 1
+(Prio 1 - dei false) -&gt; PCP 0
+(Prio 2 - dei false) -&gt; PCP 2
+(Prio 3 - dei false) -&gt; PCP 3
+(Prio 4 - dei false) -&gt; PCP 4
+(Prio 5 - dei false) -&gt; PCP 5
+(Prio 6 - dei false) -&gt; PCP 6
+(Prio 7 - dei false) -&gt; PCP 7</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-encoding-map" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/pcp-encoding-table/pcp-encoding-map"
+  : pcp: 8P0D</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The FETCH will only return elements in 'priority-map' that are NOT default.<br>
+Show that the 'priority-map' is empty:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-encoding-map-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/pcp-encoding-table/pcp-encoding-map"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-encoding-map-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     pcp-encoding-table/pcp-encoding-map"
+  : - pcp: 8P0D
+      priority-map: []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>PATCH an element in 'priority-map' that is not default:<br>
+(Prio 7 - dei false) &#8594; PCP 2</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-encoding-priority-map" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/pcp-encoding-table/\
+     pcp-encoding-map[pcp='8P0D']/priority-map"
+  : priority: 7
+    dei: false
+    priority-code-point: 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that an element in 'priority-map' is as expected (NOT default):</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-encoding-map-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/pcp-encoding-table/pcp-encoding-map"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-encoding-map-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     pcp-encoding-table/pcp-encoding-map"
+  : - pcp: 8P0D
+      priority-map:
+      - priority: 7
+        dei: false
+        priority-code-point: 2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_traffic_class_shaping_on_a_port"><a class="anchor" href="#_configure_traffic_class_shaping_on_a_port"></a>5. Configure traffic-class Shaping on a port.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The interface (port) name is '1'<br>
+For each traffic class (priority), it is possible to enable a traffic-class (priority) shaper. By default, no shaper is enabled.<br>
+The shaper can be either Credit Based or Single Leaky.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s show that no shaper is enabled.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-shapers-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/traffic-class-shapers"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-shapers-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     traffic-class-shapers"
+  : []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Enable Credit Based shaping on traffic class 3 with idle-slope 100 MB.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-cbs" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-qos/config/traffic-class-shapers"
+  : traffic-class: 3
+    credit-based:
+      idle-slope: 100000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the shaper for traffic class indeed has been changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-shapers-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/traffic-class-shapers"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-shapers-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     traffic-class-shapers"
+  : - traffic-class: 3
+      credit-based:
+        idle-slope: 100000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Enable Single Leaky Bucket shaping on traffic class 7 with CBS 2000 Bytes and CIR 50 MB.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-slb" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-qos/config/traffic-class-shapers"
+  : traffic-class: 7
+    single-leaky-bucket:
+      committed-information-rate: 50000
+      committed-burst-size: 2000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the shaper for traffic class indeed has been changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-shapers-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/traffic-class-shapers"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-shapers-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     traffic-class-shapers"
+  : - traffic-class: 3
+      credit-based:
+        idle-slope: 100000
+    - traffic-class: 7
+      single-leaky-bucket:
+        committed-information-rate: 50000
+        committed-burst-size: 2000</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qos-sched-dwwr"><a class="anchor" href="#qos-sched-dwwr"></a>6. Configure Weighted Round Robin scheduling on a port.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In WRR, each traffic-class is given a percentage of the available bandwidth.<br>
+To configure this, there is a list that contains the scheduler bandwidth in percent per traffic-class.<br>
+The list only contains traffic-classes that are part of WRR.<br>
+The first traffic-class in the list is always 0, the next is always one higher.<br>
+The traffic-classes not in the list use strict scheduling.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s show that no traffic-class is part of WRR - meaning the list is empty.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'<br></p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-schedule-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/traffic-class-schedulers-bandwidth"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-schedule-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     traffic-class-schedulers-bandwidth"
+  : []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Enable WRR on traffic-class 0 - 1 - 2.<br>
+Bandwidth in percent are 10 - 40 - 50.<br>
+The traffic-classes 3 - 4 - 5 - 6 - 7 are running strict scheduling.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'<br></p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-schedule" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-qos/config/\
+     traffic-class-schedulers-bandwidth"
+  : - 10
+    - 40
+    - 50</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the WRR configuration is applied:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-schedule-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/traffic-class-schedulers-bandwidth"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-schedule-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     traffic-class-schedulers-bandwidth"
+  : - 10
+    - 40
+    - 50</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="qos-police"><a class="anchor" href="#qos-police"></a>7. Configure Port Policing on a port.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>On each port, a number of policers can be enabled. The maximum number of policers is hardware dependent.
+Which frames to be policed can be selected by the <code>frame_selector</code>.
+In case a frame is selected by multiple policies, the most conservative with the lowest rate wins.</p>
+</div>
+<div class="paragraph">
+<p>A Port Policer ensures that the selected frames at port ingress are limited to a configured <code>rate</code>.
+The rate can burst at a higher rate until a configured number of bytes (<code>burst-size</code>) has been received.</p>
+</div>
+<div class="paragraph">
+<p>By default, policers are disabled.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s show that no Port Policer is enabled - the <code>port-policers</code> list is empty.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name is '1'<br></p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-policers-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/port-policers"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-policers-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     port-policers"
+  : []</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enable_policing_of_unknown_unicast_frames"><a class="anchor" href="#_enable_policing_of_unknown_unicast_frames"></a>7.1. Enable Policing of unknown unicast frames.<br></h3>
+<div class="paragraph">
+<p>The index is 1.<br>
+The rate is 1000 frames per second.<br>
+The burst capacity is 2000 bytes.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-police-unknown-unicast" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-qos/config/port-policers"
+  : index: 1
+    frame-selector: unknown-unicast
+    frame-rate:
+      rate: 1000
+      burst-size: 2000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the Port Policer indeed has been enabled:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-policers-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/port-policers"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-policers-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     port-policers"
+  : - index: 1
+      frame-selector: unknown-unicast
+      frame-rate:
+        rate: 1000
+        burst-size: 2000</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enable_policing_of_known_multicast_frames"><a class="anchor" href="#_enable_policing_of_known_multicast_frames"></a>7.2. Enable Policing of known multicast frames.<br></h3>
+<div class="paragraph">
+<p>First, add a static entry in the FDB. This is now a known multicast MAC.</p>
+</div>
+<div class="paragraph">
+<p>The vid is the default VLAN-ID 1.<br>
+The destination port is 2.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-static-multicast-mac-add" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/filtering-entry"
+  : database-id: 0
+    address: 01-00-00-00-00-01
+    vids: '1'
+    entry-type: static
+    port-map:
+    - port-ref: 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then enable the Port Policer.
+The index is 4.<br>
+The rate is 1000000 bits per second.<br>
+The burst capacity is 3000 bytes.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-police-known-multicast" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-qos/config/port-policers"
+  : index: 4
+    frame-selector: known-multicast
+    bit-rate:
+      rate: '1000000'
+      burst-size: 3000</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that two port policers have been enabled:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-policers-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/port-policers"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-policers-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     port-policers"
+  : - index: 1
+      frame-selector: unknown-unicast
+      frame-rate:
+        rate: 1000
+        burst-size: 2000
+    - index: 4
+      frame-selector: known-multicast
+      bit-rate:
+        rate: '1000000'
+        burst-size: 3000</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_a_port_policer"><a class="anchor" href="#_delete_a_port_policer"></a>7.3. Delete a Port Policer.<br></h3>
+<div class="paragraph">
+<p>The unknown-unicast Port Policer with index 1 is deleted.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-police-delete" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-qos/config/port-policers[index='1']"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that now only the known-multicast Port Policer is enabled:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-policers-4" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-qos/config/port-policers"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-policers-4" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-qos/config/\
+     port-policers"
+  : - index: 4
+      frame-selector: known-multicast
+      bit-rate:
+        rate: '1000000'
+        burst-size: 3000</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_case_how_to_utilize_the_pcp_decoding_and_encoding"><a class="anchor" href="#_use_case_how_to_utilize_the_pcp_decoding_and_encoding"></a>8. Use case - how to utilize the PCP decoding and encoding</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The PCP decoding and encoding can be used to control priority (queue) classification of ingress frames based
+on TAG PCP value and control the TAG PCP value of an egress frame based on the classified priority.<br></p>
+</div>
+<div class="paragraph">
+<p>To forward frames from ingress port to egress port, a VLAN10 is created with two ports:<br>
+Port1: TAG aware. UN-TAGGED frames are classified to port default VID. Tagged frames are classified to TAG VID<br>
+Port2: TAG aware. Frames are transmitted with classified VID as TAG VID value.</p>
+</div>
+<div class="paragraph">
+<p>To exemplify the decoding and encoding, Port1 is considered the ingress port and Port2 is the egress port.</p>
+</div>
+<div class="sect2">
+<h3 id="_set_the_vlan_tag_port_type_of_the_ports"><a class="anchor" href="#_set_the_vlan_tag_port_type_of_the_ports"></a>8.1. Set the VLAN TAG port type of the ports.</h3>
+<div class="paragraph">
+<p>The interface (port) names '1' and '2' must have 'port-type' as 'c-vlan-bridge-port' meaning C-TAG aware.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-decoding-port-type" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/port-type"
+  : ieee802-dot1q-bridge:c-vlan-bridge-port</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-decoding-port-type-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='2']/\
+     ieee802-dot1q-bridge:bridge-port/port-type"
+  : ieee802-dot1q-bridge:c-vlan-bridge-port</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_the_default_vid_on_the_port"><a class="anchor" href="#_set_the_default_vid_on_the_port"></a>8.2. Set the default VID on the port.</h3>
+<div class="paragraph">
+<p>The interface (port) name '1' must have 'pvid' set to 10 in order to classify UN-TAGGED
+frames to VLAN10.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-decoding-pvid" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/pvid"
+  : 10</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_the_default_priority_on_the_port"><a class="anchor" href="#_set_the_default_priority_on_the_port"></a>8.3. Set the default Priority on the port.</h3>
+<div class="paragraph">
+<p>The interface (port) name '1' must have 'default-priority' set to 4 in order to classify UN-TAGGED
+frames to priority (queue) 4.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-decoding-default-prio" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/default-priority"
+  : 4</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_the_vlan"><a class="anchor" href="#_add_the_vlan"></a>8.4. Add the VLAN.</h3>
+<div class="paragraph">
+<p>VLAN10 must have interface (port) names '1' and '2' as members.<br></p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-decoding-vlan1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry"
+  : database-id: 0
+    vids: '10'
+    entry-type: static
+    port-map:
+    - port-ref: 1
+      static-vlan-registration-entries:
+        vlan-transmitted: tagged
+    - port-ref: 2
+      static-vlan-registration-entries:
+        vlan-transmitted: tagged</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_decoding_priority_map"><a class="anchor" href="#_create_decoding_priority_map"></a>8.5. Create decoding 'priority-map'.</h3>
+<div class="paragraph">
+<p>Create an empty 'priority-map' on ingress Port1.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-decoding-map" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/pcp-decoding-table/pcp-decoding-map"
+  : pcp: 8P0D</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add elements in Port1 'priority-map':<br>
+PCP 0 &#8594; (Prio 1 - dei false)<br>
+PCP 1 &#8594; (Prio 0 - dei false)<br>
+PCP 2 &#8594; (Prio 7 - dei false)<br>
+PCP 3 &#8594; (Prio 2 - dei false)<br>
+PCP 4 &#8594; (Prio 5 - dei false)<br>
+PCP 5 &#8594; (Prio 6 - dei false)<br>
+PCP 6 &#8594; (Prio 3 - dei false)<br>
+PCP 7 &#8594; (Prio 4 - dei false)</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-decoding-map-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/pcp-decoding-table/\
+     pcp-decoding-map[pcp='8P0D']/priority-map"
+  : - priority-code-point: 0
+      priority: 1
+      drop-eligible: false
+    - priority-code-point: 1
+      priority: 0
+      drop-eligible: false
+    - priority-code-point: 2
+      priority: 7
+      drop-eligible: false
+    - priority-code-point: 3
+      priority: 2
+      drop-eligible: false
+    - priority-code-point: 4
+      priority: 5
+      drop-eligible: false
+    - priority-code-point: 5
+      priority: 6
+      drop-eligible: false
+    - priority-code-point: 6
+      priority: 3
+      drop-eligible: false
+    - priority-code-point: 7
+      priority: 4
+      drop-eligible: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_encoding_priority_map"><a class="anchor" href="#_create_encoding_priority_map"></a>8.6. Create encoding 'priority-map'.</h3>
+<div class="paragraph">
+<p>Create an empty 'priority-map' on egress Port2.</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-encoding-map" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='2']/\
+     ieee802-dot1q-bridge:bridge-port/pcp-encoding-table/pcp-encoding-map"
+  : pcp: 8P0D</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add elements in Port2 'priority-map':<br>
+(Prio 0 - dei false) &#8594; PCP 0<br>
+(Prio 1 - dei false) &#8594; PCP 1<br>
+(Prio 2 - dei false) &#8594; PCP 7<br>
+(Prio 3 - dei false) &#8594; PCP 3<br>
+(Prio 4 - dei false) &#8594; PCP 4<br>
+(Prio 5 - dei false) &#8594; PCP 5<br>
+(Prio 6 - dei false) &#8594; PCP 6<br>
+(Prio 7 - dei false) &#8594; PCP 2</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message.</p>
+</div>
+<div id="cg-ipatch-req-uc-encoding-map-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='2']/\
+     ieee802-dot1q-bridge:bridge-port/pcp-encoding-table/\
+     pcp-encoding-map[pcp='8P0D']/priority-map"
+  : - priority: 0
+      dei: false
+      priority-code-point: 0
+    - priority: 1
+      dei: false
+      priority-code-point: 1
+    - priority: 2
+      dei: false
+      priority-code-point: 7
+    - priority: 3
+      dei: false
+      priority-code-point: 3
+    - priority: 4
+      dei: false
+      priority-code-point: 4
+    - priority: 5
+      dei: false
+      priority-code-point: 5
+    - priority: 6
+      dei: false
+      priority-code-point: 6
+    - priority: 7
+      dei: false
+      priority-code-point: 2</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_verify_the_encodingdecoding_configuration"><a class="anchor" href="#_verify_the_encodingdecoding_configuration"></a>8.7. Verify the encoding/decoding configuration.</h3>
+<div class="paragraph">
+<p>Verify the configuration by injecting frames into the DUT:<br>
+UN-TAGGED frame into port1 observing the frame egressing port2 C-TAGGED with VID10 and PCP4.<br>
+C-TAGGED with VID 10 and PCP0 frame into port1 observing the frame egressing port2 with VID10 and PCP1.<br>
+C-TAGGED with VID 10 and PCP1 frame into port1 observing the frame egressing port2 with VID10 and PCP0.<br>
+C-TAGGED with VID 10 and PCP2 frame into port1 observing the frame egressing port2 with VID10 and PCP2.<br>
+C-TAGGED with VID 10 and PCP3 frame into port1 observing the frame egressing port2 with VID10 and PCP7.<br>
+C-TAGGED with VID 10 and PCP4 frame into port1 observing the frame egressing port2 with VID10 and PCP5.<br>
+C-TAGGED with VID 10 and PCP5 frame into port1 observing the frame egressing port2 with VID10 and PCP6.<br>
+C-TAGGED with VID 10 and PCP6 frame into port1 observing the frame egressing port2 with VID10 and PCP3.<br>
+C-TAGGED with VID 10 and PCP7 frame into port1 observing the frame egressing port2 with VID10 and PCP4.</p>
+</div>
+<div class="paragraph">
+<p>There are RX/TX counters per port per priority that can be used to verify what priority a frame was classified to.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-uc-decoding-stati" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/statistics/traffic-class"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-uc-decoding-stati" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/\
+     statistics/traffic-class"
+  : - traffic-class: 0
+      rx-packets: '0'
+      tx-packets: '0'
+    - traffic-class: 1
+      rx-packets: '0'
+      tx-packets: '0'
+    - traffic-class: 2
+      rx-packets: '0'
+      tx-packets: '0'
+    - traffic-class: 3
+      rx-packets: '0'
+      tx-packets: '0'
+    - traffic-class: 4
+      rx-packets: '0'
+      tx-packets: '0'
+    - traffic-class: 5
+      rx-packets: '0'
+      tx-packets: '0'
+    - traffic-class: 6
+      rx-packets: '0'
+      tx-packets: '0'
+    - traffic-class: 7
+      rx-packets: '0'
+      tx-packets: '0'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

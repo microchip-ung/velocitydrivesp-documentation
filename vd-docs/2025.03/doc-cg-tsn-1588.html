@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PTP/IEEE1588 :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li>TSN</li>
+    <li><a href="doc-cg-tsn-1588.html">PTP/IEEE1588</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">PTP/IEEE1588</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes PTP related configuration and get of status information.
+This covers multiple PTP profiles:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>gPTP</code></p>
+</li>
+<li>
+<p><code>automotive gPTP</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generate_1pps_output"><a class="anchor" href="#_generate_1pps_output"></a>2. Generate 1PPS output</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Configure the HW to generate a 1PPS on one of the PTP pins. This feature can be
+used for example to check that two different HWs are synchronized by checking
+the 1PPS and make sure that is aligned.</p>
+</div>
+<div class="paragraph">
+<p>The 1PPS will be generated whenever the second part will increment. This will be
+generated regardless timestamping is enabled or not or even if there is a servo
+or not.</p>
+</div>
+<div class="paragraph">
+<p>The 1PPS can be adjusted only when the local time counter is adjusted. For
+example when the frequency is increased or there is a jump in time. The local
+time counter can be adjusted only if there is a servo and that servo is in slave
+state. So if there is no servo then the local time will not be adjusted to any
+other remote GMs.</p>
+</div>
+<div class="paragraph">
+<p>The <code>ptp-pin</code> that is used here is just an example and needs to be set according
+to the schematic of the board.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-1pps-generate" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/mchp-velocitysp-ptp:ltcs/ltc"
+  : ltc-index: 1
+    ptp-pins:
+      ptp-pin:
+      - index: 4
+        function: 1pps-out</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_disable_1pps_output"><a class="anchor" href="#_disable_1pps_output"></a>3. Disable 1PPS output</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This will show how to stop generating 1PPS on that PTP port.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-1pps-disable" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/mchp-velocitysp-ptp:ltcs/ltc[ltc-index='1']"
+  :</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_add_ptp_instance_with_1_port_and_a_servo"><a class="anchor" href="#_add_ptp_instance_with_1_port_and_a_servo"></a>4. Add PTP instance with 1 port and a servo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Configure the HW to behave like a ordinary clock. In case the HW will become a
+follower then it would synchronize its own local time according to the
+grandmaster. Otherwise if the HW will become a GM then it would provide the time
+to the network.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-add-instance" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    ports:
+      port:
+      - port-index: 25
+    mchp-velocitysp-ptp:servos:
+      servo:
+      - servo-index: 0
+        servo-type: pi
+        ltc-index: 0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_ptp_instance"><a class="anchor" href="#_get_ptp_instance"></a>5. Get PTP instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get the PTP instance and see all the status and all the default parameters</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-ptp-add-instance" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee1588-ptp:ptp/instances/instance[instance-index='0']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-ptp-add-instance" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    default-ds:
+      clock-identity: 00-11-22-FF-FE-33-44-00
+      priority1: 246
+      priority2: 248
+      domain-number: 0
+      instance-enable: true
+      external-port-config-enable: false
+      max-steps-removed: 255
+      instance-type: relay
+    parent-ds:
+      parent-port-identity:
+        clock-identity: 00-00-00-00-00-00-00-00
+        port-number: 0
+      grandmaster-identity: 00-11-22-FF-FE-33-44-00
+      grandmaster-clock-quality:
+        clock-class: ieee1588-ptp:cc-default
+        clock-accuracy: mchp-velocitysp-ptp:ca-time-accurate-unknown
+      grandmaster-priority1: 246
+      grandmaster-priority2: 248
+      ieee802-dot1as-ptp:cumulative-rate-ratio: 0
+    ports:
+      port:
+      - port-index: 25
+        port-ds:
+          port-state: disabled
+          mean-link-delay: '0'
+          log-sync-interval: -3
+          log-min-pdelay-req-interval: 0
+          port-enable: true
+          ieee802-dot1as-ptp:as-capable: false
+          ieee802-dot1as-ptp:mean-link-delay-thresh: '52428800'
+          ieee802-dot1as-ptp:neighbor-rate-ratio: 0
+          ieee802-dot1as-ptp:sync-receipt-timeout: 3
+          ieee802-dot1as-ptp:use-mgt-one-step-tx-oper: false
+          ieee802-dot1as-ptp:mgt-one-step-tx-oper: 0
+        timestamp-correction-port-ds:
+          egress-latency: '0'
+          ingress-latency: '0'
+        external-port-config-port-ds:
+          desired-state: disabled
+    mchp-velocitysp-ptp:servos:
+      servo:
+      - servo-index: 0
+        servo-type: pi
+        ltc-index: 0
+        offset: '0'
+        state: 0
+    mchp-velocitysp-ptp:automotive:
+      profile: none
+    mchp-velocitysp-ptp:l2:
+      mac-address: 00-00-00-00-00-00
+      mac-address-enable: false
+      vlan: 0
+      vlan-enable: false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When looking at the response there are some fields that are usufull to check
+both for status but also for debugging any issues:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>instance-enable</code>: make sure that this is true (which is by default) otherwise
+the instance will not see any frames</p>
+</li>
+<li>
+<p><code>port-enable</code>: make sure that this is true (which is by default) otherwise the
+port will not send or receive any frames.</p>
+</li>
+<li>
+<p><code>mean-link-delay</code>: this will say what is the link delay between the port and
+the partner. The value is represented in nanoseconds with a 16 bit sub
+fractional port. If this value is bigger than the <code>mean-link-delay-thresh</code> then
+the port will not be <code>as-capable</code> meaning that the port state is <code>disabled</code></p>
+</li>
+<li>
+<p><code>port-state</code>: this will say what is the current port state. It can be in one
+of the following:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>master</code>: it would send out <code>SYNC</code> and <code>FOLLOW_UP</code> frames with the information
+that it received on the slave port, or if the DUT is a GM with its own local
+timer.</p>
+</li>
+<li>
+<p><code>slave</code>: it would receive <code>SYNC</code> and <code>FOLLOW_UP</code> frames from partner with the
+time information.</p>
+</li>
+<li>
+<p><code>disabled</code>: the port will be in this state, if the port is not <code>as-capable</code></p>
+</li>
+<li>
+<p><code>passive</code>: the port will be in this state if there another port on the DUT
+that has the same information from the master.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><code>parent-port-identity</code>: describes the partner port that send out the
+<code>ANNOUNCE</code> frame</p>
+</li>
+<li>
+<p><code>grandmaster-identity</code>: describes the GM of the network</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_delete_ptp_instance"><a class="anchor" href="#_delete_ptp_instance"></a>6. Delete PTP instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Delete the PTP instance that was created.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-del-instance" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance[instance-index='0']"
+  :</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_add_relay_with_two_ports"><a class="anchor" href="#_add_relay_with_two_ports"></a>7. Add relay with two ports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When adding multiple ports under a PTP instance and not having a servo then the
+PTP instance will behave as an relay as described in 802.1AS.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-add-relay-instance" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    ports:
+      port:
+      - port-index: 25
+      - port-index: 26</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When operating in this mode the local time is not updated to any remove
+grandmasters.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_add_relay_with_2_ports_and_a_servo"><a class="anchor" href="#_add_relay_with_2_ports_and_a_servo"></a>8. Add relay with 2 ports and a servo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are many cases where you want to be able to run different TSN protocols
+like TAS or PSFP on top of the relay. As the relay will not adjust the local
+time it is required to add an end node which will adjust the local time that is
+used by TAS.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-add-relay-instance-with-servo" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    ports:
+      port:
+      - port-index: 25
+      - port-index: 26
+    mchp-velocitysp-ptp:servos:
+      servo:
+      - servo-index: 0
+        servo-type: pi
+        ltc-index: 1</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_add_ptp_instance_enabling_automotive_bridge_profile"><a class="anchor" href="#_add_ptp_instance_enabling_automotive_bridge_profile"></a>9. Add PTP instance enabling automotive bridge profile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are cases when the Automotive Ethernet AVB Functional and Interoperability
+Specification(Auto GPTP) is need. The main differences between Auto GPTP and
+GPTP are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>Grandmaster Information and Topology</code>: there should not be any Announce
+messages in the topology as there is no BMCA running because it presumes that
+the topology doesn&#8217;t change and it is know from start which is the GM</p>
+</li>
+<li>
+<p><code>asCpable</code>: If the port has a link, then it presumes that the port is
+asCapable, in this way it improves the bring up time of the network</p>
+</li>
+<li>
+<p><code>initialLogPdelayReqInterval</code>: there is an initial interval of the peer delay
+request (1 frame per second) and it is using this interval until the
+mean path delay is stabalized. The standard doesn&#8217;t explain what means
+stabalized but in implementation it means 2 consecutive mean path delays to
+have the same value.</p>
+</li>
+<li>
+<p><code>operLogPdelayReqInterval</code>: the interval of peer delay requests after the
+link has stablized. (1 frame every 2 second).</p>
+</li>
+<li>
+<p><code>syncReceiptTimeout</code>: In case the AED-B stops receiving Sync frames, then it
+should continue to send out frames with the last received information, or if
+the AED-B doesn&#8217;t receive at all Sync frames from beginning then it is required for
+AED-B to start to send own Sync frames with a fix preciseOriginTimestamp.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To be able to configure that there is not a single configuration that needs to
+be set but multiple ones to get the full configuration.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example for configuring an automotive bridge</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-add-automotive-bridge" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    default-ds:
+      external-port-config-enable: true
+    mchp-velocitysp-ptp:automotive:
+      profile: bridge
+    ports:
+      port:
+      - port-index: 25
+        external-port-config-port-ds:
+          desired-state: slave
+      - port-index: 26
+        external-port-config-port-ds:
+          desired-state: master</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_add_ptp_instance_enabling_automotive_grandmaster_profile"><a class="anchor" href="#_add_ptp_instance_enabling_automotive_grandmaster_profile"></a>10. Add PTP instance enabling automotive grandmaster profile</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is similar with the previous configuration with the only difference being
+the automotive profile and the port states.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-add-automotive-gm" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    default-ds:
+      external-port-config-enable: true
+    mchp-velocitysp-ptp:automotive:
+      profile: gm
+    ports:
+      port:
+      - port-index: 25
+        external-port-config-port-ds:
+          desired-state: master
+      - port-index: 26
+        external-port-config-port-ds:
+          desired-state: master</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ptp-l2"><a class="anchor" href="#ptp-l2"></a>11. Allow to configure the MAC and VLAN to be used by PTP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are configuration where is required to set a custom MAC address and add a
+VLAN tag.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-change-mac-and-vlan" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    mchp-velocitysp-ptp:l2:
+      mac-address: 00-11-22-33-44-55
+      mac-address-enable: true
+      vlan: 100
+      vlan-enable: true
+    ports:
+      port:
+      - port-index: 25
+      - port-index: 26</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ptp-tc"><a class="anchor" href="#ptp-tc"></a>12. Enable transparent clock with 1-step transmission</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are configuration where is required to set the HW as transparent clock
+using 1-step timestamping. The only supported transparent clock is P2P-TC.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-transparent-clock-p2p" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    default-ds:
+      instance-type: p2p-tc
+    ports:
+      port:
+      - port-index: 25
+        port-ds:
+          ieee802-dot1as-ptp:use-mgt-one-step-tx-oper: true
+          ieee802-dot1as-ptp:mgt-one-step-tx-oper: 1
+      - port-index: 26
+        port-ds:
+          ieee802-dot1as-ptp:use-mgt-one-step-tx-oper: true
+          ieee802-dot1as-ptp:mgt-one-step-tx-oper: 1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

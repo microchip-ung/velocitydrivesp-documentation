@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Filtering Database (FDB) Configuration Guide :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li><a href="doc-cg-l2.html">L2 Forwarding</a></li>
+    <li><a href="doc-cg-l2-fdb.html">FDB</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Filtering Database (FDB) Configuration Guide</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes Filtering Database related configuration and retrieval of status
+information.<br></p>
+</div>
+<div class="paragraph">
+<p>The Filtering Database is also called the Forwarding Database or MAC Address Table.
+It helps direct network frames to their intended destination. The database has these basic functions:<br></p>
+</div>
+<div class="paragraph">
+<p>Dynamic entries:<br>
+When a frame ingresses on a port, the port, the classified VLAN, and the source MAC address
+are saved in the database - this is called a dynamic entry. Over time, the switch builds a table
+mapping MAC addresses to specific ports in specific VLANs.<br></p>
+</div>
+<div class="paragraph">
+<p>Static entries:<br>
+In the database, entries can be saved by management, this is called a static entry.</p>
+</div>
+<div class="paragraph">
+<p>Forwarding:<br>
+When a frame ingresses on a port in a classified VLAN, the switch looks in the database to find the
+destination MAC address in this VLAN. If found, the switch forwards the frame to the corresponding port.<br></p>
+</div>
+<div class="paragraph">
+<p>Flooding:<br>
+If the destination MAC address in the VLAN is not found in the table, the switch will send the frame to
+all ports except the one on which it was received.<br></p>
+</div>
+<div class="paragraph">
+<p>Aging of dynamic entries:<br>
+If a dynamic entry source MAC address is not seen on the learned port for a certain period (age-time),
+then it is removed from the database.<br></p>
+</div>
+<div class="paragraph">
+<p>Flush:
+The database can be flushed by management, meaning the dynamic entries are deleted and the learning
+process is restarted.<br></p>
+</div>
+<div class="paragraph">
+<p>Filtering:<br>
+The switch uses the MAC address table to filter traffic.
+Frames are only forwarded to the necessary ports.
+For example, if an ingress frame has a destination MAC address that is learned on the ingress port,
+it is not forwarded.<br></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_static_entries"><a class="anchor" href="#_static_entries"></a>2. Static entries.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Static entries are added to the FDB by management and are never removed by aging.<br>
+Static entries can have multiple destination ports, meaning that the frame matching the entry is forwarded
+to all those ports.<br>
+Static entries can be deleted by management.</p>
+</div>
+<div class="sect2">
+<h3 id="_add_a_unicast_static_entry_with_one_destination_port"><a class="anchor" href="#_add_a_unicast_static_entry_with_one_destination_port"></a>2.1. Add a unicast static entry with one destination port.</h3>
+<div class="paragraph">
+<p>The entry has only one destination port.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-mac-table-add" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/filtering-entry"
+  : database-id: 0
+    address: 00-00-00-00-00-01
+    vids: '10'
+    entry-type: static
+    port-map:
+    - port-ref: 2</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_a_multicast_static_entry_with_two_destination_ports"><a class="anchor" href="#_add_a_multicast_static_entry_with_two_destination_ports"></a>2.2. Add a multicast static entry with two destination ports:</h3>
+<div class="paragraph">
+<p>The entry has multiple destination ports.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-mac-table-add-multi" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/filtering-entry"
+  : database-id: 0
+    address: 01-00-00-00-00-01
+    vids: '10'
+    entry-type: static
+    port-map:
+    - port-ref: 2
+    - port-ref: 3</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dynamic_entries"><a class="anchor" href="#_dynamic_entries"></a>3. Dynamic entries.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dynamic entries are added due to frames ingressing on a port and can be removed due to aging.<br>
+Dynamic entries have only one destination port, the port it was last seen at ingress.<br>
+Dynamic entries can be flushed or deleted by management.</p>
+</div>
+<div class="sect2">
+<h3 id="_flush_the_filtering_database"><a class="anchor" href="#_flush_the_filtering_database"></a>3.1. Flush the Filtering Database.</h3>
+<div class="paragraph">
+<p>To remove dynamic entries, the Filtering Database can be flushed in different ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Flush the whole database.</p>
+</li>
+<li>
+<p>Flush all entries on a port.</p>
+</li>
+<li>
+<p>Flush all entries in a VLAN.</p>
+</li>
+<li>
+<p>Flush all entries on a port in a VLAN.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It is controlled by the 'vid' and 'port' input leaves in the 'fdb-flush' action as described in the YANG.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start by showing the content of the Filtering Database:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-flush-mac_table-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/filtering-entry"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-flush-mac_table-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     filtering-entry"
+  : - database-id: 0
+      vids: '1'
+      address: 00-00-00-00-01-01
+      entry-type: dynamic
+      port-map:
+      - port-ref: 1
+    - database-id: 0
+      vids: '10'
+      address: 00-00-00-00-00-01
+      entry-type: static
+      port-map:
+      - port-ref: 2
+    - database-id: 0
+      vids: '10'
+      address: 01-00-00-00-00-01
+      entry-type: static
+      port-map:
+      - port-ref: 2
+      - port-ref: 3</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In our case, the Filtering Database only included 1 dynamic entry:<br>
+(VLAN: <code>1</code>, MAC:`00-00-00-00-01-01` learned at port <code>1</code>).</p>
+</div>
+<div class="paragraph">
+<p>Now flush (vid=1, port=1)</p>
+</div>
+<div class="paragraph">
+<p><code>POST</code> request message:</p>
+</div>
+<div id="cg-post-req-flush-mac_table" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     mchp-velocitysp-bridge:fdb-flush"
+  : input:
+      port: 1
+      vid: 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Show that the dynamic entry is removed from the Filtering Database:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-flush-mac_table-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/filtering-entry"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-flush-mac_table-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     filtering-entry"
+  : - database-id: 0
+      vids: '10'
+      address: 00-00-00-00-00-01
+      entry-type: static
+      port-map:
+      - port-ref: 2
+    - database-id: 0
+      vids: '10'
+      address: 01-00-00-00-00-01
+      entry-type: static
+      port-map:
+      - port-ref: 2
+      - port-ref: 3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_entry_aging_timer"><a class="anchor" href="#_entry_aging_timer"></a>3.2. Entry aging timer.</h3>
+<div class="paragraph">
+<p>The entry aging timer for all dynamically learned entries in the Filtering Database can be configured.<br></p>
+</div>
+<div class="paragraph">
+<p>The aging time is set to 100 seconds.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-mac-age-time" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/aging-time"
+  : 100</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the aging time indeed has been changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-mac-age-time" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/aging-time"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-mac-age-time" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     aging-time"
+  : 100</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_all_entry_aging"><a class="anchor" href="#_all_entry_aging"></a>3.3. All entry aging.</h3>
+<div class="paragraph">
+<p>By default, the dynamic Filtering Database entries are subject to aging and will eventually be
+deleted.<br></p>
+</div>
+<div class="paragraph">
+<p>This disables aging for all entries in the Filtering Database:</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-mac-ageing" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/mchp-velocitysp-bridge:ageing-disable"
+  : true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s read back the global MAC-aging setting:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request input data:</p>
+</div>
+<div id="cg-fetch-req-mac-ageing" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/mchp-velocitysp-bridge:ageing-disable"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> result data:</p>
+</div>
+<div id="cg-fetch-res-mac-ageing" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     mchp-velocitysp-bridge:ageing-disable"
+  : true</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_specific_entry_aging"><a class="anchor" href="#_specific_entry_aging"></a>3.4. Specific entry aging.</h3>
+<div class="paragraph">
+<p>Aging of a learned (dynamic) MAC entry can be disabled by converting it
+to a static entry.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s start by showing the content of the Filtering Database:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-uc-mac-ageing" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/filtering-entry"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-uc-mac-ageing" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     filtering-entry"
+  : - database-id: 0
+      vids: '1'
+      address: 00-00-00-00-01-01
+      entry-type: dynamic
+      port-map:
+      - port-ref: 1
+    - database-id: 0
+      vids: '10'
+      address: 00-00-00-00-00-01
+      entry-type: static
+      port-map:
+      - port-ref: 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In our case, the Filtering Database only included 1 dynamic entry (VLAN: <code>1</code>, MAC:
+<code>00-00-00-00-01-01</code> learned at port '1').</p>
+</div>
+<div class="paragraph">
+<p>To disable aging on this entry, we will convert it into a static entry:</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-mac-ageing" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/filtering-entry"
+  : database-id: 0
+    address: 00-00-00-00-01-01
+    vids: '1'
+    entry-type: static
+    port-map:
+    - port-ref: 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s dump the Filtering Database again to see that the entry is now static:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-uc-mac-ageing-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/filtering-entry"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-uc-mac-ageing-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     filtering-entry"
+  : - database-id: 0
+      vids: '1'
+      address: 00-00-00-00-01-01
+      entry-type: static
+      port-map:
+      - port-ref: 1
+    - database-id: 0
+      vids: '10'
+      address: 00-00-00-00-00-01
+      entry-type: static
+      port-map:
+      - port-ref: 2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Enable aging again on a MAC address by deleting the static entry:</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-mac-ageing-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/\
+     filtering-entry[database-id='0'][vids='1'][address='00-00-00-00-01-01']"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The next ingress frame with SMAC '00-00-00-00-01-01' will create a dynamic entry with aging enabled.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mac_address_learning"><a class="anchor" href="#_mac_address_learning"></a>3.5. MAC address learning.</h3>
+<div class="paragraph">
+<p>By default, dynamic MAC address learning is enabled on all ports; this can be disabled per port.</p>
+</div>
+<div class="paragraph">
+<p>Disable learning on port '1':</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-mac-learn-dis" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     mchp-velocitysp-bridge:fdb-learning-disable"
+  : true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the MAC address learning has been disabled on port '1':</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-mac-learn-dis" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   mchp-velocitysp-bridge:fdb-learning-disable"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-mac-learn-dis" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     mchp-velocitysp-bridge:fdb-learning-disable"
+  : true</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_one_shot_mac_address_learning"><a class="anchor" href="#_one_shot_mac_address_learning"></a>3.6. One-Shot MAC address learning.</h3>
+<div class="paragraph">
+<p>By default in 802.1Q, MAC addresses shall be learned on the last port they
+are seen on. This means that it is possible for a MAC address to be moved from
+one port to another (if it is first seen on port A, and then on port B).</p>
+</div>
+<div class="paragraph">
+<p>If this is not the desired behavior, then this can be disabled by enabling
+<code>one-shot</code> mode in the switch and the entry will stay learned on the ingress port first seen.<br>
+In one-shot mode, aging is disabled, meaning entries can only be removed from the database by
+management delete or flush.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-mac-one-shot" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/mchp-velocitysp-bridge:one-shot"
+  : true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s read back the <code>one-shot</code> settings:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request input data:</p>
+</div>
+<div id="cg-fetch-req-mac-one-shot" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/mchp-velocitysp-bridge:one-shot"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> result data:</p>
+</div>
+<div id="cg-fetch-res-mac-one-shot" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     mchp-velocitysp-bridge:one-shot"
+  : true</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mac_entry_limit"><a class="anchor" href="#_mac_entry_limit"></a>3.7. MAC entry limit.</h3>
+<div class="paragraph">
+<p>The Filtering Database is a resource shared by all ports and has a given limited capacity.
+By default, there is no restriction on how many entries can be learned on a given port. <br>
+An entry limit per port can be configured.</p>
+</div>
+<div class="paragraph">
+<p>This can be used to protect against an attack, where the database is being filled with entries on one port.
+When the database is full, no entries can be learned on other ports, which will create undesired flooding.
+Flooding should be avoided as it can create congestion in the switch and in the network.</p>
+</div>
+<div class="paragraph">
+<p>Following is an example of how to limit the learning budget to <code>200</code> entries on port '1':</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-mac-learn-limit" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     mchp-velocitysp-bridge:fdb-learning-limit"
+  : 200</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s read back the MAC-learning budget on port '1':</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-mac-learn-limit" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   mchp-velocitysp-bridge:fdb-learning-limit"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-mac-learn-limit" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     mchp-velocitysp-bridge:fdb-learning-limit"
+  : 200</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_common_entries"><a class="anchor" href="#_common_entries"></a>4. Common entries.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These are the functions that are common for both static and dynamic entries.</p>
+</div>
+<div class="sect2">
+<h3 id="_delete_an_entry_in_the_filtering_database"><a class="anchor" href="#_delete_an_entry_in_the_filtering_database"></a>4.1. Delete an entry in the Filtering Database.</h3>
+<div class="paragraph">
+<p>Both static and dynamic entries can be deleted.
+The entry is identified by VID and MAC address.</p>
+</div>
+<div class="paragraph">
+<p>Delete the static multicast entry:</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-mac-table-del" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/\
+     filtering-entry[database-id='0'][vids='10'][address='01-00-00-00-00-01']"
+  :</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_the_filtering_database"><a class="anchor" href="#_get_the_filtering_database"></a>4.2. Get the Filtering Database.</h3>
+<div class="paragraph">
+<p>Get all entries in the Filtering Database - dynamic and static.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-mac-table" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/filtering-entry"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the FDB, there is a static unicast and a dynamic address entry.</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-mac-table" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     filtering-entry"
+  : - database-id: 0
+      vids: '1'
+      address: 00-00-00-00-01-01
+      entry-type: dynamic
+      port-map:
+      - port-ref: 1
+    - database-id: 0
+      vids: '10'
+      address: 00-00-00-00-00-01
+      entry-type: static
+      port-map:
+      - port-ref: 2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_advanced_operations"><a class="anchor" href="#_advanced_operations"></a>5. Advanced operations.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section is about the more advanced operations.</p>
+</div>
+<div class="sect2">
+<h3 id="_shared_vlan_filtering_database"><a class="anchor" href="#_shared_vlan_filtering_database"></a>5.1. Shared VLAN Filtering Database.</h3>
+<div class="paragraph">
+<p>For each VID, an FID can be configured. If more VIDs have the same FID, then they share a filtering database,
+meaning there can only be one entry for a given MAC in all the VIDs with the same FID.<br>
+This is known as 'shared' learning mode and can be used to reduce the size of entries in the database,
+if it is known that the same MAC only exists in one VLAN.</p>
+</div>
+<div class="paragraph">
+<p>Confirm that the <code>vid-to-fid</code> list is empty:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-vid-to-fid" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   bridge-vlan/vid-to-fid"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-vid-to-fid" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/bridge-vlan/vid-to-fid"
+  : []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Add VID 100 and 200 to FID 10:</p>
+</div>
+<div class="paragraph">
+<p><code>IPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-vid-to-fid" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     bridge-vlan/vid-to-fid"
+  : - vid: 100
+      fid: 10
+    - vid: 200
+      fid: 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the VIDs have been added to the <code>vid-to-fid</code> table:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-vid-to-fid-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   bridge-vlan/vid-to-fid"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-vid-to-fid-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/bridge-vlan/vid-to-fid"
+  : - vid: 100
+      fid: 10
+    - vid: 200
+      fid: 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now delete the VID 200 entry:</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-vid-to-fid-del" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     bridge-vlan/vid-to-fid[vid='200']"
+  :</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the VID 200 entry has been deleted from the <code>vid-to-fid</code> table:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-vid-to-fid-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   bridge-vlan/vid-to-fid"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-vid-to-fid-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/bridge-vlan/vid-to-fid"
+  : - vid: 100
+      fid: 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The deleted VID 200 is now in 'independent' learning mode.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_disable_flooding_of_unknown_mac"><a class="anchor" href="#_disable_flooding_of_unknown_mac"></a>5.2. Disable flooding of unknown MAC.</h3>
+<div class="paragraph">
+<p>By default, frames with an unknown (not learned) destination MAC are flooded on all
+ports being members of the classified VLAN. If this is not desired, then it is
+possible to further exclude selected ports from the flooding masks.</p>
+</div>
+<div class="paragraph">
+<p>This can be used as a protection of the switch and the network against undesired flooding that
+can create congestion.</p>
+</div>
+<div class="paragraph">
+<p>The switch will use the most specific of the following 4 flood masks to limit the
+flooding:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>IPv4 Multi-Cast</p>
+</li>
+<li>
+<p>IPv6 Multi-Cast</p>
+</li>
+<li>
+<p>Multi-Cast</p>
+</li>
+<li>
+<p>Uni-Cast</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If a frame is an IP multicast and an L2 multicast, then the IPv4/6
+flood-mask-disable is used.</p>
+</div>
+<div class="paragraph">
+<p>If all flood masks are empty, then normal flooding as defined by 802.1Q will
+happen. If all ports are included in all flood-disable-masks, then no flooding
+will happen.</p>
+</div>
+<div class="paragraph">
+<p>Following is an example of how to use each of the 4 flood-disable-masks.</p>
+</div>
+<div class="paragraph">
+<p>Unknown Uni-Cast Flooding is disabled to a set of ports (1,3,5):
+<code>iPATCH</code> request message (Uni-Cast):</p>
+</div>
+<div id="cg-ipatch-req-floodmask-uc" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/mchp-velocitysp-bridge:unknown-mac-flooding"
+  : uc-disable:
+    - '1'
+    - '3'
+    - '5'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unknown Multi-Cast Flooding is disabled to a set of ports (2,4,6):
+<code>iPATCH</code> request message (Multi-Cast):</p>
+</div>
+<div id="cg-ipatch-req-floodmask-mc" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/mchp-velocitysp-bridge:unknown-mac-flooding"
+  : mc-disable:
+    - '2'
+    - '4'
+    - '6'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unknown IPv4 Multi-Cast Flooding is disabled to a set of ports (1,2,3):
+<code>iPATCH</code> request message (IPv4-Multi-Cast):</p>
+</div>
+<div id="cg-ipatch-req-floodmask-ipv4mc" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/mchp-velocitysp-bridge:unknown-mac-flooding"
+  : ipv4-mc-disable:
+    - '1'
+    - '2'
+    - '3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unknown IPv6 Multi-Cast Flooding is disabled to a set of ports (4,5,6):
+<code>iPATCH</code> request message (IPv6-Multi-Cast):</p>
+</div>
+<div id="cg-ipatch-req-floodmask-ipv6mc" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/mchp-velocitysp-bridge:unknown-mac-flooding"
+  : ipv6-mc-disable:
+    - '4'
+    - '5'
+    - '6'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s read back all the <code>unknown-mac-flooding</code> masks to confirm that the settings
+were accepted:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-mac-floodmasks" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/mchp-velocitysp-bridge:unknown-mac-flooding"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-mac-floodmasks" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     mchp-velocitysp-bridge:unknown-mac-flooding"
+  : uc-disable:
+    - '1'
+    - '3'
+    - '5'
+    mc-disable:
+    - '2'
+    - '4'
+    - '6'
+    ipv4-mc-disable:
+    - '1'
+    - '2'
+    - '3'
+    ipv6-mc-disable:
+    - '4'
+    - '5'
+    - '6'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

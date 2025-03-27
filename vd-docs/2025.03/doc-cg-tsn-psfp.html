@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Per Stream Filtering and Policing :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li>TSN</li>
+    <li><a href="doc-cg-tsn-psfp.html">PSFP</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Per Stream Filtering and Policing</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Per Stream Filtering and Policing (PSFP) can be used for filtering and policing
+of ingress frames classified to specific streams.</p>
+</div>
+<div class="paragraph">
+<p>Ingress frames are processed as shown in the diagram including these elements:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Stream Identification (based on ingress port and frame fields).</p>
+</li>
+<li>
+<p>Stream Filters (MaxSDU filter, gate mapping, meter mapping, counters).</p>
+</li>
+<li>
+<p>Stream Gates (gate control list).</p>
+</li>
+<li>
+<p>Flow Meters (dual leaky bucket policers).</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+--------+  +--------+
+| Stream |  |  Flow  |
+| Gates  |  | Meters |
++--------+  +--------+
+    ^           ^
+    |           |
+    |           |
++--------------------+
+|       Stream       |
+|       Filters      |
++--------------------+
+          ^
+          |
+          |
++--------------------+
+|       Stream       |
+|   Idenfification   |
++--------------------+
+          ^
+          | Ingress frames
+          |</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An example of relations between the elements is shown below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Streams, filters, gates and meters are identified by 1-based IDs.</p>
+</li>
+<li>
+<p>Multiple streams may map to the same filter via the stream-handle.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Multiple streams may have the same handle.</p>
+</li>
+<li>
+<p>Maximum one filter may use a given handle.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Multiple filters may map to the same gate via the stream-gate-ref.</p>
+</li>
+<li>
+<p>Multiple filters may map to the same meter via the flow-meter-ref.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>  Streams                      Filters                       Gates
++----------+                 +----------+                 +----------+
+|   ID 1   |                 |   ID 1   |                 |          |
+|          |        +-------&gt;| Handle 6 |        +-------&gt;|   ID 1   |
+| Handle 6 |--------+        |  Gate 1  |--------+        |          |
++----------+                 | Meter 0  |                 +----------+
+|   ID 2   |                 +----------+                 |          |
+|          |                 |   ID 2   |     +--+-------&gt;|   ID 2   |
+| Handle 7 |------+---------&gt;| Handle 7 |     |  |        |          |
++----------+      |          |  Gate 2  |-----+  |        +----------+
+|   ID 3   |      |          | Meter 1  |-----------+
+|          |      |          +----------|        |  |
+| Handle 7 |------+          |   ID 3   |        |  |        Meters
++----------+        +-------&gt;| Handle 8 |        |  |     +----------+
+|   ID 4   |        |        |  Gate 2  |--------+  |     |          |
+|          |        |        | Meter 1  |-----------+----&gt;|   ID 1   |
+| Handle 8 |--------+        +----------+                 |          |
++----------+                 |   ID 4   |                 +----------+
+|   ID 5   |        +-------&gt;| Handle 9 |                 |          |
+|          |        |        |  Gate 0  |        +-------&gt;|   ID 2   |
+| Handle 9 |--------+        | Meter 2  |--------+        |          |
++----------+                 +----------+                 +----------+</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stream_identification"><a class="anchor" href="#_stream_identification"></a>2. Stream Identification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These stream identifications are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Null stream identification: The (DMAC, VLAN) identify the stream.</p>
+</li>
+<li>
+<p>SMAC and VLAN stream identification: The (SMAC, VLAN) identify the stream.</p>
+</li>
+<li>
+<p>IP stream identification: The (DMAC, VLAN, SIP, DIP, DSCP, Protocol, SPORT, SPORT) identify the stream.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_null_stream_identification"><a class="anchor" href="#_null_stream_identification"></a>2.1. Null Stream Identification</h3>
+<div class="paragraph">
+<p>The example below shows how to add a NULL stream identification for a multicast DMAC.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-psfp-stream-null" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1cb-stream-identification:stream-identity"
+  : index: 1
+    handle: 2
+    out-facing:
+      input-port:
+      - '1'
+    null-stream-identification:
+      destination-mac: 01-02-03-04-05-06</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The rule is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-psfp-stream-null" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1cb-stream-identification:stream-identity[index='1']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-psfp-stream-null" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1cb-stream-identification:stream-identity"
+  : index: 1
+    handle: 2
+    out-facing:
+      input-port:
+      - '1'
+    null-stream-identification:
+      destination-mac: 01-02-03-04-05-06
+      tagged: all
+      vlan: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_smac_stream_identification"><a class="anchor" href="#_smac_stream_identification"></a>2.2. SMAC Stream Identification</h3>
+<div class="paragraph">
+<p>The example below shows how to add a SMAC stream identification for a unicast SMAC.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-psfp-stream-smac" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1cb-stream-identification:stream-identity"
+  : index: 1
+    handle: 2
+    out-facing:
+      input-port:
+      - '1'
+    smac-vlan-stream-identification:
+      source-mac: 00-01-02-03-04-05</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The rule is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-psfp-stream-smac" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1cb-stream-identification:stream-identity[index='1']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-psfp-stream-smac" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1cb-stream-identification:stream-identity"
+  : index: 1
+    handle: 2
+    out-facing:
+      input-port:
+      - '1'
+    smac-vlan-stream-identification:
+      source-mac: 00-01-02-03-04-05
+      tagged: all
+      vlan: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ip_stream_identification"><a class="anchor" href="#_ip_stream_identification"></a>2.3. IP Stream Identification</h3>
+<div class="paragraph">
+<p>The example below shows how to add an IP stream identification for a multicast DMAC and SIP.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-psfp-stream-ip" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1cb-stream-identification:stream-identity"
+  : index: 1
+    handle: 2
+    out-facing:
+      input-port:
+      - '1'
+    ip-stream-identification:
+      destination-mac: 01-02-03-04-05-06
+      ip-source: 1.2.3.4</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The rule is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-psfp-stream-ip" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1cb-stream-identification:stream-identity[index='1']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-psfp-stream-ip" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1cb-stream-identification:stream-identity"
+  : index: 1
+    handle: 2
+    out-facing:
+      input-port:
+      - '1'
+    ip-stream-identification:
+      destination-mac: 01-02-03-04-05-06
+      tagged: all
+      vlan: 0
+      ip-source: 1.2.3.4
+      ip-destination: 0.0.0.0
+      dscp: 64
+      next-protocol: none
+      source-port: 0
+      destination-port: 0</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stream_filters"><a class="anchor" href="#_stream_filters"></a>3. Stream Filters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The example below shows how to add a stream filter with maximum SDU size 1024.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-psfp-filter" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     ieee802-dot1q-psfp-bridge:stream-filters/\
+     stream-filter-instance-table"
+  : stream-filter-instance-id: 1
+    stream-handle: 2
+    max-sdu-size: 1024
+    stream-gate-ref: 1
+    flow-meter-ref: 1</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The filter is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>The output also includes stream filter counters after sending one frame passing the filter.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-psfp-filter" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   ieee802-dot1q-psfp-bridge:stream-filters/\
+   stream-filter-instance-table[stream-filter-instance-id='1']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-psfp-filter" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/\
+     ieee802-dot1q-psfp-bridge:stream-filters/\
+     stream-filter-instance-table"
+  : stream-filter-instance-id: 1
+    stream-handle: 2
+    priority-spec: wildcard
+    max-sdu-size: 1024
+    stream-blocked-due-to-oversize-frame-enabled: false
+    stream-blocked-due-to-oversize-frame: false
+    stream-gate-ref: 1
+    matching-frames-count: '1'
+    passing-frames-count: '1'
+    not-passing-frames-count: '0'
+    red-frames-count: '0'
+    passing-sdu-count: '1'
+    not-passing-sdu-count: '0'
+    flow-meter-ref: 1</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stream_gates"><a class="anchor" href="#_stream_gates"></a>4. Stream Gates</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_stream_gate"><a class="anchor" href="#_stream_gate"></a>4.1. Stream Gate</h3>
+<div class="paragraph">
+<p>The following example adds a stream gate instance with cycle time 1/5000 second (200 usec).</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-psfp-gate" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     ieee802-dot1q-psfp-bridge:stream-gates/stream-gate-instance-table"
+  : stream-gate-instance-id: 1
+    gate-enable: true
+    admin-gate-states: open
+    admin-cycle-time:
+      numerator: 1
+      denominator: 5000
+    admin-base-time: {}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The gate is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-psfp-gate" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   ieee802-dot1q-psfp-bridge:stream-gates/\
+   stream-gate-instance-table[stream-gate-instance-id='1']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-psfp-gate" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/\
+     ieee802-dot1q-psfp-bridge:stream-gates/stream-gate-instance-table"
+  : stream-gate-instance-id: 1
+    gate-enable: true
+    admin-gate-states: open
+    admin-ipv: 'null'
+    oper-gate-state: open
+    oper-ipv: 'null'
+    admin-control-list:
+      gate-control-entry: []
+    admin-cycle-time:
+      numerator: 1
+      denominator: 5000
+    admin-cycle-time-extension: 0
+    admin-base-time:
+      seconds: '0'
+      nanoseconds: 0
+    config-change: false
+    config-change-time:
+      seconds: '0'
+      nanoseconds: 0
+    current-time:
+      seconds: 10
+      nanoseconds: 0
+    config-pending: false
+    gate-closed-due-to-invalid-rx-enable: false
+    gate-closed-due-to-invalid-rx: false
+    gate-closed-due-octets-exceeded-enable: false
+    gate-closed-due-octets-exceeded: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_stream_gate_control_list"><a class="anchor" href="#_stream_gate_control_list"></a>4.2. Stream Gate Control List</h3>
+<div class="paragraph">
+<p>The following example adds two entries to the Gate Control List:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The first is open with a 100 usec time interval.</p>
+</li>
+<li>
+<p>The second is closed with a 100 usec time interval.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-psfp-gcl" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     ieee802-dot1q-psfp-bridge:stream-gates/\
+     stream-gate-instance-table[stream-gate-instance-id='1']/\
+     admin-control-list/gate-control-entry"
+  : index: 1
+    time-interval-value: 100000
+    gate-state-value: open
+
+
+- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     ieee802-dot1q-psfp-bridge:stream-gates/\
+     stream-gate-instance-table[stream-gate-instance-id='1']/\
+     admin-control-list/gate-control-entry"
+  : index: 2
+    time-interval-value: 100000
+    gate-state-value: closed</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Gate Control List is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-psfp-gcl" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   ieee802-dot1q-psfp-bridge:stream-gates/\
+   stream-gate-instance-table[stream-gate-instance-id='1']/\
+   admin-control-list/gate-control-entry[index='1']"
+
+- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   ieee802-dot1q-psfp-bridge:stream-gates/\
+   stream-gate-instance-table[stream-gate-instance-id='1']/\
+   admin-control-list/gate-control-entry[index='2']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-psfp-gcl" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/\
+     ieee802-dot1q-psfp-bridge:stream-gates/stream-gate-instance-table/\
+     admin-control-list/gate-control-entry"
+  : index: 1
+    time-interval-value: 100000
+    gate-state-value: open
+    ipv-spec: 'null'
+    interval-octet-max: 0
+
+
+- ? "/ieee802-dot1q-bridge:bridges/bridge/component/\
+     ieee802-dot1q-psfp-bridge:stream-gates/stream-gate-instance-table/\
+     admin-control-list/gate-control-entry"
+  : index: 2
+    time-interval-value: 100000
+    gate-state-value: closed
+    ipv-spec: 'null'
+    interval-octet-max: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_stream_gate_activation"><a class="anchor" href="#_stream_gate_activation"></a>4.3. Stream Gate Activation</h3>
+<div class="paragraph">
+<p>The Gate Control List is activated as shown below.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-psfp-gcl-activate" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     ieee802-dot1q-psfp-bridge:stream-gates/\
+     stream-gate-instance-table[stream-gate-instance-id='1']/\
+     config-change"
+  : true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The full gate information is retrieved as shown below:</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-psfp-gcl-activate" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   ieee802-dot1q-psfp-bridge:stream-gates/\
+   stream-gate-instance-table[stream-gate-instance-id='1']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-psfp-gcl-activate" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/\
+     ieee802-dot1q-psfp-bridge:stream-gates/stream-gate-instance-table"
+  : stream-gate-instance-id: 1
+    gate-enable: true
+    admin-gate-states: open
+    admin-ipv: 'null'
+    oper-gate-state: open
+    oper-ipv: 'null'
+    admin-control-list:
+      gate-control-entry:
+      - index: 1
+        time-interval-value: 100000
+        gate-state-value: open
+        ipv-spec: 'null'
+        interval-octet-max: 0
+      - index: 2
+        time-interval-value: 100000
+        gate-state-value: closed
+        ipv-spec: 'null'
+        interval-octet-max: 0
+    admin-cycle-time:
+      numerator: 1
+      denominator: 5000
+    admin-cycle-time-extension: 0
+    admin-base-time:
+      seconds: '0'
+      nanoseconds: 0
+    config-change: true
+    config-change-time:
+      seconds: 11
+      nanoseconds: 0
+    current-time:
+      seconds: 12
+      nanoseconds: 0
+    config-pending: false
+    gate-closed-due-to-invalid-rx-enable: false
+    gate-closed-due-to-invalid-rx: false
+    gate-closed-due-octets-exceeded-enable: false
+    gate-closed-due-octets-exceeded: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_flow_meters"><a class="anchor" href="#_flow_meters"></a>5. Flow Meters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The example below adds a flow meter with single leaky bucket policer CIR of 1 Mbps.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-psfp-meter" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     ieee802-dot1q-psfp-bridge:flow-meters/flow-meter-instance-table"
+  : flow-meter-instance-id: 1
+    committed-information-rate: '1000000'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The meter is retrieved as shown below:</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-psfp-meter" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   ieee802-dot1q-psfp-bridge:flow-meters/\
+   flow-meter-instance-table[flow-meter-instance-id='1']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-psfp-meter" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/\
+     ieee802-dot1q-psfp-bridge:flow-meters/flow-meter-instance-table"
+  : flow-meter-instance-id: 1
+    committed-information-rate: '1000000'
+    committed-burst-size: 0
+    excess-information-rate: '0'
+    excess-burst-size: 0
+    coupling-flag: zero
+    color-mode: color-blind
+    drop-on-yellow: false
+    mark-all-frames-red-enable: false
+    mark-all-frames-red: false</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Virtual LAN Configuration Guide (VLAN) :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li><a href="doc-cg-l2.html">L2 Forwarding</a></li>
+    <li><a href="doc-cg-l2-vlan.html">VLAN</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Virtual LAN Configuration Guide (VLAN)</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document describes VLAN-related configuration and retrieval of status information.</p>
+</div>
+<div class="paragraph">
+<p>An Ethernet VLAN (Virtual Local Area Network) is a technology that allows segmentation of a physical network into
+multiple logical networks, improving network performance, enhancing security, and simplifying management.</p>
+</div>
+<div class="sect2">
+<h3 id="_basic_concepts"><a class="anchor" href="#_basic_concepts"></a>1.1. Basic Concepts</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Segmentation: VLANs divide a single physical network into multiple logical networks.
+Each VLAN acts as a separate forwarding and learning domain, separating frames from devices in the
+different VLANs.</p>
+</li>
+<li>
+<p>Tagging: VLANs use frame tagging (IEEE 802.1Q) to identify which VLAN a particular Ethernet frame belongs to.</p>
+</li>
+<li>
+<p>VLAN ID: Each VLAN is assigned a unique identifier called a VLAN ID, which ranges from 1 to 4094.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_vlans_work"><a class="anchor" href="#_how_vlans_work"></a>1.2. How VLANs Work</h3>
+<div class="paragraph">
+<p>VLANs are configured on network switches with a number of member ports.
+Frames in a VLAN can only be forwarded between member ports.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Access Ports: These ports are assigned to a single VLAN and are typically used to connect end devices
+like computers and printers.<br></p>
+</li>
+<li>
+<p>Trunk Ports: These ports can carry traffic from multiple VLANs and are used to connect switches to each
+other. Frame tagging is used to identify which VLAN the traffic belongs to.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Tagging behavior depends on the type of port.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Access Ports: When a frame ingresses the port, it is classified to the VLAN ID associated with that port.
+Any tag in the frame is preserved.
+When a frame egresses the port, a tag is NOT pushed with the classified VLAN ID.</p>
+</li>
+<li>
+<p>Trunk Ports: When a frame ingresses the port, it is classified to the VLAN ID based on the VID in the tag.
+The tag in the frame is NOT preserved (popped).
+When a frame egresses the port, a tag is pushed with the classified VLAN ID.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When a switch receives a frame, it uses the classified VLAN ID and forwards the frame only
+to ports that are part of that VLAN.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vlan-custom-et"><a class="anchor" href="#vlan-custom-et"></a>2. Custom EtherType</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The switch can be configured with a Custom EtherType that can be the recognized Tag EtherType on a Custom-Tag aware port.<br>
+The port type has to be configured as <code>provider-custom-network-port</code> to be Custom-Tag aware.</p>
+</div>
+<div class="paragraph">
+<p>In the following, the interface (port) name '1' is used.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the port type is <code>d-bridge-port</code> (TAG un-aware) by default:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-custom-port-type" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/port-type"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-custom-port-type" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     port-type"
+  : ieee802-dot1q-bridge:d-bridge-port</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the switch Custom EtherType is 0x88A8 (S-TAG) by default:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-custom-etype" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   mchp-velocitysp-bridge:custom-ethertype"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-custom-etype" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/\
+     mchp-velocitysp-bridge:custom-ethertype"
+  : 34984</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following two requests will configure the switch Custom EtherType to be 0x5555 and the
+port type as Custom-Tag aware on port '1':</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-custom-etype" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     mchp-velocitysp-bridge:custom-ethertype"
+  : 21845</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-custom-port-type" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/port-type"
+  : mchp-velocitysp-bridge:provider-custom-network-port</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now an ingress frame on port '1' with an outer Tag containing EtherType 0x5555 is considered a
+tagged frame and is classified to the VLAN according to the VID in the Tag.
+On port '1' egress, a pushed Tag will contain EtherType 0x5555.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="vlan-dis-inner"><a class="anchor" href="#vlan-dis-inner"></a>3. Discard frames - inner tag</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ingress frames can be discarded based on the inner (second) tag.
+By default, there is no discard on the inner tag enabled - the inner tag is considered as data.</p>
+</div>
+<div class="paragraph">
+<p>There are the following possibilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>No Tag: Discard if there is no inner tag - tag is required.</p>
+</li>
+<li>
+<p>Any Tag: Discard if there is any tag - tag is not accepted.</p>
+</li>
+<li>
+<p>C-Tag: Discard if there is a C-Tag (EtherType 0x8100).</p>
+</li>
+<li>
+<p>S-Tag: Discard if there is an S-Tag (EtherType 0x88A0).</p>
+</li>
+<li>
+<p>Custom Tag: Discard if there is a Custom-Tag (EtherType XXXX).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that inner tag discard is not enabled by default:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-inner-tag" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   mchp-velocitysp-bridge:inner-tag-discard"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-inner-tag" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     mchp-velocitysp-bridge:inner-tag-discard"
+  : ''</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Discard any inner tag - only allow single tagged frames:</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-inner-tag-any" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     mchp-velocitysp-bridge:inner-tag-discard"
+  : any-tag</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Discard inner C-Tag:</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-inner-tag-c" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     mchp-velocitysp-bridge:inner-tag-discard"
+  : c-tag</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that inner C-Tag discard is enabled:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-inner-tag-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   mchp-velocitysp-bridge:inner-tag-discard"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-inner-tag-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     mchp-velocitysp-bridge:inner-tag-discard"
+  : c-tag</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_case_how_to_set_up_a_vlan"><a class="anchor" href="#_use_case_how_to_set_up_a_vlan"></a>4. Use case - how to set up a VLAN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This use case will show an example of how to set up VLANs in a network.<br></p>
+</div>
+<div class="paragraph">
+<p>Network view:<br>
+There are two switches (S1 and S2) each with two Access ports and a Trunk port
+connecting the switch into a VLAN switched Network.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ascii hljs" data-lang="ascii">    +--+         +--+
++---+--+---------+--+---+
+|  Port1        Port2   |
+|         (S1)          |
+|         Port3         |
++----------+--+---------+
+           +-++
+             |
+    +--------+--------+
+    |      Network    |
+    +--------+--------+
+             |
+           +-++
++----------+--+---------+
+|         Port3         |
+|         (S2)          |
+|   Port1       Port2   |
++---+--+---------+--+---+
+    +--+         +--+</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In the following, we only show the configuration of one switch (S1).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Two important concepts:<br>
+On a TAG un-aware port, the ingress frame (tagged or un-tagged) is classified
+to VLAN based on port default VID.<br>
+On a TAG aware port, the ingress frame is classified to VLAN based on TAG VID.</p>
+</div>
+<div class="paragraph">
+<p>The ports involved:<br>
+Access Port1: TAG un-aware, any frames accepted. Classified to VLAN10.<br>
+Access Port2: TAG un-aware, any frames accepted. Classified to VLAN20.<br>
+Trunk Port3: TAG aware and only C-Tagged frames accepted. Classified to outer TAG VID.</p>
+</div>
+<div class="paragraph">
+<p>The VLANs:<br>
+A VLAN10 is created with Port1 and Port3 as members.<br>
+A VLAN20 is created with Port2 and Port3 as members.</p>
+</div>
+<div class="paragraph">
+<p>In this example:<br>
+Frames on Port1 are un-tagged.<br>
+Frames on Port2 are tagged.<br>
+Frames on Port3 are tagged and double-tagged.</p>
+</div>
+<div class="paragraph">
+<p>Forwarding:<br>
+Frames are forwarded between Port1 and Port3 on VLAN10.<br>
+Frames are forwarded between Port2 and Port3 on VLAN20.</p>
+</div>
+<div class="paragraph">
+<p>Access direction:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-ascii hljs" data-lang="ascii">    Access Ports:
+    Un-Tagged       Tagged VID30
+        |            |
+        v            v
+       +--+         +--+
+   +---+--+---------+--+---+
+   |  Port1        Port2   |
+   |  pvid 10      pvid 20 |
+   |         (S1)          |
+   |         Port3         |
+   +----------+--+---------+
+              +--+
+Tagged VID10  |  |  Double-Tagged VID20 + VID30
+              v  v
+    Trunk Port:</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Trunk direction:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    Access Ports:
+    Un-Tagged       Tagged VID30
+        ^            ^
+        |            |
+       +--+         +--+
+   +---+--+---------+--+---+
+   |  Port1        Port2   |
+   |  pvid 10      pvid 20 |
+   |         (S1)          |
+   |         Port3         |
+   +----------+--+---------+
+              +--+
+              ^  ^
+Tagged VID10  |  |  Double-Tagged VID20 + VID30
+    Trunk Port:</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_delete_vlan_1"><a class="anchor" href="#_delete_vlan_1"></a>4.1. Delete VLAN 1</h3>
+<div class="paragraph">
+<p>Delete the default VLAN 1 to avoid any conflicts.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-vlan-delete" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/\
+     vlan-registration-entry[database-id='0'][vids='1']"
+  :</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_the_vlan_tag_port_type_of_the_ports"><a class="anchor" href="#_set_the_vlan_tag_port_type_of_the_ports"></a>4.2. Set the VLAN TAG port type of the ports.</h3>
+<div class="paragraph">
+<p>By default, the <code>port-type</code> is <code>d-bridge-port</code> (TAG un-aware) meaning that frames are not
+classified based on the TAG content but based on PVID.<br>
+If the <code>port-type</code> is <code>c-vlan-bridge-port</code>, the port is C-TAG aware.<br>
+If the <code>port-type</code> is <code>provider-network-port</code>, the port is S-TAG aware.
+If the <code>port-type</code> is <code>provider-custom-network-port</code>, the port is Custom-TAG aware.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name '1' and '2' by default have the correct <code>port-type</code> meaning TAG un-aware.<br>
+The interface (port) name '3' must have <code>port-type</code> as <code>c-vlan-bridge-port</code> meaning C-TAG aware.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-vlan-port-type" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='3']/\
+     ieee802-dot1q-bridge:bridge-port/port-type"
+  : ieee802-dot1q-bridge:c-vlan-bridge-port</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the port type indeed has been changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-uc-vlan-port-type" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='3']/\
+   ieee802-dot1q-bridge:bridge-port/port-type"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-uc-vlan-port-type" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     port-type"
+  : ieee802-dot1q-bridge:c-vlan-bridge-port</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_the_acceptable_frame_type_on_the_ports"><a class="anchor" href="#_set_the_acceptable_frame_type_on_the_ports"></a>4.3. Set the acceptable frame type on the ports.</h3>
+<div class="paragraph">
+<p>By default, the acceptable <code>acceptable-frame</code> type is set to <code>admit-all-frames</code> meaning un-tagged and tagged frames are admitted.<br>
+If <code>acceptable-frame</code> type is set to <code>admit-only-VLAN-tagged-frames</code>, only tagged frames are admitted.<br>
+If <code>acceptable-frame</code> type is set to <code>admit-only-untagged-and-priority-tagged</code>, only un-tagged and priority-tagged frames are admitted.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name '1' and '2' is TAG un-aware so this has no relevance.<br>
+The interface (port) name '3' must have <code>acceptable-frame</code> as <code>admit-only-VLAN-tagged-frames</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-vlan-accept-frame" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='3']/\
+     ieee802-dot1q-bridge:bridge-port/acceptable-frame"
+  : admit-only-VLAN-tagged-frames</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the port <code>acceptable-frame</code> indeed has been changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-uc-vlan-accept-frame" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='3']/\
+   ieee802-dot1q-bridge:bridge-port/acceptable-frame"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-uc-vlan-accept-frame" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     acceptable-frame"
+  : admit-only-VLAN-tagged-frames</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enable_ingress_filtering"><a class="anchor" href="#_enable_ingress_filtering"></a>4.4. Enable Ingress filtering.</h3>
+<div class="paragraph">
+<p>Ingress filtering means that an ingress frame classified to a VID is only forwarded if the port is a member of that VID.<br>
+By default, Ingress Filtering is disabled.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name '3' must have Ingress Filtering enabled.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ingr-filt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='3']/\
+     ieee802-dot1q-bridge:bridge-port/enable-ingress-filtering"
+  : true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that Ingress Filtering is indeed enabled:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-ingr-filt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='3']/\
+   ieee802-dot1q-bridge:bridge-port/enable-ingress-filtering"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-ingr-filt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     enable-ingress-filtering"
+  : true</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_the_default_vid_on_the_ports"><a class="anchor" href="#_set_the_default_vid_on_the_ports"></a>4.5. Set the default VID on the ports.</h3>
+<div class="paragraph">
+<p>By default, the pvid is 1.</p>
+</div>
+<div class="paragraph">
+<p>The interface (port) name '1' must have PVID 10 in order to classify untagged frames to VLAN10.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-vlan-pvid1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/pvid"
+  : 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The interface (port) name '2' must have PVID 20 in order to classify untagged frames to VLAN20.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-vlan-pvid2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='2']/\
+     ieee802-dot1q-bridge:bridge-port/pvid"
+  : 20</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that the PVID has indeed been changed on port 1:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-uc-vlan-pvid" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/pvid"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-uc-vlan-pvid" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     pvid"
+  : 10</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_the_vlans"><a class="anchor" href="#_add_the_vlans"></a>4.6. Add the VLANs.</h3>
+<div class="paragraph">
+<p>VLAN10 must have interface (port) name '1' and name '3' as members.<br>
+Port1 must be an <code>untagged</code> port and Port3 must be a <code>tagged</code> port.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-vlan10" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry"
+  : database-id: 0
+    vids: '10'
+    entry-type: static
+    port-map:
+    - port-ref: 1
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged
+    - port-ref: 3
+      static-vlan-registration-entries:
+        vlan-transmitted: tagged</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>VLAN20 must have interface (port) name '2' and name '3' as members.<br>
+Port2 must be an <code>untagged</code> port and Port3 must be a <code>tagged</code> port.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-uc-vlan20" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry"
+  : database-id: 0
+    vids: '20'
+    entry-type: static
+    port-map:
+    - port-ref: 2
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged
+    - port-ref: 3
+      static-vlan-registration-entries:
+        vlan-transmitted: tagged</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s confirm that VLAN10 and VLAN20 have indeed been added:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-uc-vlan" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+   filtering-database/vlan-registration-entry"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-uc-vlan" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge/component/filtering-database/\
+     vlan-registration-entry"
+  : - database-id: 0
+      vids: '10'
+      entry-type: static
+      port-map:
+      - port-ref: 1
+        static-vlan-registration-entries:
+          vlan-transmitted: untagged
+      - port-ref: 3
+        static-vlan-registration-entries:
+          vlan-transmitted: tagged
+    - database-id: 0
+      vids: '20'
+      entry-type: static
+      port-map:
+      - port-ref: 2
+        static-vlan-registration-entries:
+          vlan-transmitted: untagged
+      - port-ref: 3
+        static-vlan-registration-entries:
+          vlan-transmitted: tagged</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_verify_the_vlan_configuration"><a class="anchor" href="#_verify_the_vlan_configuration"></a>4.7. Verify the VLAN configuration.</h3>
+<div class="paragraph">
+<p>Verify the configuration by injecting frames into the DUT:<br>
+UN-TAGGED frame into port1 observing the frame egressing port3 (only!) C-TAGGED with VID 10.<br>
+UN-TAGGED frame into port2 observing the frame egressing port3 (only!) C-TAGGED with VID 20.<br>
+C-TAGGED with VID 10 frame into port3 observing the frame egressing port1 (only!) UN-TAGGED.<br>
+C-TAGGED with VID 20 frame into port3 observing the frame egressing port2 (only!) UN-TAGGED.<br>
+UN-TAGGED frame into port3 observing the frame is not forwarded.<br>
+C-TAGGED with VID 100 frame into port1 observing the frame egressing port3 (only!). Outer C-TAG with VID 10 and Inner C-TAG with VID 100.<br>
+C-TAGGED with VID 100 frame into port2 observing the frame egressing port3 (only!). Outer C-TAG with VID 20 and Inner C-TAG with VID 100.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

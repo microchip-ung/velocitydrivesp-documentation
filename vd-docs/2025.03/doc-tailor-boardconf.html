@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Board Configuration :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-tailor.html">SW Tailoring</a></li>
+    <li><a href="doc-tailor-boardconf.html">Board Configuration</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Board Configuration</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The board configuration is the most important part of the board-tailoring, and
+it works as a data structure containing all the tailoring data which can be
+supplied by the customers of Microchip (here customer is the one designing a
+board - not the end user).</p>
+</div>
+<div class="paragraph">
+<p>The board configuration itself is guarded by a YANG schema file which describes
+all the fields which can be configured and encoded as CBOR as defined by
+<a href="https://datatracker.ietf.org/doc/html/rfc9254">RFC9254</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The board.yang is different from all the other YANG modules in the
+system as it is not exposed over CORECONF, and completely invisible to the
+end-user. The board-yang data belong to the firmware image and are signed along
+with that image, and therefore being considered as part of the firmware.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>CBOR is a compact and machine-friendly encoding, but not very human-friendly, and
+for this reason, the actual board configurations are written in YAML format, and
+then converted to CBOR. The build system takes care of doing that.</p>
+</div>
+<div class="paragraph">
+<p>When reading this material, one should have the
+<a href="_attachments/board.tree" class="xref attachment">board.tree</a> and
+<a href="_attachments/board.yang" class="xref attachment">board.yang</a> files open, and reference them.</p>
+</div>
+<div class="paragraph">
+<p>The high-level structure of the board.tree looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>module: board
+  +--rw drivers                   &lt;container&gt;
+  |  ...
+  +--rw capabilities              &lt;container&gt;
+  |  ...
+  +--rw factory_default_config?   &lt;anydata&gt;
+  |  ...
+  +--rw extmod                    &lt;container&gt;
+  |  ...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A basic and empty board configuration YAML template can look like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">board:drivers:
+board:capabilities:
+board:factory_default_config:</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following section will go into detail with each of the major sections</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_drivers"><a class="anchor" href="#_drivers"></a>1. Drivers</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sgpio_banks"><a class="anchor" href="#_sgpio_banks"></a>1.1. SGPIO Banks</h3>
+<div class="paragraph">
+<p>SGPIOs (Serial GPIOs) are used for communication with devices on the board such as SFP modules and LEDs.
+Up to 32 SGPIO ports can be enabled, with each port consisting of 1-4 bits.
+This configuration results in a serial data stream comprising 'ports * bits' number of GPIOs. The definition looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw sgpio_banks
+        +--rw sgpio_bank* [sgpio_bank]
+           +--rw sgpio_bank    dev_sgpio_bank
+           +--rw bit_count     uint32
+           +--rw port_mask     uint32
+           +--rw clock_div?    uint32
+           +--rw pin_ctrl
+              +--rw pins*           uint32
+              +--rw pin_function    pin_function</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sgpio_bank</code> is used to select which physical instance in hardware to configure; typically, 1-3 instances are available.</p>
+</li>
+<li>
+<p><code>bit_count</code> is the number of GPIOs (or bits) that are enabled per SGPIO port, with 1-4 bits available.</p>
+</li>
+<li>
+<p><code>port_mask</code> defines the SGPIO ports that get enabled. Some signals (e.g., SFP LOS) are mapped directly to the chip device with the same number as the SGPIO port in this mask.</p>
+</li>
+<li>
+<p><code>clock_div</code> maps directly into the hardware where the SGPIO frequency is set. The resulting frequency is the system clock divided by this value.</p>
+</li>
+<li>
+<p><code>pin_ctrl</code> is used to assign physical pins on the SoC to this function. Check the datasheet for an overview of which pins can be used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example with SGPIO ports 0,1,24,25,26,27 enabled, with 4 bits per port:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  sgpio_banks:
+    sgpio_bank:
+      - sgpio_bank: DEV_SGPIO_BANK_0
+        bit_count: 4
+        port_mask: 0x0F000003
+        clock_div: 65
+        pin_ctrl:
+          pins: [5, 6, 7, 8]
+          pin_function: alt1</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="flexcom"><a class="anchor" href="#flexcom"></a>1.2. FlexCom</h3>
+<div class="paragraph">
+<p>FlexCOM is a SoC HW component capable of providing a UART, I2C, or SPI
+interface. The definition of the FlexCOM in the board.tree looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">  +--rw drivers
+     +--rw flexcoms
+        +--rw flexcom* [hw_instance]
+           +--rw hw_instance    uint32
+           +--rw uart?          dev_uart
+           +--rw i2c?           dev_i2c
+           +--rw spi?           dev_spi
+           +--rw pin_ctrl
+              +--rw pins*           uint32
+              +--rw pin_function    pin_function</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>hw_instance</code> is used to select which physical instance in HW to configure.
+Typically a SoC supports 2-5 instances, and each instance can only be
+configured to work with a fixed pool of pins. It is therefore important to
+configure the correct instance (according to the schematic).</p>
+</li>
+<li>
+<p><code>uart</code>, <code>i2c</code>, and <code>spi</code> are used to select the personality of the FlexCOM
+instance. Any given <code>flexcom</code> entry must include one and only one of them. The
+<code>DEV_xxx</code> value assigned to either <code>uart</code>, <code>i2c</code>, or <code>spi</code> is an internal
+handle, used further down in the file to reference the FlexCOM instance.</p>
+</li>
+<li>
+<p><code>pin_ctrl</code> is used to assign physical pins on the SoC to this function. Check
+the datasheet for an overview of what pins can be used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Following is an example where FlexCom-0 is configured as UART, and FlexCOM-3 is
+configured as an I2C controller:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">board:drivers:
+  flexcoms:
+    flexcom:
+      - hw_instance: 0
+        uart: DEV_UART_0
+        pin_ctrl:
+          pins: [3, 4]
+          pin_function: alt1
+      - hw_instance: 3
+        i2c: DEV_I2C_0
+        pin_ctrl:
+          pins: [55, 56]
+          pin_function: alt2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See also: <a href="#mup1">MUP1</a> and <a href="#i2c-mux">I2C Mux</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pin_group"><a class="anchor" href="#_pin_group"></a>1.3. Pin Group</h3>
+<div class="paragraph">
+<p>Pin group is used to configure and manage the multiplexing of pins to allow multiple devices to share the same physical pins.
+The pins can be either GPIOs or SGPIOs. The typical usage is to control a mux to I2C devices. The definition looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw pin_groups
+        +--rw pin_group* [pin_group]
+           +--rw pin_group    dev_pin_group
+           +--rw sleep        uint32
+           +--ro mux_pins* []
+              +--ro (ref)
+              |  +--:(sgpio)
+              |  |  +--ro sgpio
+              |  |     +--ro ref_sgpio_bank    dev_sgpio_bank
+              |  |     +--ro port              uint8
+              |  |     +--ro bit               uint8
+              |  +--:(gpio)
+              |     +--ro gpio?     uint32
+              +--ro direction       gpio_direction
+              +--ro active_state?   active</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pin_group</code> is the internal handle for others to reference when choosing a pin group.</p>
+</li>
+<li>
+<p><code>sleep</code> is the time it takes to change the mux, i.e., the driver waits this number of ms before returning and the mux is formed.</p>
+</li>
+<li>
+<p><code>sgpio</code> defines a reference to an SGPIO bank and which port/bit are used to form the group.</p>
+</li>
+<li>
+<p><code>gpio</code> has the same purpose as <code>sgpio</code>, just for GPIOs.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of a pin group formed by 3 SGPIO pins, wich can contol mux with up to 8 outputs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  pin_groups:
+    pin_group:
+      - pin_group: DEV_PIN_GROUP_0
+        sleep: 10
+        mux_pins:
+          - sgpio:
+              ref_sgpio_bank: DEV_SGPIO_BANK_0
+              port: 0
+              bit: 1
+            direction: GPIO_DIR_OUT
+          - sgpio:
+              ref_sgpio_bank: DEV_SGPIO_BANK_0
+              port: 0
+              bit: 2
+            direction: GPIO_DIR_OUT
+          - sgpio:
+              ref_sgpio_bank: DEV_SGPIO_BANK_0
+              port: 0
+              bit: 3
+            direction: GPIO_DIR_OUT</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="i2c-mux"><a class="anchor" href="#i2c-mux"></a>1.4. I2C Mux</h3>
+<div class="paragraph">
+<p>I2C Mux is used to control a number of I2C devices (which share the same I2C bus) by enabling only one of them at a time and keeping the others disabled.
+Users will reference the MUX based on how it should be configured with 'DEV_MUX_x'. The definition looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw i2c_muxs
+        +--rw i2c_mux* [i2c_mux]
+           +--rw i2c_mux          dev_i2c_mux
+           +--rw ref_parent       dev_i2c
+           +--rw ref_pin_group    dev_pin_group
+           +--rw gpio_mask        uint32</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>i2c_mux</code> is the internal handle for others to reference when choosing an I2C mux with a specific mux configuration.</p>
+</li>
+<li>
+<p><code>ref_parent</code> is a reference to an already defined HW I2C instance.</p>
+</li>
+<li>
+<p><code>ref_pin_group</code> is a reference to an already defined pin controller.</p>
+</li>
+<li>
+<p><code>gpio_mask</code> defines how this instance will configure the mux.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of an I2C MUX which uses the pin group and the I2C instance above and sets the MUX to positions 0-3.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  i2c_muxs:
+    i2c_mux:
+      - i2c_mux: DEV_MUX_0
+        ref_parent: DEV_I2C_0
+        ref_pin_group: DEV_PIN_GROUP_0
+        gpio_mask: 0
+      - i2c_mux: DEV_MUX_1
+        ref_parent: DEV_I2C_0
+        ref_pin_group: DEV_PIN_GROUP_0
+        gpio_mask: 1
+      - i2c_mux: DEV_MUX_2
+        ref_parent: DEV_I2C_0
+        ref_pin_group: DEV_PIN_GROUP_0
+        gpio_mask: 2
+      - i2c_mux: DEV_MUX_3
+        ref_parent: DEV_I2C_0
+        ref_pin_group: DEV_PIN_GROUP_0
+        gpio_mask: 3</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sfp"><a class="anchor" href="#_sfp"></a>1.5. SFP</h3>
+<div class="paragraph">
+<p>The SFP signals that are defined consist of the following: LOS (input), TX_FAULT (input), PRESENT (input), and TX_ENABLE (output).
+When inserted, 'PRESENT' goes high and the ROM is read via I2C to determine the type and thereby how to configure the switch port to match its capabilities.
+The definition looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw sfps
+        +--rw sfp* [portno]
+           +--rw los
+           |  +--rw (ref)
+           |  |  +--:(sgpio)
+           |  |  |  +--rw sgpio
+           |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+           |  |  |     +--rw port              uint8
+           |  |  |     +--rw bit               uint8
+           |  |  +--:(gpio)
+           |  |     +--rw gpio?     uint32
+           |  +--rw direction       gpio_direction
+           |  +--rw active_state?   active
+           +--rw tx_fault
+           |  +--rw (ref)
+           |  |  +--:(sgpio)
+           |  |  |  +--rw sgpio
+           |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+           |  |  |     +--rw port              uint8
+           |  |  |     +--rw bit               uint8
+           |  |  +--:(gpio)
+           |  |     +--rw gpio?     uint32
+           |  +--rw direction       gpio_direction
+           |  +--rw active_state?   active
+           +--rw present
+           |  +--rw (ref)
+           |  |  +--:(sgpio)
+           |  |  |  +--rw sgpio
+           |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+           |  |  |     +--rw port              uint8
+           |  |  |     +--rw bit               uint8
+           |  |  +--:(gpio)
+           |  |     +--rw gpio?     uint32
+           |  +--rw direction       gpio_direction
+           |  +--rw active_state?   active
+           +--rw tx_enable
+           |  +--rw (ref)
+           |  |  +--:(sgpio)
+           |  |  |  +--rw sgpio
+           |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+           |  |  |     +--rw port              uint8
+           |  |  |     +--rw bit               uint8
+           |  |  +--:(gpio)
+           |  |     +--rw gpio?     uint32
+           |  +--rw direction       gpio_direction
+           |  +--rw active_state?   active
+           +--rw portno         uint32
+           +--rw ref_i2c_mux?   dev_i2c_mux</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>portno</code> defines to which switch front port (zero-based) this SFP belongs.</p>
+</li>
+<li>
+<p><code>los</code> indicates a loss of the received optical signal.</p>
+</li>
+<li>
+<p><code>present</code> indicates that a module is present.</p>
+</li>
+<li>
+<p><code>tx_enable</code> signal is used to enable the transmitter output.</p>
+</li>
+<li>
+<p><code>tx_fault</code> indicates faults in the Tx direction.</p>
+</li>
+<li>
+<p><code>direction</code> can be either input or output (output for <code>tx_enable</code>, input for others).</p>
+</li>
+<li>
+<p><code>active_state</code> defines the signal&#8217;s active state. This is usually documented in schematics.</p>
+</li>
+<li>
+<p><code>sgpio/gpio</code> section defines how the signals are mapped to either SGPIO port/bit or GPIO ID.</p>
+</li>
+<li>
+<p><code>ref_i2c_mux</code> is a reference to an already defined I2C mux, which enables this SFP I2C.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of a single SFP implementation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  sfps:
+    sfp:
+      - portno: 24
+        ref_i2c_mux: DEV_MUX_0
+        los:
+          sgpio:
+            ref_sgpio_bank: DEV_SGPIO_BANK_0
+            port: 24
+            bit: 0
+          direction: GPIO_DIR_IN
+          active_state: high
+        tx_fault:
+          sgpio:
+            ref_sgpio_bank: DEV_SGPIO_BANK_0
+            port: 24
+            bit: 2
+          direction: GPIO_DIR_IN
+          active_state: high
+        present:
+          sgpio:
+            ref_sgpio_bank: DEV_SGPIO_BANK_0
+            port: 24
+            bit: 1
+          direction: GPIO_DIR_IN
+          active_state: low
+        tx_enable:
+          sgpio:
+            ref_sgpio_bank: DEV_SGPIO_BANK_0
+            port: 24
+            bit: 2
+          direction: GPIO_DIR_OUT
+          active_state: low</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mdio"><a class="anchor" href="#_mdio"></a>1.6. MDIO</h3>
+<div class="paragraph">
+<p>The MDIO (Management Data Input/Output) is a serial bus protocol used for PHY access.
+There are usually 1-3 buses available on the SoC, and each PHY will reference which bus they belong to.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw mdios
+        +--rw mdio* [miim_bus]
+           +--rw miim_bus     miim_bus
+           +--rw pin_ctrl
+           |  +--rw pins*           uint32
+           |  +--rw pin_function    pin_function
+           +--rw frequency?   uint32</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>miim_bus</code> is the bus ID, used for reference.</p>
+</li>
+<li>
+<p><code>pin_ctrl</code> is used to assign physical pins on the SoC to this function. Check the datasheet for an overview of what pins can be used.</p>
+</li>
+<li>
+<p><code>frequency</code> is the MIIM bus frequency in Hz. Leave out for default SoC frequency.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of an MDIO:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  mdios:
+    mdio:
+      - miim_bus: MIIM_BUS_0
+        frequency: 2500000
+        pin_ctrl:
+          pins: [9, 10]
+          pin_function: alt1</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mup1"><a class="anchor" href="#mup1"></a>1.7. MUP1</h3>
+<div class="paragraph">
+<p><a href="doc-tech-mup1.html" class="xref page">MUP1</a> is a UART protocol facilitating configuring and
+inspecting the status of the Switch using the UART.</p>
+</div>
+<div class="paragraph">
+<p>MUP1 is a SW function, but it needs to know which UART device it shall use.
+This is done by setting a handle, which ties it to the HW instance of the same
+handle (typically a FlexCom).</p>
+</div>
+<div class="paragraph">
+<p>The definition of the MUP1 in the board.tree looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw mup1
+        +--rw ref_uart?   dev_uart</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Following is an example connecting the MUP1 function to the HW instance using
+<code>DEV_UART_0</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">board:drivers:
+  mup1:
+    ref_uart: DEV_UART_0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See also: <a href="#flexcom">FlexCom</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gpio_restart"><a class="anchor" href="#_gpio_restart"></a>1.8. GPIO-Restart</h3>
+<div class="paragraph">
+<p>The GPIO for Board restart is defined here. A board restart can e.g. be performed from management.
+The definition looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw gpio_restart
+        +--rw (ref)
+        |  +--:(sgpio)
+        |  |  +--rw sgpio
+        |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+        |  |     +--rw port              uint8
+        |  |     +--rw bit               uint8
+        |  +--:(gpio)
+        |     +--rw gpio?     uint32
+        +--rw direction       gpio_direction
+        +--rw active_state?   active</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sgpio/gpio</code> section defines how the signals are mapped to either SGPIO port/bit or GPIO ID.</p>
+</li>
+<li>
+<p><code>direction</code> is output.</p>
+</li>
+<li>
+<p><code>active_state</code> defines the signal&#8217;s active state. This is usually documented in schematics.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  gpio_restart:
+    gpio: 60
+    direction: GPIO_DIR_OUT
+    active_state: low</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gpio_reset"><a class="anchor" href="#_gpio_reset"></a>1.9. GPIO-Reset</h3>
+<div class="paragraph">
+<p>This reset is an input signal (activated by pressing a button) that indicates a reset-to-default should be performed.
+The SoC will immediately reset and read this signal during startup (state of the reset button).
+If active, the configuration is restored to default. The definition looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw gpio_reset
+        +--rw (ref)
+        |  +--:(sgpio)
+        |  |  +--rw sgpio
+        |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+        |  |     +--rw port              uint8
+        |  |     +--rw bit               uint8
+        |  +--:(gpio)
+        |     +--rw gpio?     uint32
+        +--rw direction       gpio_direction
+        +--rw active_state?   active</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sgpio/gpio</code> section defines how the signals are mapped to either SGPIO port/bit or GPIO ID.</p>
+</li>
+<li>
+<p><code>direction</code> is input.</p>
+</li>
+<li>
+<p><code>active_state</code> defines the signal&#8217;s active state. This is usually documented in schematics.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  gpio_reset:
+    gpio: 2
+    direction: GPIO_DIR_IN</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_status_led"><a class="anchor" href="#_status_led"></a>1.10. Status Led</h3>
+<div class="paragraph">
+<p>Initially, the status LED is turned off, and after the initial configuration is applied, it turns green (or blinks) to indicate normal operation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw status_led
+        +--rw (ref)
+        |  +--:(sgpio)
+        |  |  +--rw sgpio
+        |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+        |  |     +--rw port              uint8
+        |  |     +--rw bit               uint8
+        |  +--:(gpio)
+        |     +--rw gpio?     uint32
+        +--rw direction       gpio_direction
+        +--rw active_state?   active</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sgpio/gpio</code> section defines how the signals are mapped to either SGPIO port/bit or GPIO ID.</p>
+</li>
+<li>
+<p><code>direction</code> is output.</p>
+</li>
+<li>
+<p><code>active_state</code> defines the signal&#8217;s active state. This is usually documented in schematics.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  status_led:
+    gpio: 61
+    direction: GPIO_DIR_OUT
+    active_state: low</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_phy_reset"><a class="anchor" href="#_phy_reset"></a>1.11. PHY Reset</h3>
+<div class="paragraph">
+<p>The PHY&#8217;s reset state is controlled through the pin defined here.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+    +--rw phy_reset
+       +--rw (ref)
+       |  +--:(sgpio)
+       |  |  +--rw sgpio
+       |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+       |  |     +--rw port              uint8
+       |  |     +--rw bit               uint8
+       |  +--:(gpio)
+       |     +--rw gpio?     uint32
+       +--rw direction       gpio_direction
+       +--rw active_state?   active</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>sgpio/gpio</code> section defines how the signals are mapped to either SGPIO port/bit or GPIO ID.</p>
+</li>
+<li>
+<p><code>direction</code> is output.</p>
+</li>
+<li>
+<p><code>active_state</code> defines the signal&#8217;s active state. This is usually documented in schematics.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  phy_reset:
+    gpio: 62
+    direction: GPIO_DIR_OUT
+    active_state: low</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_watchdog"><a class="anchor" href="#_watchdog"></a>1.12. WatchDog</h3>
+<div class="paragraph">
+<p>The watchdog is a hardware timer and helps to ensure the system can recover from unforeseen failures.
+It reboots the system if its timer has not been updated by the CPU within a period that is set here.
+If left out, then the watchdog is disabled.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw watchdog
+        +--rw timeout?   enumeration</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Example, when timeout is set to 2 seconds:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  watchdog:
+    timeout: timeout_2000ms</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_port_leds"><a class="anchor" href="#_port_leds"></a>1.13. Port Leds</h3>
+<div class="paragraph">
+<p>This section defines how the front port LEDs should be accessed, typically SFP-based LEDs.
+Each switch port typically has two LEDs: green for 'high' speed and a second one (red/yellow/orange, etc.) for 'low' speed.
+Note that the PHYs usually control the LEDs directly through their own GPIOs and do not require any board configuration setup.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw port_leds
+        +--rw port_led* [portno]
+           +--rw portno        uint32
+           +--rw led_green
+           |  +--rw (ref)
+           |  |  +--:(sgpio)
+           |  |  |  +--rw sgpio
+           |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+           |  |  |     +--rw port              uint8
+           |  |  |     +--rw bit               uint8
+           |  |  +--:(gpio)
+           |  |     +--rw gpio?     uint32
+           |  +--rw direction       gpio_direction
+           |  +--rw active_state?   active
+           +--rw led_second
+              +--rw (ref)
+              |  +--:(sgpio)
+              |  |  +--rw sgpio
+              |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+              |  |     +--rw port              uint8
+              |  |     +--rw bit               uint8
+              |  +--:(gpio)
+              |     +--rw gpio?     uint32
+              +--rw direction       gpio_direction
+              +--rw active_state?   active</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>portno</code> defines to which switch front port (zero-based) these LEDs belong.</p>
+</li>
+<li>
+<p><code>led_green</code> defines how the green LED is accessed through SGPIOs or GPIOs.</p>
+</li>
+<li>
+<p><code>led_second</code> defines how the second LED is accessed through SGPIOs or GPIOs.</p>
+</li>
+<li>
+<p><code>sgpio/gpio</code> section defines how the signals are mapped to either SGPIO port/bit or GPIO ID.
+Example:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  port_leds:
+    port_led:
+      - portno: 24
+        led_green:
+          sgpio:
+            ref_sgpio_bank: DEV_SGPIO_BANK_0
+            port: 24
+            bit: 0
+          direction: GPIO_DIR_OUT
+          active_state: low
+        led_second:
+          sgpio:
+            ref_sgpio_bank: DEV_SGPIO_BANK_0
+            port: 24
+            bit: 1
+          direction: GPIO_DIR_OUT
+          active_state: low</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bridge"><a class="anchor" href="#_bridge"></a>1.14. Bridge</h3>
+<div class="paragraph">
+<p>The Ethernet bridge interconnects multiple ports to form a LAN.
+This section defines the switch chip and the properties of each of the attached ports and phys.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw bridge
+        +--rw mux_mode?      port_mux_mode
+        +--rw target_chip    target_chip_type
+        +--rw eth_ports
+           +--rw eth_port* [port_dev]
+              +--rw port_dev        uint32
+              +--rw phy_mode        phy_mode
+              +--rw phy_chip?       int32
+              +--rw in_band_aneg?   boolean
+              +--rw bandwidth?      uint32
+              +--rw phy
+                 +--rw ref_miim_bus    miim_bus
+                 +--rw miim_addr       uint32
+                 +--rw dummy?          boolean
+                 +--rw base_port?      uint32
+                 +--rw fixed_link
+                 |  +--rw speed?   uint32
+                 |  +--rw role?    phy_role
+                 +--rw led* [id]
+                    +--rw id      phy_led_id
+                    +--rw mode    phy_led_mode</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mux_mode</code> defines which devices and serdeses are used. Used on some SoCs.</p>
+</li>
+<li>
+<p><code>phy_mode</code> defines the PHY to MAC interface.</p>
+</li>
+<li>
+<p><code>target_chip</code> The physical chip sometimes supports different skews. <code>target_chip</code> defines which one.</p>
+</li>
+<li>
+<p><code>port_dev</code> defines the chip port device to be used.</p>
+</li>
+<li>
+<p><code>phy_chip</code> defines the physical PHY chip this port is associated with, for hardware monitoring.</p>
+</li>
+<li>
+<p><code>bandwidth</code> defines the internal switch core bandwidth this port requires.</p>
+</li>
+<li>
+<p><code>in_band_aneg</code> means that the PHY status is fetched via the device PCS as opposed to via MDIO access. Supported for some interfaces.</p>
+</li>
+<li>
+<p><code>ref_miim_bus</code> defines the PHY MIIM bus ID.</p>
+</li>
+<li>
+<p><code>miim_addr</code> defines the PHY address on the bus.</p>
+</li>
+<li>
+<p><code>dummy</code> means that this is a software PHY and PHY access is disabled. Typically used where PHY access is not possible.</p>
+</li>
+<li>
+<p><code>base_port</code> is used for quad PHYs for determining which port ID should be used for access of shared resources.</p>
+</li>
+<li>
+<p><code>fixed_link</code> means that the speed is forced as opposed to 'aneg', and is left out when aneg is enabled.</p>
+</li>
+<li>
+<p><code>speed</code> defines the speed of the fixed_link.</p>
+</li>
+<li>
+<p><code>role</code> defines the role (master/slave) of the PHY, and is left out when aneg is enabled.</p>
+</li>
+<li>
+<p><code>led</code> defines the LED settings for the PHY. Supported for some PHYs.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following example is a bridge with one PHY-based port and one SFP-based port:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">    target_chip: lan9696tsn
+    eth_ports:
+      eth_port:
+        - port_dev: 0
+          phy_mode: qsgmii
+          phy_chip: 1
+          bandwidth: 1000
+          phy:
+            ref_miim_bus: MIIM_BUS_0
+            miim_addr: 4
+            base_port: 0
+            led:
+              - id: led0
+                mode: link1000_activity
+              - id: led1
+                mode: link10_100_activity
+        - port_dev: 24
+          phy_mode: 10gbase-r
+          bandwidth: 10000</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ptp"><a class="anchor" href="#_ptp"></a>1.15. PTP</h3>
+<div class="paragraph">
+<p>Pin configuration of PTP functions. This section defines the GPIO to PTP mapping.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw ptp
+        +--ro pins* []
+           +--ro pin_ctrl
+              +--ro pins*           uint32
+              +--ro pin_function    pin_function</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pin_ctrl</code> is used to assign physical pins on the SoC to this function. Check the datasheet for an overview of what pins can be used.</p>
+</li>
+<li>
+<p><code>pins</code> defines the GPIO(s) ID.</p>
+</li>
+<li>
+<p><code>pin_function</code> defines the mode to configure the pin(s).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following example maps 3 GPIOs to the 1PPS PTP function ALT4:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  ptp:
+    pins:
+      - pin_ctrl:
+          pins: [57, 58, 59]
+          pin_function: alt4</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_allocating_of_resources_capabilities"><a class="anchor" href="#_allocating_of_resources_capabilities"></a>2. Allocating of resources (capabilities)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>capabilities</code> section is used to provide selected configurations for the application.
+All capability configurations are parsed at boot-time, and if this configuration
+requires memory to be allocated, then this allocation is done before the MUP1
+announce packet is emitted.</p>
+</div>
+<div class="paragraph">
+<p>If too many resources are assigned, it will result in a fatal boot error,
+and the board-tailor needs to lower the counts.</p>
+</div>
+<div class="paragraph">
+<p>Here is what the capability section looks like in the board.tree:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw capabilities
+     +--rw manufacturer          string
+     +--rw model                 string
+     +--rw l3_count?             uint32
+     +--rw ltc_count?            uint32
+     +--rw ltc_pin_count?        uint8
+     +--rw phy_timestamping?     boolean
+     +--rw stream_count?         uint32
+     +--rw coap_session_count?   uint32
+     +--rw arp_count?            uint32
+     +--rw ipv4_route_count?     uint32</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>manufacturer</code>: is a string returned by the IETF-HW YANG manufacturer leaf.</p>
+</li>
+<li>
+<p><code>model</code>: is the model returned in the IETF-System YANG.</p>
+</li>
+<li>
+<p><code>l3_count?</code>: Is the number of L3 interfaces. This shall be set to 1 on SW
+variants without routing support, and can be up to 32 on SW variants with
+routing support.</p>
+</li>
+<li>
+<p><code>ltc_count?</code>: Is the number of PTP instances (each instance is tied to a PTP
+domain). Set this to 3, as this is the number of domains supported in HW.</p>
+</li>
+<li>
+<p><code>ltc_pin_count?</code>: Number of PTP Pins which can be used for 1PPS in/out.</p>
+</li>
+<li>
+<p><code>phy_timestamping?</code>: Select if PHY time-stamping shall be used (requires PHYs
+with time-stamping support).</p>
+</li>
+<li>
+<p><code>stream_count?</code>: Number of PSFP Streams.</p>
+</li>
+<li>
+<p><code>coap_session_count?</code>: Number of CoAP sessions to support.</p>
+</li>
+<li>
+<p><code>arp_count?</code>: Number of ARP entries to support.</p>
+</li>
+<li>
+<p><code>ipv4_route_count?</code>: Number of IPv4 static routes. This shall be set to zero on
+SW variants without routing, and above 1 on systems with SW routing.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Here is an example of the capabilities:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">board:capabilities:
+  manufacturer: "Microchip Technology Inc."
+  model: "LAN9698RED - EV89P81A (UNG8422)"
+  l3_count: 1
+  ltc_count: 3
+  ltc_pin_count: 8
+  phy_timestamping: false
+  stream_count: 64
+  coap_session_count: 4
+  arp_count: 64
+  ipv4_route_count: 0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_factory_defaults"><a class="anchor" href="#_factory_defaults"></a>3. Factory defaults</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The factory defaults can contain the full CORECONF data-store, and is applied at
+boot time if no user-configuration is stored in flash.</p>
+</div>
+<div class="paragraph">
+<p>An example of a factory defaults which includes port 1 and port 2 in VLAN 1 is
+shown below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">board:factory_default_config:
+  ieee802-dot1q-bridge:bridges:
+    bridge:
+      - name: b0
+        component:
+          - name: c0
+            filtering-database:
+              vlan-registration-entry:
+                - database-id: 0
+                  vids: '1'
+                  entry-type: static
+                  port-map:
+                    - port-ref: 1
+                      static-vlan-registration-entries:
+                        vlan-transmitted: untagged
+                    - port-ref: 2
+                      static-vlan-registration-entries:
+                        vlan-transmitted: untagged</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

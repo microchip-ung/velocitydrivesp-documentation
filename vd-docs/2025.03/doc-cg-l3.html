@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Switch L3 Forwarding (routing) :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li><a href="doc-cg-l3.html">L3 Forwarding (routing)</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Switch L3 Forwarding (routing)</h1>
+<div class="sect1">
+<h2 id="_l3_introduction"><a class="anchor" href="#_l3_introduction"></a>1. L3 Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Routing can be used for connectivity between IP nodes in different subnets.</p>
+</div>
+<div class="paragraph">
+<p>The VelocitySP routing solution is based on VLANs as shown in the example below.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Host H1 is connected to VLAN 1.</p>
+</li>
+<li>
+<p>Router R1 is connected to VLAN 1 and VLAN 2.</p>
+</li>
+<li>
+<p>Router R2 is connected to VLAN 2 and has access to multiple remote networks.</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>+----+ 1.0.0.2/8  1.0.0.1/8 +----+ 2.0.0.1/8   2.0.0.2/8 +----+
+|    |                      |    |                       |    |     4.4.0.0/16
+| H1 +--------VID 1---------+ R1 +---------VID 2---------+ R2 |---&gt; 3.3.0.0/16
+|    |                      |    |                       |    |     0.0.0.0/0
++----+                      +----+                       +----+</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Router R1 is described in the following examples.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_l3_interface_configuration"><a class="anchor" href="#_l3_interface_configuration"></a>2. L3 Interface Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The L3 interfaces of R1 are configured as shown below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>VLAN 1: IP address 1.0.0.1/8.</p>
+</li>
+<li>
+<p>VLAN 2: IP address 2.0.0.1/8.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-l3-intf" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface"
+  : name: L3V1
+    type: iana-if-type:l3ipvlan
+
+
+- ? "/ietf-interfaces:interfaces/interface[name='L3V1']/ietf-ip:ipv4/address"
+  : ip: 1.0.0.1
+    prefix-length: 8
+
+
+- ? "/ietf-interfaces:interfaces/interface[name='L3V1']/ietf-ip:ipv4/\
+     forwarding"
+  : true
+
+
+- ? "/ietf-interfaces:interfaces/interface"
+  : name: L3V2
+    type: iana-if-type:l3ipvlan
+
+
+- ? "/ietf-interfaces:interfaces/interface[name='L3V2']/ietf-ip:ipv4/address"
+  : ip: 2.0.0.1
+    prefix-length: 8
+
+
+- ? "/ietf-interfaces:interfaces/interface[name='L3V2']/ietf-ip:ipv4/\
+     forwarding"
+  : true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_static_route_configuration"><a class="anchor" href="#_static_route_configuration"></a>3. Static Route Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The static routes of R1 are configured as shown below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Network 4.4.0.0/16 via 2.0.0.2.</p>
+</li>
+<li>
+<p>Network 3.3.0.0/16 via 2.0.0.2.</p>
+</li>
+<li>
+<p>Network 0.0.0.0/0 via 2.0.0.2 (default route).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-l3-srt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/\
+     control-plane-protocol[type='ietf-routing:static'][name='0']/\
+     static-routes/ietf-ipv4-unicast-routing:ipv4/route"
+  : destination-prefix: 4.4.0.0/16
+    next-hop:
+      next-hop-address: 2.0.0.2
+
+
+- ? "/ietf-routing:routing/control-plane-protocols/\
+     control-plane-protocol[type='ietf-routing:static'][name='0']/\
+     static-routes/ietf-ipv4-unicast-routing:ipv4/route"
+  : destination-prefix: 3.3.0.0/16
+    next-hop:
+      next-hop-address: 2.0.0.2
+
+
+- ? "/ietf-routing:routing/control-plane-protocols/\
+     control-plane-protocol[type='ietf-routing:static'][name='0']/\
+     static-routes/ietf-ipv4-unicast-routing:ipv4/route"
+  : destination-prefix: 0.0.0.0/0
+    next-hop:
+      next-hop-address: 2.0.0.2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_routing_table"><a class="anchor" href="#_routing_table"></a>4. Routing Table</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The routing table of R1 is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>It includes local routes based on L3 interface configuration and remote routes based on static route configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Net 0.0.0.0/0, static/remote route via 2.0.0.2.</p>
+</li>
+<li>
+<p>Net 1.0.0.0/8, direct/local route via VLAN 1.</p>
+</li>
+<li>
+<p>Net 2.0.0.0/8, direct/local route via VLAN 2.</p>
+</li>
+<li>
+<p>Net 3.3.0.0/16, static/remote route via 2.0.0.2.</p>
+</li>
+<li>
+<p>Net 4.4.0.0/16, static/remote route via 2.0.0.2.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-l3-rt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-routing:routing/ribs/rib[name='ipv4']/routes/route"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-l3-rt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/ribs/rib/routes/route"
+  : - next-hop:
+        outgoing-interface: L3V2
+        ietf-ipv4-unicast-routing:next-hop-address: 2.0.0.2
+      source-protocol: ietf-routing:static
+      active:
+      -
+      ietf-ipv4-unicast-routing:destination-prefix: 0.0.0.0/0
+    - next-hop:
+        outgoing-interface: L3V1
+        ietf-ipv4-unicast-routing:next-hop-address: 0.0.0.0
+      source-protocol: ietf-routing:direct
+      active:
+      -
+      ietf-ipv4-unicast-routing:destination-prefix: 1.0.0.0/8
+    - next-hop:
+        outgoing-interface: L3V2
+        ietf-ipv4-unicast-routing:next-hop-address: 0.0.0.0
+      source-protocol: ietf-routing:direct
+      active:
+      -
+      ietf-ipv4-unicast-routing:destination-prefix: 2.0.0.0/8
+    - next-hop:
+        outgoing-interface: L3V2
+        ietf-ipv4-unicast-routing:next-hop-address: 2.0.0.2
+      source-protocol: ietf-routing:static
+      active:
+      -
+      ietf-ipv4-unicast-routing:destination-prefix: 3.3.0.0/16
+    - next-hop:
+        outgoing-interface: L3V2
+        ietf-ipv4-unicast-routing:next-hop-address: 2.0.0.2
+      source-protocol: ietf-routing:static
+      active:
+      -
+      ietf-ipv4-unicast-routing:destination-prefix: 4.4.0.0/16</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_arp_table"><a class="anchor" href="#_arp_table"></a>5. ARP Table</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The ARP table of R1 is retrieved for each L3 interface as shown below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>VLAN1: IP address 1.0.0.2 via MAC address 00-00-00-00-00-12.</p>
+</li>
+<li>
+<p>VLAN2: IP address 2.0.0.2 via MAC address 00-00-00-00-00-22.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-l3-arp" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='L3V1']/ietf-ip:ipv4/neighbor"
+
+- "/ietf-interfaces:interfaces/interface[name='L3V2']/ietf-ip:ipv4/neighbor"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-l3-arp" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ietf-ip:ipv4/neighbor"
+  : - ip: 1.0.0.2
+      link-layer-address: 00-00-00-00-00-12
+
+
+- ? "/ietf-interfaces:interfaces/interface/ietf-ip:ipv4/neighbor"
+  : - ip: 2.0.0.2
+      link-layer-address: 00-00-00-00-00-22</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_l3_interface_counters"><a class="anchor" href="#_l3_interface_counters"></a>6. L3 Interface Counters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The L3 interface counters of R1 are retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>In this example, 10 frames have been routed from VLAN 1 to VLAN 2.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-l3-cnt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='L3V1']/ietf-ip:ipv4/\
+   mchp-velocitysp-ip:statistics"
+
+- "/ietf-interfaces:interfaces/interface[name='L3V2']/ietf-ip:ipv4/\
+   mchp-velocitysp-ip:statistics"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-l3-cnt" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ietf-ip:ipv4/\
+     mchp-velocitysp-ip:statistics"
+  : rx-total: '10'
+    rx-octets: '460'
+    rx-hdr-errors: '0'
+    rx-addr-errors: '0'
+    rx-forwards: '10'
+    rx-no-routes: '0'
+    rx-unknown-protos: '0'
+    rx-delivers: '0'
+    tx-requests: '0'
+    tx-forwards: '0'
+    tx-total: '0'
+    tx-octets: '0'
+
+
+- ? "/ietf-interfaces:interfaces/interface/ietf-ip:ipv4/\
+     mchp-velocitysp-ip:statistics"
+  : rx-total: '0'
+    rx-octets: '0'
+    rx-hdr-errors: '0'
+    rx-addr-errors: '0'
+    rx-forwards: '0'
+    rx-no-routes: '0'
+    rx-unknown-protos: '0'
+    rx-delivers: '0'
+    tx-requests: '0'
+    tx-forwards: '10'
+    tx-total: '10'
+    tx-octets: '460'</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

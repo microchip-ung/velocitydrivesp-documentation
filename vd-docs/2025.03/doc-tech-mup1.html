@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Technology: MUP1 :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2025.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2025.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li>Technology</li>
+    <li><a href="doc-tech-mup1.html"><code>MUP1</code></a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Technology: <code>MUP1</code></h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>MUP1</code> or Microchip UART Protocol #1, is a simple frame-based protocol designed to
+run over UART (serial) interface.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of <code>MUP1</code> is to offer a point-to-point interface which can work without
+any configuration, and which cannot be "broken" by applying configuration.</p>
+</div>
+<div class="paragraph">
+<p>It does have some similarities with SLIP
+(<a href="https://datatracker.ietf.org/doc/html/rfc1055">RFC1055</a>), but as SLIP is IP
+based, it typically needs IP configuration on both server and client, which
+contradicts the purpose.</p>
+</div>
+<div class="paragraph">
+<p>In VelocityDRIVE-SP, <code>MUP1</code> replaces the typical serial human-friendly console
+interface seen on many switches. <code>MUP1</code> is a machine interface that, among other things,
+can carry CoAP frames, which then gives access to the entire management
+interface.</p>
+</div>
+<div class="paragraph">
+<p>To use the <code>MUP1</code> interface, it is therefore required to have a client with <code>MUP1</code>
+support.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this document is to specify the <code>MUP1</code> protocol such that
+customers and/or third parties can implement <code>MUP1</code> support in their client
+products.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_high_level_design_requirements"><a class="anchor" href="#_high_level_design_requirements"></a>1. High-Level Design Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>MUP1</code> protocol is designed to meet the following goals:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Low overhead, frame-based protocol.</p>
+</li>
+<li>
+<p>Integrity checking by using checksum.</p>
+</li>
+<li>
+<p>Access to CoAP stack, with security mechanisms offered by CoAP (DTLS).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>CoAP access will give access to all CoAP resources including the entire
+CORECONF interface.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Point-to-point communication without any initial configuration.</p>
+</li>
+<li>
+<p>Not limited to CoAP, but shall also support other protocols.</p>
+</li>
+<li>
+<p>Both client and server can initiate messages.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><code>MUP1</code> is considered a layer-1 / transport-layer protocol, and is therefore not
+involved in stuff like security, reliability, and re-transmission. All of this is
+left for the higher layers.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_protocol_specification"><a class="anchor" href="#_protocol_specification"></a>2. Protocol Specification</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>MUP1</code> is a frame-based protocol that defines the following symbols:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Symbol</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SOF</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&gt;</code> (0x3e)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Start of frame</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>EOF</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;</code> (0x3c)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">End of frame</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ESC</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>\</code> (0x5c)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Escape</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The protocol frame format for frames with an equal number of data frames looks
+like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>+-----+------+----+---+----------+
+|SOF:1|TYPE:1|DATA|EOF|CHECKSUM:4|
++-----+------+----+---+----------+</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The protocol frame format for frames with a non-equal number of data frames looks
+like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>+-----+------+----+---+---+----------+
+|SOF:1|TYPE:1|DATA|EOF|EOF|CHECKSUM:4|
++-----+------+----+---+---+----------+</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SOF</code> is a symbol to indicate start-of-frame.</p>
+</li>
+<li>
+<p><code>TYPE</code> is a 1-byte field specifying the message type. Each message type
+shall be defined in other requirements. Type shall avoid using values
+which require escaping.</p>
+</li>
+<li>
+<p><code>DATA</code> is a variable length binary data field. The maximum data size is
+implementation dependent, but typically advertised in the announce message.<br>
+Default max data size is 300 bytes (actual data - not considering escaping).<br>
+Be aware of escaping rules listed below.</p>
+</li>
+<li>
+<p><code>EOF</code>: is a symbol to indicate end-of-frame.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the size of <code>DATA</code> is an even number of bytes, then one additional <code>EOF</code>
+is added. This assures that when calculating <code>CHECKSUM</code> the number of bytes is
+always even.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>CHECKSUM</code> is a 4-byte field carrying a checksum of SOF+TYPE+DATA+EOF(s) in
+the frame. The checksum algorithm is the 16-bit one&#8217;s complement (same as used
+in UDP).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The checksum is calculated on the non-escaped <code>DATA</code>.</p>
+</li>
+<li>
+<p>The 16-bit checksum shall be encoded as a hex string using the ASCII
+characters <code>0</code> (0x30) - <code>9</code> (0x39) and <code>a</code> (0x61) - <code>f</code> (0x66). The value
+shall be encoded as big-endian.</p>
+</li>
+<li>
+<p>The checksum value of <code>0000</code> (four bytes with the value of 0x30) is
+special and means that the checksum is ignored.</p>
+</li>
+<li>
+<p>Messages with invalid checksums shall be dropped.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Encoding and Escaping:</p>
+</div>
+<div class="paragraph">
+<p>The <code>SOF</code>, <code>EOF</code>, and <code>ESC</code> values are special in the MUP1 protocol as they are
+used to signal the start and end of a frame.<br>
+The values <code>0x00</code> and <code>0xFF</code> are special in the Telnet protocol and must not
+appear on the wire.</p>
+</div>
+<div class="paragraph">
+<p>The <code>DATA</code> field carries binary data, and must be encoded according
+to the following rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The       value <code>0x00</code> ('0') shall be encoded as <code>[0x5c, 0x30]</code></p>
+</li>
+<li>
+<p>The       value <code>0xFF</code> ('F') shall be encoded as <code>[0x5c, 0x46]</code></p>
+</li>
+<li>
+<p>The <code>SOF</code> value <code>0x3e</code> ('&gt;') shall be encoded as <code>[0x5c, 0x3e]</code></p>
+</li>
+<li>
+<p>The <code>EOF</code> value <code>0x3c</code> ('&lt;') shall be encoded as <code>[0x5c, 0x3c]</code></p>
+</li>
+<li>
+<p>The <code>ESC</code> value <code>0x5c</code> ('\') shall be encoded as <code>[0x5c, 0x5c]</code></p>
+</li>
+<li>
+<p>All other values are used as-is.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_error_and_recovery_handling"><a class="anchor" href="#_error_and_recovery_handling"></a>2.1. Error and Recovery Handling</h3>
+<div class="paragraph">
+<p>The error handling in <code>MUP1</code> is very simple and follows a few simple rules:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reception of a <code>SOF</code> symbol always resets the <code>MUP1</code> RX state machine.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Any partially received data shall be dropped.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>All data received outside a frame (if no <code>SOF</code> is received) can be ignored,
+and may be considered as non-reliable trace messages.</p>
+</li>
+<li>
+<p>Frames with invalid checksums shall be ignored.</p>
+</li>
+<li>
+<p>Frames with unknown types shall be ignored.</p>
+</li>
+<li>
+<p>Unexpected characters shall reset the RX state machine, and it shall wait for
+the next <code>SOF</code> symbol.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mup1_frame_types"><a class="anchor" href="#_mup1_frame_types"></a>3. MUP1 Frame Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following message types are defined:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">TYPE</th>
+<th class="tableblock halign-left valign-top">NAME</th>
+<th class="tableblock halign-left valign-top">Reference</th>
+<th class="tableblock halign-left valign-top">Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>A</code> (0x61)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Announce msg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mup1-type-announce">MUP1 TX ANNOUNCE (0x61)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server-to-Client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>c</code> (0x63)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coap frame</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mup1-type-rx-coap">MUP1 RX CoAP (0x63)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client-to-Server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>C</code> (0x43)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coap frame</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mup1-type-tx-coap">MUP1 TX CoAP (0x43)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server-to-Client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>p</code> (0x70)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ping request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mup1-type-rx-ping">MUP1 RX Ping (0x70)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client-to-Server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>P</code> (0x50)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ping response</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mup1-type-tx-pong">MUP1 TX Pong (0x50)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server-to-Client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>s</code> (0x73)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sys request</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mup1-type-sysrq">MUP1 Sys Request (0x73)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Client-to-Server</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>T</code> (0x54)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Trace msg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mup1-type-trace">MUP1 Trace Message (0x54)</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Server-to-Client</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The switches running VelocityDRIVE-SP implement the Server role.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="mup1-type-announce"><a class="anchor" href="#mup1-type-announce"></a>3.1. MUP1 TX ANNOUNCE (0x61)</h3>
+<div class="paragraph">
+<p>This is only allowed in the direction from the server to the client.</p>
+</div>
+<div class="paragraph">
+<p>This message is sent immediately upon the booting of the VelocityDRIVE-SP
+system, indicating that it is ready for use.</p>
+</div>
+<div class="paragraph">
+<p>The message data follows the same format as the PONG message (see <a href="#mup1-type-tx-pong">MUP1 TX Pong (0x50)</a>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mup1-type-rx-coap"><a class="anchor" href="#mup1-type-rx-coap"></a>3.2. MUP1 RX CoAP (0x63)</h3>
+<div class="paragraph">
+<p>This is only allowed in the direction from the Client to the Server.</p>
+</div>
+<div class="paragraph">
+<p>The <code>DATA</code> field carries the raw content of the CoAP request for the server to
+process.</p>
+</div>
+<div class="paragraph">
+<p>Any responses triggered by this request shall be received as
+<a href="#mup1-type-tx-coap">MUP1 TX CoAP (0x43)</a> message(s). All timers, re-transmissions,
+security, and other aspects are handled by CoAP.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mup1-type-tx-coap"><a class="anchor" href="#mup1-type-tx-coap"></a>3.3. MUP1 TX CoAP (0x43)</h3>
+<div class="paragraph">
+<p>This is only allowed in the direction from the Server to the Client.</p>
+</div>
+<div class="paragraph">
+<p>The <code>DATA</code> field carries the raw content of the CoAP message generated by the
+server for the client to process.</p>
+</div>
+<div class="paragraph">
+<p>These response messages are only generated when requested by a
+<a href="#mup1-type-rx-coap">MUP1 RX CoAP (0x63)</a> message. All timers, re-transmissions, security,
+and other aspects are handled by CoAP.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mup1-type-rx-ping"><a class="anchor" href="#mup1-type-rx-ping"></a>3.4. MUP1 RX Ping (0x70)</h3>
+<div class="paragraph">
+<p>This is only allowed in the direction from the Client to the Server.</p>
+</div>
+<div class="paragraph">
+<p>This message is a ping request which can be used to check if the device is
+connected and alive.</p>
+</div>
+<div class="paragraph">
+<p>The <code>DATA</code> field shall be empty (0 bytes).</p>
+</div>
+<div class="paragraph">
+<p>When a ping request is sent, the device shall respond with a
+<a href="#mup1-type-tx-pong">MUP1 TX Pong (0x50)</a> message within 1 second, otherwise it shall be
+assumed that the device is not present.</p>
+</div>
+<div class="paragraph">
+<p>If the PC sends more than 1 ping message per second, the device may or may
+not ignore such requests.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mup1-type-tx-pong"><a class="anchor" href="#mup1-type-tx-pong"></a>3.5. MUP1 TX Pong (0x50)</h3>
+<div class="paragraph">
+<p>This is only allowed in the direction from the Server to the Client.</p>
+</div>
+<div class="paragraph">
+<p>This message is a ping response which shall be generated when a
+<a href="#mup1-type-rx-ping">MUP1 RX Ping (0x70)</a> is processed.</p>
+</div>
+<div class="paragraph">
+<p>The <code>DATA</code> field carries the build version information, the system uptime, and
+MUP1 information with the following format:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>&lt;SW_VERSION&gt;&lt;0x20&gt;&lt;UP_TIME&gt;&lt;0x20&gt;&lt;MUP1_SIZE&gt;&lt;0x20&gt;&lt;MUP1_VERSION&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Where:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;SW_VERSION&gt;</code> is a string.</p>
+</li>
+<li>
+<p><code>&lt;UP_TIME&gt;</code>: Is a string that must contain system uptime in seconds.</p>
+</li>
+<li>
+<p><code>&lt;MUP1_SIZE&gt;</code>: Is the max size of the non-escaped <code>DATA</code> field that the MUP1
+server is able to handle.</p>
+</li>
+<li>
+<p><code>&lt;MUP1_VERSION&gt;</code>: Is the version number of the MUP1.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mup1-type-sysrq"><a class="anchor" href="#mup1-type-sysrq"></a>3.6. MUP1 Sys Request (0x73)</h3>
+<div class="paragraph">
+<p>The sysreq offers a low-level debug interface where various commands can be
+triggered. This shall only be implemented in the direction from PC to device.</p>
+</div>
+<div class="paragraph">
+<p>This packet type is obsolete, and the functions implemented here will be moved
+to a CoAP server instead.</p>
+</div>
+<div class="paragraph">
+<p>Due to this, the details are not documented here - if needed, then please request
+the internal specification.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mup1-type-trace"><a class="anchor" href="#mup1-type-trace"></a>3.7. MUP1 Trace Message (0x54)</h3>
+<div class="paragraph">
+<p>This is used by the device to print textual messages on the console.</p>
+</div>
+<div class="paragraph">
+<p>The data field is used to carry the message to be displayed.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

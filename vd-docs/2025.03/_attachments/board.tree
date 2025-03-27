@@ -1,0 +1,210 @@
+module: board
+  +--rw drivers
+  |  +--rw sgpio_banks
+  |  |  +--rw sgpio_bank* [sgpio_bank]
+  |  |     +--rw sgpio_bank    dev_sgpio_bank
+  |  |     +--rw bit_count     uint32
+  |  |     +--rw port_mask     uint32
+  |  |     +--rw clock_div?    uint32
+  |  |     +--rw pin_ctrl
+  |  |        +--rw pins*           uint32
+  |  |        +--rw pin_function    pin_function
+  |  +--rw flexcoms
+  |  |  +--rw flexcom* [hw_instance]
+  |  |     +--rw hw_instance    uint32
+  |  |     +--rw uart?          dev_uart
+  |  |     +--rw i2c?           dev_i2c
+  |  |     +--rw spi?           dev_spi
+  |  |     +--rw pin_ctrl
+  |  |        +--rw pins*           uint32
+  |  |        +--rw pin_function    pin_function
+  |  +--rw pin_groups
+  |  |  +--rw pin_group* [pin_group]
+  |  |     +--rw pin_group    dev_pin_group
+  |  |     +--rw sleep        uint32
+  |  |     +--ro mux_pins* []
+  |  |        +--ro (ref)
+  |  |        |  +--:(sgpio)
+  |  |        |  |  +--ro sgpio
+  |  |        |  |     +--ro ref_sgpio_bank    dev_sgpio_bank
+  |  |        |  |     +--ro port              uint8
+  |  |        |  |     +--ro bit               uint8
+  |  |        |  +--:(gpio)
+  |  |        |     +--ro gpio?     uint32
+  |  |        +--ro direction       gpio_direction
+  |  |        +--ro active_state?   active
+  |  +--rw i2c_muxs
+  |  |  +--rw i2c_mux* [i2c_mux]
+  |  |     +--rw i2c_mux          dev_i2c_mux
+  |  |     +--rw ref_parent       dev_i2c
+  |  |     +--rw ref_pin_group    dev_pin_group
+  |  |     +--rw gpio_mask        uint32
+  |  +--rw sfps
+  |  |  +--rw sfp* [portno]
+  |  |     +--rw los
+  |  |     |  +--rw (ref)
+  |  |     |  |  +--:(sgpio)
+  |  |     |  |  |  +--rw sgpio
+  |  |     |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |     |  |  |     +--rw port              uint8
+  |  |     |  |  |     +--rw bit               uint8
+  |  |     |  |  +--:(gpio)
+  |  |     |  |     +--rw gpio?     uint32
+  |  |     |  +--rw direction       gpio_direction
+  |  |     |  +--rw active_state?   active
+  |  |     +--rw tx_fault
+  |  |     |  +--rw (ref)
+  |  |     |  |  +--:(sgpio)
+  |  |     |  |  |  +--rw sgpio
+  |  |     |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |     |  |  |     +--rw port              uint8
+  |  |     |  |  |     +--rw bit               uint8
+  |  |     |  |  +--:(gpio)
+  |  |     |  |     +--rw gpio?     uint32
+  |  |     |  +--rw direction       gpio_direction
+  |  |     |  +--rw active_state?   active
+  |  |     +--rw present
+  |  |     |  +--rw (ref)
+  |  |     |  |  +--:(sgpio)
+  |  |     |  |  |  +--rw sgpio
+  |  |     |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |     |  |  |     +--rw port              uint8
+  |  |     |  |  |     +--rw bit               uint8
+  |  |     |  |  +--:(gpio)
+  |  |     |  |     +--rw gpio?     uint32
+  |  |     |  +--rw direction       gpio_direction
+  |  |     |  +--rw active_state?   active
+  |  |     +--rw tx_enable
+  |  |     |  +--rw (ref)
+  |  |     |  |  +--:(sgpio)
+  |  |     |  |  |  +--rw sgpio
+  |  |     |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |     |  |  |     +--rw port              uint8
+  |  |     |  |  |     +--rw bit               uint8
+  |  |     |  |  +--:(gpio)
+  |  |     |  |     +--rw gpio?     uint32
+  |  |     |  +--rw direction       gpio_direction
+  |  |     |  +--rw active_state?   active
+  |  |     +--rw portno         uint32
+  |  |     +--rw ref_i2c_mux?   dev_i2c_mux
+  |  +--rw mdios
+  |  |  +--rw mdio* [miim_bus]
+  |  |     +--rw miim_bus     miim_bus
+  |  |     +--rw pin_ctrl
+  |  |     |  +--rw pins*           uint32
+  |  |     |  +--rw pin_function    pin_function
+  |  |     +--rw frequency?   uint32
+  |  +--rw mup1
+  |  |  +--rw ref_uart?   dev_uart
+  |  +--rw gpio_restart
+  |  |  +--rw (ref)
+  |  |  |  +--:(sgpio)
+  |  |  |  |  +--rw sgpio
+  |  |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |  |  |     +--rw port              uint8
+  |  |  |  |     +--rw bit               uint8
+  |  |  |  +--:(gpio)
+  |  |  |     +--rw gpio?     uint32
+  |  |  +--rw direction       gpio_direction
+  |  |  +--rw active_state?   active
+  |  +--rw gpio_reset
+  |  |  +--rw (ref)
+  |  |  |  +--:(sgpio)
+  |  |  |  |  +--rw sgpio
+  |  |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |  |  |     +--rw port              uint8
+  |  |  |  |     +--rw bit               uint8
+  |  |  |  +--:(gpio)
+  |  |  |     +--rw gpio?     uint32
+  |  |  +--rw direction       gpio_direction
+  |  |  +--rw active_state?   active
+  |  +--rw status_led
+  |  |  +--rw (ref)
+  |  |  |  +--:(sgpio)
+  |  |  |  |  +--rw sgpio
+  |  |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |  |  |     +--rw port              uint8
+  |  |  |  |     +--rw bit               uint8
+  |  |  |  +--:(gpio)
+  |  |  |     +--rw gpio?     uint32
+  |  |  +--rw direction       gpio_direction
+  |  |  +--rw active_state?   active
+  |  +--rw phy_reset
+  |  |  +--rw (ref)
+  |  |  |  +--:(sgpio)
+  |  |  |  |  +--rw sgpio
+  |  |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |  |  |     +--rw port              uint8
+  |  |  |  |     +--rw bit               uint8
+  |  |  |  +--:(gpio)
+  |  |  |     +--rw gpio?     uint32
+  |  |  +--rw direction       gpio_direction
+  |  |  +--rw active_state?   active
+  |  +--rw watchdog
+  |  |  +--rw timeout?   enumeration
+  |  +--rw port_leds
+  |  |  +--rw port_led* [portno]
+  |  |     +--rw portno        uint32
+  |  |     +--rw led_green
+  |  |     |  +--rw (ref)
+  |  |     |  |  +--:(sgpio)
+  |  |     |  |  |  +--rw sgpio
+  |  |     |  |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |     |  |  |     +--rw port              uint8
+  |  |     |  |  |     +--rw bit               uint8
+  |  |     |  |  +--:(gpio)
+  |  |     |  |     +--rw gpio?     uint32
+  |  |     |  +--rw direction       gpio_direction
+  |  |     |  +--rw active_state?   active
+  |  |     +--rw led_second
+  |  |        +--rw (ref)
+  |  |        |  +--:(sgpio)
+  |  |        |  |  +--rw sgpio
+  |  |        |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+  |  |        |  |     +--rw port              uint8
+  |  |        |  |     +--rw bit               uint8
+  |  |        |  +--:(gpio)
+  |  |        |     +--rw gpio?     uint32
+  |  |        +--rw direction       gpio_direction
+  |  |        +--rw active_state?   active
+  |  +--rw bridge
+  |  |  +--rw mux_mode?      port_mux_mode
+  |  |  +--rw target_chip    target_chip_type
+  |  |  +--rw eth_ports
+  |  |     +--rw eth_port* [port_dev]
+  |  |        +--rw port_dev        uint32
+  |  |        +--rw phy_mode        phy_mode
+  |  |        +--rw phy_chip?       int32
+  |  |        +--rw in_band_aneg?   boolean
+  |  |        +--rw bandwidth?      uint32
+  |  |        +--rw phy
+  |  |           +--rw ref_miim_bus    miim_bus
+  |  |           +--rw miim_addr       uint32
+  |  |           +--rw dummy?          boolean
+  |  |           +--rw base_port?      uint32
+  |  |           +--rw fixed_link
+  |  |           |  +--rw speed?   uint32
+  |  |           |  +--rw role?    phy_role
+  |  |           +--rw led* [id]
+  |  |              +--rw id      phy_led_id
+  |  |              +--rw mode    phy_led_mode
+  |  +--rw ptp
+  |     +--ro pins* []
+  |        +--ro pin_ctrl
+  |           +--ro pins*           uint32
+  |           +--ro pin_function    pin_function
+  +--rw capabilities
+  |  +--rw manufacturer          string
+  |  +--rw model                 string
+  |  +--rw l3_count?             uint32
+  |  +--rw ltc_count?            uint32
+  |  +--rw ltc_pin_count?        uint8
+  |  +--rw phy_timestamping?     boolean
+  |  +--rw stream_count?         uint32
+  |  +--rw coap_session_count?   uint32
+  |  +--rw arp_count?            uint32
+  |  +--rw ipv4_route_count?     uint32
+  +--rw factory_default_config?   <anydata>
+  +--rw extmod
+     +--rw text?          binary
+     +--rw data_offset?   uint32
