@@ -970,8 +970,9 @@ called <code>L3V1</code>, and it will assign the <code>ip</code> and <code>prefi
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-console hljs" data-lang="console">$ cat &lt;&lt;-EOF &gt; ipatch-req-set-ip.yaml
-- ? "/ietf-interfaces:interfaces/interface[name='L3V1']"
+- ? "/ietf-interfaces:interfaces/interface"
   : name: "L3V1"
+    type: iana-if-type:l3ipvlan
     ietf-ip:ipv4:
       address:
       - ip: "10.0.0.1"
