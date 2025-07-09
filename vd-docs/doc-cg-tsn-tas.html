@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Time Aware Shaper (TAS) :: VelocityDRIVE-SP Documentation</title>
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="..">VelocityDRIVE-SP Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-redbox.html">RedBox</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-tas.html">TAS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version"></span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">default</a>
+        </li>
+        <li class="version">
+          <a href="2025.03/doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li>TSN</li>
+    <li><a href="doc-cg-tsn-tas.html">TAS</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">default</button>
+  <div class="version-menu">
+    <a class="version is-current" href="doc-cg-tsn-tas.html">default</a>
+    <a class="version" href="2025.03/doc-cg-tsn-tas.html">2025.03</a>
+  </div>
+</div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Time Aware Shaper (TAS)</h1>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Time Aware Shaping (TAS) is implementing the Enhancement for scheduled traffic,
+as described in IEEE 802.1Q section 8.6.8.4 and 8.6.9.
+It can be used for scheduling transmission per queue relative to a known timescale.
+This can be configured per port.</p>
+</div>
+<div class="paragraph">
+<p>As illustrated below:<br>
+A Gate Control List is a list of entries containing Gate Operations per Class.<br>
+Each entry is applying Gate Operations in a defined time interval (I0 - I3) and
+set the gate state for each Class to either Open or Closed.<br>
+The Gate Control List is executed in a cyclic manner and is started at a defined point
+in time.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>                            Gate Control List
+
+Queue   Queue      Queue     +-----------+
+Class 7 Class 6    Class 0   |I0 OOOCCCCC|
++---+   +---+      +---+     +-----------+
++---+   +---+ ---- +---+     |I1 COOCOOOC|
++---+   +---+      +---+     +-----------+
++---+   +---+      +---+     |I2 CCCOOOCO|
++---+   +---+      +---+     +-----------+
++-+-+   +-+-+      +-+-+     |I3 OCOOOOOO|
+  |       |          |       +-----+-----+
++-+--+  +-+--+     +-+--+          |
+|Gate|  |Gate|     |Gate|          |
+| O  +--+ C  +-----+ O  &lt;----------+
++----+  +----+     +----+</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The TAS functionality can be enabled or disabled.<br>
+When enabled it can be configured through the 'Administrative' parameters.<br>
+When all 'Administrative' parameters are configured, it can become a 'Pending' configuration
+by setting the 'config-change' parameter to 'True'. A pending configuration becomes 'Operational'
+when the 'Current Time' (PTP TOD) becomes equal to the configured 'Administrative' parameter 'Base Time'.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_full_gate_parameter_table"><a class="anchor" href="#_the_full_gate_parameter_table"></a>2. The full Gate Parameter Table</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This show a get of the full Gate Parameter Table.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-gate-table" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   ieee802-dot1q-sched-bridge:gate-parameter-table"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-gate-table" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table"
+  : queue-max-sdu-table:
+    - traffic-class: 0
+    - traffic-class: 1
+    - traffic-class: 2
+    - traffic-class: 3
+    - traffic-class: 4
+    - traffic-class: 5
+    - traffic-class: 6
+    - traffic-class: 7
+    oper-gate-states: 255
+    admin-control-list:
+      gate-control-entry: []
+    oper-control-list:
+      gate-control-entry: []
+    admin-cycle-time:
+      numerator: 0
+      denominator: 1
+    oper-cycle-time:
+      numerator: 0
+      denominator: 1
+    admin-cycle-time-extension: 256
+    oper-cycle-time-extension: 256
+    admin-base-time:
+      seconds: '0'
+      nanoseconds: 0
+    oper-base-time:
+      seconds: '0'
+      nanoseconds: 0
+    config-change: false
+    config-change-time:
+      seconds: '0'
+      nanoseconds: 0
+    tick-granularity: 30
+    current-time:
+      seconds: '11'
+      nanoseconds: 369956254
+    config-pending: false
+    config-change-error: '0'
+    supported-list-max: 8
+    supported-cycle-max:
+      numerator: 1000000000
+      denominator: 1000000001
+    supported-interval-max: 4294967295</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_gate_enable"><a class="anchor" href="#_gate_enable"></a>3. Gate Enable</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This will show how to set the Gate Enable to true.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-gate-enable" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/gate-enabled"
+  : true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check that the Gate Enable is actually True.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-gate-enable" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   ieee802-dot1q-sched-bridge:gate-parameter-table/gate-enabled"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-gate-enable" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/gate-enabled"
+  : true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_maximum_sdu_size"><a class="anchor" href="#_maximum_sdu_size"></a>4. Maximum SDU size</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Maximum SDU size is controlling the maximum size of frames that are allowed to be forwarded.
+It also determines the Guard Band time, the transmission is stopped before end of
+a Gate Control List interval.</p>
+</div>
+<div class="paragraph">
+<p>Configure the Maximum SDU size for traffic class 0-3-7 to 128-256-512 Bytes:</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-max-sdu-size-0" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/\
+     queue-max-sdu-table[traffic-class='0']/queue-max-sdu"
+  : 128</code></pre>
+</div>
+</div>
+<div id="cg-ipatch-req-max-sdu-size-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/\
+     queue-max-sdu-table[traffic-class='3']/queue-max-sdu"
+  : 256</code></pre>
+</div>
+</div>
+<div id="cg-ipatch-req-max-sdu-size-7" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/\
+     queue-max-sdu-table[traffic-class='7']/queue-max-sdu"
+  : 512</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Get the Maximum SDU size for all traffic class:
+Note that the value '0' interpreted as the max SDU size supported by the
+underlying MAC.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-max-sdu-size" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   ieee802-dot1q-sched-bridge:gate-parameter-table/queue-max-sdu-table"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-max-sdu-size" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/queue-max-sdu-table"
+  : - traffic-class: 0
+      queue-max-sdu: 128
+    - traffic-class: 1
+      queue-max-sdu: 0
+    - traffic-class: 2
+      queue-max-sdu: 0
+    - traffic-class: 3
+      queue-max-sdu: 256
+    - traffic-class: 4
+      queue-max-sdu: 0
+    - traffic-class: 5
+      queue-max-sdu: 0
+    - traffic-class: 6
+      queue-max-sdu: 0
+    - traffic-class: 7
+      queue-max-sdu: 512</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_administrative_gate_control_list"><a class="anchor" href="#_administrative_gate_control_list"></a>5. Administrative Gate Control List</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Administrative Gate Control List is the Control List that can be operational after
+Config Change set to true.<br></p>
+</div>
+<div class="paragraph">
+<p>Related to this is:
+The Administrative Base Time<br>
+The Administrative Cycle Time<br>
+The Administrative Cycle Time Extension<br>
+The Administrative Gate States<br></p>
+</div>
+<div class="sect2">
+<h3 id="_gate_control_list"><a class="anchor" href="#_gate_control_list"></a>5.1. Gate Control List</h3>
+<div class="paragraph">
+<p>Configure the Administrative Gate Control List to have three entries:<br>
+Index 1: Open traffic-class 0 in 10 ms
+Index 2: Open traffic-class 3 in 40 ms
+Index 3: Open traffic-class 7 in 90 ms</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-admin-control-list-0" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/admin-control-list/\
+     gate-control-entry"
+  : index: 1
+    operation-name: ieee802-dot1q-sched:set-gate-states
+    time-interval-value: 10000000
+    gate-states-value: 1</code></pre>
+</div>
+</div>
+<div id="cg-ipatch-req-admin-control-list-3" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/admin-control-list/\
+     gate-control-entry"
+  : index: 2
+    operation-name: ieee802-dot1q-sched:set-gate-states
+    time-interval-value: 40000000
+    gate-states-value: 8</code></pre>
+</div>
+</div>
+<div id="cg-ipatch-req-admin-control-list-7" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/admin-control-list/\
+     gate-control-entry"
+  : index: 3
+    operation-name: ieee802-dot1q-sched:set-gate-states
+    time-interval-value: 90000000
+    gate-states-value: 128</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_base_time"><a class="anchor" href="#_base_time"></a>5.2. Base Time</h3>
+<div class="paragraph">
+<p>The point in time where the pending Control List becomes Operational.</p>
+</div>
+<div class="paragraph">
+<p>Configure the Administrative Base Time to start the list in 20 sec 0 nsec:<br></p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-admin-base-time" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/admin-base-time/\
+     seconds"
+  : '20'
+
+- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/admin-base-time/\
+     nanoseconds"
+  : 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cycle_time"><a class="anchor" href="#_cycle_time"></a>5.3. Cycle Time</h3>
+<div class="paragraph">
+<p>The length in time of the Control List.<br>
+Note that this has to be at least the sum of the time interval in the Control List.<br></p>
+</div>
+<div class="paragraph">
+<p>Configure the Administrative Cycle Time to 140 ms:<br></p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-admin-cycle-time" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/admin-cycle-time/\
+     numerator"
+  : 140000000
+
+- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/admin-cycle-time/\
+     denominator"
+  : 1000000000</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cycle_time_extension"><a class="anchor" href="#_cycle_time_extension"></a>5.4. Cycle Time Extension</h3>
+<div class="paragraph">
+<p>This is the time the running Control List can be extended when a new Control List becomes operational.<br>
+If the Base Time of the new Control List is configured so it cannot be within this time,
+the running list will be truncated.</p>
+</div>
+<div class="paragraph">
+<p>Configure the Administrative Cycle Time extension to 10 ms:<br></p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-admin-cycle-time-ext" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/\
+     admin-cycle-time-extension"
+  : 10000000</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gate_states"><a class="anchor" href="#_gate_states"></a>5.5. Gate States</h3>
+<div class="paragraph">
+<p>This is the Gate State for all traffic classes that is configured when no Control List is active.</p>
+</div>
+<div class="paragraph">
+<p>Configure the Administrative Gate States to: <br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Open   traffic-class 0
+Closed traffic-class 1
+Closed traffic-class 2
+Open   traffic-class 3
+Closed traffic-class 4
+Closed traffic-class 5
+Closed traffic-class 6
+Open   traffic-class 7</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The least sinificat bit is traffic-class 0.<br>
+This is represented by the hexadecimal value 0x85 and the same as decimal 133.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-admin-gate-states" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/admin-gate-states"
+  : 133</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Administrative Gate Control List is the Control List that can be operational after
+Config Change set to true.<br></p>
+</div>
+<div class="paragraph">
+<p>Related to this is:
+The Administrative Base Time<br>
+The Administrative Cycle Time<br>
+The Administrative Cycle Time Extension<br>
+The Administrative Gate States<br></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_config_change"><a class="anchor" href="#_config_change"></a>6. Config Change</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To make a new Control List running the following has to be done.<br></p>
+</div>
+<div class="paragraph">
+<p>Set the Gate Enabled to enable the TAS functionality:<br>
+- gate-enabled</p>
+</div>
+<div class="paragraph">
+<p>Configuration of required Control List information in the Gate Parameter Table:<br>
+Let the admin-base-time be in the future.<br></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>- queue-max-sdu-table
+- admin-gate-states
+- admin-control-list
+- admin-cycle-time
+- admin-cycle-time-extension
+- admin-base-time</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Set the Config-Change to move the Control List to Pending state awaiting the Base Time to occur:<br>
+- config-change</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-config-change" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/config-change"
+  : true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Read back the status information showing that the Control List is pending:<br>
+- config-pending</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-status-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   ieee802-dot1q-sched-bridge:gate-parameter-table/config-pending"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-status-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/config-pending"
+  : true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Read back the status information showing what time the pending Control List becomes operational:<br>
+- config-change-time</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-status-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   ieee802-dot1q-sched-bridge:gate-parameter-table/config-change-time"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-status-2" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table/config-change-time"
+  : seconds: '20'
+    nanoseconds: 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the Config Change Time occur, read back the Gate Parameter Table to see the
+new Operational Control List information.<br></p>
+</div>
+<div class="paragraph">
+<p>Observe that the Config Pending has cleared.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operational_gate_control_list"><a class="anchor" href="#_operational_gate_control_list"></a>7. Operational Gate Control List</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When a Control List becomes operational the Operational Gate Control List information is
+available in the Gate Parameter Table.</p>
+</div>
+<div class="paragraph">
+<p>Related to this is:<br>
+The Operational Base Time<br>
+The Operational Cycle Time<br>
+The Operational Cycle Time Extension<br>
+The Operational Gate States<br></p>
+</div>
+<div class="paragraph">
+<p>All leafs containing Operational information is named starting with 'oper-'.<br></p>
+</div>
+<div class="paragraph">
+<p>This show a get of the full Gate Parameter Table.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-gate-table-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   ieee802-dot1q-bridge:bridge-port/\
+   ieee802-dot1q-sched-bridge:gate-parameter-table"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-gate-table-1" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/ieee802-dot1q-bridge:bridge-port/\
+     ieee802-dot1q-sched-bridge:gate-parameter-table"
+  : queue-max-sdu-table:
+    - traffic-class: 0
+      queue-max-sdu: 128
+    - traffic-class: 1
+    - traffic-class: 2
+    - traffic-class: 3
+      queue-max-sdu: 256
+    - traffic-class: 4
+    - traffic-class: 5
+    - traffic-class: 6
+    - traffic-class: 7
+      queue-max-sdu: 512
+    gate-enabled: true
+    admin-gate-states: 133
+    oper-gate-states: 128
+    admin-control-list:
+      gate-control-entry:
+      - index: 1
+        operation-name: ieee802-dot1q-sched:set-gate-states
+        time-interval-value: 10000000
+        gate-states-value: 1
+      - index: 2
+        operation-name: ieee802-dot1q-sched:set-gate-states
+        time-interval-value: 40000000
+        gate-states-value: 8
+      - index: 3
+        operation-name: ieee802-dot1q-sched:set-gate-states
+        time-interval-value: 90000000
+        gate-states-value: 128
+    oper-control-list:
+      gate-control-entry:
+      - index: 1
+        operation-name: ieee802-dot1q-sched:set-gate-states
+        time-interval-value: 10000000
+        gate-states-value: 1
+      - index: 2
+        operation-name: ieee802-dot1q-sched:set-gate-states
+        time-interval-value: 40000000
+        gate-states-value: 8
+      - index: 3
+        operation-name: ieee802-dot1q-sched:set-gate-states
+        time-interval-value: 90000000
+        gate-states-value: 128
+    admin-cycle-time:
+      numerator: 140000000
+      denominator: 1000000000
+    oper-cycle-time:
+      numerator: 140000000
+      denominator: 1000000000
+    admin-cycle-time-extension: 10000000
+    oper-cycle-time-extension: 10000000
+    admin-base-time:
+      seconds: '20'
+      nanoseconds: 0
+    oper-base-time:
+      seconds: '20'
+      nanoseconds: 0
+    config-change: true
+    config-change-time:
+      seconds: '20'
+      nanoseconds: 0
+    tick-granularity: 30
+    current-time:
+      seconds: '23'
+      nanoseconds: 835093398
+    config-pending: false
+    config-change-error: '0'
+    supported-list-max: 8
+    supported-cycle-max:
+      numerator: 1000000000
+      denominator: 1000000001
+    supported-interval-max: 4294967295</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>
