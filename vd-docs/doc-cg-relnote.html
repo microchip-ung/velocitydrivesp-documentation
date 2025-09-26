@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>VelocityDRIVE-SP-2025.06 Release Notes :: VelocityDRIVE-SP Documentation</title>
-    <meta name="generator" content="Antora 3.1.9">
+    <title>VelocityDRIVE-SP-2025.09 Release Notes :: VelocityDRIVE™ Software Package Documentation</title>
+    <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="..">VelocityDRIVE-SP Documentation</a>
+      <a class="navbar-item" href="..">VelocityDRIVE™ Software Package Documentation</a>
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
           <input id="search-input" type="text" placeholder="Search the docs">
@@ -265,6 +265,9 @@
           <a href="doc-intro.html">default</a>
         </li>
         <li class="version">
+          <a href="2025.06/doc-intro.html">2025.06</a>
+        </li>
+        <li class="version">
           <a href="2025.03/doc-intro.html">2025.03</a>
         </li>
       </ul>
@@ -288,6 +291,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">default</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-relnote.html">default</a>
+    <a class="version" href="2025.06/doc-cg-relnote.html">2025.06</a>
     <a class="version" href="2025.03/doc-cg-relnote.html">2025.03</a>
   </div>
 </div>
@@ -297,107 +301,68 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">VelocityDRIVE-SP-2025.06 Release Notes</h1>
+<h1 class="page">VelocityDRIVE-SP-2025.09 Release Notes</h1>
 <div class="sect1">
-<h2 id="_2025_06"><a class="anchor" href="#_2025_06"></a>1. 2025.06</h2>
+<h2 id="_2025_09"><a class="anchor" href="#_2025_09"></a>1. 2025.09</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre>Version:            2025.06
-Previous Version:   2025.03-1   (yyyy.mm-cnt)
-Release date:       2025-07-08  (yyyy-mm-dd)
+<pre>Version:            2025.09
+Previous Version:   2025.06     (yyyy.mm-cnt)
+Release date:       2025-09-26  (yyyy-mm-dd)
 Type:               Roadmap release
-YANG Catalog SHA:   5151bae07677b1501f9cf52637f2a38f</pre>
+YANG Catalog SHA:   70a9c09e5a0a0382f5de262c9db2db4d</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_management_features"><a class="anchor" href="#_new_management_features"></a>1.1. New Management Features</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>HSR/PRP (IEC-62439-3): A new <a href="_attachments/yang-catalog.html#mchp-velocitysp-redbox" class="xref attachment">YANG</a> and application module to add RedBox
-support has been added (<a href="doc-cg-l2-redbox.html" class="xref page">details here</a>).</p>
-</li>
-<li>
-<p>802.1AS: Implement more YANG leaves to comply with AVNU and/or Automotive test
-suites.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>From <code>ieee802-dot1as-ptp</code> YANG, the
-<a href="_attachments/yang-catalog.html#/ptp/instances/instance/ports/port/port-ds/use-mgt-log-gptp-cap-interval" class="xref attachment">use-mgt-log-gptp-cap-interval</a> /
-<a href="_attachments/yang-catalog.html#/ptp/instances/instance/ports/port/port-ds/mgt-log-gptp-cap-interval" class="xref attachment">mgt-log-gptp-cap-interval</a>
-leaves are implemented.</p>
-</li>
-<li>
-<p><code>mchp-velocitysp-ptp</code> has been extended with two new leaves (
-<a href="_attachments/yang-catalog.html#/ptp/instances/instance/automotive/oper-log-pdelay-req-interval" class="xref attachment">oper-log-pdelay-req-interval</a>
-and
-<a href="_attachments/yang-catalog.html#/ptp/instances/instance/automotive/oper-log-sync-interval" class="xref attachment">oper-log-sync-interval</a>)
-to control the
-peer-delay and sync interval at stable state.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>DTLS settings in the CoAP server are now configured for MUP1 and IP
-individually (<a href="doc-cg-mgmt-coap.html" class="xref page">details here</a>).</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_board_configuration_features"><a class="anchor" href="#_board_configuration_features"></a>1.2. Board Configuration Features</h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The EXTMOD sub-system has been extended to allow implementation of an external PHY
-driver. The basic driver model is described in
-<a href="doc-tailor.html#extmod-phy" class="xref page">this section</a>. To activate the EXTMOD driver
-for a given port, use the <code>extmod</code> bool in the <code>bridge</code> section as described
-in <a href="doc-tailor-boardconf.html#bridge" class="xref page">bridge</a> section.</p>
-</li>
-<li>
-<p>The board-config YANG has been extended with an <code>extmod</code> driver which can be
-used to assign GPIOs to be controlled by the EXTMOD code. See this
-<a href="doc-tailor-boardconf.html#extmod-drv" class="xref page">section</a> for more details.</p>
-</li>
-<li>
-<p>The board-config YANG can be used to configure per-interface 1588/PTP
-time-stamping calibration profiles. This allows the board vendor to provide base
-calibration numbers to get better 1588/PTP results without requiring users
-to set the
-<a href="_attachments/yang-catalog.html#/ptp/instances/instance/ports/port/timestamp-correction-port-ds/egress-latency" class="xref attachment">egress-latency</a>
-and
-<a href="_attachments/yang-catalog.html#/ptp/instances/instance/ports/port/timestamp-correction-port-ds/ingress-latency" class="xref attachment">ingress-latency</a>
-leaves from the <code>ieee1588-ptp</code> YANG.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Be aware that Microchip EVBs are now pre-calibrated using this facility. The
-calibration process is still not 100% complete, and further tuning may occur
-in future releases. This also means that users who have been setting
-<a href="_attachments/yang-catalog.html#/ptp/instances/instance/ports/port/timestamp-correction-port-ds/egress-latency" class="xref attachment">egress-latency</a>
-/
-<a href="_attachments/yang-catalog.html#/ptp/instances/instance/ports/port/timestamp-correction-port-ds/ingress-latency" class="xref attachment">ingress-latency</a>
-manually will have to clear these numbers and re-do the calibration. The
-<a href="doc-cg-tsn-1588.html#ptp-calibration" class="xref page">section</a> can be referenced for
-instructions on how to do this calibration.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_new_images"><a class="anchor" href="#_new_images"></a>1.3. New images</h3>
+<h3 id="_new_ptp_instance_types_and_features"><a class="anchor" href="#_new_ptp_instance_types_and_features"></a>1.1. New PTP Instance types and features</h3>
 <div class="paragraph">
-<p>This release introduces a new image variant where DTLS is enabled by default
-(also on MUP1). All images are offered in a variant with and without DTLS
-enabled by default. See <a href="doc-evb-lan969x-fw-files.html" class="xref page">LAN969x Firmware File Types</a> and
-<a href="doc-evb-lan966x-fw-files.html" class="xref page">LAN966x Firmware File Types</a> for more details.</p>
+<p>The PTP implementation has been updated with the following new features:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Peer to peer (P2P) Transparent clock (TC) supporting 1-step and 2-step. See
+<a href="doc-cg-tsn-1588.html#ptp-p2p-tc-2-step" class="xref page">this section</a> for more details on
+how to configure it.</p>
+</li>
+<li>
+<p>End to end (E2E) Transparent clock (TC) supporting 1-step and 2-step. See
+<a href="doc-cg-tsn-1588.html#ptp-e2e-tc-2-step" class="xref page">this section</a> for more details on
+how to configure it.</p>
+</li>
+<li>
+<p>Support for PTP over a PRP interface. The support here is limited to 3-way
+boundary clock (TWBC). No configuration is needed. If a redbox is enabled on a
+given interface then this mode is activated.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_management_attributes"><a class="anchor" href="#_new_management_attributes"></a>1.2. New Management Attributes</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>PTP: A new YANG leaf:
+<a href="_attachments/yang-catalog.html#/ptp/instances/instance/ports/port/timestamp-correction-port-ds/disable-hw-calibration" class="xref attachment">disable-hw-calibration</a>,
+has been added. This can be used to disable calibration data from the
+board-configuration files. This is necessary if re-calibration is required
+the board. See <a href="doc-cg-tsn-1588.html#ptp-calibration" class="xref page">this section</a> for more details on calibration.</p>
+</li>
+<li>
+<p>A new YANG leaf called
+<a href="_attachments/yang-catalog.html#/interfaces/interface/eth-qos/config/traffic-class-shapers/type/single-leaky-bucket/single-leaky-bucket/mode" class="xref attachment">mode</a>,
+has been added in the single-leaky-bucket container. This can be used to
+configure whether the shaper should use line rate or data rate.</p>
+</li>
+<li>
+<p>A new YANG leaf called
+<a href="_attachments/yang-catalog.html#/interfaces/interface/eth-qos/config/traffic-class-shapers/type/credit-based/credit-based/mode" class="xref attachment">mode</a>
+has been added in the credit-based container. This can be used to
+configure whether the shaper should use line rate or data rate.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>

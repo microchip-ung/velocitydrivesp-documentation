@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>PTP/IEEE1588 :: VelocityDRIVE-SP Documentation</title>
-    <meta name="generator" content="Antora 3.1.9">
+    <title>PTP/IEEE1588 :: VelocityDRIVE™ Software Package Documentation</title>
+    <meta name="generator" content="Antora 3.1.10">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -12,7 +12,7 @@
 <header class="header">
   <nav class="navbar">
     <div class="navbar-brand">
-      <a class="navbar-item" href="..">VelocityDRIVE-SP Documentation</a>
+      <a class="navbar-item" href="..">VelocityDRIVE™ Software Package Documentation</a>
       <div class="navbar-item search hide-for-print">
         <div id="search-field" class="field">
           <input id="search-input" type="text" placeholder="Search the docs">
@@ -265,6 +265,9 @@
           <a href="doc-intro.html">default</a>
         </li>
         <li class="version">
+          <a href="2025.06/doc-intro.html">2025.06</a>
+        </li>
+        <li class="version">
           <a href="2025.03/doc-intro.html">2025.03</a>
         </li>
       </ul>
@@ -290,6 +293,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">default</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-tsn-1588.html">default</a>
+    <a class="version" href="2025.06/doc-cg-tsn-1588.html">2025.06</a>
     <a class="version" href="2025.03/doc-cg-tsn-1588.html">2025.03</a>
   </div>
 </div>
@@ -746,7 +750,7 @@ VLAN tag.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ptp-tc"><a class="anchor" href="#ptp-tc"></a>12. Enable transparent clock with 1-step transmission</h2>
+<h2 id="ptp-tc"><a class="anchor" href="#ptp-tc"></a>12. Enable P2P transparent clock with 1-step transmission</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There are configuration where is required to set the HW as transparent clock
@@ -776,7 +780,61 @@ using 1-step timestamping. The only supported transparent clock is P2P-TC.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ptp-calibration"><a class="anchor" href="#ptp-calibration"></a>13. How to do the calibration of the device</h2>
+<h2 id="ptp-p2p-tc-2-step"><a class="anchor" href="#ptp-p2p-tc-2-step"></a>13. Enable P2P transparent clock with 2-step transmission</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are configuration where is required to set the HW as transparent clock
+using 2-step timestamping. It is required for non of the ports to enable
+'ieee802-dot1as-ptp:use-mgt-one-step-tx-oper' or
+'ieee802-dot1as-ptp:mgt-one-step-tx-oper'. If any of them are enabled then the
+instance will behave as 1-step timestamping.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-2-step-transparent-clock-p2p" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    default-ds:
+      instance-type: p2p-tc
+    ports:
+      port:
+      - port-index: 25
+      - port-index: 26</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ptp-e2e-tc-2-step"><a class="anchor" href="#ptp-e2e-tc-2-step"></a>14. Enable E2E transparent clock with 2-step transmission</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are configuration where is required to set the HW as transparent clock
+using 2-step timestamping. It is required for non of the ports to enable
+'ieee802-dot1as-ptp:use-mgt-one-step-tx-oper' or
+'ieee802-dot1as-ptp:mgt-one-step-tx-oper'. If any of them are enabled then the
+instance will behave as 1-step timestamping.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ptp-2-step-transparent-clock-e2e" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    default-ds:
+      instance-type: e2e-tc
+    ports:
+      port:
+      - port-index: 25
+      - port-index: 26</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ptp-calibration"><a class="anchor" href="#ptp-calibration"></a>15. How to do the calibration of the device</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To be able to precisely synchronize the device is required to calculate the
