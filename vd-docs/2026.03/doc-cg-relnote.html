@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VelocityDRIVE-SP-2026.03 Release Notes :: VelocityDRIVE™ Software Package Documentation</title>
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE™ Software Package Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2026.03">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-redbox.html">RedBox</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-tas.html">TAS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mup1.html">MUP1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev22n59a.html">EVB-LAN9692-Hallberg-POC (EV22N59A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-regaccess.html">Register Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-serdes.html">SerDes tuning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2026.03</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">2026.03</a>
+        </li>
+        <li class="version">
+          <a href="../2025.12/doc-intro.html">2025.12</a>
+        </li>
+        <li class="version">
+          <a href="../2025.09/doc-intro.html">2025.09</a>
+        </li>
+        <li class="version">
+          <a href="../2025.06/doc-intro.html">2025.06</a>
+        </li>
+        <li class="version">
+          <a href="../2025.03/doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg-relnote.html">Release note</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2026.03</button>
+  <div class="version-menu">
+    <a class="version is-current" href="doc-cg-relnote.html">2026.03</a>
+    <a class="version" href="../2025.12/doc-cg-relnote.html">2025.12</a>
+    <a class="version" href="../2025.09/doc-cg-relnote.html">2025.09</a>
+    <a class="version" href="../2025.06/doc-cg-relnote.html">2025.06</a>
+    <a class="version" href="../2025.03/doc-cg-relnote.html">2025.03</a>
+  </div>
+</div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">VelocityDRIVE-SP-2026.03 Release Notes</h1>
+<div class="sect1">
+<h2 id="_2026_03"><a class="anchor" href="#_2026_03"></a>1. 2026.03</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>Version:            2026.03
+Previous Version:   2025.12     (yyyy.mm-cnt)
+Release date:       2026-03-27  (yyyy-mm-dd)
+Type:               Roadmap release
+YANG Catalog SHA:   e6311dd5be50af0f0286fd3a6fb218a1</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_serdes_tuning_board_yang_and_runtime_actions_added"><a class="anchor" href="#_serdes_tuning_board_yang_and_runtime_actions_added"></a>2. SerDes tuning: Board YANG and runtime actions added</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Support for configuring and tuning SerDes (Serializer/Deserializer) parameters
+has been added. This allows optimization of signal quality for different board
+designs.</p>
+</div>
+<div class="paragraph">
+<p>Two mechanisms are available:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Runtime tuning actions via YANG (TX equalizer, RX CTLE, RX DFE, polarity).
+This is intended to be used during the board development phase to identify
+good parameters.</p>
+</li>
+<li>
+<p>Once a set of good parameters has been identified, then they need to be
+persisted in the board-config, which is applied during boot.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-dbg-serdes.html" class="xref page">SerDes Tuning guide</a> for details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dtls_access_control_changed_from_per_key_to_per_user"><a class="anchor" href="#_dtls_access_control_changed_from_per_key_to_per_user"></a>3. DTLS: Access control changed from per-key to per-user</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The CoAP access control rights (cc-rights, startup-config-rights, fw-rights,
+etc.) have been moved from the individual key entry to the user entry. This
+means all keys belonging to a given user share the same access rights, which
+are now configured once at the user level.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mgmt-coap.html#coap-user-access-control" class="xref page">this section</a> of the
+CoAP configuration guide for details.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this change is to make it simpler to replace an SSH key (first
+add a new key, confirm everything is working, then delete the old key).</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This is a non-backwards-compatible change. Users who have already
+deployed DTLS will need to re-configure the user settings after this.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acl_redirect_forwarding_action_added"><a class="anchor" href="#_acl_redirect_forwarding_action_added"></a>4. ACL: Redirect forwarding action added</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A new forwarding action <code>redirect</code> has been added to the ACL rule configuration.
+Unlike the <code>filtering</code> action (which restricts the normal forwarding port mask),
+<code>redirect</code> replaces the forwarding port mask entirely with the configured
+<code>egress-port-list</code>.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-l2-acl.html#acl-redirect" class="xref page">this section</a> of the ACL
+configuration guide for details and an example.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mup1_optional_crc32_checksum_support_added"><a class="anchor" href="#_mup1_optional_crc32_checksum_support_added"></a>5. MUP1: Optional CRC32 checksum support added</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The MUP1 protocol now supports a configurable checksum type. In addition to
+the default 16-bit Internet checksum (RFC 1071), CRC32 (Ethernet polynomial)
+can now be selected. Both the host and device must use the same checksum type.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mup1.html#mup1-checksum" class="xref page">this section</a> of the MUP1
+configuration guide for details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mup1_ability_to_disable_individual_features_added"><a class="anchor" href="#_mup1_ability_to_disable_individual_features_added"></a>6. MUP1: Ability to disable individual features added</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Individual MUP1 protocol features (announce, coap, dtls, ping, trace) can now
+be selectively disabled at runtime without rebooting. This is useful for
+restricting the communication surface exposed over the serial management
+interface.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mup1.html#mup1-feature-disable" class="xref page">this section</a> of the MUP1
+configuration guide for details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_doc_list_of_included_phy_and_switch_drivers_updated"><a class="anchor" href="#_doc_list_of_included_phy_and_switch_drivers_updated"></a>7. DOC: List of included PHY and Switch drivers updated</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="doc-tailor-sw-variants.html#phy-drivers-included" class="xref page">list of PHY drivers</a>
+included in the SW variants has been updated to reflect the current set of
+supported PHYs.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The actual list of included PHY drivers has not changed since the last
+release, but the documentation was accidentally not updated until now.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_802_1q_bridge_vlanvlan_list_with_name_exposed_via_coreconf"><a class="anchor" href="#_802_1q_bridge_vlanvlan_list_with_name_exposed_via_coreconf"></a>8. 802.1Q: bridge-vlan/vlan list with name exposed via CORECONF</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The
+<a href="_attachments/yang-catalog.html#/bridges/bridge/component/bridge-vlan/vlan" class="xref attachment">bridge-vlan/vlan</a>
+list from <code>ieee802-dot1q-bridge</code> has been included and is now accessible via
+CORECONF. Each entry is keyed by
+<a href="_attachments/yang-catalog.html#/bridges/bridge/component/bridge-vlan/vlan/vid" class="xref attachment">vid</a>
+and has an optional
+<a href="_attachments/yang-catalog.html#/bridges/bridge/component/bridge-vlan/vlan/name" class="xref attachment">name</a>
+leaf. Currently the list can only be used to associate a name with a VLAN, and
+it is an optional setting (VLAN registration can still be used without this).</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
