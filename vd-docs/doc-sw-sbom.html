@@ -27,7 +27,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="vd-docs" data-version="">
+<div class="nav-container" data-component="vd-docs" data-version="latest">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -121,6 +121,9 @@
     <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mup1.html">MUP1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -181,6 +184,9 @@
     <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev22n59a.html">EVB-LAN9692-Hallberg-POC (EV22N59A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -217,6 +223,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-regaccess.html">Register Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-serdes.html">SerDes tuning</a>
   </li>
 </ul>
   </li>
@@ -255,14 +267,23 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Documentation</span>
-    <span class="version"></span>
+    <span class="version">latest</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <div class="title"><a href="doc-intro.html">Documentation</a></div>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="doc-intro.html">default</a>
+          <a href="doc-intro.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="2026.03/doc-intro.html">2026.03</a>
+        </li>
+        <li class="version">
+          <a href="2025.12/doc-intro.html">2025.12</a>
+        </li>
+        <li class="version">
+          <a href="2025.09/doc-intro.html">2025.09</a>
         </li>
         <li class="version">
           <a href="2025.06/doc-intro.html">2025.06</a>
@@ -289,9 +310,12 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">default</button>
+  <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
-    <a class="version is-current" href="doc-sw-sbom.html">default</a>
+    <a class="version is-current" href="doc-sw-sbom.html">latest</a>
+    <a class="version" href="2026.03/doc-sw-sbom.html">2026.03</a>
+    <a class="version" href="2025.12/doc-sw-sbom.html">2025.12</a>
+    <a class="version" href="2025.09/doc-sw-sbom.html">2025.09</a>
     <a class="version" href="2025.06/doc-sw-sbom.html">2025.06</a>
     <a class="version" href="2025.03/doc-sw-sbom.html">2025.03</a>
   </div>
@@ -340,7 +364,7 @@
 <p>Embedded components:</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="#clang_rt.builtins-arm">clang_rt.builtins-arm</a>, <a href="#freertos">freertos</a>, <a href="#lan966x_lm_static">lan966x_lm_static</a>, <a href="#lm_arm_optimized_routines">lm_arm_optimized_routines</a>, <a href="#lm_utils">lm_utils</a>, <a href="#mepa_velocitysp_lan966x">mepa_velocitysp_lan966x</a>, <a href="#printf">printf</a>, <a href="#tfa_libc_hdrs">tfa_libc_hdrs</a>, <a href="#tinycbor">tinycbor</a>, <a href="#tinymt32">tinymt32</a></p>
+<p><a href="#clang_rt.builtins-arm">clang_rt.builtins-arm</a>, <a href="#freertos">freertos</a>, <a href="#lan966x_lm_static">lan966x_lm_static</a>, <a href="#lm_arm_optimized_routines">lm_arm_optimized_routines</a>, <a href="#lm_utils">lm_utils</a>, <a href="#lm_utils_cbor">lm_utils_cbor</a>, <a href="#mepa_velocitysp_lan966x">mepa_velocitysp_lan966x</a>, <a href="#printf">printf</a>, <a href="#tfa_libc_hdrs">tfa_libc_hdrs</a>, <a href="#tinymt32">tinymt32</a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -413,7 +437,7 @@
 <p>Embedded components:</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="#freertos">freertos</a>, <a href="#lan969x_lm_static">lan969x_lm_static</a>, <a href="#lm_arm_optimized_routines">lm_arm_optimized_routines</a>, <a href="#lm_utils">lm_utils</a>, <a href="#mepa_velocitysp_lan969x">mepa_velocitysp_lan969x</a>, <a href="#printf">printf</a>, <a href="#tfa_libc_hdrs">tfa_libc_hdrs</a>, <a href="#tinycbor">tinycbor</a>, <a href="#tinymt32">tinymt32</a></p>
+<p><a href="#freertos">freertos</a>, <a href="#lan969x_lm_static">lan969x_lm_static</a>, <a href="#lm_arm_optimized_routines">lm_arm_optimized_routines</a>, <a href="#lm_utils">lm_utils</a>, <a href="#lm_utils_cbor">lm_utils_cbor</a>, <a href="#mepa_velocitysp_lan969x">mepa_velocitysp_lan969x</a>, <a href="#printf">printf</a>, <a href="#tfa_libc_hdrs">tfa_libc_hdrs</a>, <a href="#tinymt32">tinymt32</a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -486,7 +510,7 @@
 <p>Embedded components:</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="#freertos">freertos</a>, <a href="#lan969x_lm_static">lan969x_lm_static</a>, <a href="#lm_arm_optimized_routines">lm_arm_optimized_routines</a>, <a href="#lm_utils">lm_utils</a>, <a href="#mepa_velocitysp_lan969x_auto">mepa_velocitysp_lan969x_auto</a>, <a href="#printf">printf</a>, <a href="#tfa_libc_hdrs">tfa_libc_hdrs</a>, <a href="#tinycbor">tinycbor</a>, <a href="#tinymt32">tinymt32</a></p>
+<p><a href="#freertos">freertos</a>, <a href="#lan969x_lm_static">lan969x_lm_static</a>, <a href="#lm_arm_optimized_routines">lm_arm_optimized_routines</a>, <a href="#lm_utils">lm_utils</a>, <a href="#lm_utils_cbor">lm_utils_cbor</a>, <a href="#mepa_velocitysp_lan969x_auto">mepa_velocitysp_lan969x_auto</a>, <a href="#printf">printf</a>, <a href="#tfa_libc_hdrs">tfa_libc_hdrs</a>, <a href="#tinymt32">tinymt32</a></p>
 </div></div></td>
 </tr>
 <tr>
@@ -538,72 +562,7 @@
 <h2 id="_embedded_sw_components"><a class="anchor" href="#_embedded_sw_components"></a>2. Embedded SW components</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="tinycbor"><a class="anchor" href="#tinycbor"></a>2.1. tinycbor</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 80%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Field</th>
-<th class="tableblock halign-left valign-top">Data</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Name:</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="#tinycbor">tinycbor</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Source:</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="https://github.com/intel/tinycbor/releases/tag/v0.6.0" class="bare">https://github.com/intel/tinycbor/releases/tag/v0.6.0</a></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Version:</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>v0.6.0</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Description:</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The TinyCBOR library is a small CBOR encoder and decoder library.</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>License:</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>MIT</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>License file:</p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><a href="_attachments/license-6c1ac30774dd6476b42b5b020cd2aa5f.txt" class="xref attachment">license-6c1ac30774dd6476b42b5b020cd2aa5f.txt</a></p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="tinymt32"><a class="anchor" href="#tinymt32"></a>2.2. tinymt32</h3>
+<h3 id="tinymt32"><a class="anchor" href="#tinymt32"></a>2.1. tinymt32</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -668,7 +627,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="printf"><a class="anchor" href="#printf"></a>2.3. printf</h3>
+<h3 id="printf"><a class="anchor" href="#printf"></a>2.2. printf</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -733,7 +692,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="lm_utils"><a class="anchor" href="#lm_utils"></a>2.4. lm_utils</h3>
+<h3 id="lm_utils"><a class="anchor" href="#lm_utils"></a>2.3. lm_utils</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -798,7 +757,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="mepa_velocitysp_lan966x"><a class="anchor" href="#mepa_velocitysp_lan966x"></a>2.5. mepa_velocitysp_lan966x</h3>
+<h3 id="mepa_velocitysp_lan966x"><a class="anchor" href="#mepa_velocitysp_lan966x"></a>2.4. mepa_velocitysp_lan966x</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -863,7 +822,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="lan966x_lm_static"><a class="anchor" href="#lan966x_lm_static"></a>2.6. lan966x_lm_static</h3>
+<h3 id="lan966x_lm_static"><a class="anchor" href="#lan966x_lm_static"></a>2.5. lan966x_lm_static</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -928,7 +887,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="clang_rt.builtins-arm"><a class="anchor" href="#clang_rt.builtins-arm"></a>2.7. clang_rt.builtins-arm</h3>
+<h3 id="clang_rt.builtins-arm"><a class="anchor" href="#clang_rt.builtins-arm"></a>2.6. clang_rt.builtins-arm</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -993,7 +952,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="mepa_velocitysp_lan969x"><a class="anchor" href="#mepa_velocitysp_lan969x"></a>2.8. mepa_velocitysp_lan969x</h3>
+<h3 id="mepa_velocitysp_lan969x"><a class="anchor" href="#mepa_velocitysp_lan969x"></a>2.7. mepa_velocitysp_lan969x</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1058,7 +1017,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="lan969x_lm_static"><a class="anchor" href="#lan969x_lm_static"></a>2.9. lan969x_lm_static</h3>
+<h3 id="lan969x_lm_static"><a class="anchor" href="#lan969x_lm_static"></a>2.8. lan969x_lm_static</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1123,7 +1082,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="mepa_velocitysp_lan969x_auto"><a class="anchor" href="#mepa_velocitysp_lan969x_auto"></a>2.10. mepa_velocitysp_lan969x_auto</h3>
+<h3 id="mepa_velocitysp_lan969x_auto"><a class="anchor" href="#mepa_velocitysp_lan969x_auto"></a>2.9. mepa_velocitysp_lan969x_auto</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1188,7 +1147,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="freertos"><a class="anchor" href="#freertos"></a>2.11. freertos</h3>
+<h3 id="freertos"><a class="anchor" href="#freertos"></a>2.10. freertos</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1253,7 +1212,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="tfa_libc_hdrs"><a class="anchor" href="#tfa_libc_hdrs"></a>2.12. tfa_libc_hdrs</h3>
+<h3 id="tfa_libc_hdrs"><a class="anchor" href="#tfa_libc_hdrs"></a>2.11. tfa_libc_hdrs</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1318,7 +1277,7 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="lm_arm_optimized_routines"><a class="anchor" href="#lm_arm_optimized_routines"></a>2.13. lm_arm_optimized_routines</h3>
+<h3 id="lm_arm_optimized_routines"><a class="anchor" href="#lm_arm_optimized_routines"></a>2.12. lm_arm_optimized_routines</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1377,6 +1336,73 @@
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><a href="_attachments/license-a14f9a60ce515276faa91f0349a47d81.txt" class="xref attachment">license-a14f9a60ce515276faa91f0349a47d81.txt</a></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="lm_utils_cbor"><a class="anchor" href="#lm_utils_cbor"></a>2.13. lm_utils_cbor</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Name:</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="#lm_utils_cbor">lm_utils_cbor</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Source:</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="https://github.com/intel/tinycbor" class="bare">https://github.com/intel/tinycbor</a></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Version:</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>0.6</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Description:</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A MISRA-C:2023 compliant fork of TinyCBOR that uses the lm_utils library
+instead of libc. Notice, this is a one-time import, we are not following the
+upstream repository, but are maintaining this fork instead.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>License:</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>MIT</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>License file:</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><a href="_attachments/license-6c1ac30774dd6476b42b5b020cd2aa5f.txt" class="xref attachment">license-6c1ac30774dd6476b42b5b020cd2aa5f.txt</a></p>
 </div></div></td>
 </tr>
 </tbody>

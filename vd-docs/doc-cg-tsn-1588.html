@@ -27,7 +27,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="vd-docs" data-version="">
+<div class="nav-container" data-component="vd-docs" data-version="latest">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -121,6 +121,9 @@
     <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mup1.html">MUP1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -181,6 +184,9 @@
     <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev22n59a.html">EVB-LAN9692-Hallberg-POC (EV22N59A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -217,6 +223,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-regaccess.html">Register Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-serdes.html">SerDes tuning</a>
   </li>
 </ul>
   </li>
@@ -255,14 +267,23 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Documentation</span>
-    <span class="version"></span>
+    <span class="version">latest</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <div class="title"><a href="doc-intro.html">Documentation</a></div>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="doc-intro.html">default</a>
+          <a href="doc-intro.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="2026.03/doc-intro.html">2026.03</a>
+        </li>
+        <li class="version">
+          <a href="2025.12/doc-intro.html">2025.12</a>
+        </li>
+        <li class="version">
+          <a href="2025.09/doc-intro.html">2025.09</a>
         </li>
         <li class="version">
           <a href="2025.06/doc-intro.html">2025.06</a>
@@ -290,9 +311,12 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">default</button>
+  <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
-    <a class="version is-current" href="doc-cg-tsn-1588.html">default</a>
+    <a class="version is-current" href="doc-cg-tsn-1588.html">latest</a>
+    <a class="version" href="2026.03/doc-cg-tsn-1588.html">2026.03</a>
+    <a class="version" href="2025.12/doc-cg-tsn-1588.html">2025.12</a>
+    <a class="version" href="2025.09/doc-cg-tsn-1588.html">2025.09</a>
     <a class="version" href="2025.06/doc-cg-tsn-1588.html">2025.06</a>
     <a class="version" href="2025.03/doc-cg-tsn-1588.html">2025.03</a>
   </div>
@@ -465,9 +489,12 @@ to the network.</p>
           ieee802-dot1as-ptp:mgt-log-gptp-cap-interval: 0
           ieee802-dot1as-ptp:use-mgt-one-step-tx-oper: false
           ieee802-dot1as-ptp:mgt-one-step-tx-oper: 0
+          ieee802-dot1as-hd:pdelay-req-send-disabled: false
+          ieee802-dot1as-hd:pdelay-resp-send-disabled: false
         timestamp-correction-port-ds:
           egress-latency: '0'
           ingress-latency: '0'
+          mchp-velocitysp-ptp:disable-hw-calibration: false
         external-port-config-port-ds:
           desired-state: disabled
     mchp-velocitysp-ptp:servos:
@@ -834,7 +861,54 @@ instance will behave as 1-step timestamping.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ptp-calibration"><a class="anchor" href="#ptp-calibration"></a>15. How to do the calibration of the device</h2>
+<h2 id="ptp-shared-media"><a class="anchor" href="#ptp-shared-media"></a>15. Enable PTP over shared media</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When enabling the PTP over shared media, it is not possible to run BMCA, so it
+is required to disable it and the set the desired port states. On top of this is
+required that the master port will not send any PREQ frames while the slave port
+port should not send reply to any PREQ frames.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message for the master port</p>
+</div>
+<div id="cg-ipatch-req-ptp-shared-media-master" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    default-ds:
+      external-port-config-enable: true
+    ports:
+      port:
+      - port-index: 25
+        external-port-config-port-ds:
+          desired-state: master
+        port-ds:
+          ieee802-dot1as-hd:pdelay-req-send-disabled: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message for the slave port</p>
+</div>
+<div id="cg-ipatch-req-ptp-shared-media-slave" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee1588-ptp:ptp/instances/instance"
+  : instance-index: 0
+    default-ds:
+      external-port-config-enable: true
+    ports:
+      port:
+      - port-index: 25
+        external-port-config-port-ds:
+          desired-state: slave
+        port-ds:
+          ieee802-dot1as-hd:pdelay-resp-send-disabled: true</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ptp-calibration"><a class="anchor" href="#ptp-calibration"></a>16. How to do the calibration of the device</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To be able to precisely synchronize the device is required to calculate the
@@ -893,6 +967,8 @@ synchronized to the master.</p>
     ports:
       port:
       - port-index: 25
+        timestamp-correction-port-ds:
+          mchp-velocitysp-ptp:disable-hw-calibration: true
     mchp-velocitysp-ptp:servos:
       servo:
       - servo-index: 0

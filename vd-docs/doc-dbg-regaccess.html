@@ -27,7 +27,7 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="vd-docs" data-version="">
+<div class="nav-container" data-component="vd-docs" data-version="latest">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
@@ -121,6 +121,9 @@
     <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mup1.html">MUP1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -181,6 +184,9 @@
     <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev22n59a.html">EVB-LAN9692-Hallberg-POC (EV22N59A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -217,6 +223,12 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="doc-dbg-regaccess.html">Register Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-serdes.html">SerDes tuning</a>
   </li>
 </ul>
   </li>
@@ -255,14 +267,23 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Documentation</span>
-    <span class="version"></span>
+    <span class="version">latest</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <div class="title"><a href="doc-intro.html">Documentation</a></div>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="doc-intro.html">default</a>
+          <a href="doc-intro.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="2026.03/doc-intro.html">2026.03</a>
+        </li>
+        <li class="version">
+          <a href="2025.12/doc-intro.html">2025.12</a>
+        </li>
+        <li class="version">
+          <a href="2025.09/doc-intro.html">2025.09</a>
         </li>
         <li class="version">
           <a href="2025.06/doc-intro.html">2025.06</a>
@@ -284,13 +305,17 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="doc-intro.html">Documentation</a></li>
+    <li>SW Debugging</li>
     <li><a href="doc-dbg-regaccess.html">Register Access</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">default</button>
+  <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
-    <a class="version is-current" href="doc-dbg-regaccess.html">default</a>
+    <a class="version is-current" href="doc-dbg-regaccess.html">latest</a>
+    <a class="version" href="2026.03/doc-dbg-regaccess.html">2026.03</a>
+    <a class="version" href="2025.12/doc-dbg-regaccess.html">2025.12</a>
+    <a class="version" href="2025.09/doc-dbg-regaccess.html">2025.09</a>
     <a class="version" href="2025.06/doc-dbg-regaccess.html">2025.06</a>
     <a class="version" href="2025.03/doc-dbg-regaccess.html">2025.03</a>
   </div>
@@ -324,8 +349,9 @@
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -h
 dbgreg - Register access debug tool
 
+
 Usage:
-  dbgreg [options] miim [c22|c45]  (&lt;PORT&gt;[:&lt;MMD&gt;]:&lt;REG_ADDR&gt;[=VAL])...
+  dbgreg [options] miim|sw [c22|c45] (&lt;PORT&gt;[:&lt;MMD&gt;]:&lt;ADDR&gt;[=VAL])...
 
 Options:
   -h --help                  Show this screen.
@@ -333,8 +359,15 @@ Options:
                              Ex: termhub://10.0.0.2:4000
 
 Command details:
-  dbgreg [options] miim|sw [(c22|c45)] (&lt;PORT&gt;[:&lt;MMD&gt;]:&lt;REG_ADDR&gt;[=VAL])...
-  Do a MIIM or Switch read or write request</code></pre>
+  Do a MIIM or Switch read or write request.
+  miim: MIIM register access option.
+  sw  : Switch register access option.
+  c22 : Clause 22 MIIM access.
+  c45 : Clause 45 MIIM access.
+  PORT: 0-based switch port number.
+  MMD : MMD (8 bits) for clause 45 access.
+  ADDR: Register address (5/16/32 bits for c22/c45/switch access)
+  VAL : Register value for write operation (16/32 bits for MIIM/switch access)</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -359,10 +392,12 @@ The register is 0.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -d termhub://10.205.27.92:4113 miim c22 rd 1:0
-mup1ct -d termhub://10.205.27.92:4101 coap post /dbg/reg --content-type 60 --accept 60
-Status: 0, stderr: RESPONSE-CODE: class 2 detail 5 Success Content
-, got 14 bytes
-[{0=&gt;0, 4=&gt;1, 2=&gt;0, 3=&gt;4416}]</code></pre>
+mup1ct  coap post /dbg/reg --content-type 60 --accept 60
+Status: 0, stderr: RESPONSE-CODE: class 2 detail 5 Success Content, got 14 bytes
+
+                  Value              Value   Value
+Oper  Port  Addr  15     8.7      0  Hex     Decimal
+RD    1     0x00  00010001.01000000  0x1140  4416</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -431,11 +466,12 @@ The register is '8404992' (DEVCPU_GCB:CHIP_REGS:CHIP_ID).</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -d termhub://10.205.27.92:4101 sw 8404992
-"[{0:4,2:8404992}]"
-mup1ct -d termhub://10.205.27.92:4101 coap post /dbg/reg --content-type 60 --accept 60
-Status: 0, stderr: RESPONSE-CODE: class 2 detail 5 Success Content
-, got 18 bytes
-[{0=&gt;4, 2=&gt;8404992, 3=&gt;157922373}]</code></pre>
+mup1ct  coap post /dbg/reg --content-type 60 --accept 60
+Status: 0, stderr: RESPONSE-CODE: class 2 detail 5 Success Content, got 18 bytes
+
+                  Value                                Value       Value
+Oper  Address     31    24.23    16.15     8.7      0  Hex         Decimal
+RD    0x00804000  00001001.01101001.10110100.01000101  0x0969B445  157922373</code></pre>
 </div>
 </div>
 <div class="paragraph">

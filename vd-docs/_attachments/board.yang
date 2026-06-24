@@ -11,13 +11,20 @@ module board {
      uses to initilize the needed drivers to get the board up and running.
      The purpose is similar to 'device tree' for linux";
 
+  revision 2026-03-31 {
+    description "Added serdes container with tx_eq and polarity";
+  }
+
+  revision 2025-12-31 {
+    description "Added init_id leaf.";
+  }
+
   revision 2025-06-30 {
     description "1) Added fs (file system) container
                  2) Added extmod leaf
                  3) Added ts_calibration
                  4) Added timestamp container";
   }
-
 
   revision 2025-03-31 {
     description "1) Added dummy phy leaf
@@ -39,6 +46,7 @@ module board {
       enum qsgmii;
       enum 10gbase-r;
       enum serdes;
+      enum rmii;
     }
     description "Phy-mode enumeration for port";
   }
@@ -302,7 +310,7 @@ module board {
     }
   }
 
-  typedef ts_type {
+  typedef speed_type {
     type enumeration {
       enum SPEED_10MBIT {
         description "Speed 10 both full and half duplex";
@@ -639,7 +647,7 @@ module board {
           description "Calibration setup";
 
           leaf type {
-            type ts_type;
+            type speed_type;
             description "Calibration type";
           }
 
@@ -739,6 +747,11 @@ module board {
         type target_chip_type;
         mandatory true;
         description "SoC installed on the board";
+      }
+
+      leaf init_id {
+        type uint32;
+        description "Identication of procedure executed between switch and PHY initialization.";
       }
 
       container eth_ports {
@@ -847,6 +860,51 @@ module board {
                 type phy_led_mode;
                 mandatory true;
                 description "PHY LED mode";
+              }
+            }
+          }
+
+          container serdes {
+            description "SerDes configuration for the port";
+
+            list tx_eq {
+              key "type";
+              description "TX equalizer configuration for a specific speed";
+
+              leaf type {
+                type speed_type;
+                description "Speed for this TX EQ configuration";
+              }
+
+              leaf pre {
+                type uint8;
+                description "Pre-cursor tap coefficient";
+              }
+
+              leaf main {
+                type uint8;
+                description "Main cursor tap coefficient (amplitude)";
+              }
+
+              leaf post {
+                type uint8;
+                description "Post-cursor tap coefficient";
+              }
+            }
+
+            container polarity {
+              description "SerDes polarity configuration";
+
+              leaf rx_inv {
+                type boolean;
+                description "Invert RX lane polarity";
+                default "false";
+              }
+
+              leaf tx_inv {
+                type boolean;
+                description "Invert TX lane polarity";
+                default "false";
               }
             }
           }
