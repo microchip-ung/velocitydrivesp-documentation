@@ -127,6 +127,9 @@
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -197,6 +200,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
   </li>
 </ul>
   </li>
@@ -277,6 +283,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.06/doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
           <a href="2026.03/doc-intro.html">2026.03</a>
         </li>
         <li class="version">
@@ -314,6 +323,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-l2-acl.html">latest</a>
+    <a class="version" href="2026.06/doc-cg-l2-acl.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-l2-acl.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-l2-acl.html">2025.12</a>
     <a class="version" href="2025.09/doc-cg-l2-acl.html">2025.09</a>
@@ -603,9 +613,12 @@ The possible egress ports are '2' and '3'.</p>
 <div class="sect2">
 <h3 id="_add_an_ace_matching_a_specific_frame_type"><a class="anchor" href="#_add_an_ace_matching_a_specific_frame_type"></a>2.4. Add an ACE matching a specific frame type</h3>
 <div class="paragraph">
+<p>Matching on frame types that are not IPV4/IPV6.</p>
+</div>
+<div class="paragraph">
 <p>The ingress port is '2'.<br>
 The SMAC is 00-00-00-00-00-01.<br>
-The frame type is C-Tagged - '8100'.<br>
+The frame type is ARP (Address Resolution Protocol) - value 0x0806 or 2056<br>
 The possible egress ports are '1' and '3'.</p>
 </div>
 <div class="paragraph">
@@ -620,7 +633,7 @@ The possible egress ports are '1' and '3'.</p>
     smac: 00-00-00-00-00-01
     smac-mask: FF-FF-FF-FF-FF-FF
     frame-etype:
-      etype: 33024
+      etype: 2054
       etype-mask: 65535
     forwarding: filter
     egress-port-list:
@@ -659,7 +672,7 @@ The possible egress ports are '1' and '3'.</p>
     pcp-mask: 0
     dei: any
     frame-etype:
-      etype: 33024
+      etype: 2054
       etype-mask: 65535
       data: 0
       data-mask: 0
@@ -674,23 +687,34 @@ The possible egress ports are '1' and '3'.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_an_ipv4_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_frame"></a>2.5. Add an ACE matching an IPv4 frame</h3>
+<h3 id="_add_an_ace_matching_an_ipv4_not_udptcp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_not_udptcp_frame"></a>2.5. Add an ACE matching an IPv4 NOT UDP/TCP frame</h3>
+<div class="paragraph">
+<p>When not matching on UDP/TCP:<br>
+    The TCP and UDP sport/dport range is ignored.<br>
+    It is possible to match on IP data value.</p>
+</div>
 <div class="paragraph">
 <p>The ingress port is '3'.<br>
 The IPv4 SIP is 1.2.3.4/16.<br>
-The possible egress ports are '1' and '2'.</p>
+The possible egress ports are '1' and '2'.<br>
+The IP protocol is IGMP - protocol value 2<br>
+IP data value is 1234.<br></p>
 </div>
 <div class="paragraph">
 <p><code>iPATCH</code> request message:</p>
 </div>
-<div id="cg-ipatch-req-ace-ipv4-sip" class="listingblock">
+<div id="cg-ipatch-req-ace-ipv4-igmp" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
   : id: 4
     ingress-port-list:
     - '3'
     frame-ipv4:
+      proto: 2
+      proto-mask: 255
       sip: 1.2.3.4/16
+      data: 1234
+      data-mask: 4294967295
     forwarding: filter
     egress-port-list:
     - '1'
@@ -733,12 +757,12 @@ The possible egress ports are '1' and '2'.</p>
       sip: 1.2.3.4/16
       dip: 0.0.0.0/0
       ttl: any
-      proto: 0
-      proto-mask: 0
+      proto: 2
+      proto-mask: 255
       ds: 0
       ds-mask: 0
-      data: 0
-      data-mask: 0
+      data: 1234
+      data-mask: 4294967295
       sport-min: 0
       sport-max: 0
       dport-min: 0
@@ -762,10 +786,16 @@ The possible egress ports are '1' and '2'.</p>
 <div class="sect2">
 <h3 id="_add_an_ace_matching_an_ipv4_udp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_udp_frame"></a>2.6. Add an ACE matching an IPv4 UDP frame</h3>
 <div class="paragraph">
+<p>When matching on UDP:<br>
+    The SPORT/DPORT range must be given or it is only matching in SPORT/DPORT value '0'.<br>
+    It is NOT possible to match on IP data value.</p>
+</div>
+<div class="paragraph">
 <p>The ingress port is '1'.<br>
 The IPv4 SIP is 1.2.3.4/16.<br>
 The UDP SPORT range is 10-20.<br>
-The possible egress ports are '2' and '3'.</p>
+The UDP DPORT range is 30-40.<br>
+The possible egress ports are '2' and '3'.<br></p>
 </div>
 <div class="paragraph">
 <p><code>iPATCH</code> request message:</p>
@@ -782,6 +812,8 @@ The possible egress ports are '2' and '3'.</p>
       sip: 1.2.3.4/16
       sport-min: 10
       sport-max: 20
+      dport-min: 30
+      dport-max: 40
     forwarding: filter
     egress-port-list:
     - '2'
@@ -832,8 +864,8 @@ The possible egress ports are '2' and '3'.</p>
       data-mask: 0
       sport-min: 10
       sport-max: 20
-      dport-min: 0
-      dport-max: 0
+      dport-min: 30
+      dport-max: 40
       tcp-fin: any
       tcp-syn: any
       tcp-rst: any
@@ -853,9 +885,16 @@ The possible egress ports are '2' and '3'.</p>
 <div class="sect2">
 <h3 id="_add_an_ace_matching_an_ipv4_tcp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_tcp_frame"></a>2.7. Add an ACE matching an IPv4 TCP frame</h3>
 <div class="paragraph">
+<p>When matching on TCP:<br>
+    The SPORT/DPORT range must be given or it is only matching in SPORT/DPORT value '0'.<br>
+    It is NOT possible to match on IP data value.</p>
+</div>
+<div class="paragraph">
 <p>The ingress port is '2'.<br>
 The IPv4 SIP is 1.2.3.4/16.<br>
-The possible egress ports are '1' and '3'.</p>
+The UDP SPORT range is 10-20.<br>
+The UDP DPORT range is 30-40.<br>
+The possible egress ports are '1' and '3'.<br></p>
 </div>
 <div class="paragraph">
 <p><code>iPATCH</code> request message:</p>
@@ -870,6 +909,10 @@ The possible egress ports are '1' and '3'.</p>
       proto: 6
       proto-mask: 255
       sip: 1.2.3.4/16
+      sport-min: 10
+      sport-max: 20
+      dport-min: 30
+      dport-max: 40
     forwarding: filter
     egress-port-list:
     - '1'
@@ -918,10 +961,10 @@ The possible egress ports are '1' and '3'.</p>
       ds-mask: 0
       data: 0
       data-mask: 0
-      sport-min: 0
-      sport-max: 0
-      dport-min: 0
-      dport-max: 0
+      sport-min: 10
+      sport-max: 20
+      dport-min: 30
+      dport-max: 40
       tcp-fin: any
       tcp-syn: any
       tcp-rst: any

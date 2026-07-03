@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LAN969x OTP Provisioning :: VelocityDRIVE™ Software Package Documentation</title>
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="..">VelocityDRIVE™ Software Package Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-redbox.html">RedBox</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-tas.html">TAS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mup1.html">MUP1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev22n59a.html">EVB-LAN9692-Hallberg-POC (EV22N59A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-regaccess.html">Register Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-serdes.html">SerDes tuning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="2026.06/doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
+          <a href="2026.03/doc-intro.html">2026.03</a>
+        </li>
+        <li class="version">
+          <a href="2025.12/doc-intro.html">2025.12</a>
+        </li>
+        <li class="version">
+          <a href="2025.09/doc-intro.html">2025.09</a>
+        </li>
+        <li class="version">
+          <a href="2025.06/doc-intro.html">2025.06</a>
+        </li>
+        <li class="version">
+          <a href="2025.03/doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-evb.html">EVBs</a></li>
+    <li><a href="doc-evb-lan969x.html">LAN969x EVBs</a></li>
+    <li><a href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">latest</button>
+  <div class="version-menu">
+    <a class="version is-current" href="doc-cg-otp-provisioning.html">latest</a>
+    <a class="version" href="2026.06/doc-cg-otp-provisioning.html">2026.06</a>
+    <a class="version is-missing" href="2026.03/doc-intro.html">2026.03</a>
+    <a class="version is-missing" href="2025.12/doc-intro.html">2025.12</a>
+    <a class="version is-missing" href="2025.09/doc-intro.html">2025.09</a>
+    <a class="version is-missing" href="2025.06/doc-intro.html">2025.06</a>
+    <a class="version is-missing" href="2025.03/doc-intro.html">2025.03</a>
+  </div>
+</div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">LAN969x OTP Provisioning</h1>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OTP (One-Time Programmable) provisioning allows programming security keys,
+device identity and configuration into the on-chip OTP memory. OTP writes are
+<strong>irreversible</strong>&#8201;&#8212;&#8201;once a field is written it cannot be changed, and once a
+region is write-protected the chip must be discarded to change it.</p>
+</div>
+<div class="paragraph">
+<p>A customer typically provisions OTP to: anchor secure boot to their own
+signing key (Root-of-Trust), give each unit a stable identity (serial
+number and MAC addresses), enable firmware encryption, lock down JTAG
+debug access, and disable unused boot-strap modes&#8201;&#8212;&#8201;then write-protect
+the regions so the configuration can never be altered in the field.</p>
+</div>
+<div class="paragraph">
+<p>The
+<a href="_attachments/yang-catalog.html#/otp-provisioning-1" class="xref attachment">otp-provisioning-1</a>
+RPC is available via the CORECONF management interface. It targets chips
+implementing MCHP-OTP-Schema 1 and is currently only implemented on LAN969x.</p>
+</div>
+<div class="paragraph">
+<p>All input leafs are optional&#8201;&#8212;&#8201;only the fields provided will be programmed.
+The RPC validates all input before writing anything. If any check fails, the
+entire operation is rejected with no side effects.</p>
+</div>
+<div class="sect2">
+<h3 id="_otp_regions_lan969x"><a class="anchor" href="#_otp_regions_lan969x"></a>1.1. OTP Regions (LAN969x)</h3>
+<div class="paragraph">
+<p>The OTP is divided into 8 regions with independent write-protection:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 85.7143%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">REG</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manufacturing data (serial number, JTAG config, etc.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Write-protect bitmask</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Region boundary definitions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Keys and security (ROTPK, SSK, strap disable)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non-volatile secure counters (must remain writable)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Key-value tag store (must remain writable for MAC updates)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_available_fields"><a class="anchor" href="#_available_fields"></a>1.2. Available Fields</h3>
+<div class="paragraph">
+<p>The following fields can be programmed via the RPC:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Field</th>
+<th class="tableblock halign-left valign-top">Region</th>
+<th class="tableblock halign-left valign-top">Size</th>
+<th class="tableblock halign-left valign-top">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/serial-number" class="xref attachment">serial-number</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Free-form. Only if blank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/write-protect" class="xref attachment">write-protect</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OR bitmask. Irreversible.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/root-of-trust-public-key-sha" class="xref attachment">root-of-trust-public-key-sha</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ROTPK hash. Only if blank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/secret-symmetric-key" class="xref attachment">secret-symmetric-key</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FW encryption key. Only if blank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/strap-disable-mask" class="xref attachment">strap-disable-mask</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boot mode disable. Only if blank.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/eth-mac-addr" class="xref attachment">eth-mac-addr</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MAC address in tag store.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/eth-mac-addr-count" class="xref attachment">eth-mac-addr-count</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Consecutive MAC count.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/secure-jtag-conf" class="xref attachment">secure-jtag-conf</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only if blank. Auto-locks <code>SECURE_JTAG</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/secure-jtag-uuid" class="xref attachment">secure-jtag-uuid</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Only if blank. Auto-locks <code>JTAG_UUID</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="_attachments/yang-catalog.html#/otp-provisioning-1/input/secure-jtag-shared-secret-key" class="xref attachment">secure-jtag-shared-secret-key</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 B</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SJTAG auth key. Only if blank.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+By default, OTP fields can only be programmed once&#8201;&#8212;&#8201;only while
+the field is still blank in hardware (every bit zero), referred to as the
+<strong>HW-blank rule</strong>. This applies to serial-number, ROTPK, SSK,
+strap-disable-mask and the three <code>secure-jtag-*</code> leafs. Two fields are
+exceptions: <code>write-protect</code>
+is OR-ed into the hardware value and can be updated multiple times
+(irreversibly setting additional bits); <code>eth-mac-addr</code> and <code>eth-mac-addr-count</code>
+live in the Region 7 tag store and can be re-written (the old record is
+invalidated, a new one is appended).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>secure-jtag-conf</code> and <code>secure-jtag-uuid</code> go further than the HW-blank
+rule&#8201;&#8212;&#8201;a successful write atomically also burns the matching <code>OTP_PRG[0]</code>
+lock bit (bit 0 for <code>SECURE_JTAG</code>, bit 1 for <code>JTAG_UUID</code>). The OTP HW FSM
+requires this lock for the value to take effect at cold reset, so the
+auto-burn is functionality-critical, not just defence-in-depth (see
+<a href="#uc-sjtag">Use Case: Secure JTAG</a>).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="field-encoding"><a class="anchor" href="#field-encoding"></a>2. Field Encoding</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Five RPC leafs carry <strong>raw binary</strong> values (8 to 32 bytes) that, in
+the YAML payload, must be <strong>base64-encoded</strong>&#8201;&#8212;&#8201;this is how YANG-CBOR
+(<code>type binary</code>) is rendered in YAML/JSON per RFC 9254 §6.4.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 37.5%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Leaf</th>
+<th class="tableblock halign-left valign-top">Bytes</th>
+<th class="tableblock halign-left valign-top">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serial-number</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Free-form 8-byte ID supplied by the OEM.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>root-of-trust-public-key-sha</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SHA-256 of the DER-encoded ROT public key (see <a href="#uc-signing">Use Case: Signing / Authentication</a>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>secret-symmetric-key</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Random 32-byte AES-GCM key (see <a href="#uc-encryption">Use Case: Confidentiality / Encryption</a>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>secure-jtag-uuid</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vendor 10-byte JTAG identifier (see <a href="#uc-sjtag">Use Case: Secure JTAG</a>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>secure-jtag-shared-secret-key</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Random 32-byte SJTAG challenge/response key (see <a href="#uc-sjtag">Use Case: Secure JTAG</a>).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The remaining leafs (<code>strap-disable-mask</code>, <code>write-protect</code>,
+<code>eth-mac-addr</code>, <code>eth-mac-addr-count</code>, <code>secure-jtag-conf</code>) are
+integers, dash-separated MAC strings, or YANG enumeration names&#8201;&#8212;&#8201;they are NOT base64 and appear verbatim in YAML.</p>
+</div>
+<div class="sect2">
+<h3 id="_encode_bytes_to_base64_for_rpc_input"><a class="anchor" href="#_encode_bytes_to_base64_for_rpc_input"></a>2.1. Encode bytes to base64 (for RPC input)</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># A binary file (e.g. a 32-byte ROTPK hash or SSK key) -&gt; single-line base64
+base64 -w 0 my_field_bytes.bin
+
+# An ad-hoc 8-byte serial captured as hex -&gt; base64
+printf '\x01\x02\x03\x04\x05\x06\x07\x08' | base64 -w 0    # AQIDBAUGBwg=</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decode_base64_back_to_bytes_for_sanity_check"><a class="anchor" href="#_decode_base64_back_to_bytes_for_sanity_check"></a>2.2. Decode base64 back to bytes (for sanity check)</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">echo -n 'AQIDBAUGBwg=' | base64 -d | xxd
+# 00000000: 0102 0304 0506 0708                      ........
+
+# round-trip an existing 32-byte file
+base64 -w 0 my_field_bytes.bin | base64 -d | sha256sum
+sha256sum my_field_bytes.bin
+# both lines must print the same hash</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_provisioning_use_cases"><a class="anchor" href="#_provisioning_use_cases"></a>3. Provisioning Use Cases</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section walks through the OTP fields the customer is likely to
+program, organised as use cases. Each use case follows the same shape:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Why</strong>&#8201;&#8212;&#8201;when this is needed and what it provides.</p>
+</li>
+<li>
+<p><strong>Preparation</strong>&#8201;&#8212;&#8201;inputs to gather and build steps to run beforehand.</p>
+</li>
+<li>
+<p><strong>How&#8201;&#8212;&#8201;Construct the RPC</strong>&#8201;&#8212;&#8201;the YAML body to POST.</p>
+</li>
+<li>
+<p><strong>Verification</strong>&#8201;&#8212;&#8201;how to confirm the value landed correctly.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For the recommended production workflow that combines them into a
+single RPC, see <a href="#recommendations">Recommendations</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="uc-serial"><a class="anchor" href="#uc-serial"></a>3.1. Use Case: Serial Number</h3>
+<div class="sect3">
+<h4 id="_why"><a class="anchor" href="#_why"></a>3.1.1. Why</h4>
+<div class="paragraph">
+<p>An 8-byte free-form OEM identifier used to track each
+unit through manufacturing, returns (RMA), and field deployments. Once written,
+the value is exposed for runtime queries via
+<a href="_attachments/yang-catalog.html#/hardware/component/serial-num" class="xref attachment">serial-num</a>
+(<code>ietf-hardware</code>). The field lives in Region 0 and can only be
+programmed once (HW-blank rule).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_preparation"><a class="anchor" href="#_preparation"></a>3.1.2. Preparation</h4>
+<div class="paragraph">
+<p>Decide the 8 raw bytes&#8201;&#8212;&#8201;typically a manufacturing serial drawn from
+the OEM tracking system. Base64-encode them (see <a href="#field-encoding">Field Encoding</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># Bytes 01 02 03 04 05 06 07 08 -&gt; AQIDBAUGBwg=
+printf '\x01\x02\x03\x04\x05\x06\x07\x08' | base64 -w 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_howconstruct_the_rpc"><a class="anchor" href="#_howconstruct_the_rpc"></a>3.1.3. How&#8201;&#8212;&#8201;Construct the RPC</h4>
+<div id="cg-post-req-otp-serial" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:otp-provisioning-1":
+    input:
+      serial-number: AQIDBAUGBwg=</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verification"><a class="anchor" href="#_verification"></a>3.1.4. Verification</h4>
+<div class="paragraph">
+<p>Fetch <code>/ietf-hardware:hardware</code>; the value appears as a hex-formatted
+string under the board component&#8217;s <code>serial-num</code> leaf.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uc-mac"><a class="anchor" href="#uc-mac"></a>3.2. Use Case: MAC Address</h3>
+<div class="sect3">
+<h4 id="_why_2"><a class="anchor" href="#_why_2"></a>3.2.1. Why</h4>
+<div class="paragraph">
+<p>Each switch port (and the management interface) consumes one MAC
+address. The chip is provisioned with a <strong>base MAC</strong> plus a <strong>count</strong>
+of consecutive addresses; the hardware derives each port&#8217;s address by
+adding to the base. The pair lives in the OTP key-value tag store
+(Region 7)&#8201;&#8212;&#8201;the only OTP field that can be updated multiple times
+(the old record is invalidated, a new one is appended).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_preparation_2"><a class="anchor" href="#_preparation_2"></a>3.2.2. Preparation</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Allocate a base MAC from the IEEE-assigned vendor prefix (OUI).</p>
+</li>
+<li>
+<p>Choose the count. The count must be a power of 2 (1, 2, 4, 8, 16,
+32, &#8230;&#8203;). The hardware allocates the block by masking the low bits
+of the base MAC, so the count&#8217;s bit width imposes a fixed alignment:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">count</th>
+<th class="tableblock halign-left valign-top">Required base-MAC alignment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>8</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the <strong>3</strong> least significant bits of the base MAC must be 0.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>16</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the <strong>4</strong> least significant bits of the base MAC must be 0.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>32</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the <strong>5</strong> least significant bits of the base MAC must be 0.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Size for the device: software needs <strong>at least number-of-ports + 1</strong>
+MACs (one per port, plus the management interface), rounded up to
+the next power of 2. A 20-port switch needs 21 &#8594; rounded to 32.
+Production builds typically use <code>count = 32</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_howconstruct_the_rpc_2"><a class="anchor" href="#_howconstruct_the_rpc_2"></a>3.2.3. How&#8201;&#8212;&#8201;Construct the RPC</h4>
+<div class="paragraph">
+<p>The base MAC is a dash-separated string and is <strong>not</strong> base64.</p>
+</div>
+<div id="cg-post-req-otp-mac" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:otp-provisioning-1":
+    input:
+      eth-mac-addr: "00-04-a3-01-02-00"
+      eth-mac-addr-count: 32</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verification_2"><a class="anchor" href="#_verification_2"></a>3.2.4. Verification</h4>
+<div class="paragraph">
+<p>After programming, port MAC addresses are derivable as
+<code>&lt;base&gt; + interface_index</code>. Fetch any port&#8217;s
+<a href="_attachments/yang-catalog.html#/interfaces/interface/phys-address" class="xref attachment">phys-address</a>
+(<code>ietf-interfaces</code>) to spot-check.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Each MAC update consumes an additional 8-byte record slot in
+Region 7 (the old record becomes dead weight). On LAN969x, Region 7
+holds up to 1792 records shared with other tag types. The RPC fails
+if no free slots remain.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uc-signing"><a class="anchor" href="#uc-signing"></a>3.3. Use Case: Signing / Authentication</h3>
+<div class="sect3">
+<h4 id="_why_3"><a class="anchor" href="#_why_3"></a>3.3.1. Why</h4>
+<div class="paragraph">
+<p>Anchor the device to a single Root-of-Trust (ROT) key so that only
+firmware signed by that key can boot. Once the OTP ROTPK is programmed,
+BL1 (ROM) at every boot computes the SHA-256 of the public key embedded
+in the firmware&#8217;s signing certificate, compares it against the OTP
+value, and refuses to boot if it doesn&#8217;t match.</p>
+</div>
+<div class="paragraph">
+<p>LAN969x firmware is split into a <strong>bootloader</strong> and an <strong>application</strong>. The
+bootloader (sometimes referred to as BL2) is the build artifact
+<code>lan969x_&lt;board&gt;_&lt;variant&gt;-secure.fip</code>. The application is the normal
+<code>.fip</code> file, which is also used for over-the-air updates (internally the
+FIP holds images for the two TrustZone domains, <code>BL31</code> and <code>BL33</code>). Both
+the bootloader and the application are checked by secure boot, so when
+deploying secure boot <strong>both</strong> must be signed with the ROT key. To ease
+production a <code>.img</code> file is also generated; it contains both the
+bootloader and the application, replicated across two slots.</p>
+</div>
+<div class="paragraph">
+<p>The ROT private key stays on the build host&#8201;&#8212;&#8201;only the SHA-256 of the
+public key is written to OTP.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_preparation_3"><a class="anchor" href="#_preparation_3"></a>3.3.2. Preparation</h4>
+<div class="paragraph">
+<p>The value written to OTP is simply the <strong>SHA-256 of the public ECDSA
+key</strong>. Derive it with <code>openssl</code> alone&#8201;&#8212;&#8201;the build system is not needed
+for this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># 1. Generate the ROT key pair
+openssl ecparam -name prime256v1 -genkey -noout -out my_rotprivk_ecdsa.pem
+
+# 2. Derive the public key (DER)
+openssl ec -in my_rotprivk_ecdsa.pem -pubout -outform DER \
+    -out my_rotpubk_ecdsa.der
+
+# 3. SHA-256 of the public key -- this is the OTP ROTPK value
+openssl dgst -sha256 -binary -out rotpubk_sha256.bin my_rotpubk_ecdsa.der
+
+# 4. base64-encode it for the RPC input (see "How" below)
+base64 -w 0 rotpubk_sha256.bin</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The ROT private key is the root of all device trust&#8201;&#8212;&#8201;anyone
+who holds it can sign firmware the chip will accept, and losing it means
+no future firmware can ever be signed for units already provisioned with
+the matching OTP ROTPK. Generate it on a secure host and keep it safe.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>target/lan969x/rotprivk_ecdsa.pem</code> in the source tree is an
+<strong>example key only</strong>&#8201;&#8212;&#8201;it is published in the tree and offers no
+protection. Use it for development against blank-ROTPK chips, never in
+production.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Then build the matching signed firmware&#8201;&#8212;&#8201;the build signs the FIP
+with the ROT key:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dr cmake --preset lan969x \
+    -DLAN969X_ROT_KEY_FILE=$PWD/my_rotprivk_ecdsa.pem
+dr cmake --build --preset lan969x</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This emits the signed bootloader (<code>lan969x_&lt;board&gt;-secure.fip</code>) and
+application (<code>.fip</code> / <code>.img</code>) anchored at the ROT key. Anti-rollback NV
+counters are configured separately at build time&#8201;&#8212;&#8201;see <a href="#anti-rollback">Anti-Rollback (NV Counters)</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_howconstruct_the_rpc_3"><a class="anchor" href="#_howconstruct_the_rpc_3"></a>3.3.3. How&#8201;&#8212;&#8201;Construct the RPC</h4>
+<div class="paragraph">
+<p>The placeholder below is illustrative&#8201;&#8212;&#8201;replace it with the base64
+string from the preparation step.</p>
+</div>
+<div id="cg-post-req-otp-rotpk" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:otp-provisioning-1":
+    input:
+      root-of-trust-public-key-sha: ZmFrZS0zMi1ieXRlLVJPVFBLLVNIQTI1Ni1hbmNob3I=</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verification_3"><a class="anchor" href="#_verification_3"></a>3.3.4. Verification</h4>
+<div class="paragraph">
+<p>Secure boot anchors the OTP ROTPK while authenticating each <code>sign</code>-ed
+root certificate: the bootloader root (<code>id=6</code>, the <code>tb_fw</code> cert, checked
+by BL1) and the application root (<code>id=7</code>, the trusted-key cert that roots
+the BL31 + BL33 chain, checked by BL2). The trace on those two images is
+what changes once the ROTPK is programmed.</p>
+</div>
+<div class="paragraph">
+<p>While the cell is still blank, neither root can be anchored against OTP,
+so each logs the same NOTICE:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">INFO:    Authenticating image id=6 (sign)
+NOTICE:  ROTPK is not deployed on platform. Skipping ROTPK verification.
+INFO:    Authenticated image id=6 (sign) = 0
+...
+INFO:    Authenticating image id=7 (sign)
+NOTICE:  ROTPK is not deployed on platform. Skipping ROTPK verification.
+INFO:    Authenticated image id=7 (sign) = 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>After the ROTPK is programmed, the very next boot anchors both roots
+against the OTP value&#8201;&#8212;&#8201;the <code>ROTPK is not deployed</code> NOTICE is gone and
+the same certs authenticate silently:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">INFO:    Authenticating image id=6 (sign)
+INFO:    Authenticated image id=6 (sign) = 0
+...
+INFO:    Authenticating image id=7 (sign)
+INFO:    Authenticated image id=7 (sign) = 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A ROTPK mismatch fails this step and halts the boot before the
+corresponding image runs.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Order matters. While OTP ROTPK is blank, BL1 reports
+<code>ROTPK is not deployed</code> and accepts any validly-signed FIP (no anchor
+match). Once ROTPK is programmed, the <strong>next</strong> boot strictly compares
+the signing cert&#8217;s ROT pubkey hash against OTP&#8201;&#8212;&#8201;a mismatch halts BL1
+with no in-band software recovery (neither <code>/fw/bootloader</code> nor
+<code>/fw/image</code> runs); recovery then requires the
+<a href="doc-evb-lan969x-debrick.html" class="xref page">debrick procedure</a>. Recommended
+sequence:
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Push the matching set first&#8201;&#8212;&#8201;<strong>both</strong> the bootloader FIP
+(<code>lan969x_&lt;board&gt;-secure.fip</code> &#8594; <code>/fw/bootloader</code>) and the
+application FIP (<code>lan969x_&lt;board&gt;.fip</code> &#8594; <code>/fw/image</code>) from the same
+ROT-key build (see <a href="doc-cg-mgmt-fwup.html" class="xref page">Firmware Update</a>).
+They are signed independently, so updating only <code>/fw/image</code> would
+leave an old-keyed bootloader in place.</p>
+</li>
+<li>
+<p><a href="_attachments/yang-catalog.html#/system-restart" class="xref attachment"><code>system-restart</code></a> and confirm the chip boots.</p>
+</li>
+<li>
+<p>Then program ROTPK via this use case&#8217;s RPC.</p>
+</li>
+<li>
+<p><code>system-restart</code> again and confirm the boot no longer logs
+<code>ROTPK is not deployed</code>&#8201;&#8212;&#8201;BL1 now anchors against the programmed
+OTP value.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_re_signing_the_fwu_recovery_tool"><a class="anchor" href="#_re_signing_the_fwu_recovery_tool"></a>3.3.5. Re-signing the FWU recovery tool</h4>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The FWU recovery tool (<code>fwu-&#8230;&#8203;html</code>) is a <strong>development /
+recovery tool</strong>&#8201;&#8212;&#8201;it can access OTP and perform other insecure
+operations. Re-signing it with the production ROT key lets the
+provisioned devices boot it, which would expose those insecure
+operations on production hardware. Treat the re-signed tool as
+sensitive: keep it under access control and never ship it in a
+production release.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The upstream FWU recovery tool shipped at
+<a href="https://github.com/microchip-ung/arm-trusted-firmware/releases/" class="bare">https://github.com/microchip-ung/arm-trusted-firmware/releases/</a> (e.g.
+<code>fwu-lan969x_a0-release.html</code>) embeds a BL2U FIP whose <code>fwu_cert.crt</code>
+is signed by the <strong>TFA sample ROT key</strong>. After a customer ROTPK is
+burned, BL1 will refuse to load that BL2U during recovery.</p>
+</div>
+<div class="paragraph">
+<p><code>support/scripts/lan969x-fwu-resign</code> re-signs the embedded BL2U
+cert with the customer&#8217;s ROT key without touching the BL2U binary
+itself:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dr ./support/scripts/lan969x-fwu-resign \
+    --input-html  fwu-lan969x_a0-release.html \
+    --output-html fwu-lan969x_a0-release.customer.html \
+    --rot-priv    my_rotprivk_ecdsa.pem</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Outputs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>&lt;output-html&gt;</code>&#8201;&#8212;&#8201;the same HTML scaffolding with the embedded
+BL2U FIP re-signed.</p>
+</li>
+<li>
+<p><code>&lt;output-html stem&gt;.fwu_fip.bin</code>&#8201;&#8212;&#8201;the regenerated BL2U FIP, in
+case the customer prefers the standalone binary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ship the resulting HTML alongside the customer-keyed application
+firmware. The BL2U binary itself is unchanged across the operation;
+only the cert chain anchored at the new ROT key is regenerated.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uc-encryption"><a class="anchor" href="#uc-encryption"></a>3.4. Use Case: Confidentiality / Encryption</h3>
+<div class="sect3">
+<h4 id="_why_4"><a class="anchor" href="#_why_4"></a>3.4.1. Why</h4>
+<div class="paragraph">
+<p>AES-GCM-encrypt BL31 and BL33 against the OTP Secret Symmetric Key
+(SSK) so the firmware payloads cannot be read off the boot media (NOR
+flash). BL2 auto-detects the encryption header, decrypts with the OTP
+SSK, and then authenticates the plaintext against the signing certs.
+BL2 itself, and the cert chain stay plaintext&#8201;&#8212;&#8201;they carry the
+signing material, not secrets.</p>
+</div>
+<div class="paragraph">
+<p>Encryption is a complement to signing, not a replacement. A device
+with no SSK programmed can run signed plaintext images just fine; SSK
+only matters when confidentiality is also required.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_preparation_4"><a class="anchor" href="#_preparation_4"></a>3.4.2. Preparation</h4>
+<div class="paragraph">
+<p>Encryption is <strong>off by default</strong>. The standard build produces only
+the plaintext artifact set (<code>&lt;prefix&gt;.bin</code>, <code>.fip</code>, <code>.img</code>,
+<code>-secure.fip</code>). To enable:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Generate a random 32-byte SSK and back it up securely:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">openssl rand -out my_ssk_key.bin 32</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Losing this file means no future encrypted firmware can be
+produced for devices already provisioned with the matching SSK.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Build with the SSK enabled:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dr cmake --preset lan969x \
+    -DLAN969X_ENCRYPT_KEY_FILE=$PWD/my_ssk_key.bin
+dr cmake --build --preset lan969x</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The build emits the additional <code>&lt;prefix&gt;.enc.{bin,fip,img}</code> set
+alongside the plaintext set.</p>
+</div>
+</li>
+<li>
+<p>Base64-encode the 32 bytes for the RPC:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">base64 -w 0 my_ssk_key.bin</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_howconstruct_the_rpc_4"><a class="anchor" href="#_howconstruct_the_rpc_4"></a>3.4.3. How&#8201;&#8212;&#8201;Construct the RPC</h4>
+<div class="paragraph">
+<p>The placeholder below is illustrative&#8201;&#8212;&#8201;replace it with the base64
+from the preparation step.</p>
+</div>
+<div id="cg-post-req-otp-ssk" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:otp-provisioning-1":
+    input:
+      secret-symmetric-key: ZmFrZS0zMi1ieXRlLUFFUy1HQ00tU1NLLWV4YW1wbGU=</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verification_4"><a class="anchor" href="#_verification_4"></a>3.4.4. Verification</h4>
+<div class="paragraph">
+<p>BL2 decrypts BL31/BL33 with whatever bytes are in OTP SSK&#8201;&#8212;&#8201;including
+all zeros if the cell is blank. <code>&lt;prefix&gt;.enc.img</code> boots only when
+the OTP value exactly matches the SSK the image was encrypted with;
+any mismatch fails the AES-GCM integrity check and BL2 aborts the
+load. Recommended sequence:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Push the encrypted set (<code>-secure.fip</code> &#8594; <code>/fw/bootloader</code>,
+<code>.enc.fip</code> &#8594; <code>/fw/image</code>).</p>
+</li>
+<li>
+<p>Program OTP SSK via this use case&#8217;s RPC.</p>
+</li>
+<li>
+<p><code>system-restart</code> and confirm the chip boots.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Steps 1 and 2 can run in any order before the reboot&#8201;&#8212;&#8201;only the next
+reset enforces the new pairing.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Plaintext <code>&lt;prefix&gt;.img</code> always boots regardless of OTP SSK, so
+re-pushing it to <code>/fw/image</code> is a safe recovery if the encrypted flow
+goes wrong before any region is locked.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>&lt;prefix&gt;-secure.fip</code> is identical regardless of encryption (it
+carries no encrypted payloads); it can be deployed to <code>/fw/bootloader</code>
+from any build.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+When confidentiality is required, distribute <strong>only</strong> the
+encrypted images (<code>&lt;prefix&gt;.enc.fip</code> / <code>.enc.img</code>)&#8201;&#8212;&#8201;delete the
+plaintext <code>&lt;prefix&gt;.fip</code> / <code>.img</code> so they cannot be shipped or booted
+in the field. Keep the plaintext set only on the build host for the
+recovery path noted above.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uc-strap"><a class="anchor" href="#uc-strap"></a>3.5. Use Case: STRAP Disable</h3>
+<div class="sect3">
+<h4 id="_why_5"><a class="anchor" href="#_why_5"></a>3.5.1. Why</h4>
+<div class="paragraph">
+<p>Permanently refuse boot via specific strap-mode pins. Useful to lock
+down debug or recovery boot modes on production hardware so they
+cannot be entered even with physical access to the strap pins.</p>
+</div>
+<div class="paragraph">
+<p>The <code>strap-disable-mask</code> leaf is a 16-bit value where <strong>bit N disables
+strap mode N</strong> in BL1 (ROM). The OTP cell is OR-merged at the
+hardware level&#8201;&#8212;&#8201;a follow-up RPC can only <strong>add</strong> more disabled
+modes, never clear a previously set bit.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_preparation_5"><a class="anchor" href="#_preparation_5"></a>3.5.2. Preparation</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Pick the modes to disable. Strap-mode bit map (LAN969x):</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 9.0909%;">
+<col style="width: 36.3636%;">
+<col style="width: 27.2727%;">
+<col style="width: 27.2728%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-top">Bit</th>
+<th class="tableblock halign-left valign-top">Mode</th>
+<th class="tableblock halign-center valign-top">VelocityDRIVE-SP-Debug</th>
+<th class="tableblock halign-center valign-top">VelocityDRIVE-SP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eMMC + FC0 trace</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QSPI0 + FC0 trace</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SDCard + FC0 trace</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eMMC</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QSPI0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SDCard</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PCIe EndPoint</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QSPI0-HS + FC0 trace</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TF-A Monitor FC0</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TF-A Monitor FC0-HS</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">QSPI0-HS</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">✓</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reserved</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SPI Client (brick-recovery)</p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 83.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Column</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bit / Mode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The strap-mode bit and the boot source it selects (a <strong>clear</strong> bit = that mode enabled).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VelocityDRIVE-SP-Debug</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boot modes useful while bringing up / developing on VelocityDRIVE-SP (1, 4, 8, 10, 11, 13).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VelocityDRIVE-SP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Boot modes recommended to leave open in production: 4 and 13 (QSPI0 / QSPI0-HS NOR boot).</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Compute the bitmask. VelocityDRIVE-SP boots from NOR (QSPI0 /
+QSPI0-HS), so the recommended production lock-down leaves <strong>only</strong>
+modes 4 and 13 open and disables everything else:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Decimal</th>
+<th class="tableblock halign-left valign-top">Hex</th>
+<th class="tableblock halign-left valign-top">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>57327</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0xDFEF</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disable every mode except 4 (QSPI0) and 13 (QSPI0-HS)&#8201;&#8212;&#8201;recommended production lock-down</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>0xDFEF</code> is all 16 bits set except bit 4 (<code>0x0010</code>) and bit 13
+(<code>0x2000</code>): <code>0xFFFF &amp; ~(0x0010 | 0x2000)</code>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<code>0xDFEF</code> also disables the TF-A monitor boot modes (10 and
+11), so once it is programmed there is no monitor-based firmware
+download path left&#8201;&#8212;&#8201;firmware can then only be updated through the
+management interface (<code>/fw/bootloader</code> and <code>/fw/image</code>).
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Always leave at least one of the boot modes actually in
+use <strong>clear</strong>&#8201;&#8212;&#8201;otherwise the chip will refuse to boot and there is
+no software recovery.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Verify the value before sending. The cell is OR-merged at
+the HW level, so a follow-up RPC can only add more disabled modes,
+never clear an already-set bit.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_howconstruct_the_rpc_5"><a class="anchor" href="#_howconstruct_the_rpc_5"></a>3.5.3. How&#8201;&#8212;&#8201;Construct the RPC</h4>
+<div id="cg-post-req-otp-strap" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:otp-provisioning-1":
+    input:
+      strap-disable-mask: 57327</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verification_5"><a class="anchor" href="#_verification_5"></a>3.5.4. Verification</h4>
+<div class="paragraph">
+<p>Reboot the chip into the disabled mode and confirm BL1 refuses boot.
+There is no runtime read-back of the mask from non-secure world.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uc-sjtag"><a class="anchor" href="#uc-sjtag"></a>3.6. Use Case: Secure JTAG</h3>
+<div class="sect3">
+<h4 id="_why_6"><a class="anchor" href="#_why_6"></a>3.6.1. Why</h4>
+<div class="paragraph">
+<p>Lock down JTAG access on production silicon so a debugger cannot
+read internal state or drive the CPU without first authenticating
+against a device-specific secret. Three cooperating leafs are
+involved:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>secure-jtag-shared-secret-key</code>&#8201;&#8212;&#8201;a 32-byte symmetric key in OTP
+Region 4. On every cold reset BL1 reads this key, derives
+a TRNG-nonce digest, and programs the SJTAG controller; a debug
+client must hold the same 32-byte secret to pass challenge/response
+authentication.</p>
+</li>
+<li>
+<p><code>secure-jtag-uuid</code>&#8201;&#8212;&#8201;a 10-byte vendor identifier in OTP Region 0.
+Sampled by the SJTAG controller at cold reset and exposed in the
+controller&#8217;s <code>SJTAG_UUID</code> mmio register; useful as a per-device
+identity binding for unlock-challenge workflows.</p>
+</li>
+<li>
+<p><code>secure-jtag-conf</code>&#8201;&#8212;&#8201;an enumeration that selects the JTAG security
+mode:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">enum value</th>
+<th class="tableblock halign-left valign-top">JTAG_MODE</th>
+<th class="tableblock halign-left valign-top">JTAG_DISABLE</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(omit / factory)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0b00</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Open</strong>&#8201;&#8212;&#8201;no JTAG protection, no auth required.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>secure-boundary-scan</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0b01</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IEEE 1149.1 boundary scan open; CPU debug requires SSK auth.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>secure-full</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0b10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Every JTAG operation requires SSK auth.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>closed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0b11</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JTAG permanently disabled; no auth path.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Once authenticated, <code>secure-boundary-scan</code> and <code>secure-full</code> are
+identical; the two modes differ only in what is reachable in the
+locked, pre-auth state. Pick <code>secure-boundary-scan</code> only when a
+downstream partner needs ICT / boundary-scan access without holding
+the SSK; otherwise prefer <code>secure-full</code> for the strongest pre-auth
+lockdown. Pick <code>closed</code> only to give up CPU debug forever.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The factory default is <strong>Open</strong> (no JTAG protection). To leave the
+device Open, simply omit <code>secure-jtag-conf</code> from the RPC.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>secure-jtag-conf</code> is <strong>one-way and irreversible</strong>. Only
+transitions out of the factory-default Open state are accepted:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">open -&gt; secure-boundary-scan
+open -&gt; secure-full
+open -&gt; closed</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+A locked <code>SECURE_JTAG</code> / <code>JTAG_UUID</code> field cannot be
+recovered. Verify the inputs before issuing the RPC.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_preparation_6"><a class="anchor" href="#_preparation_6"></a>3.6.2. Preparation</h4>
+<div class="paragraph">
+<p>Decide the mode (see the table above), then prepare the inputs for
+each leaf to be programmed.</p>
+</div>
+<div class="paragraph">
+<p><strong>1. Generate the SSK</strong> (recommended for every secure mode):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">openssl rand -out my_sjtag_ssk.bin 32</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Losing this file means no debug client can ever
+authenticate against the chip again&#8201;&#8212;&#8201;and on <code>secure-full</code> /
+<code>closed</code> parts that means no CPU debug, ever. Back it up like the
+ROT private key.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Base64-encode for the RPC:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">base64 -w 0 my_sjtag_ssk.bin</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>2. Pick the UUID</strong> (10 raw bytes, vendor-defined). The bytes are
+free-form; a common pattern is a serial-number-like sequence drawn
+from the OEM tracking system. Example&#8201;&#8212;&#8201;the bytes <code>01..0a</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">printf '\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0a' | base64 -w 0
+# AQIDBAUGBwgJCg==</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>3. Pick the mode</strong>&#8201;&#8212;&#8201;one of <code>secure-boundary-scan</code>, <code>secure-full</code>
+or <code>closed</code>. Per <code>sw-doc-lan966x-secure-boot.pdf</code> §6 the SSK must
+already be in OTP before the SJTAG controller is asked to
+authenticate, so program SSK in the same RPC as <code>secure-jtag-conf</code>
+(or in a strictly earlier RPC). The combined RPC in the next
+subsection gets the ordering right.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_howconstruct_the_rpc_6"><a class="anchor" href="#_howconstruct_the_rpc_6"></a>3.6.3. How&#8201;&#8212;&#8201;Construct the RPC</h4>
+<div class="paragraph">
+<p>All three leafs can be submitted in a single RPC&#8201;&#8212;&#8201;the validator
+runs every check before any write, so a typo in any leaf aborts the
+whole RPC with no partial commit. Within the SJTAG cluster the firmware
+always writes <code>secure-jtag-shared-secret-key</code> before <code>secure-jtag-conf</code>,
+so the SSK is in place before the controller is asked to authenticate on
+the next reset (matching the §6 ordering rule).</p>
+</div>
+<div class="paragraph">
+<p>The placeholders below are illustrative&#8201;&#8212;&#8201;replace them with the
+values from the preparation step.</p>
+</div>
+<div id="cg-post-req-otp-sjtag" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:otp-provisioning-1":
+    input:
+      secure-jtag-shared-secret-key: ZmFrZS0zMi1ieXRlLVNKVEFHLVNTSy1leGFtcGxl
+      secure-jtag-uuid: AQIDBAUGBwgJCg==
+      secure-jtag-conf: secure-full</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>secure-jtag-shared-secret-key</code> lives in Region 4 alongside
+<code>root-of-trust-public-key-sha</code>, <code>secret-symmetric-key</code> and
+<code>strap-disable-mask</code>, and is locked together with them by
+<code>write-protect: 16</code> (or <code>17</code> to also lock Region 0, which freezes
+<code>SECURE_JTAG</code> / <code>JTAG_UUID</code> at the region level on top of the
+per-field auto-lock). See <a href="#uc-wp">Use Case: Write Protect</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verification_6"><a class="anchor" href="#_verification_6"></a>3.6.4. Verification</h4>
+<div class="paragraph">
+<p>The configured mode takes effect on the <strong>next cold reset</strong>. Run
+<code>system-restart</code>, then on the next boot:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For <code>secure-boundary-scan</code> / <code>secure-full</code>: attach a debug client
+holding the SSK and confirm authentication succeeds; an
+unauthenticated client must be rejected on the modes the chosen
+enum locks down.</p>
+</li>
+<li>
+<p>For <code>closed</code>: confirm no JTAG client can attach (e.g. DSTREAM
+connection refused). This is one-way&#8201;&#8212;&#8201;there is no way back.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To unlock a <code>secure-boundary-scan</code> / <code>secure-full</code> part for
+debugging, load the Arm Developer Studio configuration database from
+<a href="https://github.com/microchip-ung/sw-armds-configdb-boards">sw-armds-configdb-boards</a>
+and enter the 32-byte SSK (as 64 hex characters) in the connection&#8217;s
+<strong>Secure JTAG Unlock Key</strong> field; its DTSL script runs the JTAG unlock
+sequence automatically.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="uc-wp"><a class="anchor" href="#uc-wp"></a>3.7. Use Case: Write Protect</h3>
+<div class="sect3">
+<h4 id="_why_7"><a class="anchor" href="#_why_7"></a>3.7.1. Why</h4>
+<div class="paragraph">
+<p>Lock OTP regions to ensure that fields meant to stay unprovisioned
+remain unprovisioned, and that already-provisioned fields cannot be
+altered (e.g. by OR-ing more data into them). After all sensitive
+programming is done, locking the relevant regions freezes the chip&#8217;s
+configuration.</p>
+</div>
+<div class="paragraph">
+<p><code>write-protect</code> is the <strong>one OTP field that does not follow the
+HW-blank rule</strong>&#8201;&#8212;&#8201;it is OR-merged into the existing value, so this
+RPC can be called multiple times to add more locked regions, but
+never to clear them.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_preparation_7"><a class="anchor" href="#_preparation_7"></a>3.7.2. Preparation</h4>
+<div class="paragraph">
+<p>Decide which regions are ready to lock. Each bit locks one region:
+bit N &#8594; Region N. Common production locks:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 28.5714%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Decimal</th>
+<th class="tableblock halign-left valign-top">Hex</th>
+<th class="tableblock halign-left valign-top">Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x01</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lock Region 0 (manufacturing data: serial number)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>16</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x10</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lock Region 4 (keys: ROTPK, SSK, strap-disable)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>17</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x11</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lock Regions 0 + 4 (typical production end-state)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<strong>Bits 5 and 7 are forbidden.</strong> Region 5 holds non-volatile
+secure counters required for rollback protection; Region 7 is the
+key-value tag store that must remain writable for MAC address
+updates. The RPC will reject requests with bit 5 or bit 7 set.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_howconstruct_the_rpc_7"><a class="anchor" href="#_howconstruct_the_rpc_7"></a>3.7.3. How&#8201;&#8212;&#8201;Construct the RPC</h4>
+<div id="cg-post-req-otp-wp" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:otp-provisioning-1":
+    input:
+      write-protect: 17</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This sets bits 0 and 4 (<code>0x11</code>), locking Region 0 (manufacturing
+data) and Region 4 (keys). If Region 0 was already locked, only
+Region 4 is additionally locked.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_verification_7"><a class="anchor" href="#_verification_7"></a>3.7.4. Verification</h4>
+<div class="paragraph">
+<p>Subsequent RPCs targeting fields in the locked regions return the
+structured error <code>Region is write-protected</code> (see <a href="#error-handling">Error Handling</a>).</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Once a region is write-protected, it can never be written
+again. Make sure all desired fields are programmed before locking.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="anti-rollback"><a class="anchor" href="#anti-rollback"></a>4. Anti-Rollback (NV Counters)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The anti-rollback NV counters are independent of the Root-of-Trust&#8201;&#8212;&#8201;they guard against firmware <strong>downgrade</strong> rather than authenticity. The
+hardware holds a monotonic counter in OTP and secure boot refuses to
+run any image whose counter is lower than the value already latched in
+the chip.</p>
+</div>
+<div class="paragraph">
+<p>The model is:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start at <code>0</code> on fresh silicon.</p>
+</li>
+<li>
+<p>When a critical security issue is fixed, increment the counter in the
+build that carries the fix.</p>
+</li>
+<li>
+<p>On the next boot the hardware advances its OTP counter to the image&#8217;s
+value automatically, and from then on refuses to run any older image&#8201;&#8212;&#8201;so an attacker cannot reflash a vulnerable build to re-open the
+issue.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The counter is stored in OTP as a <strong>bit field</strong>&#8201;&#8212;&#8201;each
+increment burns one more fuse bit and is irreversible (monotonic). The
+field is 32 bytes, so it can be incremented at most <strong>256 times</strong> over
+the chip&#8217;s whole lifetime. Do <strong>not</strong> bump it on every build; increment
+it only when shipping a fix for a critical security issue.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The counters are baked into the signed image at build time
+(<code>LAN969X_FW_NVCTR</code> covers the secure firmware BL2/BL31,
+<code>LAN969X_NTFW_NVCTR</code> the non-trusted BL33):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dr cmake --preset lan969x \
+    -DLAN969X_ROT_KEY_FILE=$PWD/my_rotprivk_ecdsa.pem \
+    -DLAN969X_FW_NVCTR=0 -DLAN969X_NTFW_NVCTR=0
+dr cmake --build --preset lan969x</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Incrementing a counter requires building and deploying a new image
+(both <code>-secure.fip</code> and <code>.fip</code>), exactly like any other firmware update.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A build that omits these flags bakes the Microchip build default,
+which is <strong>not</strong> <code>0</code>. On fresh silicon always pass
+<code>-DLAN969X_FW_NVCTR=0 -DLAN969X_NTFW_NVCTR=0</code> explicitly. Once a chip has
+latched a counter value the hardware refuses any image built with a lower
+one, so never boot a lower-counter image after a higher one.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="recommendations"><a class="anchor" href="#recommendations"></a>5. Recommendations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For a production unit, all sensitive OTP fields <strong>and</strong> the
+write-protect lock should be programmed in a single RPC. The
+implementation validates every field before writing any of them, so a
+single typo aborts the operation cleanly with no partial writes.</p>
+</div>
+<div class="paragraph">
+<p>Recommended order, with the leaf that programs each item:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 37.5%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Step</th>
+<th class="tableblock halign-left valign-top">Use case</th>
+<th class="tableblock halign-left valign-top">Leaf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#uc-serial">Use Case: Serial Number</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>serial-number</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#uc-mac">Use Case: MAC Address</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>eth-mac-addr</code> + <code>eth-mac-addr-count</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#uc-signing">Use Case: Signing / Authentication</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>root-of-trust-public-key-sha</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#uc-encryption">Use Case: Confidentiality / Encryption</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>secret-symmetric-key</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#uc-strap">Use Case: STRAP Disable</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>strap-disable-mask</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#uc-sjtag">Use Case: Secure JTAG</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>secure-jtag-shared-secret-key</code> + <code>secure-jtag-uuid</code> + <code>secure-jtag-conf</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#uc-wp">Use Case: Write Protect</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>write-protect</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_combined_production_rpc_steps_1_7"><a class="anchor" href="#_combined_production_rpc_steps_1_7"></a>5.1. Combined production RPC (steps 1-7)</h3>
+<div class="paragraph">
+<p>Replace each placeholder below with the value from the matching use
+case&#8217;s preparation step. Steps 1-7 fit into a single POST; the
+implementation rejects the whole RPC on any validation failure, so
+either everything lands or nothing does.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>strap-disable-mask</code> value shown (<code>57327</code> / <code>0xDFEF</code>) is the
+recommended production lock-down&#8201;&#8212;&#8201;only modes 4 and 13 (QSPI0 /
+QSPI0-HS NOR boot) stay open. It also disables the TF-A monitor, so
+after this RPC firmware can only be updated via <code>/fw/bootloader</code> and
+<code>/fw/image</code> (see <a href="#uc-strap">Use Case: STRAP Disable</a>).
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<code>write-protect: 17</code> is <strong>irreversible</strong>. Once Region 4 is
+locked, ROTPK, SSK, STRAP_DISABLE and OTP_SJTAG_SSK can never be
+modified again. <code>secure-jtag-conf</code> and <code>secure-jtag-uuid</code> are
+additionally locked at the per-field level by their <code>OTP_PRG[0]</code>
+auto-burn (see <a href="#uc-sjtag">Use Case: Secure JTAG</a>). Verify every value above is correct
+before issuing this RPC.
+</td>
+</tr>
+</table>
+</div>
+<div id="cg-post-req-otp-multi" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:otp-provisioning-1":
+    input:
+      serial-number: AQIDBAUGBwg=
+      eth-mac-addr: "00-04-a3-01-02-00"
+      eth-mac-addr-count: 32
+      root-of-trust-public-key-sha: ZmFrZS0zMi1ieXRlLVJPVFBLLVNIQTI1Ni1hbmNob3I=
+      secret-symmetric-key: ZmFrZS0zMi1ieXRlLUFFUy1HQ00tU1NLLWV4YW1wbGU=
+      strap-disable-mask: 57327
+      secure-jtag-shared-secret-key: ZmFrZS0zMi1ieXRlLVNKVEFHLVNTSy1leGFtcGxl
+      secure-jtag-uuid: AQIDBAUGBwgJCg==
+      secure-jtag-conf: secure-full
+      write-protect: 17</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_build_the_matching_firmware"><a class="anchor" href="#_build_the_matching_firmware"></a>5.2. Build the matching firmware</h3>
+<div class="paragraph">
+<p>Provisioning and firmware go together: the image loaded for the
+combined RPC above must be built with <strong>all</strong> the options the RPC
+programs&#8201;&#8212;&#8201;the customer ROT key (signing), the SSK (encryption) and
+the NV counters (anti-rollback)&#8201;&#8212;&#8201;so the signed/encrypted image
+matches what OTP will enforce on the next boot:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dr cmake --preset lan969x \
+    -DLAN969X_ROT_KEY_FILE=$PWD/my_rotprivk_ecdsa.pem \
+    -DLAN969X_ENCRYPT_KEY_FILE=$PWD/my_ssk_key.bin \
+    -DLAN969X_FW_NVCTR=0 -DLAN969X_NTFW_NVCTR=0
+dr cmake --build --preset lan969x</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This produces the full artifact set: the signed bootloader
+(<code>lan969x_&lt;board&gt;-secure.fip</code>) and the signed + encrypted application
+(<code>lan969x_&lt;board&gt;.enc.fip</code> / <code>.enc.img</code>). If confidentiality is not
+required, omit <code>-DLAN969X_ENCRYPT_KEY_FILE</code> and load the plaintext
+<code>.fip</code> / <code>.img</code> instead.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_push_matching_firmware_before_reboot"><a class="anchor" href="#_push_matching_firmware_before_reboot"></a>5.3. Push matching firmware (before reboot)</h3>
+<div class="paragraph">
+<p>After the RPC succeeds and <strong>before</strong> issuing <code>system-restart</code>, push
+the matching customer-keyed firmware to flash:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>lan969x_&lt;board&gt;-secure.fip</code> &#8594; <code>/fw/bootloader</code> (carries
+<code>tb_fw.crt</code>, anchored against OTP ROTPK by BL1).</p>
+</li>
+<li>
+<p><code>lan969x_&lt;board&gt;.fip</code> (or <code>.enc.fip</code> if encryption was also enabled)
+&#8594; <code>/fw/image</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>OTP changes only take effect on the next reset, and the
+currently-running BL1/BL2 already authorised this boot under the
+previous OTP state&#8201;&#8212;&#8201;so doing the OTP RPC and the firmware push
+in the same pre-reboot window saves one reboot and removes the
+"OTP programmed but firmware still old" failure mode.</p>
+</div>
+<div class="paragraph">
+<p><code>system-restart</code> once both are in place; the very first boot after
+the reset lands the new OTP and the matching firmware in lockstep.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="error-handling"><a class="anchor" href="#error-handling"></a>6. Error Handling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Failures fall into two classes.</p>
+</div>
+<div class="paragraph">
+<p><strong>User-fixable input errors</strong> return CoAP <strong>4.00 Bad Request</strong> with a
+structured payload naming the failing field and a human-readable
+<code>error-message</code>:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><code>error-message</code></th>
+<th class="tableblock halign-left valign-top">Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Field length mismatch</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A base64 binary leaf decodes to the wrong number of bytes (e.g. a ROTPK that is not 32 bytes).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Bits 5/7 must not be set</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The <code>write-protect</code> value sets a forbidden bit (Region 5 or Region 7).</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-coreconf:error":
+    error-data-node: "/mchp-velocitysp-system:otp-provisioning-1//write-protect"
+    error-tag: ietf-coreconf:invalid-value
+    error-message: Bits 5/7 must not be set</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Irreversible-state or hardware failures</strong> return CoAP <strong>5.00</strong> with
+<strong>no payload</strong>&#8201;&#8212;&#8201;they cannot be corrected by re-sending, so no
+<code>error-message</code> is provided; the specific reason is emitted to the device
+trace with a numeric SID. These include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the target field&#8217;s region is already write-protected;</p>
+</li>
+<li>
+<p>the field is not blank&#8201;&#8212;&#8201;already programmed (HW-blank rule);</p>
+</li>
+<li>
+<p>the current OTP value or write-protect state could not be read;</p>
+</li>
+<li>
+<p>the OTP hardware / secure monitor rejected the write;</p>
+</li>
+<li>
+<p>a <code>secure-jtag-*</code> rejection&#8201;&#8212;&#8201;<code>{SECURE_JTAG,JTAG_UUID} already
+programmed</code>, <code>{SECURE_JTAG,JTAG_UUID} locked by OTP_PRG[0]</code>, or the
+unrecoverable <code>partial commit: &#8230;&#8203; burn failed</code> (requires Microchip
+support).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All input is validated before any OTP write, so a validation failure
+guarantees no partial writes. A partial write is only theoretically
+possible if a hardware fault occurs mid-sequence&#8201;&#8212;&#8201;in particular the
+non-atomic <code>secure-jtag-*</code> value + <code>OTP_PRG[0]</code> auto-lock burn.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>

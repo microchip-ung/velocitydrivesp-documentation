@@ -127,6 +127,9 @@
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -197,6 +200,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
   </li>
 </ul>
   </li>
@@ -277,6 +283,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.06/doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
           <a href="2026.03/doc-intro.html">2026.03</a>
         </li>
         <li class="version">
@@ -314,6 +323,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-if-port.html">latest</a>
+    <a class="version" href="2026.06/doc-cg-if-port.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-if-port.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-if-port.html">2025.12</a>
     <a class="version" href="2025.09/doc-cg-if-port.html">2025.09</a>
@@ -511,7 +521,10 @@ The administrative state is disabled as shown below.</p>
 - "/ietf-interfaces:interfaces/interface[name='1']/\
    ieee802-ethernet-interface:ethernet/duplex"
 
-- "/ietf-interfaces:interfaces/interface[name='1']/phys-address"</code></pre>
+- "/ietf-interfaces:interfaces/interface[name='1']/phys-address"
+
+- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/test/sqi-value"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -540,7 +553,12 @@ The administrative state is disabled as shown below.</p>
 
 
 - ? "/ietf-interfaces:interfaces/interface/phys-address"
-  : 00-11-22-33-44-01</code></pre>
+  : 00-11-22-33-44-01
+
+
+- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
+     sqi-value"
+  : 6</code></pre>
 </div>
 </div>
 </div>
@@ -790,6 +808,659 @@ These frames have been received by the port prior to the accesses shown:</p>
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
      mchp-velocitysp-port:eth-port/statistics/clear-statistics"
   :</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_port_test"><a class="anchor" href="#_port_test"></a>4. Port Test</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The port test feature provides diagnostic primitives to verify the physical-layer
+integrity of an Ethernet port.
+Two test modes are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>One-shot tests</strong> — a single action triggers the test and stores the result.
+The result remains readable until the next invocation.</p>
+</li>
+<li>
+<p><strong>Multi-step tests</strong> — individual primitives (loopbacks, PRBS generators, isolation)
+are enabled and disabled independently, allowing custom diagnostic sequences.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Activating any test mode may temporarily disrupt normal traffic on the
+tested port.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_signal_quality_indicator"><a class="anchor" href="#_signal_quality_indicator"></a>4.1. Signal Quality Indicator</h3>
+<div class="paragraph">
+<p>The Signal Quality Indicator (SQI) reflects the received signal quality as
+measured by the copper PHY.
+A value of 0xFF indicates that the PHY did not return a valid reading.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-port-test-sqi-value" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/test/sqi-value"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-port-test-sqi-value" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
+     sqi-value"
+  : 6</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_one_shot_tests"><a class="anchor" href="#_one_shot_tests"></a>4.2. One-Shot Tests</h3>
+<div class="paragraph">
+<p>A one-shot test is started by invoking the <code>activate</code> action with the desired
+<code>mode</code>.
+The optional <code>pattern</code> selects the PRBS polynomial for PRBS-based modes and is
+ignored for other modes.
+The test runs to completion and the result is stored as read-only state.</p>
+</div>
+<div class="sect3">
+<h4 id="_cable_diagnostic"><a class="anchor" href="#_cable_diagnostic"></a>4.2.1. Cable Diagnostic</h4>
+<div class="paragraph">
+<p>The port is isolated during the test, meaning frames are not forwarded to and
+from the port.
+The cable diagnostic test is executed.
+It reports whether a link was detected and, for each pair, the fault status
+and estimated cable length in metres.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The cable diagnostic can take up to 4 seconds to complete as it tests
+each wire pair in sequence.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>POST request message:</p>
+</div>
+<div id="cg-post-req-port-test-cable-diag" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/one-shot-test/activate"
+  : input:
+      mode: cable-diag</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-port-test-cable-diag-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/test/one-shot-test/cable-diag"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-port-test-cable-diag-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
+     one-shot-test/cable-diag"
+  : link: true
+    pair-result:
+    - index: 1
+      status: ok
+      length: 0
+    - index: 2
+      status: ok
+      length: 0
+    - index: 3
+      status: ok
+      length: 0
+    - index: 4
+      status: abnorm
+      length: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_host_side_loop_frame_test"><a class="anchor" href="#_host_side_loop_frame_test"></a>4.2.2. Host-Side Loop Frame Test</h4>
+<div class="paragraph">
+<p>The port is isolated during the test, meaning frames are not forwarded to and
+from the port.
+The host-side loop is created, meaning frames generated against the line are
+looped back to the host.
+Frames are generated at line speed for a predefined time.
+The host-side loop is then removed.
+A healthy loopback path yields equal transmit and receive frame counts.</p>
+</div>
+<div class="paragraph">
+<p>POST request message:</p>
+</div>
+<div id="cg-post-req-port-test-host-loop-frame" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/one-shot-test/activate"
+  : input:
+      mode: host-side-loop-frame</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-port-test-host-loop-frame-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/test/one-shot-test/host-side-loop-frame"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-port-test-host-loop-frame-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
+     one-shot-test/host-side-loop-frame"
+  : tx-frame-count: '708037'
+    rx-frame-count: '708037'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_frame_generator_test"><a class="anchor" href="#_frame_generator_test"></a>4.2.3. Frame Generator Test</h4>
+<div class="paragraph">
+<p>The port is isolated during the test, meaning frames are not forwarded to and
+from the port.
+Frames are generated against the line at line speed for a predefined time.
+A line-side loopback or a looping cable must be present before running this
+test.</p>
+</div>
+<div class="paragraph">
+<p>POST request message:</p>
+</div>
+<div id="cg-post-req-port-test-frame-gen" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/one-shot-test/activate"
+  : input:
+      mode: frame-gen</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-port-test-frame-gen-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/test/one-shot-test/frame-gen"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-port-test-frame-gen-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
+     one-shot-test/frame-gen"
+  : tx-frame-count: '704860'
+    rx-frame-count: '0'</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_prbs_generator_test"><a class="anchor" href="#_prbs_generator_test"></a>4.2.4. PRBS Generator Test</h4>
+<div class="paragraph">
+<p>The port is isolated during the test, meaning frames are not forwarded to and
+from the port.
+The PRBS pattern is generated against the line for a predefined time.
+A line-side loopback or a looping cable must be present before running this
+test.</p>
+</div>
+<div class="paragraph">
+<p>POST request message:</p>
+</div>
+<div id="cg-post-req-port-test-prbs-gen" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/one-shot-test/activate"
+  : input:
+      mode: prbs-gen
+      pattern: prbs7</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-port-test-prbs-gen-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/test/one-shot-test/prbs-gen"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-port-test-prbs-gen-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
+     one-shot-test/prbs-gen"
+  : error-count: 0</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_multi_step_test"><a class="anchor" href="#_multi_step_test"></a>4.3. Multi-Step Test</h3>
+<div class="paragraph">
+<p>The multi-step test exposes individual diagnostic primitives that can be
+combined in any order.
+Each primitive is controlled by a dedicated action with a boolean <code>active</code>
+input.
+The current state of all primitives is reflected in the <code>status</code> container,
+and accumulated PRBS error counts are available in the <code>result</code> container.</p>
+</div>
+<div class="paragraph">
+<p>The following test scenarios are supported.
+"Near end" refers to the device under test; "far end" refers to the remote
+link partner.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Line-side loop one-shot frame test</strong></dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>Near end:  isolate(true)
+Far end:   line-side-loop(active=true, position=loop-outer)
+Near end:  one-shot-test(frame-gen)
+           Fetch one-shot-test-result/frame-gen
+Far end:   line-side-loop(false)
+Near end:  isolate(false)</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><strong>Line-side loop one-shot PRBS test</strong></dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>Near end:  isolate(true)
+Far end:   line-side-loop(active=true, position=loop-outer)
+Near end:  one-shot-test(prbs-gen)
+           Fetch one-shot-test-result/prbs-gen
+Far end:   line-side-loop(false)
+Near end:  isolate(false)</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><strong>Line-side loop contiguous switch PRBS test</strong></dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>Near end:  isolate(true)
+Far end:   line-side-loop(active=true, position=loop-outer)
+Near end:  prbs-switch(true)
+           prbs-switch(false)
+           Fetch multi-step-test/result/prbs-switch-error-count
+Far end:   line-side-loop(false)
+Near end:  isolate(false)</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><strong>Line-side loop contiguous PHY-host-to-switch PRBS test</strong></dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>Near end:  line-side-loop(active=true, position=loop-inner)
+           prbs-phy-host(true)
+           prbs-phy-host(false)
+           line-side-loop(false)
+           Fetch multi-step-test/result/prbs-phy-host-error-count</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><strong>Bidirectional contiguous switch-to-switch PRBS test</strong></dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>Far end + Near end:
+           prbs-switch(true)
+           prbs-switch(false)
+           Fetch multi-step-test/result/prbs-switch-error-count</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1"><strong>Bidirectional contiguous switch-to-PHY-host PRBS test</strong></dt>
+<dd>
+<div class="listingblock">
+<div class="content">
+<pre>Near end:  prbs-switch(true)
+           prbs-phy-host(true)
+           prbs-switch(false)
+           prbs-phy-host(false)
+           Fetch multi-step-test/result/prbs-switch-error-count
+           Fetch multi-step-test/result/prbs-phy-host-error-count</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="sect3">
+<h4 id="_port_isolation"><a class="anchor" href="#_port_isolation"></a>4.3.1. Port Isolation</h4>
+<div class="paragraph">
+<p>Port isolation disconnects the port from the switch fabric so that no normal
+traffic is forwarded during testing.</p>
+</div>
+<div class="paragraph">
+<p>POST request message (enable):</p>
+</div>
+<div id="cg-post-req-port-test-isolate-on" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/isolate"
+  : input:
+      active: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>POST request message (disable):</p>
+</div>
+<div id="cg-post-req-port-test-isolate-off" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/isolate"
+  : input:
+      active: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_line_side_loopback"><a class="anchor" href="#_line_side_loopback"></a>4.3.2. Line-Side Loopback</h4>
+<div class="paragraph">
+<p>The line-side loopback reflects frames arriving from the cable back toward the
+remote link partner without entering the switch fabric.</p>
+</div>
+<div class="paragraph">
+<p>Position 'loop-outer' means that the loop is positioned in the PHY if there is any. Otherwise in the switch.
+Position 'loop-inner' means that the loop is positioned in the switch.</p>
+</div>
+<div class="paragraph">
+<p>POST request message (enable):</p>
+</div>
+<div id="cg-post-req-port-test-line-loop-on" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     line-side-loop"
+  : input:
+      active: true
+      position: loop-outer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>POST request message (disable):</p>
+</div>
+<div id="cg-post-req-port-test-line-loop-off" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     line-side-loop"
+  : input:
+      active: false
+      position: loop-outer</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_host_side_loopback"><a class="anchor" href="#_host_side_loopback"></a>4.3.3. Host-Side Loopback</h4>
+<div class="paragraph">
+<p>The host-side loopback reflects frames from the switch fabric back to the
+switch without reaching the line side.</p>
+</div>
+<div class="paragraph">
+<p>POST request message (enable):</p>
+</div>
+<div id="cg-post-req-port-test-host-loop-on" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     host-side-loop"
+  : input:
+      active: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>POST request message (disable):</p>
+</div>
+<div id="cg-post-req-port-test-host-loop-off" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     host-side-loop"
+  : input:
+      active: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_phy_host_side_prbs"><a class="anchor" href="#_phy_host_side_prbs"></a>4.3.4. PHY Host-Side PRBS</h4>
+<div class="paragraph">
+<p>Enables the PHY-internal PRBS generator and checker on the host-side SerDes.
+The accumulated error count is available in the <code>result</code> container while the
+engine is active.</p>
+</div>
+<div class="paragraph">
+<p>POST request message (enable):</p>
+</div>
+<div id="cg-post-req-port-test-prbs-phy-host-on" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     prbs-phy-host"
+  : input:
+      active: true
+      pattern: prbs7</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>POST request message (disable):</p>
+</div>
+<div id="cg-post-req-port-test-prbs-phy-host-off" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     prbs-phy-host"
+  : input:
+      active: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_switch_side_prbs"><a class="anchor" href="#_switch_side_prbs"></a>4.3.5. Switch-Side PRBS</h4>
+<div class="paragraph">
+<p>Enables the switch-side PRBS generator and checker toward the PHY line side.
+The accumulated error count is available in the <code>result</code> container while the
+engine is active.</p>
+</div>
+<div class="paragraph">
+<p>POST request message (enable):</p>
+</div>
+<div id="cg-post-req-port-test-prbs-switch-on" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     prbs-switch"
+  : input:
+      active: true
+      pattern: prbs15</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>POST request message (disable):</p>
+</div>
+<div id="cg-post-req-port-test-prbs-switch-off" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     prbs-switch"
+  : input:
+      active: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_phy_host_side_prbs_error_injection"><a class="anchor" href="#_phy_host_side_prbs_error_injection"></a>4.3.6. PHY Host-Side PRBS Error Injection</h4>
+<div class="paragraph">
+<p>Triggers a contiguous insertion of bit errors in the PHY host-side PRBS stream.
+When <code>active</code> is <code>true</code>, the error injection is enabled and errors are
+injected periodically.
+When <code>active</code> is <code>false</code>, error injection is disabled.</p>
+</div>
+<div class="paragraph">
+<p>POST request message (enable):</p>
+</div>
+<div id="cg-post-req-port-test-prbs-phy-host-error-on" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     prbs-phy-host-error"
+  : input:
+      active: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>POST request message (disable):</p>
+</div>
+<div id="cg-post-req-port-test-prbs-phy-host-error-off" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     prbs-phy-host-error"
+  : input:
+      active: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_switch_side_prbs_error_injection"><a class="anchor" href="#_switch_side_prbs_error_injection"></a>4.3.7. Switch-Side PRBS Error Injection</h4>
+<div class="paragraph">
+<p>Triggers a contiguous insertion of bit errors in the switch-side PRBS stream.
+When <code>active</code> is <code>true</code>, the error injection is enabled and errors are
+injected periodically.
+When <code>active</code> is <code>false</code>, error injection is disabled.</p>
+</div>
+<div class="paragraph">
+<p>POST request message (enable):</p>
+</div>
+<div id="cg-post-req-port-test-prbs-switch-error-on" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     prbs-switch-error"
+  : input:
+      active: true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>POST request message (disable):</p>
+</div>
+<div id="cg-post-req-port-test-prbs-switch-error-off" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/test/multi-step-test/actions/\
+     prbs-switch-error"
+  : input:
+      active: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_multi_step_test_status_and_results"><a class="anchor" href="#_multi_step_test_status_and_results"></a>4.3.8. Multi-Step Test Status and Results</h4>
+<div class="paragraph">
+<p>The active state of all primitives and the accumulated PRBS error counts are
+retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-port-test-multi-status" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/test/multi-step-test/status"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-port-test-multi-status" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
+     multi-step-test/status"
+  : isolate: false
+    line-side-loop: false
+    line-side-loop-position: loop-outer
+    host-side-loop: false
+    prbs-switch: false
+    prbs-switch-pattern: prbs15
+    prbs-phy-host: false
+    prbs-phy-host-pattern: prbs15</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-port-test-multi-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
+   mchp-velocitysp-port:eth-port/test/multi-step-test/result"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-port-test-multi-result" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
+     multi-step-test/result"
+  : prbs-switch-error-count: 0
+    prbs-phy-host-error-count: 65535</code></pre>
+</div>
 </div>
 </div>
 </div>

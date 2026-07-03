@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VelocityDRIVE-SP-2026.06 Release Notes :: VelocityDRIVE™ Software Package Documentation</title>
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../../_/css/site.css">
+    <link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../..">VelocityDRIVE™ Software Package Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="2026.06">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-redbox.html">RedBox</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-tas.html">TAS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mup1.html">MUP1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev22n59a.html">EVB-LAN9692-Hallberg-POC (EV22N59A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-regaccess.html">Register Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-serdes.html">SerDes tuning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">2026.06</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="../doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../doc-intro.html">latest</a>
+        </li>
+        <li class="version is-current">
+          <a href="doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
+          <a href="../2026.03/doc-intro.html">2026.03</a>
+        </li>
+        <li class="version">
+          <a href="../2025.12/doc-intro.html">2025.12</a>
+        </li>
+        <li class="version">
+          <a href="../2025.09/doc-intro.html">2025.09</a>
+        </li>
+        <li class="version">
+          <a href="../2025.06/doc-intro.html">2025.06</a>
+        </li>
+        <li class="version">
+          <a href="../2025.03/doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg-relnote.html">Release note</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">2026.06</button>
+  <div class="version-menu">
+    <a class="version" href="../doc-cg-relnote.html">latest</a>
+    <a class="version is-current" href="doc-cg-relnote.html">2026.06</a>
+    <a class="version" href="../2026.03/doc-cg-relnote.html">2026.03</a>
+    <a class="version" href="../2025.12/doc-cg-relnote.html">2025.12</a>
+    <a class="version" href="../2025.09/doc-cg-relnote.html">2025.09</a>
+    <a class="version" href="../2025.06/doc-cg-relnote.html">2025.06</a>
+    <a class="version" href="../2025.03/doc-cg-relnote.html">2025.03</a>
+  </div>
+</div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">VelocityDRIVE-SP-2026.06 Release Notes</h1>
+<div class="sect1">
+<h2 id="_2026_06"><a class="anchor" href="#_2026_06"></a>1. 2026.06</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>Version:            2026.06
+Previous Version:   2026.03
+Release date:       2026-07-03
+Type:               Roadmap release
+YANG Catalog SHA:   TBD</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_new_features"><a class="anchor" href="#_new_features"></a>2. New features</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_mld_snooping_added"><a class="anchor" href="#_mld_snooping_added"></a>2.1. MLD Snooping added</h3>
+<div class="paragraph">
+<p>MLD (Multicast Listener Discovery) Snooping has been added. It constrains IPv6
+multicast forwarding to the ports that have active listeners, instead of
+flooding multicast to every member port of a VLAN. The implementation covers
+MLDv2 (RFC 9777) with backward compatibility for MLDv1 (RFC 2710) and is based
+on lightweight snooping protocol (RFC5790) and is configured and monitored via
+the RFC 9166 YANG model (<code>ietf-igmp-mld-snooping</code>) over CORECONF/CoAP.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mld.html" class="xref page">the MLD Snooping guide</a> for configuration examples,
+and the
+<a href="_attachments/yang-catalog.html#/routing/control-plane-protocols/control-plane-protocol/mld-snooping-instance" class="xref attachment">mld-snooping-instance</a>
+YANG model.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_port_test_and_cable_diagnostics_added"><a class="anchor" href="#_port_test_and_cable_diagnostics_added"></a>2.2. Port Test and cable diagnostics added</h3>
+<div class="paragraph">
+<p>A port test framework has been added, exposed under the port <code>test</code> subtree of
+the interface model. It provides:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>One-shot tests: cable diagnostics (pair status and length), host-side loop
+frame test, frame generator and PRBS generator.</p>
+</li>
+<li>
+<p>Multi-step tests with individually controllable actions: isolate, line-side
+loop, host-side loop and PRBS (PHY-host / switch) generation with error
+counting.</p>
+</li>
+<li>
+<p>A read-only Signal Quality Index (SQI) value.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-if-port.html" class="xref page">the Switch Interface Port guide</a> for details and
+examples, and the
+<a href="_attachments/yang-catalog.html#/interfaces/interface/eth-port/test" class="xref attachment">eth-port/test</a>
+YANG model.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_coreconf_client_library_added"><a class="anchor" href="#_coreconf_client_library_added"></a>2.3. CORECONF client library added</h3>
+<div class="paragraph">
+<p>A new C client library (<code>velocitydrivesp-client-lib</code> / <code>lm_client</code>) has been
+added for building CORECONF/CoAP requests and decoding the responses from a
+host application. It ships with MUP1, CoAP and CORECONF transports, x86 and
+ARMv7 build presets, a C++ compile test, and is MISRA C:2023 checked.</p>
+</div>
+<div class="paragraph">
+<p>See <code>client-lib/README.md</code> in the source tree for build and usage details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_lan969x_otp_provisioning_yang_added"><a class="anchor" href="#_lan969x_otp_provisioning_yang_added"></a>2.4. LAN969x OTP provisioning YANG added</h3>
+<div class="paragraph">
+<p>A new YANG model has been added to facilitate OTP (and secure boot) provisioning
+using the CORECONF interface.</p>
+</div>
+<div class="paragraph">
+<p>The supported fields include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Serial number</p>
+</li>
+<li>
+<p>Ethernet MAC address range</p>
+</li>
+<li>
+<p>Root-of-Trust public-key for FW authentication</p>
+</li>
+<li>
+<p>Secret symmetric key for FW encryption</p>
+</li>
+<li>
+<p>Boot-strap disable mask</p>
+</li>
+<li>
+<p>Secure JTAG configuration</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-otp-provisioning.html" class="xref page">the LAN969x OTP Provisioning guide</a> and
+the <a href="_attachments/yang-catalog.html#/otp-provisioning-1" class="xref attachment">otp-provisioning-1</a>
+RPC for more details.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+OTP programming is irreversible and can permanently brick the board.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_firmware_update_per_platform_image_compatibility_check"><a class="anchor" href="#_firmware_update_per_platform_image_compatibility_check"></a>2.5. Firmware update: per-platform image compatibility check</h3>
+<div class="paragraph">
+<p>The firmware-update service now rejects firmware images that were not built for
+the running board (LMSTAX-372). Each board carries a <code>platform_id</code>
+(<code>board:capabilities/platform_id</code> in <code>board.yang</code>), and each generated LAN969x
+image is stamped with the id of the board it was built for. A <code>PUT /fw/image</code>
+whose stamped id is not compatible with the running board is rejected before
+anything is written to flash, so an image built for a different platform can no
+longer be installed and leave the device unbootable.</p>
+</div>
+<div class="paragraph">
+<p>Boards that share the same SoC share an id and stay cross-loadable (for example,
+the auto and non-auto variants of the same SoC).</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mgmt-fwup.html" class="xref page">the Firmware Update guide</a> for the compatibility
+scheme.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This breaks downgrade to releases built before this check. Once 2026.06
+is deployed the board&#8217;s <code>platform_id</code> is set to a real value, while pre-2026.06
+LAN969x images are stamped <code>0x0000</code> (untagged). An untagged image is <strong>not</strong>
+treated as universal (only <code>0xffff</code> is), so it fails the exact-match and is
+rejected. Downgrading to a pre-2026.06 release over <code>PUT /fw/image</code> will
+therefore be refused.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mup1_configurable_uart_baud_rate_added"><a class="anchor" href="#_mup1_configurable_uart_baud_rate_added"></a>2.6. MUP1: Configurable UART baud rate added</h3>
+<div class="paragraph">
+<p>The MUP1 UART baud rate is now configurable via the <code>mup1-baudrate</code> leaf,
+supporting the standard rates from 9600 up to 921600 bps (default 115200). The
+change takes effect after saving the configuration and rebooting; the matching
+rate must be selected on the host tools (<code>mup1ct</code>, <code>mup1cc</code>) via <code>--baudrate</code>.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mup1.html#mup1-baudrate" class="xref page">this section</a> of the MUP1
+configuration guide and the
+<a href="_attachments/yang-catalog.html#/mup1-config/mup1-baudrate" class="xref attachment">mup1-baudrate</a>
+leaf for details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_board_configuration_port_max_speed_advertisement"><a class="anchor" href="#_board_configuration_port_max_speed_advertisement"></a>2.7. Board configuration: Port max-speed advertisement</h3>
+<div class="paragraph">
+<p>A <code>max_speed</code> leaf has been added to the board configuration <code>eth_port/phy</code>
+container. When set, it limits the speed advertised during PHY
+auto-negotiation, allowing a port to be capped below its maximum capability.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_board_configuration_new_peripheral_and_mux_definitions"><a class="anchor" href="#_board_configuration_new_peripheral_and_mux_definitions"></a>2.8. Board configuration: new peripheral and mux definitions</h3>
+<div class="paragraph">
+<p>The board configuration model has been extended with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>uarts</code>/<code>uart</code> and <code>i2cs</code>/<code>i2c</code> entries to declare SoC UART and I2C bus
+controllers and assign them logical handles.</p>
+</li>
+<li>
+<p>PCA954x-type I2C multiplexers (<code>i2c_mux_pca954x</code>), in addition to the existing
+GPIO-controlled muxes.</p>
+</li>
+<li>
+<p>MCP230xx I2C GPIO expanders (<code>gpio_mcp230xx</code>).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-tailor-boardconf.html" class="xref page">Board Configuration</a> for details.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_board_configuration_phy_drivers_dummy_phy_support_on_lan969x_variants"><a class="anchor" href="#_board_configuration_phy_drivers_dummy_phy_support_on_lan969x_variants"></a>2.9. Board configuration: PHY drivers: dummy-PHY support on LAN969x variants</h3>
+<div class="paragraph">
+<p>The dummy-PHY driver has been added to the <code>velocitysp_lan969x</code> and
+<code>velocitysp_lan969x_auto</code> MEPA variants. Its purpose is to support MAC-to-MAC
+connections, i.e. ports that have no external PHY (such as SerDes/backplane
+links between two MACs), allowing such ports to be brought up.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_behavioral_changes"><a class="anchor" href="#_behavioral_changes"></a>3. Behavioral changes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_l3_static_routes_created_together_with_their_protocol_instance"><a class="anchor" href="#_l3_static_routes_created_together_with_their_protocol_instance"></a>3.1. L3: Static routes created together with their protocol instance</h3>
+<div class="paragraph">
+<p>Static routes live under a user-managed <code>control-plane-protocol</code> instance of
+type <code>static</code>, which (per RFC 8349 §5.3.1) is not created implicitly by the
+system. The configuration guide now shows the initial routing table being set
+with a single request that creates the instance together with all its routes —
+the same form used when the running configuration is applied at boot — while
+individual routes can still be added later by addressing the <code>route</code> list
+directly.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-l3.html" class="xref page">the L3 configuration guide</a> for details.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

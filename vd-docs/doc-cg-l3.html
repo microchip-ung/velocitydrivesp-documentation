@@ -127,6 +127,9 @@
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -197,6 +200,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
   </li>
 </ul>
   </li>
@@ -277,6 +283,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.06/doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
           <a href="2026.03/doc-intro.html">2026.03</a>
         </li>
         <li class="version">
@@ -313,6 +322,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-l3.html">latest</a>
+    <a class="version" href="2026.06/doc-cg-l3.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-l3.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-l3.html">2025.12</a>
     <a class="version" href="2025.09/doc-cg-l3.html">2025.09</a>
@@ -420,6 +430,14 @@
 <h2 id="_static_route_configuration"><a class="anchor" href="#_static_route_configuration"></a>3. Static Route Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>Static routes live under a <code>control-plane-protocol</code> instance of type
+<code>static</code>. Per RFC 8349 (§5.3.1) this instance is user-managed configuration
+("It MAY be configured in zero or multiple instances") and is not created
+implicitly by the system. The initial routing table is therefore set with a
+single request that creates the instance together with its routes — the same
+form used when the running configuration is applied at boot.</p>
+</div>
+<div class="paragraph">
 <p>The static routes of R1 are configured as shown below:</p>
 </div>
 <div class="ulist">
@@ -440,26 +458,48 @@
 </div>
 <div id="cg-ipatch-req-l3-srt" class="listingblock">
 <div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/control-plane-protocol"
+  : type: ietf-routing:static
+    name: '0'
+    static-routes:
+      ietf-ipv4-unicast-routing:ipv4:
+        route:
+        - destination-prefix: 4.4.0.0/16
+          next-hop:
+            next-hop-address: 2.0.0.2
+        - destination-prefix: 3.3.0.0/16
+          next-hop:
+            next-hop-address: 2.0.0.2
+        - destination-prefix: 0.0.0.0/0
+          next-hop:
+            next-hop-address: 2.0.0.2</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_a_static_route"><a class="anchor" href="#_adding_a_static_route"></a>4. Adding a Static Route</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once the instance exists, an individual route can be added (or changed) by
+addressing the <code>route</code> list directly, without resending the whole table:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Network 5.5.0.0/16 via 2.0.0.2.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-l3-srt-add" class="listingblock">
+<div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/\
      control-plane-protocol[type='ietf-routing:static'][name='0']/\
      static-routes/ietf-ipv4-unicast-routing:ipv4/route"
-  : destination-prefix: 4.4.0.0/16
-    next-hop:
-      next-hop-address: 2.0.0.2
-
-
-- ? "/ietf-routing:routing/control-plane-protocols/\
-     control-plane-protocol[type='ietf-routing:static'][name='0']/\
-     static-routes/ietf-ipv4-unicast-routing:ipv4/route"
-  : destination-prefix: 3.3.0.0/16
-    next-hop:
-      next-hop-address: 2.0.0.2
-
-
-- ? "/ietf-routing:routing/control-plane-protocols/\
-     control-plane-protocol[type='ietf-routing:static'][name='0']/\
-     static-routes/ietf-ipv4-unicast-routing:ipv4/route"
-  : destination-prefix: 0.0.0.0/0
+  : destination-prefix: 5.5.0.0/16
     next-hop:
       next-hop-address: 2.0.0.2</code></pre>
 </div>
@@ -467,7 +507,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_routing_table"><a class="anchor" href="#_routing_table"></a>4. Routing Table</h2>
+<h2 id="_routing_table"><a class="anchor" href="#_routing_table"></a>5. Routing Table</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The routing table of R1 is retrieved as shown below.</p>
@@ -548,7 +588,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_arp_table"><a class="anchor" href="#_arp_table"></a>5. ARP Table</h2>
+<h2 id="_arp_table"><a class="anchor" href="#_arp_table"></a>6. ARP Table</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The ARP table of R1 is retrieved for each L3 interface as shown below:</p>
@@ -591,7 +631,7 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_l3_interface_counters"><a class="anchor" href="#_l3_interface_counters"></a>6. L3 Interface Counters</h2>
+<h2 id="_l3_interface_counters"><a class="anchor" href="#_l3_interface_counters"></a>7. L3 Interface Counters</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The L3 interface counters of R1 are retrieved as shown below.</p>

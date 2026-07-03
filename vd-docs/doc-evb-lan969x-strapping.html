@@ -127,6 +127,9 @@
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -197,6 +200,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
   </li>
 </ul>
   </li>
@@ -277,6 +283,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.06/doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
           <a href="2026.03/doc-intro.html">2026.03</a>
         </li>
         <li class="version">
@@ -314,6 +323,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-evb-lan969x-strapping.html">latest</a>
+    <a class="version" href="2026.06/doc-evb-lan969x-strapping.html">2026.06</a>
     <a class="version" href="2026.03/doc-evb-lan969x-strapping.html">2026.03</a>
     <a class="version" href="2025.12/doc-evb-lan969x-strapping.html">2025.12</a>
     <a class="version" href="2025.09/doc-evb-lan969x-strapping.html">2025.09</a>
@@ -369,12 +379,12 @@ the boot mode, the board needs to be reset.
 <td class="tableblock halign-left valign-top"><p class="tableblock">0001 (0x1)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-1.jpg" alt="dip 1" width="150px">
+<img src="_images/dip-lan969x-1.jpg" alt="dip lan969x 1" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Default development boot mode for VelocityDRIVE-SP</strong><br>
-Booting from SPI-NOR 25Mhz mode <code>1-1-1</code><br>
+Booting from NOR-Flash
 BootROM traces activated on FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 </div></div></td>
 </tr>
@@ -382,12 +392,12 @@ BootROM traces activated on FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0100 (0x4)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-4.jpg" alt="dip 4" width="150px">
+<img src="_images/dip-lan969x-4.jpg" alt="dip lan969x 4" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Default boot mode for VelocityDRIVE-SP</strong><br>
-Booting from SPI-NOR 25Mhz mode <code>1-1-1</code><br>
+Booting from NOR-Flash
 BootROM traces disabled.<br>
 VelocityDRIVE uses FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 </div></div></td>
@@ -396,7 +406,7 @@ VelocityDRIVE uses FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1010 (0xa)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-10.jpg" alt="dip 10" width="150px">
+<img src="_images/dip-lan969x-10.jpg" alt="dip lan969x 10" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -409,7 +419,7 @@ FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1011 (0xb)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-11.jpg" alt="dip 11" width="150px">
+<img src="_images/dip-lan969x-11.jpg" alt="dip lan969x 11" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -423,12 +433,12 @@ VelocityDRIVE uses FlexCOM-0 in UART mode <code>115200 1N8</code> (to be changed
 <td class="tableblock halign-left valign-top"><p class="tableblock">1101 (0xd)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-13.jpg" alt="dip 13" width="150px">
+<img src="_images/dip-lan969x-13.jpg" alt="dip lan969x 13" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Supported by VelocityDRIVE-SP</strong><br>
-Booting from SPI-NOR 100Mhz mode <code>1-4-4</code><br>
+Booting from NOR-Flash
 BootROM traces disabled.<br>
 VelocityDRIVE uses FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 </div></div></td>
@@ -438,7 +448,75 @@ VelocityDRIVE uses FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_additional_non_velocitydrive_sp_strap_modes"><a class="anchor" href="#_additional_non_velocitydrive_sp_strap_modes"></a>1. Additional Non-VelocityDRIVE-SP Strap Modes</h2>
+<h2 id="_strapping_impact_on_nor_flash"><a class="anchor" href="#_strapping_impact_on_nor_flash"></a>1. Strapping impact on NOR flash</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The SoC have 3 different strapping settings which configures the device to boot
+from NOR Flash. The table below documents the per-strapping, per-boot-stage NOR
+flash speed and mode.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Strap Value</th>
+<th class="tableblock halign-left valign-top">BL1-NOR</th>
+<th class="tableblock halign-left valign-top">BL2-NOR</th>
+<th class="tableblock halign-left valign-top">VelocityDRIVE-SP-NOR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0001 (0x1)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>25Mhz@1-1-1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Mhz@1-4-4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Mhz@1-4-4</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0100 (0x4)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>25Mhz@1-1-1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Mhz@1-4-4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Mhz@1-4-4</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1101 (0xd)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Mhz@1-4-4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Mhz@1-4-4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>100Mhz@1-4-4</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In the table above the 3 digits after the <code>@</code> symbol indicate the width (number
+of data-lines) for <code>command</code>, <code>address</code> and <code>data</code>. <code>1-1-1</code> is generally referred
+to as single SPI (only one data line used for command, address and data).
+<code>1-4-4</code> is generally referred to as QSPI-NOR, where only one data line is used to
+transfer the command, but address and data are transmitted using 4 data lines.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The LAN969x has only been tested using QSPI-NOR flashes from the
+SST26 family, and the implementation has been hard-coded to use this command
+set. Other devices may work if they are compatible, but the device does not
+support SFDP.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additional_non_velocitydrive_sp_strap_modes"><a class="anchor" href="#_additional_non_velocitydrive_sp_strap_modes"></a>2. Additional Non-VelocityDRIVE-SP Strap Modes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The following modes are defined by the SoC, but are not relevant in a
@@ -462,7 +540,7 @@ VelocityDRIVE-SP application.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0000 (0x0)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-0.jpg" alt="dip 0" width="150px">
+<img src="_images/dip-lan969x-0.jpg" alt="dip lan969x 0" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -477,7 +555,7 @@ NOTE: Not all boards have eMMC mounted.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0010 (0x2)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-2.jpg" alt="dip 2" width="150px">
+<img src="_images/dip-lan969x-2.jpg" alt="dip lan969x 2" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -491,7 +569,7 @@ Not supported with current EVBs, and not all SD-cards are supported.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0011 (0x3)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-3.jpg" alt="dip 3" width="150px">
+<img src="_images/dip-lan969x-3.jpg" alt="dip lan969x 3" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -507,7 +585,7 @@ NOTE: Not all boards have eMMC mounted.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0101 (0x5)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-5.jpg" alt="dip 5" width="150px">
+<img src="_images/dip-lan969x-5.jpg" alt="dip lan969x 5" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -521,7 +599,7 @@ Not supported with current EVBs, and not all SD-cards are supported.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0110 (0x6)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-6.jpg" alt="dip 6" width="150px">
+<img src="_images/dip-lan969x-6.jpg" alt="dip lan969x 6" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -532,7 +610,7 @@ Not supported with current EVBs, and not all SD-cards are supported.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0111 (0x7)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-7.jpg" alt="dip 7" width="150px">
+<img src="_images/dip-lan969x-7.jpg" alt="dip lan969x 7" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -543,7 +621,7 @@ Not supported with current EVBs, and not all SD-cards are supported.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1000 (0x8)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-8.jpg" alt="dip 8" width="150px">
+<img src="_images/dip-lan969x-8.jpg" alt="dip lan969x 8" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -557,7 +635,7 @@ VelocityDRIVE uses FlexCOM-0 in UART mode <code>921600 1N8</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1001 (0x9)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-9.jpg" alt="dip 9" width="150px">
+<img src="_images/dip-lan969x-9.jpg" alt="dip lan969x 9" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -568,7 +646,7 @@ VelocityDRIVE uses FlexCOM-0 in UART mode <code>921600 1N8</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1100 (0xc)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-12.jpg" alt="dip 12" width="150px">
+<img src="_images/dip-lan969x-12.jpg" alt="dip lan969x 12" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -579,7 +657,7 @@ VelocityDRIVE uses FlexCOM-0 in UART mode <code>921600 1N8</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1110 (0xe)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-14.jpg" alt="dip 14" width="150px">
+<img src="_images/dip-lan969x-14.jpg" alt="dip lan969x 14" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -590,7 +668,7 @@ VelocityDRIVE uses FlexCOM-0 in UART mode <code>921600 1N8</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1111 (0xf)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-15.jpg" alt="dip 15" width="150px">
+<img src="_images/dip-lan969x-15.jpg" alt="dip lan969x 15" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">

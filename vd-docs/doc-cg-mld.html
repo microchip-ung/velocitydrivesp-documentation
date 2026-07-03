@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MLD Snooping :: VelocityDRIVE™ Software Package Documentation</title>
+    <meta name="generator" content="Antora 3.1.10">
+    <link rel="stylesheet" href="../_/css/site.css">
+    <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="..">VelocityDRIVE™ Software Package Documentation</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" aria-controls="topbar-nav" aria-expanded="false" aria-label="Toggle main menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vd-docs" data-version="latest">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <button class="nav-menu-toggle" aria-label="Toggle expand/collapse all" style="display: none"></button>
+    <h3 class="title"><a href="doc-intro.html">Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-intro.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="doc-cg-relnote.html">Release note</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg.html">Configuration Guides</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Interface</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-naming.html">Naming</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-port.html">Port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-qos.html">QoS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-if-aggr.html">Link aggregation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-cg-l2.html">L2 Forwarding</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-fdb.html">FDB</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-vlan.html">VLAN</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-mirror.html">Mirroring</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-acl.html">ACL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-l2-redbox.html">RedBox</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-cg-l3.html">L3 Forwarding (routing)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">TSN</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-1588.html">PTP/IEEE1588</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-tas.html">TAS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-tsn-psfp.html">PSFP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Management</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-system.html">System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-ip.html">IP Based Management</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-coap.html">Securing CoAP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mup1.html">MUP1</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-fwup.html">Firmware update</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mgmt-hw.html">Hardware</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="_attachments/yang-catalog.html">Yang Catalog</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-sw-packets.html">SW Packets</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sw-sbom.html">SBOM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb.html">EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan966x.html">LAN966x EVB</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan9662-ev09d37a.html">EVB-LAN9662-EndNode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan966x-debrick.html">Flashing and Debrick</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-evb-lan969x.html">LAN969x EVBs</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev23x71a.html">EVB-LAN9696-24port</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev09p11a.html">EVB-LAN9692-Auto (EV09P11A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev22n59a.html">EVB-LAN9692-Hallberg-POC (EV22N59A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-ev89p81a.html">EVB-LAN9698-10port (EV89P81A)</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-fw-files.html">FW File Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-strapping.html">Strapping Modes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="doc-tailor.html">SW Tailoring</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-sw-variants.html">SW Variants</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tailor-boardconf.html">Board Configuration</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">SW Debugging</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-trace.html">Trace</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-regaccess.html">Register Access</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-dbg-serdes.html">SerDes tuning</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Support tools</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-ct.html">VelocityDRIVE-CT</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-sup-gh.html">Support Scripts</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technology</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-mup1.html"><code>MUP1</code></a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-yang.html">YANG</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="doc-tech-cc.html">CORECONF</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Documentation</span>
+    <span class="version">latest</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <div class="title"><a href="doc-intro.html">Documentation</a></div>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="doc-intro.html">latest</a>
+        </li>
+        <li class="version">
+          <a href="2026.06/doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
+          <a href="2026.03/doc-intro.html">2026.03</a>
+        </li>
+        <li class="version">
+          <a href="2025.12/doc-intro.html">2025.12</a>
+        </li>
+        <li class="version">
+          <a href="2025.09/doc-intro.html">2025.09</a>
+        </li>
+        <li class="version">
+          <a href="2025.06/doc-intro.html">2025.06</a>
+        </li>
+        <li class="version">
+          <a href="2025.03/doc-intro.html">2025.03</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="doc-intro.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="doc-intro.html">Documentation</a></li>
+    <li><a href="doc-cg.html">Configuration Guides</a></li>
+    <li>Management</li>
+    <li><a href="doc-cg-mld.html">MLD Snooping</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">latest</button>
+  <div class="version-menu">
+    <a class="version is-current" href="doc-cg-mld.html">latest</a>
+    <a class="version" href="2026.06/doc-cg-mld.html">2026.06</a>
+    <a class="version is-missing" href="2026.03/doc-intro.html">2026.03</a>
+    <a class="version is-missing" href="2025.12/doc-intro.html">2025.12</a>
+    <a class="version is-missing" href="2025.09/doc-intro.html">2025.09</a>
+    <a class="version is-missing" href="2025.06/doc-intro.html">2025.06</a>
+    <a class="version is-missing" href="2025.03/doc-intro.html">2025.03</a>
+  </div>
+</div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="3">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">MLD Snooping</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>MLD Snooping constrains IPv6 multicast forwarding to ports with active
+listeners. The VelocitySP implementation covers Lightweight MLDv2 (RFC 5790)
+with backward compatibility for MLDv1 (RFC 2710). Configuration and status
+are exposed via the RFC 9166 YANG model for IGMP and MLD Snooping, accessed
+through CORECONF/CoAP.</p>
+</div>
+<div class="paragraph">
+<p>An MLD snooping instance is a control-plane-protocol entry of type
+<code>mld-snooping</code>. Each VLAN is bound to at most one instance, and each
+instance is bound to at most one VLAN (1:1 binding) via the
+bridge-vlan configuration.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_topology"><a class="anchor" href="#_example_topology"></a>1. Example Topology</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The examples below assume one multicast source and two receivers, all on
+the same VLAN. Without snooping the source&#8217;s stream would be flooded to
+every member port; with snooping enabled the switch forwards each group&#8217;s
+traffic only to ports that have actually reported a listener for it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>                        +--------------------------+
+                        |                          |
+   Multicast source --- | port 10                  |
+   (eth_yellow)         |                          |
+                        |     Switch (DUT)         |
+                        |     VLAN 100             |
+                        |     MLD instance "mld1"  |
+   Receiver A       --- | port 9                   |
+   (eth_red, joins      |                          |
+    ff02::db8:1)        |                          |
+                        |                          |
+   Receiver B       --- | port 8                   |
+   (eth_blue, joins     |                          |
+    ff02::db8:2)        |                          |
+                        +--------------------------+</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The IPATCHes that follow use this topology: VID <code>100</code>, instance <code>mld1</code>,
+ports <code>8</code>, <code>9</code>, <code>10</code> are bridge members.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configure_bridge_ports"><a class="anchor" href="#_configure_bridge_ports"></a>2. Configure Bridge Ports</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each port participating in MLD snooping is configured as a C-VLAN
+bridge port with PVID=100.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-mld-port-setup" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='10']/\
+     ieee802-dot1q-bridge:bridge-port/port-type"
+  : ieee802-dot1q-bridge:c-vlan-bridge-port
+
+- ? "/ietf-interfaces:interfaces/interface[name='10']/\
+     ieee802-dot1q-bridge:bridge-port/pvid"
+  : 100
+
+- ? "/ietf-interfaces:interfaces/interface[name='10']/\
+     ieee802-dot1q-bridge:bridge-port/acceptable-frame"
+  : admit-all-frames
+
+
+- ? "/ietf-interfaces:interfaces/interface[name='9']/\
+     ieee802-dot1q-bridge:bridge-port/port-type"
+  : ieee802-dot1q-bridge:c-vlan-bridge-port
+
+- ? "/ietf-interfaces:interfaces/interface[name='9']/\
+     ieee802-dot1q-bridge:bridge-port/pvid"
+  : 100
+
+- ? "/ietf-interfaces:interfaces/interface[name='9']/\
+     ieee802-dot1q-bridge:bridge-port/acceptable-frame"
+  : admit-all-frames
+
+
+- ? "/ietf-interfaces:interfaces/interface[name='8']/\
+     ieee802-dot1q-bridge:bridge-port/port-type"
+  : ieee802-dot1q-bridge:c-vlan-bridge-port
+
+- ? "/ietf-interfaces:interfaces/interface[name='8']/\
+     ieee802-dot1q-bridge:bridge-port/pvid"
+  : 100
+
+- ? "/ietf-interfaces:interfaces/interface[name='8']/\
+     ieee802-dot1q-bridge:bridge-port/acceptable-frame"
+  : admit-all-frames</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_vlan"><a class="anchor" href="#_create_vlan"></a>3. Create VLAN</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Create VID 100 with the topology ports as untagged members.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-mld-vlan-add" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     filtering-database/vlan-registration-entry"
+  : database-id: 0
+    vids: '100'
+    entry-type: static
+    port-map:
+    - port-ref: 10
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged
+    - port-ref: 9
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged
+    - port-ref: 8
+      static-vlan-registration-entries:
+        vlan-transmitted: untagged</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_and_configure_mld_snooping_instance"><a class="anchor" href="#_create_and_configure_mld_snooping_instance"></a>4. Create and Configure MLD Snooping Instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A snooping instance is created and configured in one IPATCH. The
+control-plane-protocol entry is added together with its
+<code>mld-snooping-instance</code> container; available configuration leafs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>enabled</code>&#8201;&#8212;&#8201;enable/disable snooping on this instance</p>
+</li>
+<li>
+<p><code>mld-version</code>&#8201;&#8212;&#8201;1 or 2 (MLDv1 or MLDv2)</p>
+</li>
+<li>
+<p><code>send-query</code>&#8201;&#8212;&#8201;enable the active querier role</p>
+</li>
+<li>
+<p><code>robustness-variable</code>&#8201;&#8212;&#8201;protocol robustness (default 2)</p>
+</li>
+<li>
+<p><code>query-interval</code>&#8201;&#8212;&#8201;seconds between general queries (default 125)</p>
+</li>
+<li>
+<p><code>query-max-response-time</code>&#8201;&#8212;&#8201;max response delay in seconds (default 10)</p>
+</li>
+<li>
+<p><code>last-member-query-interval</code>&#8201;&#8212;&#8201;seconds between GSQ retransmissions</p>
+</li>
+<li>
+<p><code>querier-source</code>&#8201;&#8212;&#8201;IPv6 source address for generated queries</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-mld-create" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/control-plane-protocol"
+  : type: ietf-igmp-mld-snooping:mld-snooping
+    name: mld1
+    ietf-igmp-mld-snooping:mld-snooping-instance:
+      enabled: true
+      send-query: false
+      mld-version: 2
+      robustness-variable: 2
+      query-interval: 125
+      query-max-response-time: 100
+      last-member-query-interval: 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-mld-create" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-routing:routing/control-plane-protocols/\
+   control-plane-protocol[type='ietf-igmp-mld-snooping:mld-snooping'][name='mld1']/\
+   ietf-igmp-mld-snooping:mld-snooping-instance"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-mld-create" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/control-plane-protocol/\
+     ietf-igmp-mld-snooping:mld-snooping-instance"
+  : enabled: true
+    send-query: false
+    last-member-query-interval: 10
+    query-interval: 125
+    query-max-response-time: 100
+    robustness-variable: 2
+    static-bridge-mrouter-interface: []
+    mld-version: 2
+    entries-count: 0
+    group: []</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bind_vlan_to_snooping_instance"><a class="anchor" href="#_bind_vlan_to_snooping_instance"></a>5. Bind VLAN to Snooping Instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Each VLAN that should participate in MLD snooping must be bound to an
+instance. The binding is done via the <code>mld-snooping-instance</code> leaf in
+the bridge-vlan configuration.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-mld-vlan" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
+     bridge-vlan/vlan"
+  : vid: 100
+    ietf-igmp-mld-snooping:mld-snooping-instance: mld1</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_retrieve_snooping_status"><a class="anchor" href="#_retrieve_snooping_status"></a>6. Retrieve Snooping Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The snooping status includes entries-count, multicast router interfaces,
+and the group/source table.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-mld-status" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-routing:routing/control-plane-protocols/\
+   control-plane-protocol[type='ietf-igmp-mld-snooping:mld-snooping'][name='mld1']/\
+   ietf-igmp-mld-snooping:mld-snooping-instance"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-mld-status" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/control-plane-protocol/\
+     ietf-igmp-mld-snooping:mld-snooping-instance"
+  : enabled: true
+    send-query: false
+    last-member-query-interval: 10
+    query-interval: 125
+    query-max-response-time: 100
+    robustness-variable: 2
+    static-bridge-mrouter-interface: []
+    mld-version: 2
+    entries-count: 0
+    group: []</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_delete_mld_snooping_instance"><a class="anchor" href="#_delete_mld_snooping_instance"></a>7. Delete MLD Snooping Instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The instance is deleted by setting the control-plane-protocol entry to null.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-mld-delete" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/\
+     control-plane-protocol[type='ietf-igmp-mld-snooping:mld-snooping'][name='mld1']"
+  :</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_worked_example_asm_join_with_mcjoin"><a class="anchor" href="#_worked_example_asm_join_with_mcjoin"></a>8. Worked Example: ASM Join with mcjoin</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This walks through a typical Any-Source Multicast (ASM) scenario on the
+topology above. The receiver joins group <code>ff02::db8:1</code> with <code>mcjoin</code>, the
+source sends UDP packets to that group, and snooping confines the stream
+to the receiver&#8217;s port.</p>
+</div>
+<div class="paragraph">
+<p>Each PC NIC is moved into its own network namespace so the host kernel
+does not auto-route the multicast traffic between them.</p>
+</div>
+<div class="sect2">
+<h3 id="_1_receiver_joins_port_9_eth_red"><a class="anchor" href="#_1_receiver_joins_port_9_eth_red"></a>8.1. 1. Receiver joins (port 9 / eth_red)</h3>
+<div class="listingblock">
+<div class="content">
+<pre>ip netns add mld_dst
+ip link set eth_red netns mld_dst
+ip netns exec mld_dst ip link set eth_red up
+ip netns exec mld_dst ip -6 route add ff00::/8 dev eth_red
+
+# Join (*,G) and listen on UDP 5001 — mcjoin emits an MLDv2 IS_EX report
+ip netns exec mld_dst \
+    mcjoin -i eth_red -p 5001 -W 25 -o "ff02::db8:1"</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_verify_the_switch_learnt_the_group"><a class="anchor" href="#_2_verify_the_switch_learnt_the_group"></a>8.2. 2. Verify the switch learnt the group</h3>
+<div class="paragraph">
+<p>The MLDv2 report creates a <code>(*, ff02::db8:1)</code> entry on VID <code>100</code> bound
+to ingress port <code>9</code>. Use the FETCH from
+<a href="#cg-fetch-req-mld-status">Retrieve Snooping Status</a>&#8201;&#8212;&#8201;the response
+should now contain:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/control-plane-protocol/\
+     ietf-igmp-mld-snooping:mld-snooping-instance"
+  : enabled: true
+    entries-count: 1
+    group:
+    - address: FF02::DB8:1
+      mac-address: 33-33-0D-B8-00-01
+      expire: 258
+      up-time: 2
+      last-reporter: FE80::A
+      source: []</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_source_transmits_port_10_eth_yellow"><a class="anchor" href="#_3_source_transmits_port_10_eth_yellow"></a>8.3. 3. Source transmits (port 10 / eth_yellow)</h3>
+<div class="listingblock">
+<div class="content">
+<pre>ip netns add mld_src
+ip link set eth_yellow netns mld_src
+ip netns exec mld_src ip link set eth_yellow up
+ip netns exec mld_src ip -6 route add ff00::/8 dev eth_yellow
+
+# 5000 packets at 1 ms interval to UDP 5001
+ip netns exec mld_src \
+    mcjoin -s -i eth_yellow -f 1 -c 5000 -p 5001 -o "ff02::db8:1"</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_expected_behaviour"><a class="anchor" href="#_4_expected_behaviour"></a>8.4. 4. Expected behaviour</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Receiver A (port 9)&#8201;&#8212;&#8201;multicast packets arrive at line rate.</p>
+</li>
+<li>
+<p>Receiver B (port 8)&#8201;&#8212;&#8201;counter <code>/sys/class/net/eth_blue/statistics/multicast</code>
+stays flat (snooping confines the stream).</p>
+</li>
+<li>
+<p>When Receiver A leaves (Ctrl-C on <code>mcjoin</code> or its <code>-W</code> timeout), the group
+ages out at <code>last-member-query-interval x robustness-variable</code> and the
+IPMC entry is removed; subsequent traffic to the group is dropped.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  This page was built using <a href="https://antora.org">Antora</a>
+</footer>
+<script id="site-script" src="../_/js/site.js" data-ui-root-path="../_"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>

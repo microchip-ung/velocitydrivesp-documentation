@@ -127,6 +127,9 @@
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -197,6 +200,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
   </li>
 </ul>
   </li>
@@ -277,6 +283,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.06/doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
           <a href="2026.03/doc-intro.html">2026.03</a>
         </li>
         <li class="version">
@@ -313,6 +322,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-tailor-boardconf.html">latest</a>
+    <a class="version" href="2026.06/doc-tailor-boardconf.html">2026.06</a>
     <a class="version" href="2026.03/doc-tailor-boardconf.html">2026.03</a>
     <a class="version" href="2025.12/doc-tailor-boardconf.html">2025.12</a>
     <a class="version" href="2025.09/doc-tailor-boardconf.html">2025.09</a>
@@ -526,7 +536,72 @@ configured as an I2C controller:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_pin_group"><a class="anchor" href="#_pin_group"></a>1.3. Pin Group</h3>
+<h3 id="uart"><a class="anchor" href="#uart"></a>1.3. UART</h3>
+<div class="paragraph">
+<p>UART peripheral within a SoC. The definition of the uart in the board.tree looks
+like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">  +--rw drivers
+     +--rw uarts
+        +--rw uart* [hw_instance]
+           +--rw hw_instance    uint32
+           +--rw logical_id?    dev_uart</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>hw_instance</code> is used to select which physical instance in HW to configure. On
+PIC64-HPSC/HX, instance 0 is the SysC UART and instance 1-4 are for AppC UART
+0-3.</p>
+</li>
+<li>
+<p><code>logical_id</code> is the logical handle (<code>DEV_UART_x</code> value) for this UART. This is
+used when referencing the UART in other places, such as in the "mup1" section.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="i2c"><a class="anchor" href="#i2c"></a>1.4. I2C</h3>
+<div class="paragraph">
+<p>I2C bus controller within a SoC. The definition of the i2c in the board.tree
+looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">  +--rw drivers
+     +--rw i2cs
+        +--rw i2c* [hw_instance]
+           +--rw hw_instance    uint32
+           +--rw logical_id?    dev_i2c</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>hw_instance</code> is used to select which physical instance in HW to configure. On
+PIC64-HPSC/HX, instance 0 is the SysC I2C and instance 1-4 are for AppC I2C
+0-3.</p>
+</li>
+<li>
+<p><code>logical_id</code> is the logical handle (<code>DEV_I2C_x</code> value) for this I2C. This is
+used when referencing the I2C bus in other places, such as when specifying the
+parent bus of an I2C multiplexer.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pin_group"><a class="anchor" href="#_pin_group"></a>1.5. Pin Group</h3>
 <div class="paragraph">
 <p>Pin group is used to configure and manage the multiplexing of pins to allow multiple devices to share the same physical pins.
 The pins can be either GPIOs or SGPIOs. The typical usage is to control a mux to I2C devices. The definition looks like this:</p>
@@ -597,10 +672,27 @@ The pins can be either GPIOs or SGPIOs. The typical usage is to control a mux to
 </div>
 </div>
 <div class="sect2">
-<h3 id="i2c-mux"><a class="anchor" href="#i2c-mux"></a>1.4. I2C Mux</h3>
+<h3 id="i2c-mux"><a class="anchor" href="#i2c-mux"></a>1.6. I2C Mux</h3>
 <div class="paragraph">
 <p>I2C Mux is used to control a number of I2C devices (which share the same I2C bus) by enabling only one of them at a time and keeping the others disabled.
-Users will reference the MUX based on how it should be configured with 'DEV_MUX_x'. The definition looks like this:</p>
+Users will reference the MUX based on how it should be configured with 'DEV_MUX_x'.</p>
+</div>
+<div class="paragraph">
+<p>Two types of I2C muxes are supported. The first type uses GPIOs to select between
+different I2C channels. The second type are PCA954x type devices which accepts
+writes to one I2C address to switch between the different I2C channels.</p>
+</div>
+<div class="paragraph">
+<p>I2C muxes must mux an I2C root bus. An I2C root bus is a bus controller declared
+in <a href="#flexcom">FlexCom</a> or <a href="#i2c">I2C</a>. It is not allowed to place a mux on the output of a
+mux.</p>
+</div>
+<div class="paragraph">
+<p>Only one type of mux must be used on a given I2C root bus. i.e., it is not
+allowed to mix GPIOs type muxes with PCA954x type muxes on a given I2C root bus.</p>
+</div>
+<div class="paragraph">
+<p>The definition looks like this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -611,7 +703,13 @@ Users will reference the MUX based on how it should be configured with 'DEV_MUX_
            +--rw i2c_mux          dev_i2c_mux
            +--rw ref_parent       dev_i2c
            +--rw ref_pin_group    dev_pin_group
-           +--rw gpio_mask        uint32</code></pre>
+           +--rw gpio_mask        uint32
+     +--rw i2c_mux_pca954x
+        +--rw i2c_mux* [i2c_mux]
+           +--rw i2c_mux        dev_i2c_mux
+           +--rw ref_parent     dev_i2c
+           +--rw i2c_address    uint8
+           +--rw i2c_val        uint8</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -623,15 +721,21 @@ Users will reference the MUX based on how it should be configured with 'DEV_MUX_
 <p><code>ref_parent</code> is a reference to an already defined HW I2C instance.</p>
 </li>
 <li>
-<p><code>ref_pin_group</code> is a reference to an already defined pin controller.</p>
+<p><code>ref_pin_group</code> is a reference to an already defined pin group for GPIO controlled I2C mux.</p>
 </li>
 <li>
-<p><code>gpio_mask</code> defines how this instance will configure the mux.</p>
+<p><code>gpio_mask</code> defines the pin mask for GPIO controlled I2C mux.</p>
+</li>
+<li>
+<p><code>i2c_address</code> defines the I2C address to write to for PCA954x I2C mux.</p>
+</li>
+<li>
+<p><code>i2c_val</code> defines the I2C value written to <code>i2c_address</code> for PCA954x I2C mux.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Example of an I2C MUX which uses the pin group and the I2C instance above and sets the MUX to positions 0-3.</p>
+<p>Example of a GPIO controlled I2C MUX with a reference for channel 0 to 3.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -655,9 +759,84 @@ Users will reference the MUX based on how it should be configured with 'DEV_MUX_
         gpio_mask: 3</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Example of a PCA954x I2C MUX at address 0x70 with a reference for channel 0 and 1:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">    i2c_mux_pca954x:
+        i2c_mux:
+            - i2c_mux: DEV_MUX_0
+              ref_parent: DEV_I2C_0
+              i2c_address: 0x70
+              i2c_val: 0x01
+            - i2c_mux: DEV_MUX_1
+              ref_parent: DEV_I2C_0
+              i2c_address: 0x70
+              i2c_val: 0x02</code></pre>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_sfp"><a class="anchor" href="#_sfp"></a>1.5. SFP</h3>
+<h3 id="gpio_mcp230xx"><a class="anchor" href="#gpio_mcp230xx"></a>1.7. MCP230xx I2C GPIO expander</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw gpio_mcp230xx
+     +--rw mcp230xx* [handle]
+        +--rw handle         dev_sgpio_bank
+        +--rw (i2c_parent)
+           +--:(i2c_bus)
+           |  +--rw i2c_bus?   dev_i2c
+           +--:(i2c_mux)
+              +--rw i2c_mux?   dev_i2c_mux
+        +--rw i2c_address    uint8
+        +--rw gpio_count     uint32</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>handle</code> is the internal handle for others to reference this mcp230xx instance.</p>
+</li>
+<li>
+<p><code>i2c_bus</code> is the I2C bus of this mcp230xx instance if it is placed on a root I2C bus. See <a href="#flexcom">FlexCom</a> or <a href="#i2c">I2C</a>.</p>
+</li>
+<li>
+<p><code>i2c_mux</code> is the I2C bus of this mcp230xx instance if it is placed on an I2C multiplexer. See <a href="#i2c-mux">I2C Mux</a>.</p>
+</li>
+<li>
+<p><code>i2c_address</code> is the I2C address of this mcp230xx instance.</p>
+</li>
+<li>
+<p><code>gpio_count</code> is the total number of gpio of this mcp230xx instance. Must be 8 or 16.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of three MCP230xx at address 0x21, 0x22 and 0x23 on I2C bus DEV_MUX_0, each providing 16 GPIOs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">    gpio_mcp230xx:
+        mcp230xx:
+            - handle: DEV_SGPIO_BANK_0
+              i2c_mux: DEV_MUX_0
+              i2c_address: 0x21
+              gpio_count: 16
+            - handle: DEV_SGPIO_BANK_1
+              i2c_mux: DEV_MUX_0
+              i2c_address: 0x22
+              gpio_count: 16
+            - handle: DEV_SGPIO_BANK_2
+              i2c_mux: DEV_MUX_0
+              i2c_address: 0x23
+              gpio_count: 16</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sfp"><a class="anchor" href="#_sfp"></a>1.8. SFP</h3>
 <div class="paragraph">
 <p>The SFP signals that are defined consist of the following: LOS (input), TX_FAULT (input), PRESENT (input), and TX_ENABLE (output).
 When inserted, 'PRESENT' goes high and the ROM is read via I2C to determine the type and thereby how to configure the switch port to match its capabilities.
@@ -789,7 +968,7 @@ The definition looks like this:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_mdio"><a class="anchor" href="#_mdio"></a>1.6. MDIO</h3>
+<h3 id="_mdio"><a class="anchor" href="#_mdio"></a>1.9. MDIO</h3>
 <div class="paragraph">
 <p>The MDIO (Management Data Input/Output) is a serial bus protocol used for PHY access.
 There are usually 1-3 buses available on the SoC, and each PHY will reference which bus they belong to.</p>
@@ -836,7 +1015,7 @@ There are usually 1-3 buses available on the SoC, and each PHY will reference wh
 </div>
 </div>
 <div class="sect2">
-<h3 id="mup1"><a class="anchor" href="#mup1"></a>1.7. MUP1</h3>
+<h3 id="mup1"><a class="anchor" href="#mup1"></a>1.10. MUP1</h3>
 <div class="paragraph">
 <p><a href="doc-tech-mup1.html" class="xref page">MUP1</a> is a UART protocol facilitating configuring and
 inspecting the status of the Switch using the UART.</p>
@@ -873,7 +1052,7 @@ handle (typically a FlexCom).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_gpio_restart"><a class="anchor" href="#_gpio_restart"></a>1.8. GPIO-Restart</h3>
+<h3 id="_gpio_restart"><a class="anchor" href="#_gpio_restart"></a>1.11. GPIO-Restart</h3>
 <div class="paragraph">
 <p>The GPIO for Board restart is defined here. A board restart can e.g. be performed from management.
 The definition looks like this:</p>
@@ -921,7 +1100,7 @@ The definition looks like this:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_gpio_reset"><a class="anchor" href="#_gpio_reset"></a>1.9. GPIO-Reset</h3>
+<h3 id="_gpio_reset"><a class="anchor" href="#_gpio_reset"></a>1.12. GPIO-Reset</h3>
 <div class="paragraph">
 <p>This reset is an input signal (activated by pressing a button) that indicates a reset-to-default should be performed.
 The SoC will immediately reset and read this signal during startup (state of the reset button).
@@ -969,7 +1148,7 @@ If active, the configuration is restored to default. The definition looks like t
 </div>
 </div>
 <div class="sect2">
-<h3 id="_status_led"><a class="anchor" href="#_status_led"></a>1.10. Status Led</h3>
+<h3 id="_status_led"><a class="anchor" href="#_status_led"></a>1.13. Status Led</h3>
 <div class="paragraph">
 <p>Initially, the status LED is turned off, and after the initial configuration is applied, it turns green (or blinks) to indicate normal operation.</p>
 </div>
@@ -1016,7 +1195,7 @@ If active, the configuration is restored to default. The definition looks like t
 </div>
 </div>
 <div class="sect2">
-<h3 id="_phy_reset"><a class="anchor" href="#_phy_reset"></a>1.11. PHY Reset</h3>
+<h3 id="_phy_reset"><a class="anchor" href="#_phy_reset"></a>1.14. PHY Reset</h3>
 <div class="paragraph">
 <p>The PHY&#8217;s reset state is controlled through the pin defined here.</p>
 </div>
@@ -1063,7 +1242,7 @@ If active, the configuration is restored to default. The definition looks like t
 </div>
 </div>
 <div class="sect2">
-<h3 id="_watchdog"><a class="anchor" href="#_watchdog"></a>1.12. WatchDog</h3>
+<h3 id="_watchdog"><a class="anchor" href="#_watchdog"></a>1.15. WatchDog</h3>
 <div class="paragraph">
 <p>The watchdog is a hardware timer and helps to ensure the system can recover from unforeseen failures.
 It reboots the system if its timer has not been updated by the CPU within a period that is set here.
@@ -1088,7 +1267,7 @@ If left out, then the watchdog is disabled.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_fs_file_system"><a class="anchor" href="#_fs_file_system"></a>1.13. FS (File System)</h3>
+<h3 id="_fs_file_system"><a class="anchor" href="#_fs_file_system"></a>1.16. FS (File System)</h3>
 <div class="paragraph">
 <p>This section defines the file types that are needed to be stored in the flash.
 The types must be defined in lm_os.h.
@@ -1118,7 +1297,7 @@ If the type is not defined here a storage is not possible. Minimum file/block si
 </div>
 </div>
 <div class="sect2">
-<h3 id="timestamp-props"><a class="anchor" href="#timestamp-props"></a>1.14. TimeStamp properties</h3>
+<h3 id="timestamp-props"><a class="anchor" href="#timestamp-props"></a>1.17. TimeStamp properties</h3>
 <div class="paragraph">
 <p>This container contains timestamping proterties. Currently it has a list of
 time-stamp calibration profiles, which a given port can link to.</p>
@@ -1192,7 +1371,7 @@ The profile will only be used by ports which points to it in the
 </div>
 </div>
 <div class="sect2">
-<h3 id="_port_leds"><a class="anchor" href="#_port_leds"></a>1.15. Port Leds</h3>
+<h3 id="_port_leds"><a class="anchor" href="#_port_leds"></a>1.18. Port Leds</h3>
 <div class="paragraph">
 <p>This section defines how the front port LEDs should be accessed, typically SFP-based LEDs.
 Each switch port typically has two LEDs: green for 'high' speed and a second one (red/yellow/orange, etc.) for 'low' speed.
@@ -1269,7 +1448,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="bridge"><a class="anchor" href="#bridge"></a>1.16. Bridge</h3>
+<h3 id="bridge"><a class="anchor" href="#bridge"></a>1.19. Bridge</h3>
 <div class="paragraph">
 <p>The Ethernet bridge interconnects multiple ports to form a LAN.
 This section defines the switch chip and the properties of each of the attached ports and phys.</p>
@@ -1309,7 +1488,41 @@ This section defines the switch chip and the properties of each of the attached 
 <p><code>mux_mode</code> defines which devices and serdeses are used. Used on some SoCs.</p>
 </li>
 <li>
-<p><code>phy_mode</code> defines the PHY to MAC interface.</p>
+<p><code>phy_mode</code> defines the PHY to MAC interface. Valid values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>rgmii</code>&#8201;&#8212;&#8201;RGMII (10/100/1G), 12-pin interface using a synchronous 125 MHz clock</p>
+</li>
+<li>
+<p><code>rgmii_txid</code>&#8201;&#8212;&#8201;RGMII with 2 ns internal TX delay</p>
+</li>
+<li>
+<p><code>rgmii_rxid</code>&#8201;&#8212;&#8201;RGMII with 2 ns internal RX delay</p>
+</li>
+<li>
+<p><code>rgmii_id</code>&#8201;&#8212;&#8201;RGMII with 2 ns internal RX and TX delay</p>
+</li>
+<li>
+<p><code>rmii</code>&#8201;&#8212;&#8201;RMII (10/100)</p>
+</li>
+<li>
+<p><code>sgmii</code>&#8201;&#8212;&#8201;SGMII (10/100/1G), 8B/10B PCS encoding, supports in-band Cisco SGMII aneg</p>
+</li>
+<li>
+<p><code>qsgmii</code>&#8201;&#8212;&#8201;QSGMII, equivalent to 4xSGMII over a single serdes</p>
+</li>
+<li>
+<p><code>1000base-x</code>&#8201;&#8212;&#8201;1000BASE-X (1G, 8B/10B PCS, Clause-37 in-band aneg)</p>
+</li>
+<li>
+<p><code>2500base-x</code>&#8201;&#8212;&#8201;2500BASE-X (2.5G, 8B/10B PCS, no autoneg)</p>
+</li>
+<li>
+<p><code>10gbase-r</code>&#8201;&#8212;&#8201;10GBASE-R (10G), 64B/66B PCS encoding at 10.3125 Gbaud</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><code>target_chip</code> The physical chip sometimes supports different skews. <code>target_chip</code> defines which one.</p>
@@ -1337,7 +1550,9 @@ defined in <a href="#timestamp-props">TimeStamp properties</a></p>
 <p><code>miim_addr</code> defines the PHY address on the bus.</p>
 </li>
 <li>
-<p><code>dummy</code> means that this is a software PHY and PHY access is disabled. Typically used where PHY access is not possible.</p>
+<p><code>dummy</code> means that this is a software PHY and PHY access is disabled. Typically used where PHY access is not possible.
+A <code>fixed_link</code> with the desired <code>speed</code> must also be configured so the dummy PHY knows what link speed to report.
+<code>ref_miim_bus</code> and <code>miim_addr</code> must be present (to satisfy the YANG model) but are ignored at runtime.</p>
 </li>
 <li>
 <p><code>base_port</code> is used for quad PHYs for determining which port ID should be used for access of shared resources.</p>
@@ -1362,7 +1577,7 @@ this</a> for additional details.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The following example is a bridge with one PHY-based port and one SFP-based port:</p>
+<p>The following example is a bridge with one PHY-based port, one SFP-based port, and one dummy PHY port:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1385,12 +1600,21 @@ this</a> for additional details.</p>
         - port_dev: 24
           phy_mode: 10gbase-r
           bandwidth: 10000
-          ts_calibration: 2</code></pre>
+          ts_calibration: 2
+        - port_dev: 29
+          phy_mode: sgmii
+          bandwidth: 1000
+          phy:
+            ref_miim_bus: MIIM_BUS_0
+            miim_addr: 0
+            dummy: true
+            fixed_link:
+              speed: 1000</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ptp"><a class="anchor" href="#_ptp"></a>1.17. PTP</h3>
+<h3 id="_ptp"><a class="anchor" href="#_ptp"></a>1.20. PTP</h3>
 <div class="paragraph">
 <p>Pin configuration of PTP functions. This section defines the GPIO to PTP mapping.</p>
 </div>
@@ -1432,7 +1656,7 @@ this</a> for additional details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="extmod-drv"><a class="anchor" href="#extmod-drv"></a>1.18. EXTMOD (Driver)</h3>
+<h3 id="extmod-drv"><a class="anchor" href="#extmod-drv"></a>1.21. EXTMOD (Driver)</h3>
 <div class="paragraph">
 <p>A EXTMOD Driver used to claim HW resources and expose the relevant HW to the
 EXTMOD module. The EXTMOD module will have to decide what to do with it.</p>
@@ -1510,6 +1734,7 @@ and the board-tailor needs to lower the counts.</p>
   +--rw capabilities
      +--rw manufacturer          string
      +--rw model                 string
+     +--rw platform_id?          uint16
      +--rw l3_count?             uint32
      +--rw ltc_count?            uint32
      +--rw ltc_pin_count?        uint8
@@ -1530,6 +1755,11 @@ and the board-tailor needs to lower the counts.</p>
 </li>
 <li>
 <p><code>model</code>: is the model returned in the IETF-System YANG.</p>
+</li>
+<li>
+<p><code>platform_id?</code>: Firmware-image compatibility identifier for this board (see
+<a href="#firmware-image-compatibility">Firmware image compatibility (platform_id)</a> below). Omit it (or set 0) to disable the
+firmware-image platform check.</p>
 </li>
 <li>
 <p><code>l3_count?</code>: Is the number of L3 interfaces. This shall be set to 1 on SW
@@ -1560,6 +1790,15 @@ with time-stamping support).</p>
 <p><code>ipv4_route_count?</code>: Number of IPv4 static routes. This shall be set to zero on
 SW variants without routing, and above 1 on systems with SW routing.</p>
 </li>
+<li>
+<p><code>mld_instance_count?</code>: Number of MLD snooping instances.</p>
+</li>
+<li>
+<p><code>mld_group_count?</code>: Number of MLD multicast groups (across all instances).</p>
+</li>
+<li>
+<p><code>mld_source_count?</code>: Number of MLD source entries (across all groups).</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -1570,6 +1809,7 @@ SW variants without routing, and above 1 on systems with SW routing.</p>
 <pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">board:capabilities:
   manufacturer: "Microchip Technology Inc."
   model: "LAN9698RED - EV89P81A (UNG8422)"
+  platform_id: 0x0003
   l3_count: 1
   ltc_count: 3
   ltc_pin_count: 8
@@ -1577,7 +1817,70 @@ SW variants without routing, and above 1 on systems with SW routing.</p>
   stream_count: 64
   coap_session_count: 4
   arp_count: 64
-  ipv4_route_count: 0</code></pre>
+  ipv4_route_count: 0
+  mld_instance_count: 8
+  mld_group_count: 128
+  mld_source_count: 512</code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="firmware-image-compatibility"><a class="anchor" href="#firmware-image-compatibility"></a>2.1. Firmware image compatibility (platform_id)</h3>
+<div class="paragraph">
+<p>Every firmware image is stamped with the <code>platform_id</code> of the board it was built
+for, and the firmware-update service rejects an image whose id is not compatible
+with the running board before writing flash — this stops an image for a
+different platform from bricking the device.</p>
+</div>
+<div class="paragraph">
+<p>Assign ids per <strong>compatibility group</strong>: boards that should accept each other&#8217;s
+images get the same value, so set it in the base board configuration and the
+auto / no-security / DTLS variants inherit it. The Microchip lan969x boards use
+one id per SoC:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 66.6666%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">SoC (<code>target_chip</code>)</th>
+<th class="tableblock halign-left valign-top">platform_id</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lan9692vao</code> (EV09P11A, EV22N59A)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x0001</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lan9696red</code> (EV23X71A)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x0002</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>lan9698red</code> (EV89P81A)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>0x0003</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Rules:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Assignable values are <code>0x0001</code>–<code>0x7ffe</code>. Bit 15 is reserved: the build sets it
+on the bootloader image so an application image cannot be written to the
+bootloader (and vice versa).</p>
+</li>
+<li>
+<p><code>0x0000</code> (the default when omitted) disables the check on that board.</p>
+</li>
+<li>
+<p>The build reads <code>platform_id</code> from the board configuration and stamps it into
+the image automatically; no per-image build flag is needed.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>

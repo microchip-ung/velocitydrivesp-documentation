@@ -127,6 +127,9 @@
     <a class="nav-link" href="doc-cg-mgmt-lldp.html">LLDP</a>
   </li>
   <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -197,6 +200,9 @@
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="doc-evb-lan969x-debrick.html">Flashing and Debrick</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-otp-provisioning.html">LAN969x OTP Provisioning</a>
   </li>
 </ul>
   </li>
@@ -277,6 +283,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.06/doc-intro.html">2026.06</a>
+        </li>
+        <li class="version">
           <a href="2026.03/doc-intro.html">2026.03</a>
         </li>
         <li class="version">
@@ -314,6 +323,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-evb-lan969x-debrick.html">latest</a>
+    <a class="version" href="2026.06/doc-evb-lan969x-debrick.html">2026.06</a>
     <a class="version" href="2026.03/doc-evb-lan969x-debrick.html">2026.03</a>
     <a class="version" href="2025.12/doc-evb-lan969x-debrick.html">2025.12</a>
     <a class="version" href="2025.09/doc-evb-lan969x-debrick.html">2025.09</a>
@@ -381,7 +391,7 @@ dots are added to the picture to make it easier to see):</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/dip-11.jpg" alt="dip 11" width="150px">
+<img src="_images/dip-lan969x-11.jpg" alt="dip lan969x 11" width="150px">
 </div>
 </div>
 <div class="paragraph">
@@ -573,12 +583,12 @@ to boot from the newly programmed NOR flash. Settings shown here:</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0001 (0x1)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-1.jpg" alt="dip 1" width="150px">
+<img src="_images/dip-lan969x-1.jpg" alt="dip lan969x 1" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Default development boot mode for VelocityDRIVE-SP</strong><br>
-Booting from SPI-NOR 25MHz mode <code>1-1-1</code><br>
+Booting from NOR-flash
 BootROM traces activated on FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 </div></div></td>
 </tr>
@@ -586,12 +596,12 @@ BootROM traces activated on FlexCOM-0 in UART mode <code>115200 1N8</code>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0100 (0x4)</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
 <div class="content">
-<img src="_images/dip-4.jpg" alt="dip 4" width="150px">
+<img src="_images/dip-lan969x-4.jpg" alt="dip lan969x 4" width="150px">
 </div>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><strong>Default boot mode for VelocityDRIVE-SP</strong><br>
-Booting from SPI-NOR 25MHz mode <code>1-1-1</code><br>
+Booting from NOR-flash
 BootROM traces disabled.<br>
 VelocityDRIVE uses FlexCOM-0 in UART mode <code>115200 1N8</code>.<br></p>
 </div></div></td>
