@@ -348,13 +348,10 @@ Type:               Roadmap release
 YANG Catalog SHA:   a451a0f8915c93316acec762c840219d</pre>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_new_features"><a class="anchor" href="#_new_features"></a>2. New features</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_mld_snooping_added"><a class="anchor" href="#_mld_snooping_added"></a>2.1. MLD Snooping added</h3>
+<h3 id="_new_features"><a class="anchor" href="#_new_features"></a>1.1. New features</h3>
+<div class="sect3">
+<h4 id="_mld_snooping_added"><a class="anchor" href="#_mld_snooping_added"></a>1.1.1. MLD Snooping added</h4>
 <div class="paragraph">
 <p>MLD (Multicast Listener Discovery) Snooping has been added. It constrains IPv6
 multicast forwarding to the ports that have active listeners, instead of
@@ -370,8 +367,8 @@ and the
 YANG model.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_port_test_and_cable_diagnostics_added"><a class="anchor" href="#_port_test_and_cable_diagnostics_added"></a>2.2. Port Test and cable diagnostics added</h3>
+<div class="sect3">
+<h4 id="_port_test_and_cable_diagnostics_added"><a class="anchor" href="#_port_test_and_cable_diagnostics_added"></a>1.1.2. Port Test and cable diagnostics added</h4>
 <div class="paragraph">
 <p>A port test framework has been added, exposed under the port <code>test</code> subtree of
 the interface model. It provides:</p>
@@ -399,8 +396,8 @@ examples, and the
 YANG model.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_coreconf_client_library_added"><a class="anchor" href="#_coreconf_client_library_added"></a>2.3. CORECONF client library added</h3>
+<div class="sect3">
+<h4 id="_coreconf_client_library_added"><a class="anchor" href="#_coreconf_client_library_added"></a>1.1.3. CORECONF client library added</h4>
 <div class="paragraph">
 <p>A new C client library (<code>velocitydrivesp-client-lib</code> / <code>lm_client</code>) has been
 added for building CORECONF/CoAP requests and decoding the responses from a
@@ -411,8 +408,8 @@ ARMv7 build presets, a C++ compile test, and is MISRA C:2023 checked.</p>
 <p>See <code>client-lib/README.md</code> in the source tree for build and usage details.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_lan969x_otp_provisioning_yang_added"><a class="anchor" href="#_lan969x_otp_provisioning_yang_added"></a>2.4. LAN969x OTP provisioning YANG added</h3>
+<div class="sect3">
+<h4 id="_lan969x_otp_provisioning_yang_added"><a class="anchor" href="#_lan969x_otp_provisioning_yang_added"></a>1.1.4. LAN969x OTP provisioning YANG added</h4>
 <div class="paragraph">
 <p>A new YANG model has been added to facilitate OTP (and secure boot) provisioning
 using the CORECONF interface.</p>
@@ -460,8 +457,8 @@ OTP programming is irreversible and can permanently brick the board.
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_firmware_update_per_platform_image_compatibility_check"><a class="anchor" href="#_firmware_update_per_platform_image_compatibility_check"></a>2.5. Firmware update: per-platform image compatibility check</h3>
+<div class="sect3">
+<h4 id="_firmware_update_per_platform_image_compatibility_check"><a class="anchor" href="#_firmware_update_per_platform_image_compatibility_check"></a>1.1.5. Firmware update: per-platform image compatibility check</h4>
 <div class="paragraph">
 <p>The firmware-update service now rejects firmware images that were not built for
 the running board (LMSTAX-372). Each board carries a <code>platform_id</code>
@@ -497,8 +494,8 @@ therefore be refused.
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_mup1_configurable_uart_baud_rate_added"><a class="anchor" href="#_mup1_configurable_uart_baud_rate_added"></a>2.6. MUP1: Configurable UART baud rate added</h3>
+<div class="sect3">
+<h4 id="_mup1_configurable_uart_baud_rate_added"><a class="anchor" href="#_mup1_configurable_uart_baud_rate_added"></a>1.1.6. MUP1: Configurable UART baud rate added</h4>
 <div class="paragraph">
 <p>The MUP1 UART baud rate is now configurable via the <code>mup1-baudrate</code> leaf,
 supporting the standard rates from 9600 up to 921600 bps (default 115200). The
@@ -512,16 +509,16 @@ configuration guide and the
 leaf for details.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_board_configuration_port_max_speed_advertisement"><a class="anchor" href="#_board_configuration_port_max_speed_advertisement"></a>2.7. Board configuration: Port max-speed advertisement</h3>
+<div class="sect3">
+<h4 id="_board_configuration_port_max_speed_advertisement"><a class="anchor" href="#_board_configuration_port_max_speed_advertisement"></a>1.1.7. Board configuration: Port max-speed advertisement</h4>
 <div class="paragraph">
 <p>A <code>max_speed</code> leaf has been added to the board configuration <code>eth_port/phy</code>
 container. When set, it limits the speed advertised during PHY
 auto-negotiation, allowing a port to be capped below its maximum capability.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_board_configuration_new_peripheral_and_mux_definitions"><a class="anchor" href="#_board_configuration_new_peripheral_and_mux_definitions"></a>2.8. Board configuration: new peripheral and mux definitions</h3>
+<div class="sect3">
+<h4 id="_board_configuration_new_peripheral_and_mux_definitions"><a class="anchor" href="#_board_configuration_new_peripheral_and_mux_definitions"></a>1.1.8. Board configuration: new peripheral and mux definitions</h4>
 <div class="paragraph">
 <p>The board configuration model has been extended with:</p>
 </div>
@@ -544,8 +541,8 @@ GPIO-controlled muxes.</p>
 <p>See <a href="doc-tailor-boardconf.html" class="xref page">Board Configuration</a> for details.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_board_configuration_phy_drivers_dummy_phy_support_on_lan969x_variants"><a class="anchor" href="#_board_configuration_phy_drivers_dummy_phy_support_on_lan969x_variants"></a>2.9. Board configuration: PHY drivers: dummy-PHY support on LAN969x variants</h3>
+<div class="sect3">
+<h4 id="_board_configuration_phy_drivers_dummy_phy_support_on_lan969x_variants"><a class="anchor" href="#_board_configuration_phy_drivers_dummy_phy_support_on_lan969x_variants"></a>1.1.9. Board configuration: PHY drivers: dummy-PHY support on LAN969x variants</h4>
 <div class="paragraph">
 <p>The dummy-PHY driver has been added to the <code>velocitysp_lan969x</code> and
 <code>velocitysp_lan969x_auto</code> MEPA variants. Its purpose is to support MAC-to-MAC
@@ -554,12 +551,10 @@ links between two MACs), allowing such ports to be brought up.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_behavioral_changes"><a class="anchor" href="#_behavioral_changes"></a>3. Behavioral changes</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_l3_static_routes_created_together_with_their_protocol_instance"><a class="anchor" href="#_l3_static_routes_created_together_with_their_protocol_instance"></a>3.1. L3: Static routes created together with their protocol instance</h3>
+<h3 id="_behavioral_changes"><a class="anchor" href="#_behavioral_changes"></a>1.2. Behavioral changes</h3>
+<div class="sect3">
+<h4 id="_l3_static_routes_created_together_with_their_protocol_instance"><a class="anchor" href="#_l3_static_routes_created_together_with_their_protocol_instance"></a>1.2.1. L3: Static routes created together with their protocol instance</h4>
 <div class="paragraph">
 <p>Static routes live under a user-managed <code>control-plane-protocol</code> instance of
 type <code>static</code>, which (per RFC 8349 §5.3.1) is not created implicitly by the
@@ -571,6 +566,39 @@ directly.</p>
 </div>
 <div class="paragraph">
 <p>See <a href="doc-cg-l3.html" class="xref page">the L3 configuration guide</a> for details.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2026_06_1"><a class="anchor" href="#_2026_06_1"></a>2. 2026.06-1</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>Version:            2026.06-1  (yyyy.mm-cnt)
+Previous Version:   2026.06
+Release date:       2026-07-10
+Type:               Bugfix release
+YANG Catalog SHA:   a451a0f8915c93316acec762c840219d</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bugfixes"><a class="anchor" href="#_bugfixes"></a>2.1. Bugfixes</h3>
+<div class="sect3">
+<h4 id="_bugfix_coapcoreconf_get_running_config_failed_on_some_boards"><a class="anchor" href="#_bugfix_coapcoreconf_get_running_config_failed_on_some_boards"></a>2.1.1. Bugfix: CoAP/CORECONF get running config failed on some boards</h4>
+<div class="paragraph">
+<p>The 2026.06 release introduced the port and cable test feature, which requires
+new features from the PHY API. Not all PHY drivers have been updated to support
+the port-test feature. Drivers not supporting this feature return the
+<code>NOT_IMPLEMENTED</code> error code. This was not handled correctly, and caused the
+entire CoAP/CORECONF get request to fail.</p>
+</div>
+<div class="paragraph">
+<p>If a PHY driver does not implement a given feature, it shall not cause a request
+to fail; instead, the feature shall be marked as disabled in the get/status
+request.</p>
+</div>
 </div>
 </div>
 </div>
