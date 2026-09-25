@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Switch Interface Port :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-if-port.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-if-port.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-if-port.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-if-port.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-if-port.html">2025.12</a>
@@ -401,7 +408,6 @@ The administrative state is disabled as shown below.</p>
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
      ieee802-ethernet-interface:ethernet/auto-negotiation/enable"
   : false
-
 - ? "/ietf-interfaces:interfaces/interface[name='1']/\
      mchp-velocitysp-port:eth-port/config/speed"
   : '0.1'</code></pre>
@@ -535,26 +541,21 @@ The administrative state is disabled as shown below.</p>
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/oper-status"
   : up
 
-
 - ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/\
      status"
   : flow-control: disabled
     oper-info: oper_speed_mgmt_based
 
-
 - ? "/ietf-interfaces:interfaces/interface/ieee802-ethernet-interface:ethernet/\
      speed"
   : '1.0'
-
 
 - ? "/ietf-interfaces:interfaces/interface/ieee802-ethernet-interface:ethernet/\
      duplex"
   : full
 
-
 - ? "/ietf-interfaces:interfaces/interface/phys-address"
   : 00-11-22-33-44-01
-
 
 - ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-port:eth-port/test/\
      sqi-value"
@@ -1460,6 +1461,158 @@ retrieved as shown below.</p>
      multi-step-test/result"
   : prbs-switch-error-count: 0
     prbs-phy-host-error-count: 65535</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="frame-generator-test"><a class="anchor" href="#frame-generator-test"></a>5. Frame Generator (test)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The frame generator is a low-level diagnostic tool.
+It drives each selected front port at its own line rate, injecting 64-octet
+frames as fast as the port allows, to stress the switch fabric and maximise the
+power drawn by the switch and connected PHYs.
+This makes it useful for production testing and power qualification.</p>
+</div>
+<div class="paragraph">
+<p>Frames are injected into VLAN 1, so all selected ports must be members of
+VLAN 1. Default switch settings satisfy this requirement.</p>
+</div>
+<div class="paragraph">
+<p>If frames loop back into the switch, an ACL rule must be installed to prevent
+those frames from being forwarded again.
+When loops are in place, compare the TX counter on each sending port with the
+RX counter on its loop partner to determine whether the link passed.</p>
+</div>
+<div class="sect2">
+<h3 id="_testing_ports_using_pairwise_loops"><a class="anchor" href="#_testing_ports_using_pairwise_loops"></a>5.1. Testing ports using pairwise loops</h3>
+<div class="paragraph">
+<p>Loop the ports to be tested pairwise (<code>1 &lt;&#8594; 2</code>, <code>3 &lt;&#8594; 4</code>), ensure they are all
+members of VLAN 1 (the default), and wait a few seconds for links to come up.</p>
+</div>
+<div class="paragraph">
+<p>The following subsections covers the suggested steps.</p>
+</div>
+<div class="sect3">
+<h4 id="_disable_forwarding_to_prevent_loops"><a class="anchor" href="#_disable_forwarding_to_prevent_loops"></a>5.1.1. Disable forwarding to prevent loops</h4>
+<div class="paragraph">
+<p>Since the test ports are in the same VLAN, a looped cable would cause frames
+to be forwarded indefinitely.
+Add an ACL rule that discards all traffic received on the test ports to prevent
+this, which keeps the fabric clear and the counters meaningful.
+See <a href="doc-cg-l2-acl.html" class="xref page">ACL</a> for details.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-frame-load-acl" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 1
+    priority: 1
+    ingress-port-list:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    common-match-params: {}
+    frame-any:
+      any:
+      -
+    actions:
+      forwarding: filter
+      egress-port-list: []</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adjust the <code>ingress-port-list</code> for the ports under test; always leave
+<code>egress-port-list</code> empty.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_optional_clear_the_counters"><a class="anchor" href="#_optional_clear_the_counters"></a>5.1.2. (Optional) Clear the counters</h4>
+<div class="paragraph">
+<p>Clearing the counters before the test makes it easier to compare RX and TX
+counts afterwards.</p>
+</div>
+<div class="paragraph">
+<p><code>POST</code> request message:</p>
+</div>
+<div id="cg-post-req-frame-load-clear" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
+     mchp-velocitysp-port:eth-port/statistics/clear-statistics"
+  :
+
+- ? "/ietf-interfaces:interfaces/interface[name='2']/\
+     mchp-velocitysp-port:eth-port/statistics/clear-statistics"
+  :
+
+- ? "/ietf-interfaces:interfaces/interface[name='3']/\
+     mchp-velocitysp-port:eth-port/statistics/clear-statistics"
+  :
+
+- ? "/ietf-interfaces:interfaces/interface[name='4']/\
+     mchp-velocitysp-port:eth-port/statistics/clear-statistics"
+  :</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_enable_the_frame_generator"><a class="anchor" href="#_enable_the_frame_generator"></a>5.1.3. Enable the frame generator</h4>
+<div class="paragraph">
+<p><code>POST</code> request message:</p>
+</div>
+<div id="cg-post-req-frame-load-start" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-frame:frame-inject/activate"
+  : input:
+      active: true
+      egress-port-list:
+      - '1'
+      - '2'
+      - '3'
+      - '4'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Adjust the <code>egress-port-list</code> according to the actual test setup.</p>
+</div>
+<div class="paragraph">
+<p>Leave it running for the desired amount of time.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_stop_the_frame_generator"><a class="anchor" href="#_stop_the_frame_generator"></a>5.1.4. Stop the frame generator</h4>
+<div class="paragraph">
+<p><code>POST</code> request message:</p>
+</div>
+<div id="cg-post-req-frame-load-stop" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-frame:frame-inject/activate"
+  : input:
+      active: false</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_check_statistics"><a class="anchor" href="#_check_statistics"></a>5.1.5. Check statistics</h4>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-frame-load-counters" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/statistics"
+
+- "/ietf-interfaces:interfaces/interface[name='2']/statistics"
+
+- "/ietf-interfaces:interfaces/interface[name='3']/statistics"
+
+- "/ietf-interfaces:interfaces/interface[name='4']/statistics"</code></pre>
 </div>
 </div>
 </div>

@@ -1,0 +1,1214 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "VelocityDRIVE-SP LAN969x binary SBOM (VelocitySP-v2026.09)",
+  "documentNamespace": "https://microchip.com/velocitydrivesp/velocitydrive-sp-lan969x-binary-sbom-762d6b0a-0742-47f1-bdf9-42de619974fc",
+  "creationInfo": {
+    "created": "2026-09-23T13:13:53Z",
+    "creators": [
+      "Tool: support/scripts/sbom-spdx",
+      "Organization: Microchip Technology Inc."
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev09p11a-auto",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV09P11A_AUTO",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV09P11A_AUTO.img and lan969x_EV09P11A_AUTO.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev09p11a-auto-dtls",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV09P11A_AUTO_DTLS",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV09P11A_AUTO_DTLS.img and lan969x_EV09P11A_AUTO_DTLS.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev22n59a-auto",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV22N59A_AUTO",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV22N59A_AUTO.img and lan969x_EV22N59A_AUTO.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev22n59a-auto-dtls",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV22N59A_AUTO_DTLS",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV22N59A_AUTO_DTLS.img and lan969x_EV22N59A_AUTO_DTLS.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev23x71a",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV23X71A",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV23X71A.img and lan969x_EV23X71A.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev23x71a-dtls",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV23X71A_DTLS",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV23X71A_DTLS.img and lan969x_EV23X71A_DTLS.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev89p81a",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV89P81A",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV89P81A.img and lan969x_EV89P81A.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev89p81a-auto",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV89P81A_AUTO",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV89P81A_AUTO.img and lan969x_EV89P81A_AUTO.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev89p81a-auto-dtls",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV89P81A_AUTO_DTLS",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV89P81A_AUTO_DTLS.img and lan969x_EV89P81A_AUTO_DTLS.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev89p81a-dtls",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV89P81A_DTLS",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV89P81A_DTLS.img and lan969x_EV89P81A_DTLS.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev89p81a-vsc8574-1000base-x",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV89P81A_VSC8574_1000BASE_X",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV89P81A_VSC8574_1000BASE_X.img and lan969x_EV89P81A_VSC8574_1000BASE_X.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-img-lan969x-ev89p81a-vsc8574-sgmii",
+      "name": "IMG: VelocityDRIVE-SP LAN969x/EV89P81A_VSC8574_SGMII",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Shipped LAN969x firmware image lan969x_EV89P81A_VSC8574_SGMII.img and lan969x_EV89P81A_VSC8574_SGMII.fip."
+    },
+    {
+      "SPDXID": "SPDXRef-arm-optimized-routines",
+      "name": "LIB: Arm Optimized Routines",
+      "versionInfo": "v23.01",
+      "downloadLocation": "https://github.com/ARM-software/optimized-routines",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT OR Apache-2.0 WITH LLVM-exception",
+      "licenseDeclared": "MIT OR Apache-2.0 WITH LLVM-exception",
+      "copyrightText": "Copyright (c) 1999-2022, Arm Limited.",
+      "description": "Optimized implementation of memset, memcmp, memcmp and other for ARM platform.",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/ARM-software/optimized-routines@v23.01"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-freertos",
+      "name": "LIB: FreeRTOS",
+      "versionInfo": "v10.5.1",
+      "downloadLocation": "https://github.com/FreeRTOS/FreeRTOS-Kernel/tree/V10.5.1",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (C) 2021 Amazon.com, Inc. or its affiliates.",
+      "description": "The FreeRTOS is a class of RTOS that is designed to run on a microcontroller.",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/FreeRTOS/FreeRTOS-Kernel@V10.5.1"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:amazon:freertos:10.5.1:-:*:*:*:*:*:*"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-lan867x-phy",
+      "name": "LIB: Microchip LAN867x PHY",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2004-2023 Microchip Technology Inc. and its subsidiaries.",
+      "description": "Microchip LAN867x Ethernet PHY driver."
+    },
+    {
+      "SPDXID": "SPDXRef-lan8814-phy",
+      "name": "LIB: Microchip LAN8814 PHY",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2004-2023 Microchip Technology Inc. and its subsidiaries.",
+      "description": "Microchip LAN8814 Ethernet PHY driver (also built in the 'light' variant)."
+    },
+    {
+      "SPDXID": "SPDXRef-lan884x-phy",
+      "name": "LIB: Microchip LAN884x PHY",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2004-2023 Microchip Technology Inc. and its subsidiaries.",
+      "description": "Microchip LAN884x Ethernet PHY driver."
+    },
+    {
+      "SPDXID": "SPDXRef-lan887x-phy",
+      "name": "LIB: Microchip LAN887x PHY",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2004-2023 Microchip Technology Inc. and its subsidiaries.",
+      "description": "Microchip LAN887x Ethernet PHY driver."
+    },
+    {
+      "SPDXID": "SPDXRef-lan8x8x-phy",
+      "name": "LIB: Microchip LAN8x8x PHY",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2004-2023 Microchip Technology Inc. and its subsidiaries.",
+      "description": "Microchip LAN8x8x Ethernet PHY driver."
+    },
+    {
+      "SPDXID": "SPDXRef-lm-utils-cbor",
+      "name": "LIB: lm_utils CBOR",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2017 Intel Corporation",
+      "sourceInfo": "Hard fork of TinyCBOR (upstream https://github.com/intel/tinycbor, v0.6), heavily rewritten to be MISRA-C:2023 compliant and to use lm_utils instead of libc. One-time import (fork point: commit d393c16f3eb30d0c47e6f9d92db62272f0ec4dc7); upstream is not tracked and cannot be re-downloaded.",
+      "description": "A MISRA-C:2023 compliant fork of TinyCBOR that uses the lm_utils library\ninstead of libc. Notice, this is a one-time import, we are not following the\nupstream repository, but are maintaining this fork instead."
+    },
+    {
+      "SPDXID": "SPDXRef-lmd-atf",
+      "name": "LIB: lmd_atf",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "copyrightText": "Copyright (c) 2017-2021, Arm Limited and Contributors.",
+      "sourceInfo": "Hard fork of ARM Trusted Firmware runtime code maintained in-tree with Microchip additions. Upstream is not tracked (hard fork); per-file copyright and license are in the source headers.",
+      "description": "ARM Trusted Firmware-derived runtime (GIC, translation tables, cache/CPU helpers), hard-forked into the LMStax OS drivers and compiled into the reloc and os-init binaries."
+    },
+    {
+      "SPDXID": "SPDXRef-mesa-api",
+      "name": "LIB: MESA",
+      "versionInfo": "v2026.09-SOAK-11-gb755815d3",
+      "downloadLocation": "git+https://github.com/microchip-ung/mesa.git",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2004-2024 Microsemi Corporation \"Microsemi\"; Copyright (c) 2004-2022 Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "MSCC Ethernet Switch API (MESA) and Ethernet PHY API (MEPA); the C library that is the MESA deliverable."
+    },
+    {
+      "SPDXID": "SPDXRef-miniz",
+      "name": "LIB: miniz",
+      "versionInfo": "3.0.0",
+      "downloadLocation": "https://github.com/richgel999/miniz",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright 2013-2014 RAD Game Tools and Valve Software; Copyright 2010-2014 Rich Geldreich and Tenacious Software LLC",
+      "description": "Single-file deflate/inflate (zlib-subset) compression library.",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/richgel999/miniz@3.0.0"
+        },
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:miniz_project:miniz:3.0.0:-:*:*:*:*:*:*"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-os-init-lan969x",
+      "name": "BIN: VDSP OS-init LAN969x",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "OS initialization binary (lm_os_init.bin) loaded early in the boot flow."
+    },
+    {
+      "SPDXID": "SPDXRef-printf",
+      "name": "LIB: printf",
+      "versionInfo": "0dd4b64bc778bf55229428cefccba4c0a81f384b",
+      "downloadLocation": "https://github.com/mpaland/printf",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2014 Marco Paland",
+      "description": "Minimal printf implementation"
+    },
+    {
+      "SPDXID": "SPDXRef-reloc-lan969x",
+      "name": "BIN: VDSP reloc-loader LAN969x",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Relocation/decompression loader binary (lan969x_reloc.bin)."
+    },
+    {
+      "SPDXID": "SPDXRef-silex",
+      "name": "LIB: Silex SilexPK",
+      "versionInfo": "f5b2700ca5aabc9dbe60f38df57db2d88ca09ec6",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "copyrightText": "Copyright (c) 2018-2020 Silex Insight sa; Copyright (c) 2018-2020 Beerten Engineering scs",
+      "sourceInfo": "Silex Insight SilexPK crypto library (Copyright Silex Insight sa / Beerten Engineering scs). Imported into LMStax from the Microchip Arm Trusted Firmware fork (sw-arm-trusted-firmware) revision f5b2700ca5aabc9dbe60f38df57db2d88ca09ec6; vendored under third-party/silex.",
+      "description": "Silex SilexPK public-key crypto library used by the LAN969x ECC driver."
+    },
+    {
+      "SPDXID": "SPDXRef-tfa-lan969x",
+      "name": "BIN: Arm Trusted Firmware LAN969x",
+      "versionInfo": "e0a69fa2eea493af50826adf1aac2fa765ba7294",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "copyrightText": "Copyright (c) Arm Limited and Contributors; portions (c) Microchip Technology Inc.",
+      "sourceInfo": "Microchip fork of ARM Trusted Firmware (bitbucket UNGE/sw-arm-trusted-firmware, branch tfa.main.lmstax, commit e0a69fa2eea493af50826adf1aac2fa765ba7294). Provides BL2, BL31 and fw_config; see target/lan969x/tfa/SOURCES.md.",
+      "description": "BL2 bootloader, BL31 runtime firmware and fw_config blob (ARM Trusted Firmware)."
+    },
+    {
+      "SPDXID": "SPDXRef-tfa-libc-hdr",
+      "name": "LIB: tfa-libc-hdr",
+      "versionInfo": "2.4",
+      "downloadLocation": "https://github.com/ARM-software/arm-trusted-firmware/tree/v2.4/include/lib/libc",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "copyrightText": "Copyright (c) 2012-2017 Roberto E. Vargas Caballero; portions (c) 2018, Arm Limited and Contributors.",
+      "description": "Basic C header files"
+    },
+    {
+      "SPDXID": "SPDXRef-tinydtls-rijndael",
+      "name": "LIB: tinyDTLS Rijndael (AES)",
+      "versionInfo": "3.0",
+      "downloadLocation": "https://android.googlesource.com/platform/external/openssh/+/idea133",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-Public-Domain",
+      "licenseDeclared": "LicenseRef-Public-Domain",
+      "copyrightText": "Vincent Rijmen, Antoon Bosselaers and Paulo Barreto",
+      "description": "Optimised ANSI C implementation of the Rijndael/AES cipher, used by tinyDTLS."
+    },
+    {
+      "SPDXID": "SPDXRef-tinydtls-sha2",
+      "name": "LIB: tinyDTLS SHA-2",
+      "versionInfo": "1.1",
+      "downloadLocation": "https://github.com/dylan-lang/hash-algorithms/tree/master",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "copyrightText": "Copyright (c) 2000-2001, Aaron D. Gifford",
+      "description": "SHA-2 (SHA-224/256/384/512) implementation by Aaron Gifford, used by tinyDTLS."
+    },
+    {
+      "SPDXID": "SPDXRef-tinymt",
+      "name": "LIB: TinyMT",
+      "versionInfo": "v1.1.2",
+      "downloadLocation": "https://github.com/MersenneTwister-Lab/TinyMT",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "copyrightText": "Copyright (c) 2011, 2013 Mutsuo Saito, Makoto Matsumoto, Hiroshima University and The University of Tokyo.",
+      "description": "Pseudo random number generator"
+    },
+    {
+      "SPDXID": "SPDXRef-ut-utils",
+      "name": "LIB: ut-utils",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2021-2022 Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Utility functions for embedded systems"
+    },
+    {
+      "SPDXID": "SPDXRef-vdsp-bin-lan969x",
+      "name": "BIN: VDSP application LAN969x",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "The VelocitySP application (BL33) for LAN969x"
+    },
+    {
+      "SPDXID": "SPDXRef-vdsp-bin-lan969x-auto",
+      "name": "BIN: VDSP application LAN969x/AUTO",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "LicenseRef-VDSP-Binaries",
+      "licenseDeclared": "LicenseRef-VDSP-Binaries",
+      "copyrightText": "Copyright (c) Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "The VelocitySP application (BL33) for LAN969x Automotive variant"
+    },
+    {
+      "SPDXID": "SPDXRef-vsc8574-phy",
+      "name": "LIB: Microchip VSC8574 PHY",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2004-2023 Microchip Technology Inc. and its subsidiaries.",
+      "description": "Microchip (Vitesse) VSC8574 Ethernet PHY driver."
+    },
+    {
+      "SPDXID": "SPDXRef-x-tfa-lan969x-Package-tfa",
+      "comment": "Microchip fork of ARM Trusted Firmware-A v2.8.17. The\nproject's primary license is BSD-3-Clause; the aggregate distribution also\nincludes the separately-listed bundled components below, plus a few\ndual-licensed device-tree binding headers (GPL-2.0-or-later OR MIT, and MIT)\nunder include/dt-bindings and the microchip platform dirs.\nImported from https://bitbucket.microchip.com/unge/sw-arm-trusted-firmware/spdxdocs/sw-arm-trusted-firmware-e0a69fa2eea4 (SHA1: d25a868a3d391e807ffd986c07018f3c10224f6c).",
+      "copyrightText": "Copyright (c) 2013-2022, Arm Limited and Contributors. All rights reserved.\nCopyright (C) 2021-2026 Microchip Technology Inc. and its subsidiaries.",
+      "downloadLocation": "git+ssh://git@bitbucket.microchip.com/unge/sw-arm-trusted-firmware.git@e0a69fa2eea493af50826adf1aac2fa765ba7294",
+      "filesAnalyzed": false,
+      "homepage": "https://trustedfirmware.org/projects/tf-a/",
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "sw-arm-trusted-firmware",
+      "originator": "Organization: Arm Limited",
+      "primaryPackagePurpose": "FIRMWARE",
+      "supplier": "Organization: Microchip Technology Inc.",
+      "versionInfo": "2.8.17-mchp1-23-ge0a69fa2eea4",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:o:trustedfirmware:trusted_firmware-a:2.8.17:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/TrustedFirmware-A/trusted-firmware-a@lts-v2.8.17"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:generic/sw-arm-trusted-firmware@2.8.17-mchp1-23-ge0a69fa2eea4"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-x-tfa-lan969x-Package-st-drivers",
+      "comment": "STMicroelectronics clock drivers and device-tree bindings\n(drivers/st, include/drivers/st, include/dt-bindings), imported from upstream\nTF-A. Dual-licensed GPL-2.0-or-later OR BSD-3-Clause.",
+      "copyrightText": "Copyright (C) STMicroelectronics 2018-2022 - All Rights Reserved",
+      "downloadLocation": "git+https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later OR BSD-3-Clause",
+      "licenseDeclared": "GPL-2.0-or-later OR BSD-3-Clause",
+      "name": "st-drivers",
+      "originator": "Organization: STMicroelectronics",
+      "primaryPackagePurpose": "LIBRARY",
+      "supplier": "Organization: Microchip Technology Inc.",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:generic/st-drivers"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-x-tfa-lan969x-Package-silexpk",
+      "comment": "Silex BA414e public-key accelerator library used by the\nlan969x ECDSA driver, vendored under drivers/microchip/crypto/silex.\nAPI version 2.2 per include/silexpk/version.h (SX_PK_API_MAJOR=2,\nSX_PK_API_MINOR=2). No NVD CPE entry exists for this library.",
+      "copyrightText": "Copyright (c) 2014-2021 Silex Insight sa\nCopyright (c) 2014-2021 Beerten Engineering scs",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "name": "silexpk",
+      "originator": "Organization: Silex Insight sa and Beerten Engineering scs",
+      "primaryPackagePurpose": "LIBRARY",
+      "supplier": "Organization: Microchip Technology Inc.",
+      "versionInfo": "2.2",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:generic/silexpk@2.2"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-x-tfa-lan969x-Package-libc",
+      "comment": "TF-A minimal C library, vendored under lib/libc and\ninclude/lib/libc; predominantly BSD-3-Clause with a few ISC and\nBSD-2-Clause-FreeBSD files.",
+      "copyrightText": "Copyright (c) the Regents of the University of California and Arm Limited",
+      "downloadLocation": "git+https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause AND ISC AND BSD-2-Clause-Views",
+      "licenseDeclared": "BSD-3-Clause AND ISC AND BSD-2-Clause-Views",
+      "name": "tf-a-libc",
+      "originator": "Organization: Arm Limited",
+      "primaryPackagePurpose": "LIBRARY",
+      "supplier": "Organization: Microchip Technology Inc.",
+      "versionInfo": "2.8.17-mchp1-23-ge0a69fa2eea4",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:generic/tf-a-libc@2.8.17-mchp1-23-ge0a69fa2eea4"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-x-tfa-lan969x-Package-compiler-rt",
+      "comment": "Compiler builtins (e.g. 64-bit integer helpers) from LLVM\ncompiler-rt, vendored under lib/compiler-rt/builtins. Files were imported\nfrom upstream TF-A incrementally; no single upstream version pin exists.\nCPE omitted because the version is unknown.",
+      "copyrightText": "Copyright (c) 2009-2016 by the contributors listed in CREDITS.TXT",
+      "downloadLocation": "https://github.com/llvm/llvm-project",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0 WITH LLVM-exception",
+      "licenseDeclared": "Apache-2.0 WITH LLVM-exception",
+      "name": "compiler-rt-builtins",
+      "originator": "Organization: LLVM project",
+      "primaryPackagePurpose": "LIBRARY",
+      "supplier": "Organization: Microchip Technology Inc.",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/llvm/llvm-project"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-x-tfa-lan969x-Package-libfdt",
+      "comment": "Flattened device tree access library (from dtc), vendored\nunder lib/libfdt and include/lib/libfdt. The related FIT-image helper under\nlib/libfit carries the same dual license. Vendored at upstream dtc commit\ne37c256 (post-1.4.7; no release tag). NVD vendor/product confirmed as\ndtc_project:dtc but the catalog only covers through 1.4.7; version field\nin CPE is therefore '-' (unspecified).",
+      "copyrightText": "Copyright (C) 2006 David Gibson, IBM Corporation.",
+      "downloadLocation": "https://git.kernel.org/pub/scm/utils/dtc/dtc.git",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later OR BSD-2-Clause",
+      "licenseDeclared": "GPL-2.0-or-later OR BSD-2-Clause",
+      "name": "libfdt",
+      "originator": "Organization: Device Tree Compiler project",
+      "primaryPackagePurpose": "LIBRARY",
+      "supplier": "Organization: Microchip Technology Inc.",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:dtc_project:dtc:-:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/dgibson/dtc@e37c256#lib/libfdt"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-x-tfa-lan969x-Package-zlib",
+      "comment": "Inflate/gunzip support, vendored under lib/zlib.",
+      "copyrightText": "Copyright (C) 1995-2022 Jean-loup Gailly and Mark Adler",
+      "downloadLocation": "https://zlib.net/",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Zlib",
+      "licenseDeclared": "Zlib",
+      "name": "zlib",
+      "originator": "Person: Jean-loup Gailly and Mark Adler",
+      "primaryPackagePurpose": "LIBRARY",
+      "supplier": "Organization: Microchip Technology Inc.",
+      "versionInfo": "1.2.13",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:zlib:zlib:1.2.13:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/madler/zlib@v1.2.13"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-x-tfa-lan969x-Package-mbedtls",
+      "comment": "Cryptographic library used by the trusted boot chain. Cloned\nat build time (not committed) into mbedtls/; the build pins tag mbedtls-2.28.0.",
+      "copyrightText": "Copyright The Mbed TLS Contributors",
+      "downloadLocation": "git+https://github.com/microchip-ung/mbedtls.git@mbedtls-2.28.0",
+      "filesAnalyzed": false,
+      "homepage": "https://www.trustedfirmware.org/projects/mbed-tls/",
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "name": "mbedtls",
+      "originator": "Organization: Arm Limited (Mbed TLS project)",
+      "primaryPackagePurpose": "LIBRARY",
+      "supplier": "Organization: Microchip Technology Inc.",
+      "versionInfo": "2.28.0",
+      "externalRefs": [
+        {
+          "referenceCategory": "SECURITY",
+          "referenceType": "cpe23Type",
+          "referenceLocator": "cpe:2.3:a:trustedfirmware:mbed_tls:2.28.0:*:*:*:*:*:*:*"
+        },
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/microchip-ung/mbedtls@mbedtls-2.28.0"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev09p11a-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev09p11a-auto-dtls"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev22n59a-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev22n59a-auto-dtls"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev23x71a"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev23x71a-dtls"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev89p81a"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev89p81a-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev89p81a-auto-dtls"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev89p81a-dtls"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev89p81a-vsc8574-1000base-x"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-img-lan969x-ev89p81a-vsc8574-sgmii"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev09p11a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev09p11a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev09p11a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev09p11a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev09p11a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev09p11a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev09p11a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev09p11a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev22n59a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev22n59a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev22n59a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev22n59a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev22n59a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev22n59a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev22n59a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev22n59a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev23x71a",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev23x71a",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev23x71a",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev23x71a",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev23x71a-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev23x71a-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev23x71a-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev23x71a-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-auto-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x-auto"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-dtls",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-vsc8574-1000base-x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-vsc8574-1000base-x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-vsc8574-1000base-x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-vsc8574-1000base-x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-vsc8574-sgmii",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-os-init-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-vsc8574-sgmii",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-reloc-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-vsc8574-sgmii",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-img-lan969x-ev89p81a-vsc8574-sgmii",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vdsp-bin-lan969x"
+    },
+    {
+      "spdxElementId": "SPDXRef-mesa-api",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-ut-utils"
+    },
+    {
+      "spdxElementId": "SPDXRef-os-init-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lmd-atf"
+    },
+    {
+      "spdxElementId": "SPDXRef-os-init-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-silex"
+    },
+    {
+      "spdxElementId": "SPDXRef-os-init-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-ut-utils"
+    },
+    {
+      "spdxElementId": "SPDXRef-reloc-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lmd-atf"
+    },
+    {
+      "spdxElementId": "SPDXRef-reloc-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-miniz"
+    },
+    {
+      "spdxElementId": "SPDXRef-reloc-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-ut-utils"
+    },
+    {
+      "spdxElementId": "SPDXRef-ut-utils",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-arm-optimized-routines"
+    },
+    {
+      "spdxElementId": "SPDXRef-ut-utils",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lm-utils-cbor"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-freertos"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan867x-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan8814-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan884x-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan887x-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan8x8x-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lmd-atf"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-mesa-api"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-printf"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-silex"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-libc-hdr"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tinydtls-rijndael"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tinydtls-sha2"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tinymt"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-ut-utils"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vsc8574-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-freertos"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan867x-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan8814-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan884x-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan887x-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lan8x8x-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lmd-atf"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-mesa-api"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-printf"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-silex"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tfa-libc-hdr"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tinydtls-rijndael"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tinydtls-sha2"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-tinymt"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-ut-utils"
+    },
+    {
+      "spdxElementId": "SPDXRef-vdsp-bin-lan969x-auto",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-vsc8574-phy"
+    },
+    {
+      "spdxElementId": "SPDXRef-x-tfa-lan969x-Package-tfa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-x-tfa-lan969x-Package-mbedtls"
+    },
+    {
+      "spdxElementId": "SPDXRef-x-tfa-lan969x-Package-tfa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-x-tfa-lan969x-Package-zlib"
+    },
+    {
+      "spdxElementId": "SPDXRef-x-tfa-lan969x-Package-tfa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-x-tfa-lan969x-Package-libfdt"
+    },
+    {
+      "spdxElementId": "SPDXRef-x-tfa-lan969x-Package-tfa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-x-tfa-lan969x-Package-compiler-rt"
+    },
+    {
+      "spdxElementId": "SPDXRef-x-tfa-lan969x-Package-tfa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-x-tfa-lan969x-Package-libc"
+    },
+    {
+      "spdxElementId": "SPDXRef-x-tfa-lan969x-Package-tfa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-x-tfa-lan969x-Package-silexpk"
+    },
+    {
+      "spdxElementId": "SPDXRef-x-tfa-lan969x-Package-tfa",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-x-tfa-lan969x-Package-st-drivers"
+    },
+    {
+      "spdxElementId": "SPDXRef-tfa-lan969x",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-x-tfa-lan969x-Package-tfa"
+    }
+  ],
+  "hasExtractedLicensingInfos": [
+    {
+      "licenseId": "LicenseRef-Public-Domain",
+      "extractedText": "This code is hereby placed in the public domain."
+    },
+    {
+      "licenseId": "LicenseRef-VDSP-Binaries",
+      "extractedText": "Copyright (C) 2025 Microchip Technology Incorporated and its subsidiaries.\nAll rights reserved.\n\nREDISTRIBUTION: Permission is hereby granted by Microchip Technology\nIncorporated (Microchip), free of any license fees, to any person obtaining a\ncopy of this firmware (the \"Software\"), to install, reproduce, copy and\ndistribute copies, in binary form, hexadecimal or equivalent formats only, the\nSoftware and to permit persons to whom the Software is provided to do the same,\nsubject to the following conditions:\n\n* Any redistribution of the Software must reproduce the above copyright notice,\n  this license notice, and the following disclaimers and notices in the\n  documentation and/or other materials provided with the Software.\n\n* Neither the name of Microchip, its products nor the names of its suppliers\n  may be used to endorse or promote products derived from this Software without\n  specific prior written permission.\n\n* No reverse engineering, decompilation, or disassembly of this Software is\n  permitted.\n\nLimited patent license.  Microchip grants a world-wide, royalty-free,\nnon-exclusive, revocable license under any patents that it now has or hereafter\nmay have, own or control related to the Software to make, have made, use,\nimport, offer to sell and sell (\"Utilize\") this Software, but solely to the\nextent that any such patent is necessary to Utilize the Software in conjunction\nwith Microchip processors. The patent license shall not apply to any other\ncombinations which include this Software nor to any other Microchip patents or\npatent rights. No hardware per se is licensed hereunder.\n\nDISCLAIMER: THIS SOFTWARE IS PROVIDED BY MICROCHIP \"AS IS\" AND ANY EXPRESS OR\nIMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT ARE\nDISCLAIMED. IN NO EVENT SHALL ATMEL BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\nLIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR\nPROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\nLIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE\nOR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF\nADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    }
+  ]
+}

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Management System :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-mgmt-system.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-mgmt-system.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-mgmt-system.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-mgmt-system.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-mgmt-system.html">2025.12</a>
@@ -403,6 +410,78 @@ This can read out.</p>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:system-factory-reset"
   :</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reading_memory_usage"><a class="anchor" href="#_reading_memory_usage"></a>5. Reading memory usage.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The device exposes a read-only snapshot of main heap usage captured at
+the end of boot-time initialisation.  The values do not change at
+runtime.</p>
+</div>
+<div class="sect2">
+<h3 id="_total_used_and_free_bytes"><a class="anchor" href="#_total_used_and_free_bytes"></a>5.1. Total used and free bytes</h3>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-sys-memory" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-system:system/mchp-velocitysp-system:memory/used"
+- "/ietf-system:system/mchp-velocitysp-system:memory/free"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-sys-memory" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-system:system/mchp-velocitysp-system:memory/used": 1234560
+- "/ietf-system:system/mchp-velocitysp-system:memory/free":  876032</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The sum of <code>used</code> and <code>free</code> equals the total heap size configured for
+the target.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_per_capability_breakdown"><a class="anchor" href="#_per_capability_breakdown"></a>5.2. Per-capability breakdown</h3>
+<div class="paragraph">
+<p>The <code>capability</code> list shows how many bytes each board-configuration
+capability consumed.  Only capabilities with a non-zero allocation
+appear in the list.  The <code>id</code> leaf is an enum whose values match the
+<code>lm_os_cap_t</code> identifiers (e.g. <code>port-cnt</code>, <code>stream-cnt</code>,
+<code>coap-session-cnt</code>).</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message.</p>
+</div>
+<div id="cg-fetch-req-sys-memory-cap" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-system:system/mchp-velocitysp-system:memory/capability"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message.</p>
+</div>
+<div id="cg-fetch-res-sys-memory-cap" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-system:system/mchp-velocitysp-system:memory/capability":
+    - id: port-cnt
+      bytes: 38400
+    - id: stream-cnt
+      bytes: 204800
+    - id: coap-session-cnt
+      bytes: 16384</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The sum of all <code>bytes</code> values across capabilities is less than <code>used</code>
+because module-state structures and driver tables are counted in <code>used</code>
+but not broken out by capability.</p>
 </div>
 </div>
 </div>

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>VelocityDRIVE-SP-2026.06 Release Notes :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <title>VelocityDRIVE-SP-2026.09 Release Notes :: VelocityDRIVE™ Software Package Documentation</title>
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -321,6 +327,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-relnote.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-relnote.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-relnote.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-relnote.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-relnote.html">2025.12</a>
@@ -335,114 +342,80 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">VelocityDRIVE-SP-2026.06 Release Notes</h1>
+<h1 class="page">VelocityDRIVE-SP-2026.09 Release Notes</h1>
 <div class="sect1">
-<h2 id="_2026_06"><a class="anchor" href="#_2026_06"></a>1. 2026.06</h2>
+<h2 id="_2026_09"><a class="anchor" href="#_2026_09"></a>1. 2026.09</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre>Version:            2026.06
-Previous Version:   2026.03
-Release date:       2026-07-03
+<pre>Version:            2026.09
+Previous Version:   2026.06-1
+Release date:       2026-09-25
 Type:               Roadmap release
-YANG Catalog SHA:   a451a0f8915c93316acec762c840219d</pre>
+YANG Catalog SHA:   b9a283a2c36b799683c792d8a0c21559</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_new_features"><a class="anchor" href="#_new_features"></a>1.1. New features</h3>
+<h3 id="_new_runtime_features"><a class="anchor" href="#_new_runtime_features"></a>1.1. New runtime features</h3>
 <div class="sect3">
-<h4 id="_mld_snooping_added"><a class="anchor" href="#_mld_snooping_added"></a>1.1.1. MLD Snooping added</h4>
+<h4 id="_igmp_snooping_added"><a class="anchor" href="#_igmp_snooping_added"></a>1.1.1. IGMP Snooping added</h4>
 <div class="paragraph">
-<p>MLD (Multicast Listener Discovery) Snooping has been added. It constrains IPv6
-multicast forwarding to the ports that have active listeners, instead of
-flooding multicast to every member port of a VLAN. The implementation covers
-MLDv2 (RFC 9777) with backward compatibility for MLDv1 (RFC 2710) and is based
-on lightweight snooping protocol (RFC5790) and is configured and monitored via
-the RFC 9166 YANG model (<code>ietf-igmp-mld-snooping</code>) over CORECONF/CoAP.</p>
+<p>IGMPv2/v3 Snooping has been added. It constrains IPv4 multicast forwarding to
+the ports that have active listeners, instead of flooding multicast to every
+member port of a VLAN. The implementation covers IGMPv3 (RFC 3376) with
+backward compatibility for IGMPv2 (RFC 2236) and is based on lightweight
+snooping protocol (RFC 5790). It is configured and monitored via the RFC 9166
+YANG model (<code>ietf-igmp-mld-snooping</code>) over CORECONF/CoAP.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="doc-cg-mld.html" class="xref page">the MLD Snooping guide</a> for configuration examples,
+<p>See <a href="doc-cg-igmp.html" class="xref page">the IGMP Snooping guide</a> for configuration examples,
 and the
-<a href="_attachments/yang-catalog.html#/routing/control-plane-protocols/control-plane-protocol/mld-snooping-instance" class="xref attachment">mld-snooping-instance</a>
+<a href="_attachments/yang-catalog.html#/routing/control-plane-protocols/control-plane-protocol/igmp-snooping-instance" class="xref attachment">igmp-snooping-instance</a>
 YANG model.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_port_test_and_cable_diagnostics_added"><a class="anchor" href="#_port_test_and_cable_diagnostics_added"></a>1.1.2. Port Test and cable diagnostics added</h4>
+<h4 id="_acl2_new_acl_yang_model"><a class="anchor" href="#_acl2_new_acl_yang_model"></a>1.1.2. ACL2: New ACL YANG model</h4>
 <div class="paragraph">
-<p>A port test framework has been added, exposed under the port <code>test</code> subtree of
-the interface model. It provides:</p>
+<p>A new ACL YANG module (<code>mchp-velocitysp-acl2</code>) replaces the previous
+<code>mchp-velocitysp-acl</code> model. The two modules co-exist during a transition
+period — the old module is still accepted on input but read requests return no
+data; the ACL2 module backs both.</p>
+</div>
+<div class="paragraph">
+<p>The key changes in ACL2:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>One-shot tests: cable diagnostics (pair status and length), host-side loop
-frame test, frame generator and PRBS generator.</p>
+<p>It is now possible to utilize 3 different lookup in the HW. To introduce this
+change rules are keyed by <code>[lookup id]</code> rather than a single id. The <code>lookup</code>
+selects the VCAP IS2 lookup that holds the rule, so the same rule id can be
+used once per lookup, and a frame is matched against every lookup.</p>
 </li>
 <li>
-<p>Multi-step tests with individually controllable actions: isolate, line-side
-loop, host-side loop and PRBS (PHY-host / switch) generation with error
-counting.</p>
+<p>A <code>priority</code> leaf sets the search order within a lookup (lowest
+first).</p>
 </li>
 <li>
-<p>A read-only Signal Quality Index (SQI) value.</p>
+<p>A read-only <code>status</code> leaf reports whether a rule can be hit at all, depending
+on the per-lookup key types in <code>acl-key-types</code>.</p>
+</li>
+<li>
+<p>Match parameters are split into <code>common-match-params</code> and a frame-type
+specific container (<code>frame-etype</code>, <code>frame-ipv4</code>, <code>frame-ipv6</code>).</p>
+</li>
+<li>
+<p>Actions are grouped in an <code>actions</code> container that also carries the new
+<code>mirror-enable</code> flag.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>See <a href="doc-cg-if-port.html" class="xref page">the Switch Interface Port guide</a> for details and
+<p>See <a href="doc-cg-l2-acl.html" class="xref page">the ACL configuration guide</a> for configuration
 examples, and the
-<a href="_attachments/yang-catalog.html#/interfaces/interface/eth-port/test" class="xref attachment">eth-port/test</a>
+<a href="_attachments/yang-catalog.html#mchp-velocitysp-acl2" class="xref attachment">acl2</a>
 YANG model.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_coreconf_client_library_added"><a class="anchor" href="#_coreconf_client_library_added"></a>1.1.3. CORECONF client library added</h4>
-<div class="paragraph">
-<p>A new C client library (<code>velocitydrivesp-client-lib</code> / <code>lm_client</code>) has been
-added for building CORECONF/CoAP requests and decoding the responses from a
-host application. It ships with MUP1, CoAP and CORECONF transports, x86 and
-ARMv7 build presets, a C++ compile test, and is MISRA C:2023 checked.</p>
-</div>
-<div class="paragraph">
-<p>See <code>client-lib/README.md</code> in the source tree for build and usage details.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_lan969x_otp_provisioning_yang_added"><a class="anchor" href="#_lan969x_otp_provisioning_yang_added"></a>1.1.4. LAN969x OTP provisioning YANG added</h4>
-<div class="paragraph">
-<p>A new YANG model has been added to facilitate OTP (and secure boot) provisioning
-using the CORECONF interface.</p>
-</div>
-<div class="paragraph">
-<p>The supported fields include:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Serial number</p>
-</li>
-<li>
-<p>Ethernet MAC address range</p>
-</li>
-<li>
-<p>Root-of-Trust public-key for FW authentication</p>
-</li>
-<li>
-<p>Secret symmetric key for FW encryption</p>
-</li>
-<li>
-<p>Boot-strap disable mask</p>
-</li>
-<li>
-<p>Secure JTAG configuration</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>See <a href="doc-cg-otp-provisioning.html" class="xref page">the LAN969x OTP Provisioning guide</a> and
-the <a href="_attachments/yang-catalog.html#/otp-provisioning-1" class="xref attachment">otp-provisioning-1</a>
-RPC for more details.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -451,89 +424,219 @@ RPC for more details.</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-OTP programming is irreversible and can permanently brick the board.
+The old <code>mchp-velocitysp-acl</code> model has been obsoleted, and is
+planned to be removed in the 2027.06 release (last planned version to include it
+is 2027.03). Existing configurations using it should be migrated to
+<code>mchp-velocitysp-acl2</code> before the 2027.06 release.
 </td>
 </tr>
 </table>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_firmware_update_per_platform_image_compatibility_check"><a class="anchor" href="#_firmware_update_per_platform_image_compatibility_check"></a>1.1.5. Firmware update: per-platform image compatibility check</h4>
-<div class="paragraph">
-<p>The firmware-update service now rejects firmware images that were not built for
-the running board (LMSTAX-372). Each board carries a <code>platform_id</code>
-(<code>board:capabilities/platform_id</code> in <code>board.yang</code>), and each generated LAN969x
-image is stamped with the id of the board it was built for. A <code>PUT /fw/image</code>
-whose stamped id is not compatible with the running board is rejected before
-anything is written to flash, so an image built for a different platform can no
-longer be installed and leave the device unbootable.</p>
-</div>
-<div class="paragraph">
-<p>Boards that share the same SoC share an id and stay cross-loadable (for example,
-the auto and non-auto variants of the same SoC).</p>
-</div>
-<div class="paragraph">
-<p>See <a href="doc-cg-mgmt-fwup.html" class="xref page">the Firmware Update guide</a> for the compatibility
-scheme.</p>
-</div>
-<div class="admonitionblock warning">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This breaks downgrade to releases built before this check. Once 2026.06
-is deployed the board&#8217;s <code>platform_id</code> is set to a real value, while pre-2026.06
-LAN969x images are stamped <code>0x0000</code> (untagged). An untagged image is <strong>not</strong>
-treated as universal (only <code>0xffff</code> is), so it fails the exact-match and is
-rejected. Downgrading to a pre-2026.06 release over <code>PUT /fw/image</code> will
-therefore be refused.
+During the transition period (until and including the 2027.03 release),
+configuration stored in the startup config will be loaded using the backwards
+compatibility, the resulting config should be saved to startup-config to migrate
+the persisted config to the new YANG. Read/fetch requests on the old
+<code>mchp-velocitysp-acl</code> model will not return any data.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_mup1_configurable_uart_baud_rate_added"><a class="anchor" href="#_mup1_configurable_uart_baud_rate_added"></a>1.1.6. MUP1: Configurable UART baud rate added</h4>
+<h4 id="_test_frame_generator_added"><a class="anchor" href="#_test_frame_generator_added"></a>1.1.3. Test Frame Generator added</h4>
 <div class="paragraph">
-<p>The MUP1 UART baud rate is now configurable via the <code>mup1-baudrate</code> leaf,
-supporting the standard rates from 9600 up to 921600 bps (default 115200). The
-change takes effect after saving the configuration and rebooting; the matching
-rate must be selected on the host tools (<code>mup1ct</code>, <code>mup1cc</code>) via <code>--baudrate</code>.</p>
+<p>A line-rate frame load has been added for driving front ports with traffic -
+useful for hardware bring-up and stress testing. This feature is different from
+the port-test YANG added in the earlier release in the sense that it accepts a
+port list and can generate traffic on one or more ports in parallel, and this
+feature does not do any looping or inspection of counters - this must be done by
+the operator.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="doc-cg-mup1.html#mup1-baudrate" class="xref page">this section</a> of the MUP1
-configuration guide and the
-<a href="_attachments/yang-catalog.html#/mup1-config/mup1-baudrate" class="xref attachment">mup1-baudrate</a>
-leaf for details.</p>
+<p>The load is controlled via the <code>mchp-velocitysp-frame</code> YANG module under
+CORECONF/CoAP. A port used for management must be excluded from
+<code>egress-port-list</code>, as every driven port discards incoming frames and the
+deactivation command would then be undeliverable.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-if-port.html#frame-generator-test" class="xref page">the Frame Generator guide</a> for details and the
+<a href="_attachments/yang-catalog.html#mchp-velocitysp-frame" class="xref attachment">mchp-velocitysp-frame</a>
+YANG model.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_board_configuration_port_max_speed_advertisement"><a class="anchor" href="#_board_configuration_port_max_speed_advertisement"></a>1.1.7. Board configuration: Port max-speed advertisement</h4>
+<h4 id="_mup1_state_machine_status_counters_added"><a class="anchor" href="#_mup1_state_machine_status_counters_added"></a>1.1.4. MUP1: State machine status counters added</h4>
 <div class="paragraph">
-<p>A <code>max_speed</code> leaf has been added to the board configuration <code>eth_port/phy</code>
-container. When set, it limits the speed advertised during PHY
-auto-negotiation, allowing a port to be capped below its maximum capability.</p>
+<p>The MUP1 serial transport now exposes a set of read-only state machine counters
+under <code>mup1-config/status</code>. The counters track MUP1 link events (frames
+received, frames sent, resync events) and can be read via a CORECONF FETCH.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mup1.html#mup1-status" class="xref page">the MUP1 status section</a> for FETCH examples and the
+<a href="_attachments/yang-catalog.html#/mup1-status" class="xref attachment">mup1-config/status</a>
+YANG model.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_board_configuration_new_peripheral_and_mux_definitions"><a class="anchor" href="#_board_configuration_new_peripheral_and_mux_definitions"></a>1.1.8. Board configuration: new peripheral and mux definitions</h4>
+<h4 id="_ptp_configurable_frame_tx_priority"><a class="anchor" href="#_ptp_configurable_frame_tx_priority"></a>1.1.5. PTP: configurable frame TX priority</h4>
 <div class="paragraph">
-<p>The board configuration model has been extended with:</p>
+<p>A new <code>frame-tx-prio</code> leaf has been added to the PTP instance configuration
+(<code>ieee1588-ptp</code>). It allows the CoS priority of PTP-generated frames to be
+set explicitly, instead of relying on the default.</p>
+</div>
+<div class="paragraph">
+<p>See the
+<a href="_attachments/yang-catalog.html#/ptp/instances/instance/default-ds/frame-tx-prio" class="xref attachment">frame-tx-prio</a>
+YANG leaf.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_lldp_configurable_message_tx_interval"><a class="anchor" href="#_lldp_configurable_message_tx_interval"></a>1.1.6. LLDP: configurable message Tx interval</h4>
+<div class="paragraph">
+<p>The LLDP global message transmission interval is now configurable via the
+<code>msg-tx-interval</code> leaf in the LLDP instance configuration. In addition, the
+implementation now starts a fast transmission burst whenever a port comes up,
+accelerating neighbor discovery after a link event.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mgmt-lldp.html" class="xref page">the LLDP configuration guide</a> for FETCH and iPATCH
+examples.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_lldp_organizationally_specific_tlv_transmission"><a class="anchor" href="#_lldp_organizationally_specific_tlv_transmission"></a>1.1.7. LLDP: Organizationally Specific TLV transmission</h4>
+<div class="paragraph">
+<p>Custom Organizationally Specific TLVs can now be configured for transmission
+via the new <code>remote-org-tlv-xmt</code> table in the LLDP port configuration. The
+OUI is a 24-bit number written in decimal; the information field is base64.
+Every received Organizationally Specific TLV is also reported in the status
+subtree.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mgmt-lldp.html" class="xref page">the LLDP configuration guide</a> for configuration
+examples, and the
+<a href="_attachments/yang-catalog.html#/lldp/port/custom-tlv" class="xref attachment">remote-org-tlv-xmt</a>
+YANG model.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_firmware_update_chunked_upload_support"><a class="anchor" href="#_firmware_update_chunked_upload_support"></a>1.1.8. Firmware update: chunked upload support</h4>
+<div class="paragraph">
+<p>The firmware update PUT endpoint now accepts an <code>?offset=n</code> query parameter,
+allowing the firmware image to be uploaded in multiple chunks. This makes it
+possible to perform firmware updates over transports with limited block sizes
+without holding the entire image in the client&#8217;s memory.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-cg-mgmt-fwup.html" class="xref page">the Firmware Update guide</a> for the chunked
+upload protocol.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_system_memory_usage_monitoring"><a class="anchor" href="#_system_memory_usage_monitoring"></a>1.1.9. System: memory usage monitoring</h4>
+<div class="paragraph">
+<p>The <code>/system/memory</code> container (under <code>mchp-velocitysp-system</code>) is now
+accessible via CORECONF. It exposes the <code>used</code> and <code>free</code> heap figures and a
+per-capability breakdown list so that memory consumption can be attributed to
+individual protocol modules.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The figures are a snapshot taken once at the end of boot-time
+initialisation and do not change at runtime, so polling the container returns
+the same values. The per-capability list is not a complete accounting either:
+the sum of its <code>bytes</code> values is strictly less than <code>used</code>, because
+non-capability memory (module state, drivers, MESA-internal tables) is not
+itemised.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>See the <a href="doc-cg-mgmt-system.html" class="xref page">System configuration guide</a> for FETCH examples,
+and the
+<a href="_attachments/yang-catalog.html#/system/memory" class="xref attachment">system/memory</a>
+YANG model.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_system_source_revision_exposed"><a class="anchor" href="#_system_source_revision_exposed"></a>1.1.10. System: source revision exposed</h4>
+<div class="paragraph">
+<p>A new <code>source-revision</code> leaf under <code>/system-state/platform</code> (in
+<code>mchp-velocitysp-system</code>) exposes the full (unabbreviated) git SHA of the
+firmware image currently running. This makes it straightforward to trace an
+installed image back to the exact source commit it was built from.</p>
+</div>
+<div class="paragraph">
+<p>See the
+<a href="_attachments/yang-catalog.html#/system-state/platform/source-revision" class="xref attachment">system-state/platform/source-revision</a>
+YANG leaf.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_hw_support"><a class="anchor" href="#_new_hw_support"></a>1.2. New HW Support</h3>
+<div class="sect3">
+<h4 id="_lan969x_unified_phy_driver_set_and_vsc8504vsc8574_support"><a class="anchor" href="#_lan969x_unified_phy_driver_set_and_vsc8504vsc8574_support"></a>1.2.1. LAN969x: unified PHY driver set and VSC8504/VSC8574 support</h4>
+<div class="paragraph">
+<p>The <code>VDSP_BIN_LAN969x</code> and <code>VDSP_BIN_LAN969x_AUTO</code> binary variants previously
+had exclusive PHY sets. They now ship the same unified driver set — the union
+of what both variants previously supported:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>uarts</code>/<code>uart</code> and <code>i2cs</code>/<code>i2c</code> entries to declare SoC UART and I2C bus
-controllers and assign them logical handles.</p>
+<p>LAN8814/LAN8804/LAN8818/LAN8808 (QSGMII, 4x10/100/1000BASE-T) — previously
+in <code>LAN969x</code> only, now also in <code>LAN969x_AUTO</code>.</p>
 </li>
 <li>
-<p>PCA954x-type I2C multiplexers (<code>i2c_mux_pca954x</code>), in addition to the existing
-GPIO-controlled muxes.</p>
+<p>LAN887x (LAN8870, LAN8870B, LAN8871, LAN8872 — RGMII/SGMII 100/1000BASE-T1)
+and LAN867x (LAN8671, LAN8670 — 10BASE-T1S) — previously in <code>LAN969x_AUTO</code>
+only, now also in <code>LAN969x</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In addition, support for the VSC8504 and VSC8574 quad-port 10/100/1000BASE-T
+PHYs has been added to both LAN969x variants. Only Rev-E silicon is supported.
+The PHY-timestamping feature of the VSC8574 is not supported.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-tailor-sw-variants.html" class="xref page">Software Variants</a> for the full updated
+PHY support table.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_tailoringboard_configuration_features"><a class="anchor" href="#_new_tailoringboard_configuration_features"></a>1.3. New tailoring/board configuration features</h3>
+<div class="sect3">
+<h4 id="_board_configuration_phy_device_id_verification"><a class="anchor" href="#_board_configuration_phy_device_id_verification"></a>1.3.1. Board configuration: PHY device ID verification</h4>
+<div class="paragraph">
+<p>Two new board configuration fields have been added to the <code>eth_port/phy</code>
+container:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>phy_driver_id</code> — the expected PHY device identifier. If set, the system
+verifies that the PHY responds with this ID at startup and logs an error if
+the IDs do not match.</p>
 </li>
 <li>
-<p>MCP230xx I2C GPIO expanders (<code>gpio_mcp230xx</code>).</p>
+<p><code>phy_readback</code> — a list of register read-back checks applied to the PHY
+after initialisation.</p>
 </li>
 </ul>
 </div>
@@ -542,62 +645,155 @@ GPIO-controlled muxes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_board_configuration_phy_drivers_dummy_phy_support_on_lan969x_variants"><a class="anchor" href="#_board_configuration_phy_drivers_dummy_phy_support_on_lan969x_variants"></a>1.1.9. Board configuration: PHY drivers: dummy-PHY support on LAN969x variants</h4>
+<h4 id="_board_configuration_multiple_status_leds"><a class="anchor" href="#_board_configuration_multiple_status_leds"></a>1.3.2. Board configuration: multiple status LEDs</h4>
 <div class="paragraph">
-<p>The dummy-PHY driver has been added to the <code>velocitysp_lan969x</code> and
-<code>velocitysp_lan969x_auto</code> MEPA variants. Its purpose is to support MAC-to-MAC
-connections, i.e. ports that have no external PHY (such as SerDes/backplane
-links between two MACs), allowing such ports to be brought up.</p>
+<p>The board configuration now supports a <code>status_leds</code> container, holding a
+<code>status_led</code> list, alongside the
+previous single-LED container. Up to four instances can be configured, each
+with its own <code>instance_id</code>, <code>gpio_state_at_init</code> and
+<code>gpio_state_at_boot_complete</code>. The older
+single-LED container continues to be honoured but cannot be combined with the
+new list.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-tailor-boardconf.html" class="xref page">Board Configuration</a> for details and
+drive-state examples.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_board_configuration_phy_media_interface_selection"><a class="anchor" href="#_board_configuration_phy_media_interface_selection"></a>1.3.3. Board configuration: PHY media interface selection</h4>
+<div class="paragraph">
+<p>A <code>media_interface</code> leaf has been added to the <code>eth_port/phy</code> container.
+It selects the physical media interface between the MAC and the PHY: <code>Cu</code>,
+<code>SGMII</code>, or <code>1000BASE-X</code>. If absent the default is <code>Cu</code>.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-tailor-boardconf.html" class="xref page">Board Configuration</a> for details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_board_configuration_phy_tunables"><a class="anchor" href="#_board_configuration_phy_tunables"></a>1.3.4. Board configuration: PHY tunables</h4>
+<div class="paragraph">
+<p>A <code>tunables</code> list has been added to the <code>eth_port/phy</code> container in the board
+configuration. It allows named PHY parameters to be set at startup without
+modifying the PHY driver. The supported tunable types are documented in the
+board configuration guide.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-tailor-boardconf.html" class="xref page">Board Configuration</a> for details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tailoring_flash_and_bootloader_flash_configuration"><a class="anchor" href="#_tailoring_flash_and_bootloader_flash_configuration"></a>1.3.5. Tailoring: flash and bootloader flash configuration</h4>
+<div class="paragraph">
+<p>Two new tailoring sections cover flash speed configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>board:drivers/flash_static</code> container selects the flash access mode
+and sets a maximum SPI clock rate. The achieved clock may be lower than
+the requested bound, clamped to what the divider can express.</p>
+</li>
+<li>
+<p>The <code>LAN969X_FW_CONFIG_DTS</code> device-tree knobs let the BL2 bootloader&#8217;s
+flash rate be set independently of the application&#8217;s rate — both have to be
+lowered to de-risk a marginal board.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="doc-tailor-boardconf.html" class="xref page">Board Configuration</a> and
+<a href="doc-tailor.html" class="xref page">Tailoring</a> for details.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_behavioral_changes"><a class="anchor" href="#_behavioral_changes"></a>1.2. Behavioral changes</h3>
+<h3 id="_new_support_features"><a class="anchor" href="#_new_support_features"></a>1.4. New support features</h3>
 <div class="sect3">
-<h4 id="_l3_static_routes_created_together_with_their_protocol_instance"><a class="anchor" href="#_l3_static_routes_created_together_with_their_protocol_instance"></a>1.2.1. L3: Static routes created together with their protocol instance</h4>
+<h4 id="_yang_sid_files_published_in_rfc_9595_format"><a class="anchor" href="#_yang_sid_files_published_in_rfc_9595_format"></a>1.4.1. YANG SID files published in RFC 9595 format</h4>
 <div class="paragraph">
-<p>Static routes live under a user-managed <code>control-plane-protocol</code> instance of
-type <code>static</code>, which (per RFC 8349 §5.3.1) is not created implicitly by the
-system. The configuration guide now shows the initial routing table being set
-with a single request that creates the instance together with all its routes —
-the same form used when the running configuration is applied at boot — while
-individual routes can still be added later by addressing the <code>route</code> list
-directly.</p>
+<p>YANG SID files are now generated and shipped in
+<a href="https://www.rfc-editor.org/rfc/rfc9595">RFC 9595</a> format alongside the
+existing legacy-format files.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>New location</strong>: <code>docs/sw_refs/yang/new-sid-files/&lt;module&gt;@&lt;revision&gt;.sid</code> —
+RFC 9595 format, using the <code>ietf-sid-file:sid-file</code> namespace, <code>item</code> (not
+<code>items</code>) and <code>assignment-range</code> (not <code>assignment-ranges</code>).</p>
+</li>
+<li>
+<p><strong>Legacy location</strong>: <code>docs/sw_refs/yang/&lt;module&gt;@&lt;revision&gt;.sid</code> — retained
+unchanged for backward compatibility.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>See <a href="doc-cg-l3.html" class="xref page">the L3 configuration guide</a> for details.</p>
+<p>Both the YANG catalog tar (attached to the documentation) and the
+<code>velocitydrivesp-client-lib</code> packet include the <code>new-sid-files</code> directory.</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_sbom_published_spdx"><a class="anchor" href="#_sbom_published_spdx"></a>1.4.2. SBOM published SPDX</h4>
+<div class="paragraph">
+<p>The Software Bill of Materials is now published as a self-contained browsable
+HTML file alongside the SPDX JSON. Both the binary packet SBOM and the
+client-library SBOM are attached to the documentation and linked from the SBOM
+page.</p>
+</div>
+<div class="paragraph">
+<p>The JSON SPDX files are also embedded in the distributed tar files.</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_client_library_new_example_tools"><a class="anchor" href="#_client_library_new_example_tools"></a>1.4.3. Client library: new example tools</h4>
+<div class="paragraph">
+<p>Two new C example programs are included in the client-library packet:</p>
 </div>
-<div class="sect1">
-<h2 id="_2026_06_1"><a class="anchor" href="#_2026_06_1"></a>2. 2026.06-1</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre>Version:            2026.06-1  (yyyy.mm-cnt)
-Previous Version:   2026.06
-Release date:       2026-07-10
-Type:               Bugfix release
-YANG Catalog SHA:   a451a0f8915c93316acec762c840219d</pre>
+<div class="ulist">
+<ul>
+<li>
+<p><code>mup1ct</code> — a C port of the MUP1 configuration tool, demonstrating
+CORECONF get and set over MUP1.</p>
+</li>
+<li>
+<p><code>dbgreg</code> — a MIIM / switch register access tool that demonstrates raw
+register reads and writes via the client library.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <code>client-lib/README.md</code> in the source tree for build and usage details.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_bugfixes"><a class="anchor" href="#_bugfixes"></a>2.1. Bugfixes</h3>
+<h3 id="_behavioral_changes"><a class="anchor" href="#_behavioral_changes"></a>1.5. Behavioral changes</h3>
 <div class="sect3">
-<h4 id="_bugfix_coapcoreconf_get_running_config_failed_on_some_boards"><a class="anchor" href="#_bugfix_coapcoreconf_get_running_config_failed_on_some_boards"></a>2.1.1. Bugfix: CoAP/CORECONF get running config failed on some boards</h4>
+<h4 id="_coreconf_two_pass_validation_for_putipatch"><a class="anchor" href="#_coreconf_two_pass_validation_for_putipatch"></a>1.5.1. CORECONF: two-pass validation for PUT/iPATCH</h4>
 <div class="paragraph">
-<p>The 2026.06 release introduced the port and cable test feature, which requires
-new features from the PHY API. Not all PHY drivers have been updated to support
-the port-test feature. Drivers not supporting this feature return the
-<code>NOT_IMPLEMENTED</code> error code. This was not handled correctly, and caused the
-entire CoAP/CORECONF get request to fail.</p>
+<p><code>PUT</code> and <code>iPATCH</code> requests on the <code>&lt;running&gt;</code> datastore (<code>/c</code>) are now
+validated in two passes before any change is applied. The first pass checks the
+entire request against the YANG schema; if it finds a violation (for example, a
+value outside its permitted range) the request is rejected with an error before
+the configuration is touched. This makes it less likely that the rollback
+mechanism is needed, and means that a malformed request is always visible as a
+clean error rather than a partially applied update.</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bugfixes"><a class="anchor" href="#_bugfixes"></a>1.6. Bugfixes</h3>
+<div class="sect3">
+<h4 id="_bugfix_lan969x_secure_boot_rot_key_leading_zero_guard"><a class="anchor" href="#_bugfix_lan969x_secure_boot_rot_key_leading_zero_guard"></a>1.6.1. Bugfix: LAN969x: Secure boot ROT key leading-zero guard</h4>
 <div class="paragraph">
-<p>If a PHY driver does not implement a given feature, it shall not cause a request
-to fail; instead, the feature shall be marked as disabled in the get/status
-request.</p>
+<p>An ECDSA public key coordinate with a leading zero byte could previously be
+silently accepted as a Root-of-Trust key, producing a key shorter than the
+expected 32 bytes and causing signature verification to fail at boot.  The
+provisioning tooling now rejects any ROT key whose X or Y coordinate has a
+leading zero, so the problem is caught before the key is written to OTP.</p>
 </div>
 </div>
 </div>

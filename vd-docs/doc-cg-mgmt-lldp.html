@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>LLDP :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-mgmt-lldp.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-mgmt-lldp.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-mgmt-lldp.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-mgmt-lldp.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-mgmt-lldp.html">2025.12</a>
@@ -372,7 +379,48 @@ between neighbor systems on each link. The exchanged LLDP PDUs include TLVs such
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lldp_port_configuration"><a class="anchor" href="#_lldp_port_configuration"></a>1. LLDP Port Configuration</h2>
+<h2 id="_lldp_global_configuration"><a class="anchor" href="#_lldp_global_configuration"></a>1. LLDP Global Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The interval between the LLDP messages of a normal transmission period is
+configurable from 1 to 3600 seconds and defaults to 30 seconds. It also
+determines the Time To Live of the transmitted messages, which is the interval
+multiplied by the hold multiplier of 4. A shortened interval takes effect at
+once, without waiting out the transmission that is already scheduled.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-lldp-global-conf" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1ab-lldp:lldp/message-tx-interval"
+  : 10</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The global configuration is retrieved as shown below.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-lldp-global-conf" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1ab-lldp:lldp/message-tx-interval"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-lldp-global-conf" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1ab-lldp:lldp/message-tx-interval"
+  : 10</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lldp_port_configuration"><a class="anchor" href="#_lldp_port_configuration"></a>2. LLDP Port Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Rx and Tx of LLDP messages can be enabled per port, using DMAC 01-80-C2-00-00-0E.</p>
@@ -411,7 +459,67 @@ between neighbor systems on each link. The exchanged LLDP PDUs include TLVs such
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lldp_rx_processing"><a class="anchor" href="#_lldp_rx_processing"></a>2. LLDP Rx Processing</h2>
+<h2 id="_lldp_custom_tlv"><a class="anchor" href="#_lldp_custom_tlv"></a>3. LLDP Custom TLV</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An Organizationally Specific TLV carries information defined by an organization
+rather than by IEEE 802.1AB, identified by the Organizationally Unique
+Identifier (OUI) of that organization and by a subtype it chooses. Each port has
+a list of these, keyed by OUI and subtype, and one TLV is transmitted for each
+entry in every LLDPDU sent on the port. An entry is transmitted by virtue of
+existing, so transmission is stopped by deleting the entry.</p>
+</div>
+<div class="paragraph">
+<p>The number of entries a port takes, and the maximum size of the information
+field of each, are declared by the board configuration using
+<code>lldp_custom_tlv_count</code> (default 1) and <code>lldp_custom_tlv_size</code> (default 8).</p>
+</div>
+<div class="paragraph">
+<p>The first port is set up to transmit a TLV with OUI 0x010203, subtype 0x04 and
+the two information octets 0x05 and 0x06 as shown below. The OUI is a 24 bit
+number, so 0x010203 is written as 66051, and the information field is a binary
+leaf, so it is written in base64, where 0x0506 is 'BQY='.</p>
+</div>
+<div class="paragraph">
+<p>IPATCH request message:</p>
+</div>
+<div id="cg-ipatch-req-lldp-custom-tlv" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1ab-lldp:lldp/\
+     port[name='1'][dest-mac-address='01-80-C2-00-00-0E']/\
+     mchp-velocitysp-lldp:custom-tlv[oui='66051'][subtype='4']/info"
+  : BQY=</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The TLV is retrieved by its keys as shown below. Leaving the keys out of the
+request would retrieve every custom TLV of the port instead.</p>
+</div>
+<div class="paragraph">
+<p>FETCH request message:</p>
+</div>
+<div id="cg-fetch-req-lldp-custom-tlv" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ieee802-dot1ab-lldp:lldp/\
+   port[name='1'][dest-mac-address='01-80-C2-00-00-0E']/\
+   mchp-velocitysp-lldp:custom-tlv[oui='66051'][subtype='4']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>FETCH response message:</p>
+</div>
+<div id="cg-fetch-res-lldp-custom-tlv" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1ab-lldp:lldp/port/mchp-velocitysp-lldp:custom-tlv"
+  : oui: 66051
+    subtype: 4
+    info: BQY=</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lldp_rx_processing"><a class="anchor" href="#_lldp_rx_processing"></a>4. LLDP Rx Processing</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Remote data received on the port is retrieved as shown below.</p>
@@ -440,14 +548,17 @@ between neighbor systems on each link. The exchanged LLDP PDUs include TLVs such
       port-desc: ''
       system-name: ''
       system-description: ''
-      management-address: []
-      remote-org-defined-info: []</code></pre>
+      remote-org-defined-info:
+      - info-identifier: 66051
+        info-subtype: 4
+        info-index: 1
+        remote-info: BQY=</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lldp_tx_processing"><a class="anchor" href="#_lldp_tx_processing"></a>3. LLDP Tx Processing</h2>
+<h2 id="_lldp_tx_processing"><a class="anchor" href="#_lldp_tx_processing"></a>5. LLDP Tx Processing</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When Tx is enabled on a port, LLDP messages including the TLVs listed above are sent every 30 seconds.
@@ -456,7 +567,7 @@ If the IP address is changed, a number of transmissions are done every second.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lldp_counters"><a class="anchor" href="#_lldp_counters"></a>4. LLDP Counters</h2>
+<h2 id="_lldp_counters"><a class="anchor" href="#_lldp_counters"></a>6. LLDP Counters</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>LLDP counters for a port are retrieved as shown below.</p>
@@ -478,19 +589,18 @@ If the IP address is changed, a number of transmissions are done every second.</
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ieee802-dot1ab-lldp:lldp/port/tx-statistics"
   : total-frames: 1
 
-
 - ? "/ieee802-dot1ab-lldp:lldp/port/rx-statistics"
   : total-discarded-frames: 0
     error-frames: 0
     total-frames: 1
     total-discarded-tlvs: 0
-    total-unrecognized-tlvs: 0</code></pre>
+    total-unrecognized-tlvs: 1</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_lldp_frame_preemption_negotiation"><a class="anchor" href="#_lldp_frame_preemption_negotiation"></a>5. LLDP Frame Preemption Negotiation</h2>
+<h2 id="_lldp_frame_preemption_negotiation"><a class="anchor" href="#_lldp_frame_preemption_negotiation"></a>7. LLDP Frame Preemption Negotiation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Frame preemption is negotiated via LLDP organizationally specific TLVs.

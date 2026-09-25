@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>MLD Snooping :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-mld.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-mld.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-mld.html">2026.06</a>
     <a class="version is-missing" href="2026.03/doc-intro.html">2026.03</a>
     <a class="version is-missing" href="2025.12/doc-intro.html">2025.12</a>
@@ -404,37 +411,29 @@ bridge port with PVID=100.</p>
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='10']/\
      ieee802-dot1q-bridge:bridge-port/port-type"
   : ieee802-dot1q-bridge:c-vlan-bridge-port
-
 - ? "/ietf-interfaces:interfaces/interface[name='10']/\
      ieee802-dot1q-bridge:bridge-port/pvid"
   : 100
-
 - ? "/ietf-interfaces:interfaces/interface[name='10']/\
      ieee802-dot1q-bridge:bridge-port/acceptable-frame"
   : admit-all-frames
 
-
 - ? "/ietf-interfaces:interfaces/interface[name='9']/\
      ieee802-dot1q-bridge:bridge-port/port-type"
   : ieee802-dot1q-bridge:c-vlan-bridge-port
-
 - ? "/ietf-interfaces:interfaces/interface[name='9']/\
      ieee802-dot1q-bridge:bridge-port/pvid"
   : 100
-
 - ? "/ietf-interfaces:interfaces/interface[name='9']/\
      ieee802-dot1q-bridge:bridge-port/acceptable-frame"
   : admit-all-frames
 
-
 - ? "/ietf-interfaces:interfaces/interface[name='8']/\
      ieee802-dot1q-bridge:bridge-port/port-type"
   : ieee802-dot1q-bridge:c-vlan-bridge-port
-
 - ? "/ietf-interfaces:interfaces/interface[name='8']/\
      ieee802-dot1q-bridge:bridge-port/pvid"
   : 100
-
 - ? "/ietf-interfaces:interfaces/interface[name='8']/\
      ieee802-dot1q-bridge:bridge-port/acceptable-frame"
   : admit-all-frames</code></pre>
@@ -549,10 +548,8 @@ control-plane-protocol entry is added together with its
     query-interval: 125
     query-max-response-time: 100
     robustness-variable: 2
-    static-bridge-mrouter-interface: []
     mld-version: 2
-    entries-count: 0
-    group: []</code></pre>
+    entries-count: 0</code></pre>
 </div>
 </div>
 </div>
@@ -583,7 +580,9 @@ the bridge-vlan configuration.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The snooping status includes entries-count, multicast router interfaces,
-and the group/source table.</p>
+and the group/source table. The response below is captured with one listener
+joined, so it shows a populated group table; <code>expire</code> and <code>up-time</code> are timers
+and are shown with representative values.</p>
 </div>
 <div class="paragraph">
 <p>FETCH request message:</p>
@@ -608,10 +607,14 @@ and the group/source table.</p>
     query-interval: 125
     query-max-response-time: 100
     robustness-variable: 2
-    static-bridge-mrouter-interface: []
     mld-version: 2
-    entries-count: 0
-    group: []</code></pre>
+    entries-count: 1
+    group:
+    - address: FF02::DB8:1
+      mac-address: 33-33-0D-B8-00-01
+      expire: 258
+      up-time: 2
+      last-reporter: FE80::A</code></pre>
 </div>
 </div>
 </div>
@@ -666,23 +669,27 @@ ip netns exec mld_dst \
 <h3 id="_2_verify_the_switch_learnt_the_group"><a class="anchor" href="#_2_verify_the_switch_learnt_the_group"></a>8.2. 2. Verify the switch learnt the group</h3>
 <div class="paragraph">
 <p>The MLDv2 report creates a <code>(*, ff02::db8:1)</code> entry on VID <code>100</code> bound
-to ingress port <code>9</code>. Use the FETCH from
-<a href="#cg-fetch-req-mld-status">Retrieve Snooping Status</a>&#8201;&#8212;&#8201;the response
-should now contain:</p>
+to ingress port <code>9</code>. Send the FETCH shown in
+<a href="#cg-fetch-req-mld-status">Retrieve Snooping Status</a>; the response is:</p>
 </div>
-<div class="listingblock">
+<div id="cg-fetch-res-mld-worked" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-routing:routing/control-plane-protocols/control-plane-protocol/\
      ietf-igmp-mld-snooping:mld-snooping-instance"
   : enabled: true
+    send-query: false
+    last-member-query-interval: 10
+    query-interval: 125
+    query-max-response-time: 100
+    robustness-variable: 2
+    mld-version: 2
     entries-count: 1
     group:
     - address: FF02::DB8:1
       mac-address: 33-33-0D-B8-00-01
       expire: 258
       up-time: 2
-      last-reporter: FE80::A
-      source: []</code></pre>
+      last-reporter: FE80::A</code></pre>
 </div>
 </div>
 </div>

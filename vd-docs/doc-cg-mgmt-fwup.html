@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Firmware update :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-mgmt-fwup.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-mgmt-fwup.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-mgmt-fwup.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-mgmt-fwup.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-mgmt-fwup.html">2025.12</a>
@@ -375,7 +382,65 @@ The IP address 1.2.3.4 has been assigned to the switch prior to the operation.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="_firmware_activation"><a class="anchor" href="#_firmware_activation"></a>3. Firmware Activation</h2>
+<h2 id="_chunked_firmware_update"><a class="anchor" href="#_chunked_firmware_update"></a>3. Chunked Firmware Update</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The image can also be transferred as a sequence of separate CoAP PUT operations
+instead of a single one. The device serves other requests in between, so
+management of the switch stays responsive for the duration of the update.</p>
+</div>
+<div class="paragraph">
+<p>Each request states the byte offset of its part within the image in an <code>offset</code>
+query parameter. The example below transfers a 192 KiB image in three parts of
+64 KiB. Note the quoting, which keeps the shell from interpreting the '?'.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>dd if=/tmp/rel.fip of=/tmp/part0 bs=65536 count=1 skip=0
+dd if=/tmp/rel.fip of=/tmp/part1 bs=65536 count=1 skip=1
+dd if=/tmp/rel.fip of=/tmp/part2 bs=65536 count=1 skip=2
+
+coap-client -m put "coap://1.2.3.4/fw/image?offset=0"      -f /tmp/part0
+coap-client -m put "coap://1.2.3.4/fw/image?offset=65536"  -f /tmp/part1
+coap-client -m put "coap://1.2.3.4/fw/image?offset=131072" -f /tmp/part2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following rules apply:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The offset must be a multiple of 4096, the flash erase block size. Every part
+except the last must therefore also be a multiple of 4096 bytes.</p>
+</li>
+<li>
+<p>An offset of 0 starts a new upload. Every following offset must be exactly
+the end of the part sent before it, so that no part of the image is skipped
+or sent twice.</p>
+</li>
+<li>
+<p>Only one upload can be in progress. An upload of '/fw/image' and an upload of
+'/fw/bootloader' cannot be interleaved.</p>
+</li>
+<li>
+<p>Omitting the parameter transfers a complete image, as described in the
+previous sections.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A request that breaks one of these rules is answered with 4.02 (Bad Option) and
+nothing is written to flash. Restart the upload from <code>offset=0</code> to recover.</p>
+</div>
+<div class="paragraph">
+<p>The image is activated by restarting the system once the last part has been
+transferred, as described below.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_firmware_activation"><a class="anchor" href="#_firmware_activation"></a>4. Firmware Activation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After loading the firmware, it can be activated by restarting the system as shown below.</p>
@@ -392,7 +457,7 @@ The IP address 1.2.3.4 has been assigned to the switch prior to the operation.</
 </div>
 </div>
 <div class="sect1">
-<h2 id="_firmware_version"><a class="anchor" href="#_firmware_version"></a>4. Firmware Version</h2>
+<h2 id="_firmware_version"><a class="anchor" href="#_firmware_version"></a>5. Firmware Version</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The firmware version is retrieved as shown below.</p>

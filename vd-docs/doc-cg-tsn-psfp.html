@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Per Stream Filtering and Policing :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-tsn-psfp.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-tsn-psfp.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-tsn-psfp.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-tsn-psfp.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-tsn-psfp.html">2025.12</a>
@@ -735,8 +742,6 @@ of ingress frames classified to specific streams.</p>
     admin-ipv: 'null'
     oper-gate-state: open
     oper-ipv: 'null'
-    admin-control-list:
-      gate-control-entry: []
     admin-cycle-time:
       numerator: 1
       denominator: 5000
@@ -788,7 +793,6 @@ of ingress frames classified to specific streams.</p>
     gate-state-value: open
     ipv-spec: 'null'
 
-
 - ? "/ieee802-dot1q-bridge:bridges/bridge[name='b0']/component[name='c0']/\
      ieee802-dot1q-psfp-bridge:stream-gates/\
      stream-gate-instance-table[stream-gate-instance-id='1']/\
@@ -831,7 +835,6 @@ of ingress frames classified to specific streams.</p>
     gate-state-value: open
     ipv-spec: 'null'
     interval-octet-max: 0
-
 
 - ? "/ieee802-dot1q-bridge:bridges/bridge/component/\
      ieee802-dot1q-psfp-bridge:stream-gates/stream-gate-instance-table/\

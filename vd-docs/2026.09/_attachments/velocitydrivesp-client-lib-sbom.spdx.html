@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPDX Outline Viewer</title>
+<style>
+  :root {
+    --bg: #1e1e2e; --fg: #cdd6f4; --muted: #7f849c; --accent: #89b4fa;
+    --pkg: #a6e3a1; --rel: #f9e2af; --line: #45475a; --panel: #181825;
+    --hit: #f38ba8; --indent: #cdd6f4;
+  }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#fdfdfd; --fg:#1e1e2e; --muted:#6c6f85; --accent:#1e66f5;
+      --pkg:#40a02b; --rel:#df8e1d; --line:#dcdce0; --panel:#f2f2f5; --hit:#d20f39;
+      --indent: #000000; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+    font: 13px/1.5 ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; }
+  header { position:sticky; top:0; z-index:10; background:var(--panel);
+    border-bottom:1px solid var(--line); padding:10px 14px; display:flex;
+    flex-wrap:wrap; gap:10px; align-items:center; }
+  header h1 { font-size:14px; margin:0 8px 0 0; font-weight:600; }
+  header .doc { color:var(--muted); font-size:12px; }
+  button, label.btn { background:transparent; color:var(--fg); border:1px solid var(--line);
+    border-radius:5px; padding:4px 9px; cursor:pointer; font:inherit; font-size:12px; }
+  button:hover, label.btn:hover { border-color:var(--accent); color:var(--accent); }
+  #search { background:var(--bg); color:var(--fg); border:1px solid var(--line);
+    border-radius:5px; padding:4px 9px; font:inherit; font-size:12px; min-width:220px; }
+  #stats { color:var(--muted); font-size:12px; margin-left:auto; }
+  #tree { padding:14px 18px 60px; }
+  #drop { margin:40px auto; max-width:620px; border:2px dashed var(--line);
+    border-radius:10px; padding:48px 24px; text-align:center; color:var(--muted); }
+  #drop.hover { border-color:var(--accent); color:var(--accent); }
+  #drop h2 { color:var(--fg); font-weight:600; }
+  details { margin:0; }
+  .children { border-left:2px solid var(--indent); margin-left:7px; padding-left:14px; }
+  details > summary { list-style:none; cursor:pointer; padding:1px 0;
+    white-space:nowrap; }
+  details > summary::-webkit-details-marker { display:none; }
+  summary .tw { display:inline-block; width:14px; color:var(--muted); }
+  details[open] > summary .tw::before { content:"▾"; }
+  details:not([open]) > summary .tw::before { content:"▸"; }
+  .leaf .tw::before { content:"•"; color:var(--line); }
+  .leaf { padding:1px 0 1px 6px; white-space:nowrap; }
+  .rel { color:var(--rel); }
+  .pkg { color:var(--pkg); }
+  .ver { color:var(--muted); }
+  .count { color:var(--muted); font-size:11px; margin-left:6px; }
+  .dup { color:var(--muted); font-style:italic; margin-left:6px; }
+  .hit > summary .pkg, .leaf.hit .pkg { color:var(--hit); font-weight:600; }
+  .meta { color:var(--muted); margin-left:20px; white-space:normal;
+    max-width:900px; padding:2px 0; }
+  .meta b { color:var(--fg); font-weight:600; }
+  .hidden { display:none; }
+  a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SPDX Outline</h1>
+  <span class="doc" id="docname"></span>
+  <label class="btn">Open file…<input id="file" type="file" accept=".json,.spdx.json,application/json" hidden></label>
+  <button id="expand">Expand all</button>
+  <button id="collapse">Collapse all</button>
+  <input id="search" type="search" placeholder="filter packages… (regex ok)">
+  <span id="stats"></span>
+</header>
+
+<div id="drop">
+  <h2>Drop an SPDX JSON file here</h2>
+  <p>or click “Open file…”. Everything runs locally in your browser — nothing is uploaded.</p>
+</div>
+<div id="tree"></div>
+
+<!-- spdx-inline: a generated/shipped build replaces this tag's contents with an SPDX
+     document, and the page renders it on load. Leave empty for the generic viewer. -->
+<script id="spdx-data" type="application/json">{"spdxVersion":"SPDX-2.3","dataLicense":"CC0-1.0","SPDXID":"SPDXRef-DOCUMENT","name":"VelocityDRIVE-SP client-lib SBOM (VelocitySP-v2026.09)","documentNamespace":"https://microchip.com/velocitydrivesp/velocitydrive-sp-client-lib-sbom-262390e0-f485-46c1-9391-5ce2495300b5","creationInfo":{"created":"2026-09-23T13:13:54Z","creators":["Tool: support/scripts/sbom-spdx","Organization: Microchip Technology Inc."]},"packages":[{"SPDXID":"SPDXRef-lm-client","name":"LIB: VelocityDRIVE-SP client library","versionInfo":"VelocitySP-v2026.09","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"MIT","licenseDeclared":"MIT","copyrightText":"Copyright (c) 2021-2026 Microchip Technology Inc. and its subsidiaries.","sourceInfo":"Microchip internal development","description":"The VelocityDRIVE-SP C client library (MUP1, CoAP and CORECONF), with the YANG bindings generated into it at packet-build time."},{"SPDXID":"SPDXRef-arm-optimized-routines","name":"LIB: Arm Optimized Routines","versionInfo":"v23.01","downloadLocation":"https://github.com/ARM-software/optimized-routines","filesAnalyzed":false,"licenseConcluded":"MIT OR Apache-2.0 WITH LLVM-exception","licenseDeclared":"MIT OR Apache-2.0 WITH LLVM-exception","copyrightText":"Copyright (c) 1999-2022, Arm Limited.","description":"Optimized implementation of memset, memcmp, memcmp and other for ARM platform.","externalRefs":[{"referenceCategory":"PACKAGE-MANAGER","referenceType":"purl","referenceLocator":"pkg:github/ARM-software/optimized-routines@v23.01"}]},{"SPDXID":"SPDXRef-lm-utils-cbor","name":"LIB: lm_utils CBOR","versionInfo":"VelocitySP-v2026.09","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"MIT","licenseDeclared":"MIT","copyrightText":"Copyright (c) 2017 Intel Corporation","sourceInfo":"Hard fork of TinyCBOR (upstream https://github.com/intel/tinycbor, v0.6), heavily rewritten to be MISRA-C:2023 compliant and to use lm_utils instead of libc. One-time import (fork point: commit d393c16f3eb30d0c47e6f9d92db62272f0ec4dc7); upstream is not tracked and cannot be re-downloaded.","description":"A MISRA-C:2023 compliant fork of TinyCBOR that uses the lm_utils library\ninstead of libc. Notice, this is a one-time import, we are not following the\nupstream repository, but are maintaining this fork instead."},{"SPDXID":"SPDXRef-ut-utils","name":"LIB: ut-utils","versionInfo":"VelocitySP-v2026.09","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"MIT","licenseDeclared":"MIT","copyrightText":"Copyright (c) 2021-2022 Microchip Technology Inc. and its subsidiaries.","sourceInfo":"Microchip internal development","description":"Utility functions for embedded systems"}],"relationships":[{"spdxElementId":"SPDXRef-DOCUMENT","relationshipType":"DESCRIBES","relatedSpdxElement":"SPDXRef-lm-client"},{"spdxElementId":"SPDXRef-lm-client","relationshipType":"CONTAINS","relatedSpdxElement":"SPDXRef-ut-utils"},{"spdxElementId":"SPDXRef-ut-utils","relationshipType":"CONTAINS","relatedSpdxElement":"SPDXRef-arm-optimized-routines"},{"spdxElementId":"SPDXRef-ut-utils","relationshipType":"CONTAINS","relatedSpdxElement":"SPDXRef-lm-utils-cbor"}]}</script>
+
+<script>
+"use strict";
+const $ = s => document.querySelector(s);
+const treeEl = $("#tree"), dropEl = $("#drop"), statsEl = $("#stats"), docEl = $("#docname");
+
+function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+function render(doc){
+  // Index packages by SPDXID
+  const byId = new Map();
+  (doc.packages||[]).forEach(p => byId.set(p.SPDXID, p));
+  (doc.files||[]).forEach(f => byId.set(f.SPDXID, f)); // files can be relationship targets too
+
+  // Build adjacency: parent SPDXID -> [{type, id}]
+  const kids = new Map();
+  const roots = [];
+  const hasParent = new Set();
+  for (const r of (doc.relationships||[])) {
+    const from = r.spdxElementId, to = r.relatedSpdxElement, t = r.relationshipType;
+    if (t === "DESCRIBES" || from === "SPDXRef-DOCUMENT") { roots.push(to); continue; }
+    if (!kids.has(from)) kids.set(from, []);
+    kids.get(from).push({type:t, id:to});
+    hasParent.add(to);
+  }
+  // Fallback: any package that is a CONTAINS/GENERATED_FROM source but never a target = a root too
+  if (roots.length === 0) {
+    for (const id of kids.keys()) if (!hasParent.has(id)) roots.push(id);
+  }
+
+  const nameOf = id => { const p = byId.get(id); return p ? (p.name||id) : id; };
+  const verOf  = id => { const p = byId.get(id); return p && p.versionInfo ? p.versionInfo : ""; };
+
+  function metaHtml(p){
+    if(!p) return "";
+    const rows = [];
+    const add=(k,v)=>{ if(v && v!=="NOASSERTION") rows.push(`<b>${esc(k)}:</b> ${esc(v)}`); };
+    add("SPDXID", p.SPDXID);
+    add("version", p.versionInfo);
+    add("license (declared)", p.licenseDeclared);
+    add("license (concluded)", p.licenseConcluded);
+    add("supplier", p.supplier);
+    add("download", p.downloadLocation);
+    add("copyright", p.copyrightText);
+    add("description", p.description);
+    if (p.externalRefs) for (const e of p.externalRefs)
+      rows.push(`<b>ref:</b> ${esc(e.referenceType)} ${esc(e.referenceLocator)}`);
+    if (p.checksums) for (const c of p.checksums)
+      rows.push(`<b>${esc(c.algorithm)}:</b> ${esc(c.checksumValue)}`);
+    return rows.length ? `<div class="meta hidden">${rows.join("<br>")}</div>` : "";
+  }
+
+  let nodeCount = 0;
+  function node(id, relType, path){
+    nodeCount++;
+    const p = byId.get(id);
+    const nm = esc(nameOf(id)), ver = verOf(id);
+    const verS = ver ? ` <span class="ver">@${esc(ver)}</span>` : "";
+    const relS = relType ? `<span class="rel">${esc(relType)}</span> ` : "";
+    const children = kids.get(id) || [];
+    const cyc = path.has(id);          // guard against cycles along this branch
+    const label = `${relS}<span class="pkg">${nm}</span>${verS}`;
+
+    if (children.length === 0 || cyc){
+      const dup = cyc ? ` <span class="dup">↺ (already shown above)</span>` : "";
+      const meta = metaHtml(p);
+      const toggle = meta ? ` data-meta="1"` : "";
+      const wrapped = meta ? `<div class="children">${meta}</div>` : "";
+      return `<div class="leaf" data-name="${nm.toLowerCase()}"${toggle}><span class="tw"></span>${label}${dup}</div>${wrapped}`;
+    }
+    const np = new Set(path); np.add(id);
+    let inner = "";
+    for (const c of children) inner += node(c.id, c.type, np);
+    return `<details data-name="${nm.toLowerCase()}"><summary><span class="tw"></span>${label}`
+         + `<span class="count">${children.length} rel</span></summary>`
+         + `<div class="children">` + metaHtml(p) + inner + `</div></details>`;
+  }
+
+  let html = "";
+  for (const r of roots) html += node(r, null, new Set());
+  treeEl.innerHTML = html;
+
+  docEl.textContent = doc.name || "(unnamed document)";
+  statsEl.textContent = `${(doc.packages||[]).length} packages · ${(doc.relationships||[]).length} relationships · ${nodeCount} tree nodes`;
+  dropEl.classList.add("hidden");
+}
+
+// ---- meta toggle (click a leaf/summary shows package details) ----
+treeEl.addEventListener("click", e => {
+  if (e.target.closest("summary")) { /* let details toggle; also flip its meta */ }
+  const leaf = e.target.closest(".leaf");
+  if (leaf && leaf.dataset.meta){
+    const w = leaf.nextElementSibling;
+    const m = w && w.querySelector(":scope > .meta");
+    if (m) m.classList.toggle("hidden");
+  }
+});
+// For details: reveal meta on open
+treeEl.addEventListener("toggle", e => {
+  const d = e.target;
+  if (d.tagName !== "DETAILS") return;
+  const first = d.querySelector(":scope > .children > .meta");
+  if (first) first.classList.toggle("hidden", !d.open);
+}, true);
+
+// ---- expand / collapse ----
+$("#expand").onclick   = () => treeEl.querySelectorAll("details").forEach(d=>d.open=true);
+$("#collapse").onclick = () => treeEl.querySelectorAll("details").forEach(d=>d.open=false);
+
+// ---- search / filter ----
+$("#search").addEventListener("input", e => {
+  const q = e.target.value.trim();
+  const all = treeEl.querySelectorAll("details, .leaf");
+  if (!q){ all.forEach(n=>{ n.classList.remove("hidden","hit"); }); return; }
+  let re; try { re = new RegExp(q, "i"); } catch { re = null; }
+  const match = name => re ? re.test(name) : name.includes(q.toLowerCase());
+  // reset
+  all.forEach(n => n.classList.remove("hidden","hit"));
+  // mark matches, then reveal their ancestor chain
+  all.forEach(n => {
+    if (match(n.dataset.name||"")){
+      n.classList.add("hit");
+      let a = n;
+      while (a && a !== treeEl){ a.classList.remove("hidden"); if(a.tagName==="DETAILS") a.open=true; a = a.parentElement.closest("details, #tree"); if(a && a.id) break; }
+    } else {
+      n.classList.add("hidden");
+    }
+  });
+  // un-hide ancestors that contain a hit (walk up from each hit)
+  treeEl.querySelectorAll(".hit").forEach(h=>{
+    let a = h.parentElement;
+    while (a && a !== treeEl){ if(a.tagName==="DETAILS"){ a.classList.remove("hidden"); a.open=true; } a = a.parentElement; }
+  });
+});
+
+// ---- file loading ----
+function load(file){
+  const rd = new FileReader();
+  rd.onload = () => {
+    try { render(JSON.parse(rd.result)); }
+    catch(err){ alert("Could not parse SPDX JSON:\n"+err.message); }
+  };
+  rd.readAsText(file);
+}
+$("#file").addEventListener("change", e => { if(e.target.files[0]) load(e.target.files[0]); });
+["dragenter","dragover"].forEach(ev=>dropEl.addEventListener(ev,e=>{e.preventDefault();dropEl.classList.add("hover");}));
+["dragleave","drop"].forEach(ev=>dropEl.addEventListener(ev,e=>{e.preventDefault();dropEl.classList.remove("hover");}));
+dropEl.addEventListener("drop", e => { const f=e.dataTransfer.files[0]; if(f) load(f); });
+document.addEventListener("dragover", e=>e.preventDefault());
+document.addEventListener("drop", e=>{ e.preventDefault(); if(e.dataTransfer.files[0]) load(e.dataTransfer.files[0]); });
+
+// Inlined data (shipped build): if the #spdx-data block holds a document, render it now.
+const inlineTxt = (document.getElementById("spdx-data")?.textContent || "").trim();
+if (inlineTxt){
+  try { render(JSON.parse(inlineTxt)); }
+  catch(err){ alert("Inlined SPDX data is invalid:\n"+err.message); }
+} else {
+  // ?src=path.json auto-load when served over http(s)
+  const p = new URLSearchParams(location.search).get("src");
+  if (p && location.protocol.startsWith("http")){
+    fetch(p).then(r=>r.json()).then(render).catch(()=>{});
+  }
+}
+</script>
+</body>
+</html>

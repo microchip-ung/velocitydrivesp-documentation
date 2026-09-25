@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>LAN969x OTP Provisioning :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-otp-provisioning.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-otp-provisioning.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-otp-provisioning.html">2026.06</a>
     <a class="version is-missing" href="2026.03/doc-intro.html">2026.03</a>
     <a class="version is-missing" href="2025.12/doc-intro.html">2025.12</a>
@@ -835,12 +842,34 @@ openssl ecparam -name prime256v1 -genkey -noout -out my_rotprivk_ecdsa.pem
 openssl ec -in my_rotprivk_ecdsa.pem -pubout -outform DER \
     -out my_rotpubk_ecdsa.der
 
+# 2b. Reject a key whose X or Y coordinate begins with a 0x00 byte -- the DER
+#     pubkey ends with 04 || X(32) || Y(32).
+tail -c 65 my_rotpubk_ecdsa.der | xxd -p | tr -d '\n' | \
+    awk '{ if (substr($0,1,2)!="04" || substr($0,3,2)=="00" || substr($0,67,2)=="00") exit 1 }' \
+    || { echo "ROT key has a leading-zero X/Y coordinate -- discard it and repeat step 1"; exit 1; }
+
 # 3. SHA-256 of the public key -- this is the OTP ROTPK value
 openssl dgst -sha256 -binary -out rotpubk_sha256.bin my_rotpubk_ecdsa.der
 
 # 4. base64-encode it for the RPC input (see "How" below)
 base64 -w 0 rotpubk_sha256.bin</code></pre>
 </div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Do not skip step 2b. A ROT key whose X or Y coordinate begins with a
+<code>0x00</code> byte is not supported (see SW-REQ-OTP-ROTPK)&#8201;&#8212;&#8201;if the check fails,
+discard the key and generate a new one. Validate this <strong>before</strong> programming the
+ROTPK into OTP: the OTP write is irreversible, and a part provisioned with an
+unsupported key cannot be recovered.
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock important">
 <table>

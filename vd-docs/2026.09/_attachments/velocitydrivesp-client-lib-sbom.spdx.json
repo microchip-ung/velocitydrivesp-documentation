@@ -1,0 +1,92 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "VelocityDRIVE-SP client-lib SBOM (VelocitySP-v2026.09)",
+  "documentNamespace": "https://microchip.com/velocitydrivesp/velocitydrive-sp-client-lib-sbom-262390e0-f485-46c1-9391-5ce2495300b5",
+  "creationInfo": {
+    "created": "2026-09-23T13:13:54Z",
+    "creators": [
+      "Tool: support/scripts/sbom-spdx",
+      "Organization: Microchip Technology Inc."
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-lm-client",
+      "name": "LIB: VelocityDRIVE-SP client library",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2021-2026 Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "The VelocityDRIVE-SP C client library (MUP1, CoAP and CORECONF), with the YANG bindings generated into it at packet-build time."
+    },
+    {
+      "SPDXID": "SPDXRef-arm-optimized-routines",
+      "name": "LIB: Arm Optimized Routines",
+      "versionInfo": "v23.01",
+      "downloadLocation": "https://github.com/ARM-software/optimized-routines",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT OR Apache-2.0 WITH LLVM-exception",
+      "licenseDeclared": "MIT OR Apache-2.0 WITH LLVM-exception",
+      "copyrightText": "Copyright (c) 1999-2022, Arm Limited.",
+      "description": "Optimized implementation of memset, memcmp, memcmp and other for ARM platform.",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/ARM-software/optimized-routines@v23.01"
+        }
+      ]
+    },
+    {
+      "SPDXID": "SPDXRef-lm-utils-cbor",
+      "name": "LIB: lm_utils CBOR",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2017 Intel Corporation",
+      "sourceInfo": "Hard fork of TinyCBOR (upstream https://github.com/intel/tinycbor, v0.6), heavily rewritten to be MISRA-C:2023 compliant and to use lm_utils instead of libc. One-time import (fork point: commit d393c16f3eb30d0c47e6f9d92db62272f0ec4dc7); upstream is not tracked and cannot be re-downloaded.",
+      "description": "A MISRA-C:2023 compliant fork of TinyCBOR that uses the lm_utils library\ninstead of libc. Notice, this is a one-time import, we are not following the\nupstream repository, but are maintaining this fork instead."
+    },
+    {
+      "SPDXID": "SPDXRef-ut-utils",
+      "name": "LIB: ut-utils",
+      "versionInfo": "VelocitySP-v2026.09",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "copyrightText": "Copyright (c) 2021-2022 Microchip Technology Inc. and its subsidiaries.",
+      "sourceInfo": "Microchip internal development",
+      "description": "Utility functions for embedded systems"
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-lm-client"
+    },
+    {
+      "spdxElementId": "SPDXRef-lm-client",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-ut-utils"
+    },
+    {
+      "spdxElementId": "SPDXRef-ut-utils",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-arm-optimized-routines"
+    },
+    {
+      "spdxElementId": "SPDXRef-ut-utils",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-lm-utils-cbor"
+    }
+  ]
+}

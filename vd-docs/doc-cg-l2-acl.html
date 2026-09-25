@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Switch ACL :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-l2-acl.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-l2-acl.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-l2-acl.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-l2-acl.html">2026.03</a>
     <a class="version" href="2025.12/doc-cg-l2-acl.html">2025.12</a>
@@ -347,7 +354,85 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_acl_rule_filtering"><a class="anchor" href="#_acl_rule_filtering"></a>2. ACL rule filtering</h2>
+<h2 id="_acl_key_types"><a class="anchor" href="#_acl_key_types"></a>2. ACL key types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The key that is generated for the VCAP IS2 lookup is configured per lookup and covers all ports.
+The key type decides which match parameters an ACE is able to use. The key types and the ACL rules
+are configured independently of each other, in any order, and an ACE which does not agree with the
+key type of its lookup cannot be hit and reports this in its status.</p>
+</div>
+<div class="paragraph">
+<p>Three key types are configured independently, one per frame category: 'etype-key-type',
+'ipv4-key-type' and 'ipv6-key-type'. All three default to 'acl-key-ext', the extended key, which
+supports the most match parameters at the cost of twice the TCAM space. An ACE selects the extended
+key with 'extended-key' in its 'lookup-params' container, which defaults to 'true' and therefore
+agrees with the default key type.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s read the key types of lookup '0':</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-key-types" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-key-types/lookup[index='0']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-key-types" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-key-types/lookup"
+  : index: 0
+    etype-key-type: acl-key-ext
+    ipv4-key-type: acl-key-ext
+    ipv6-key-type: acl-key-ext</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s select the ETYPE key for IPv4 frames. An IPv4 ACE can then no longer be hit, so any IPv4 ACE
+in this lookup reports 'acl-status-inactive':</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-acl-key-types-ipv4" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-key-types/lookup"
+  : index: 0
+    ipv4-key-type: acl-key-etype</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the key type is changed:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-key-types-0" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-key-types/lookup[index='0']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-key-types-0" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-key-types/lookup"
+  : index: 0
+    etype-key-type: acl-key-ext
+    ipv4-key-type: acl-key-etype
+    ipv6-key-type: acl-key-ext</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_acl_rule_filtering"><a class="anchor" href="#_acl_rule_filtering"></a>3. ACL rule filtering</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Access Control List</p>
@@ -363,15 +448,42 @@ the default action (section 'Port ACL default actions') of the ingress port is u
 <p>By default, the ACL is empty and the default port actions allow forwarding of frames.</p>
 </div>
 <div class="paragraph">
+<p>An ACE is identified by two keys, 'lookup' and 'id'. The 'lookup' selects the VCAP IS2 lookup that
+the entry is programmed into, so the same 'id' can be used once per lookup. Lookup '0' is available
+on all targets, while the extended lookups '1' and '2' require a target with an extended VCAP.
+A frame is matched against every lookup, so an ACE in each lookup can match the same frame.</p>
+</div>
+<div class="paragraph">
+<p>Within a lookup, the search order is given by the mandatory 'priority'. The lowest 'priority' value
+is searched first, and the value must be unique within the lookup - configuring an ACE with a
+'priority' that is already in use is rejected.</p>
+</div>
+<div class="paragraph">
+<p>The read-only 'status' reports whether the ACE can be hit at all. It is 'acl-status-inactive' when
+the ACE key does not agree with the key types of its lookup, for example when 'extended-key' does
+not match the configured key type, or when the frame type the ACE matches cannot be generated.
+See section 'ACL key types'.</p>
+</div>
+<div class="paragraph">
 <p>An ACE is divided into two parts - the matching key and the action.<br>
-The matching key has some common parameters and some parameters that are related to the frame type selected.<br>
-The action parameters are common, independent of the selected frame type.<br>
+The matching key has the key the lookup must generate in the 'lookup-params' container, the common
+parameters in the 'common-match-params' container, and the parameters that are related to the frame
+type selected in the matching 'frame-&#8230;&#8203;' container.<br>
+The action parameters are in the 'actions' container and are common, independent of the selected
+frame type.<br>
 Some parameters xxx have a related xxx-mask parameter. In this xxx-mask, any bit position with a '0' is matched as
-a 'don&#8217;t-care', meaning both '0' and '1' in this position generate a match.
-All parameters for an ACE can be found described in the mchp-velocitysp-acl.yang file.</p>
+a 'don&#8217;t-care', meaning both '0' and '1' in this position generate a match.</p>
+</div>
+<div class="paragraph">
+<p>The 'icl-acl-link' parameter in 'common-match-params' matches the ACL link number that an ingress
+classifier (ICL) action generates, which is how an ICL entry is linked to an ACE. It requires a
+target with ICL support, and with the default 'icl-acl-link-mask' of '0' any link number matches.</p>
+</div>
+<div class="paragraph">
+<p>All parameters for an ACE can be found described in the mchp-velocitysp-acl2.yang file.</p>
 </div>
 <div class="sect2">
-<h3 id="_check_initial_acl_rule_list_is_empty"><a class="anchor" href="#_check_initial_acl_rule_list_is_empty"></a>2.1. Check initial ACL rule list is empty</h3>
+<h3 id="_check_initial_acl_rule_list_is_empty"><a class="anchor" href="#_check_initial_acl_rule_list_is_empty"></a>3.1. Check initial ACL rule list is empty</h3>
 <div class="paragraph">
 <p>First, let&#8217;s see that the ACL rule list is empty:</p>
 </div>
@@ -380,7 +492,7 @@ All parameters for an ACE can be found described in the mchp-velocitysp-acl.yang
 </div>
 <div id="cg-fetch-req-acl-rule-list" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -388,19 +500,19 @@ All parameters for an ACE can be found described in the mchp-velocitysp-acl.yang
 </div>
 <div id="cg-fetch-res-acl-rule-list" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
   : []</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_any_frame"><a class="anchor" href="#_add_an_ace_matching_any_frame"></a>2.2. Add an ACE matching any frame</h3>
+<h3 id="_add_an_ace_matching_any_frame"><a class="anchor" href="#_add_an_ace_matching_any_frame"></a>3.2. Add an ACE matching any frame</h3>
 <div class="paragraph">
 <p>Let&#8217;s make a simple ACE that matches any frame received on a set of ports.<br>
 The ingress ports are '1' and '2'.</p>
 </div>
 <div class="sect3">
-<h4 id="_forward_action_filtering"><a class="anchor" href="#_forward_action_filtering"></a>2.2.1. Forward action 'filtering'</h4>
+<h4 id="_forward_action_filtering"><a class="anchor" href="#_forward_action_filtering"></a>3.2.1. Forward action 'filtering'</h4>
 <div class="paragraph">
 <p>An ACL with the forwarding action 'filtered' is meaning that the normal forwarding
 port mask is ANDed with the 'egress-port-list'.
@@ -411,17 +523,21 @@ In this case the forwarding port mask is restricted to '3'.</p>
 </div>
 <div id="cg-ipatch-req-ace-any-filt" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 1
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 1
+    priority: 1
     ingress-port-list:
     - '1'
     - '2'
+    common-match-params: {}
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '3'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '3'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -432,7 +548,7 @@ In this case the forwarding port mask is restricted to '3'.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-0" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='1']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -440,35 +556,44 @@ In this case the forwarding port mask is restricted to '3'.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-0" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 1
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 1
+    priority: 1
     ingress-port-list:
     - '1'
     - '2'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-00
-    smac-mask: 00-00-00-00-00-00
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-00
+      smac-mask: 00-00-00-00-00-00
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '3'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '3'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="acl-redirect"><a class="anchor" href="#acl-redirect"></a>2.2.2. Forward action 'redirect'</h4>
+<h4 id="acl-redirect"><a class="anchor" href="#acl-redirect"></a>3.2.2. Forward action 'redirect'</h4>
 <div class="paragraph">
 <p>An ACL with the forwarding action 'redirect' is meaning that the normal forwarding
 port mask is replaced with the 'egress-port-list'.
@@ -479,17 +604,21 @@ In this case the forwarding port mask is set to '3'.</p>
 </div>
 <div id="cg-ipatch-req-ace-any-redir" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 1
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 1
+    priority: 1
     ingress-port-list:
     - '1'
     - '2'
+    common-match-params: {}
     frame-any:
       any:
       -
-    forwarding: redirect
-    egress-port-list:
-    - '3'</code></pre>
+    actions:
+      forwarding: redirect
+      egress-port-list:
+      - '3'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -500,7 +629,7 @@ In this case the forwarding port mask is set to '3'.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-redir" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='1']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -508,36 +637,45 @@ In this case the forwarding port mask is set to '3'.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-redir" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 1
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 1
+    priority: 1
     ingress-port-list:
     - '1'
     - '2'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-00
-    smac-mask: 00-00-00-00-00-00
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-00
+      smac-mask: 00-00-00-00-00-00
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-any:
       any:
       -
-    forwarding: redirect
-    egress-port-list:
-    - '3'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: redirect
+      egress-port-list:
+      - '3'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_a_specific_mac"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac"></a>2.3. Add an ACE matching a specific MAC</h3>
+<h3 id="_add_an_ace_matching_a_specific_mac"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac"></a>3.3. Add an ACE matching a specific MAC</h3>
 <div class="paragraph">
 <p>Let&#8217;s make an ACE that matches any frame type received on a specific port with a specific SMAC.
 The frame will have two egress ports as possible forwarding ports.</p>
@@ -552,19 +690,23 @@ The possible egress ports are '2' and '3'.</p>
 </div>
 <div id="cg-ipatch-req-ace-any-smac" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 2
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 2
+    priority: 2
     ingress-port-list:
     - '1'
-    smac: 00-00-00-00-00-01
-    smac-mask: FF-FF-FF-FF-FF-FF
+    common-match-params:
+      smac: 00-00-00-00-00-01
+      smac-mask: FF-FF-FF-FF-FF-FF
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '2'
-    - '3'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '2'
+      - '3'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -575,7 +717,7 @@ The possible egress ports are '2' and '3'.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-1" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='2']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='2']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -583,35 +725,44 @@ The possible egress ports are '2' and '3'.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-1" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 2
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 2
+    priority: 2
     ingress-port-list:
     - '1'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-01
-    smac-mask: FF-FF-FF-FF-FF-FF
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-01
+      smac-mask: FF-FF-FF-FF-FF-FF
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '2'
-    - '3'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '2'
+      - '3'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_a_specific_frame_type"><a class="anchor" href="#_add_an_ace_matching_a_specific_frame_type"></a>2.4. Add an ACE matching a specific frame type</h3>
+<h3 id="_add_an_ace_matching_a_specific_frame_type"><a class="anchor" href="#_add_an_ace_matching_a_specific_frame_type"></a>3.4. Add an ACE matching a specific frame type</h3>
 <div class="paragraph">
 <p>Matching on frame types that are not IPV4/IPV6.</p>
 </div>
@@ -626,19 +777,23 @@ The possible egress ports are '1' and '3'.</p>
 </div>
 <div id="cg-ipatch-req-ace-etype-smac" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 3
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 3
+    priority: 3
     ingress-port-list:
     - '2'
-    smac: 00-00-00-00-00-01
-    smac-mask: FF-FF-FF-FF-FF-FF
+    common-match-params:
+      smac: 00-00-00-00-00-01
+      smac-mask: FF-FF-FF-FF-FF-FF
     frame-etype:
       etype: 2054
       etype-mask: 65535
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '3'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '3'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -649,7 +804,7 @@ The possible egress ports are '1' and '3'.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-2" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='3']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='3']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -657,37 +812,46 @@ The possible egress ports are '1' and '3'.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-2" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 3
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 3
+    priority: 3
     ingress-port-list:
     - '2'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-01
-    smac-mask: FF-FF-FF-FF-FF-FF
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-01
+      smac-mask: FF-FF-FF-FF-FF-FF
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-etype:
       etype: 2054
       etype-mask: 65535
       data: 0
       data-mask: 0
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '3'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '3'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_an_ipv4_not_udptcp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_not_udptcp_frame"></a>2.5. Add an ACE matching an IPv4 NOT UDP/TCP frame</h3>
+<h3 id="_add_an_ace_matching_an_ipv4_not_udptcp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_not_udptcp_frame"></a>3.5. Add an ACE matching an IPv4 NOT UDP/TCP frame</h3>
 <div class="paragraph">
 <p>When not matching on UDP/TCP:<br>
     The TCP and UDP sport/dport range is ignored.<br>
@@ -705,20 +869,24 @@ IP data value is 1234.<br></p>
 </div>
 <div id="cg-ipatch-req-ace-ipv4-igmp" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 4
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 4
+    priority: 4
     ingress-port-list:
     - '3'
+    common-match-params: {}
     frame-ipv4:
       proto: 2
       proto-mask: 255
       sip: 1.2.3.4/16
       data: 1234
       data-mask: 4294967295
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '2'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '2'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -729,7 +897,7 @@ IP data value is 1234.<br></p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-3" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='4']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='4']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -737,20 +905,29 @@ IP data value is 1234.<br></p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-3" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 4
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 4
+    priority: 4
     ingress-port-list:
     - '3'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-00
-    smac-mask: 00-00-00-00-00-00
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-00
+      smac-mask: 00-00-00-00-00-00
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-ipv4:
       fragment: any
       options: any
@@ -773,18 +950,18 @@ IP data value is 1234.<br></p>
       tcp-psh: any
       tcp-ack: any
       tcp-urg: any
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '2'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '2'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_an_ipv4_udp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_udp_frame"></a>2.6. Add an ACE matching an IPv4 UDP frame</h3>
+<h3 id="_add_an_ace_matching_an_ipv4_udp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_udp_frame"></a>3.6. Add an ACE matching an IPv4 UDP frame</h3>
 <div class="paragraph">
 <p>When matching on UDP:<br>
     The SPORT/DPORT range must be given or it is only matching in SPORT/DPORT value '0'.<br>
@@ -802,10 +979,13 @@ The possible egress ports are '2' and '3'.<br></p>
 </div>
 <div id="cg-ipatch-req-ace-ipv4-udp" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 5
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 5
+    priority: 5
     ingress-port-list:
     - '1'
+    common-match-params: {}
     frame-ipv4:
       proto: 17
       proto-mask: 255
@@ -814,10 +994,11 @@ The possible egress ports are '2' and '3'.<br></p>
       sport-max: 20
       dport-min: 30
       dport-max: 40
-    forwarding: filter
-    egress-port-list:
-    - '2'
-    - '3'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '2'
+      - '3'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -828,7 +1009,7 @@ The possible egress ports are '2' and '3'.<br></p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-4" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='5']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='5']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -836,20 +1017,29 @@ The possible egress ports are '2' and '3'.<br></p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-4" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 5
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 5
+    priority: 5
     ingress-port-list:
     - '1'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-00
-    smac-mask: 00-00-00-00-00-00
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-00
+      smac-mask: 00-00-00-00-00-00
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-ipv4:
       fragment: any
       options: any
@@ -872,18 +1062,18 @@ The possible egress ports are '2' and '3'.<br></p>
       tcp-psh: any
       tcp-ack: any
       tcp-urg: any
-    forwarding: filter
-    egress-port-list:
-    - '2'
-    - '3'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '2'
+      - '3'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_an_ipv4_tcp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_tcp_frame"></a>2.7. Add an ACE matching an IPv4 TCP frame</h3>
+<h3 id="_add_an_ace_matching_an_ipv4_tcp_frame"><a class="anchor" href="#_add_an_ace_matching_an_ipv4_tcp_frame"></a>3.7. Add an ACE matching an IPv4 TCP frame</h3>
 <div class="paragraph">
 <p>When matching on TCP:<br>
     The SPORT/DPORT range must be given or it is only matching in SPORT/DPORT value '0'.<br>
@@ -901,10 +1091,13 @@ The possible egress ports are '1' and '3'.<br></p>
 </div>
 <div id="cg-ipatch-req-ace-ipv4-tcp" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 6
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 6
+    priority: 6
     ingress-port-list:
     - '2'
+    common-match-params: {}
     frame-ipv4:
       proto: 6
       proto-mask: 255
@@ -913,10 +1106,11 @@ The possible egress ports are '1' and '3'.<br></p>
       sport-max: 20
       dport-min: 30
       dport-max: 40
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '3'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '3'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -927,7 +1121,7 @@ The possible egress ports are '1' and '3'.<br></p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-5" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='6']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='6']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -935,20 +1129,29 @@ The possible egress ports are '1' and '3'.<br></p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-5" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 6
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 6
+    priority: 6
     ingress-port-list:
     - '2'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-00
-    smac-mask: 00-00-00-00-00-00
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-00
+      smac-mask: 00-00-00-00-00-00
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-ipv4:
       fragment: any
       options: any
@@ -971,18 +1174,18 @@ The possible egress ports are '1' and '3'.<br></p>
       tcp-psh: any
       tcp-ack: any
       tcp-urg: any
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '3'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '3'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_a_specific_classified_vidpcp_in_a_tagged_frame"><a class="anchor" href="#_add_an_ace_matching_a_specific_classified_vidpcp_in_a_tagged_frame"></a>2.8. Add an ACE matching a specific classified VID/PCP in a Tagged frame</h3>
+<h3 id="_add_an_ace_matching_a_specific_classified_vidpcp_in_a_tagged_frame"><a class="anchor" href="#_add_an_ace_matching_a_specific_classified_vidpcp_in_a_tagged_frame"></a>3.8. Add an ACE matching a specific classified VID/PCP in a Tagged frame</h3>
 <div class="paragraph">
 <p>The ingress port is '3'.<br>
 The Classified VID is 200.<br>
@@ -994,22 +1197,26 @@ The possible egress ports are '1' and '2'.</p>
 </div>
 <div id="cg-ipatch-req-ace-vid" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 7
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 7
+    priority: 7
     ingress-port-list:
     - '3'
-    tagged: one
-    vid: 200
-    vid-mask: 4095
-    pcp: 4
-    pcp-mask: 7
+    common-match-params:
+      tagged: one
+      vid: 200
+      vid-mask: 4095
+      pcp: 4
+      pcp-mask: 7
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '2'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '2'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1020,7 +1227,7 @@ The possible egress ports are '1' and '2'.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-6" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='7']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='7']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1028,35 +1235,44 @@ The possible egress ports are '1' and '2'.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-6" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 7
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 7
+    priority: 7
     ingress-port-list:
     - '3'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-00
-    smac-mask: 00-00-00-00-00-00
-    tagged: one
-    vid: 200
-    vid-mask: 4095
-    pcp: 4
-    pcp-mask: 7
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-00
+      smac-mask: 00-00-00-00-00-00
+      tagged: one
+      vid: 200
+      vid-mask: 4095
+      pcp: 4
+      pcp-mask: 7
+      dei: any
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '2'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '2'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_an_un_tagged_frame"><a class="anchor" href="#_add_an_ace_matching_an_un_tagged_frame"></a>2.9. Add an ACE matching an Un-Tagged frame</h3>
+<h3 id="_add_an_ace_matching_an_un_tagged_frame"><a class="anchor" href="#_add_an_ace_matching_an_un_tagged_frame"></a>3.9. Add an ACE matching an Un-Tagged frame</h3>
 <div class="paragraph">
 <p>The ingress port is '3'.<br>
 The possible egress ports are '1' and '2'.</p>
@@ -1066,18 +1282,22 @@ The possible egress ports are '1' and '2'.</p>
 </div>
 <div id="cg-ipatch-req-ace-untagged" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 8
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 8
+    priority: 8
     ingress-port-list:
     - '3'
-    tagged: zero
+    common-match-params:
+      tagged: zero
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '2'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '2'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1088,7 +1308,7 @@ The possible egress ports are '1' and '2'.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-7" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='8']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='8']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1096,35 +1316,44 @@ The possible egress ports are '1' and '2'.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-7" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 8
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 8
+    priority: 8
     ingress-port-list:
     - '3'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-00
-    smac-mask: 00-00-00-00-00-00
-    tagged: zero
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-00
+      smac-mask: 00-00-00-00-00-00
+      tagged: zero
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '1'
-    - '2'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '1'
+      - '2'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_a_specific_mac_and_dropping_it"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac_and_dropping_it"></a>2.10. Add an ACE matching a specific MAC and dropping it</h3>
+<h3 id="_add_an_ace_matching_a_specific_mac_and_dropping_it"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac_and_dropping_it"></a>3.10. Add an ACE matching a specific MAC and dropping it</h3>
 <div class="paragraph">
 <p>If the forwarding type is <code>filter</code> and the <code>egress-port-list</code> is empty, the frame is dropped.</p>
 </div>
@@ -1138,17 +1367,21 @@ The possible egress ports are none.</p>
 </div>
 <div id="cg-ipatch-req-ace-any-drop" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 9
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 9
+    priority: 9
     ingress-port-list:
     - '1'
-    smac: 00-00-00-00-00-01
-    smac-mask: FF-FF-FF-FF-FF-FF
+    common-match-params:
+      smac: 00-00-00-00-00-01
+      smac-mask: FF-FF-FF-FF-FF-FF
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list: []</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list: []</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1159,7 +1392,7 @@ The possible egress ports are none.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-8" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='9']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='9']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1167,38 +1400,81 @@ The possible egress ports are none.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-8" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 9
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 9
+    priority: 9
     ingress-port-list:
     - '1'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-01
-    smac-mask: FF-FF-FF-FF-FF-FF
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-01
+      smac-mask: FF-FF-FF-FF-FF-FF
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list: []
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_a_specific_mac_and_policing_it"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac_and_policing_it"></a>2.11. Add an ACE matching a specific MAC and policing it</h3>
+<h3 id="_add_an_ace_matching_a_specific_mac_and_policing_it"><a class="anchor" href="#_add_an_ace_matching_a_specific_mac_and_policing_it"></a>3.11. Add an ACE matching a specific MAC and policing it</h3>
 <div class="paragraph">
-<p>An ACE can point to an ACL policer as an action. So first, the ACL policer instance must be created.</p>
+<p>The actions an ACE applies are selected by the bits of its 'enable' parameter: an action is only
+applied to a matching frame when its bit is set. The bits are 'policer' and 'mirror'.<br>
+An ACE can point to an ACL policer as an action, by setting the 'policer' bit of 'enable' and naming
+the policer in 'policer-index'.</p>
+</div>
+<div id="acl-policer-reference" class="paragraph">
+<p>The reference and the policer are configured independently. An ACE may name a policer that does
+not exist yet, a policer may be created before or after the ACEs that name it, and either may be
+deleted while the other remains. No order is enforced and nothing is rejected on account of the
+order, which keeps the two lists free of ordering rules.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+An ACE with the 'policer' bit of 'enable' set and whose 'policer-index' names a policer
+that has
+not been created discards every frame it matches. Such a policer has never been given a rate, and
+its rate reads as zero, so nothing is allowed through it. This is deliberate: a mismatch between
+the ACEs and the policer list shows up immediately as lost traffic, rather than as traffic that
+quietly passes unpoliced. When policing stops behaving as expected, check that every
+'policer-index' in use names a policer that exists.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>The policer index is 0.<br>
+<p>A policer that was created and then deleted while an ACE still names it behaves almost the same,
+but not exactly: the delete leaves the rate at zero and the burst capacity in place, so the burst
+is still forwarded and only the traffic behind it is policed away. Deleting a policer is therefore
+not a way to stop the traffic of the ACEs that name it; clear the 'policer' bit of 'enable' or
+delete the ACE for that.</p>
+</div>
+<div class="paragraph">
+<p>The example below creates the policer first.<br>
+The policer index is 0.<br>
 The Frame Rate is 1000 frames/s.</p>
 </div>
 <div class="paragraph">
@@ -1206,7 +1482,7 @@ The Frame Rate is 1000 frames/s.</p>
 </div>
 <div id="cg-ipatch-req-acl-policer" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-policers/policer-list"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-policers/policer-list"
   : index: 0
     frame-rate: 1000</code></pre>
 </div>
@@ -1219,7 +1495,7 @@ The Frame Rate is 1000 frames/s.</p>
 </div>
 <div id="cg-fetch-req-acl-policer" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-policers/policer-list[index='0']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-policers/policer-list[index='0']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1227,7 +1503,7 @@ The Frame Rate is 1000 frames/s.</p>
 </div>
 <div id="cg-fetch-res-acl-policer" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-policers/policer-list"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-policers/policer-list"
   : index: 0
     frame-rate: 1000</code></pre>
 </div>
@@ -1246,18 +1522,22 @@ The ACL police index is '0'.</p>
 </div>
 <div id="cg-ipatch-req-ace-policer" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 10
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 10
+    priority: 10
     ingress-port-list:
     - '1'
-    smac: 00-00-00-00-00-01
-    smac-mask: FF-FF-FF-FF-FF-FF
+    common-match-params:
+      smac: 00-00-00-00-00-01
+      smac-mask: FF-FF-FF-FF-FF-FF
     frame-any:
       any:
       -
-    forwarding: none
-    policer-enable: true
-    policer-index: 0</code></pre>
+    actions:
+      forwarding: none
+      enable: policer
+      policer-index: 0</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1268,7 +1548,7 @@ The ACL police index is '0'.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-9" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='10']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='10']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1276,33 +1556,41 @@ The ACL police index is '0'.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-9" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 10
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 10
+    priority: 10
     ingress-port-list:
     - '1'
-    dmac: 00-00-00-00-00-00
-    dmac-mask: 00-00-00-00-00-00
-    smac: 00-00-00-00-00-01
-    smac-mask: FF-FF-FF-FF-FF-FF
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-01
+      smac-mask: FF-FF-FF-FF-FF-FF
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-any:
       any:
       -
-    forwarding: none
-    egress-port-list: []
-    policer-enable: true
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: none
+      enable: policer
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_add_an_ace_matching_a_range_of_destination_macs"><a class="anchor" href="#_add_an_ace_matching_a_range_of_destination_macs"></a>2.12. Add an ACE matching a range of destination MACs</h3>
+<h3 id="_add_an_ace_matching_a_range_of_destination_macs"><a class="anchor" href="#_add_an_ace_matching_a_range_of_destination_macs"></a>3.12. Add an ACE matching a range of destination MACs</h3>
 <div class="paragraph">
 <p>Let&#8217;s make an ACE that matches any frame type received on a specific port with a range of DMACs.
 The frame will have two egress ports as possible forwarding ports.</p>
@@ -1322,19 +1610,23 @@ does not match.</p>
 </div>
 <div id="cg-ipatch-req-ace-dmac-range" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 11
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 11
+    priority: 11
     ingress-port-list:
     - '1'
-    dmac: 00-00-00-00-00-01
-    dmac-mask: FF-FF-FF-FF-FF-01
+    common-match-params:
+      dmac: 00-00-00-00-00-01
+      dmac-mask: FF-FF-FF-FF-FF-01
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '2'
-    - '3'</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '2'
+      - '3'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1345,7 +1637,7 @@ does not match.</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-10" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='11']"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='11']"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1353,47 +1645,146 @@ does not match.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-10" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list"
-  : id: 11
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 11
+    priority: 11
     ingress-port-list:
     - '1'
-    dmac: 00-00-00-00-00-01
-    dmac-mask: FF-FF-FF-FF-FF-01
-    smac: 00-00-00-00-00-00
-    smac-mask: 00-00-00-00-00-00
-    tagged: any
-    vid: 0
-    vid-mask: 0
-    pcp: 0
-    pcp-mask: 0
-    dei: any
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-01
+      dmac-mask: FF-FF-FF-FF-FF-01
+      smac: 00-00-00-00-00-00
+      smac-mask: 00-00-00-00-00-00
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
     frame-any:
       any:
       -
-    forwarding: filter
-    egress-port-list:
-    - '2'
-    - '3'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '2'
+      - '3'
+      enable: ''
+      policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_read_the_ace_rx_counter"><a class="anchor" href="#_read_the_ace_rx_counter"></a>2.13. Read the ACE RX counter</h3>
+<h3 id="_add_an_ace_with_an_explicit_priority_and_mirroring"><a class="anchor" href="#_add_an_ace_with_an_explicit_priority_and_mirroring"></a>3.13. Add an ACE with an explicit priority and mirroring</h3>
+<div class="paragraph">
+<p>The examples above leave 'priority' equal to the ACE 'id'. Let&#8217;s add an ACE that is searched after
+all of them by giving it a higher 'priority' value, and let it copy the matching frames to the port
+configured as mirror monitor with the 'mirror' bit of 'enable'. The response also shows the
+read-only 'status',
+which is 'acl-status-active' because the ACE key agrees with the key types of the lookup:</p>
+</div>
+<div class="paragraph">
+<p>Mirroring is not configured by the ACL: a port must have been given the Mirroring 'Monitor' role
+with 'eth-mirror/config/monitor', and a switch has at most one such port. When no 'Monitor' port is
+configured, the frames copied by the 'mirror' bit have nowhere to go and are discarded. See
+<a href="doc-cg-l2-mirror.html" class="xref page">the Mirroring guide</a> for how to give a port that role.</p>
+</div>
+<div class="paragraph">
+<p><code>iPATCH</code> request message:</p>
+</div>
+<div id="cg-ipatch-req-ace-prio-mirror" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 20
+    priority: 100
+    ingress-port-list:
+    - '1'
+    common-match-params:
+      smac: 00-00-00-00-00-02
+      smac-mask: FF-FF-FF-FF-FF-FF
+    frame-any:
+      any:
+      -
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '2'
+      enable: mirror</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s see that the ACL rule list is created:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message:</p>
+</div>
+<div id="cg-fetch-req-acl-rule-list-prio" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='20']"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message:</p>
+</div>
+<div id="cg-fetch-res-acl-rule-list-prio" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list"
+  : lookup: 0
+    id: 20
+    priority: 100
+    ingress-port-list:
+    - '1'
+    status: acl-status-active
+    rx-count: 0
+    lookup-params:
+      extended-key: true
+    common-match-params:
+      icl-acl-link: 0
+      icl-acl-link-mask: 0
+      dmac: 00-00-00-00-00-00
+      dmac-mask: 00-00-00-00-00-00
+      smac: 00-00-00-00-00-02
+      smac-mask: FF-FF-FF-FF-FF-FF
+      tagged: any
+      vid: 0
+      vid-mask: 0
+      pcp: 0
+      pcp-mask: 0
+      dei: any
+    frame-any:
+      any:
+      -
+    actions:
+      forwarding: filter
+      egress-port-list:
+      - '2'
+      enable: mirror
+      policer-index: 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_read_the_ace_rx_counter"><a class="anchor" href="#_read_the_ace_rx_counter"></a>3.14. Read the ACE RX counter</h3>
 <div class="paragraph">
 <p>When there is a match on an ACE, the related RX counter is incremented.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s read the RX counter of ACE id 1:</p>
+<p>Let&#8217;s read the RX counter of the ACE with id 1 in lookup 0:</p>
 </div>
 <div class="paragraph">
 <p><code>FETCH</code> request message:</p>
 </div>
 <div id="cg-fetch-req-acl-rule-list-cnt" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']/rx-count"</code></pre>
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='1']/rx-count"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1401,51 +1792,45 @@ does not match.</p>
 </div>
 <div id="cg-fetch-res-acl-rule-list-cnt" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list/rx-count"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list/rx-count"
   : 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_clear_the_ace_rx_counter"><a class="anchor" href="#_clear_the_ace_rx_counter"></a>2.14. Clear the ACE RX counter</h3>
+<h3 id="_clear_the_ace_rx_counter"><a class="anchor" href="#_clear_the_ace_rx_counter"></a>3.15. Clear the ACE RX counter</h3>
 <div class="paragraph">
 <p>The ACE related RX counter can be cleared.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s clear the RX counter of ACE id 1:</p>
+<p>Let&#8217;s clear the RX counter of the ACE with id 1 in lookup 0:</p>
 </div>
 <div class="paragraph">
 <p><code>POST</code> request message:</p>
 </div>
 <div id="cg-post-req-acl-rule-list-cnt-clear" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']/clear"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-rules/rule-list[lookup='0'][id='1']/clear"
   :</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>POST</code> response message:</p>
-</div>
-<div id="cg-post-res-acl-rule-list-cnt-clear" class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-acl:acl/acl-rules/rule-list[id='1']/clear":</code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_port_acl_default_actions"><a class="anchor" href="#_port_acl_default_actions"></a>3. Port ACL default actions</h2>
+<h2 id="_port_acl_default_actions"><a class="anchor" href="#_port_acl_default_actions"></a>4. Port ACL default actions</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Port based Access Control</p>
 </div>
 <div class="paragraph">
 <p>Per port, there is a default action used if no ACE is matching in the ACL.
-The possible actions are an egress port list and a policer pointer.</p>
+The possible actions are an egress port list, a policer pointer and copying the frame to the port
+configured as mirror monitor.
+The action parameters are the same as the ones in the 'actions' container of an ACE.</p>
 </div>
 <div class="sect2">
-<h3 id="_check_initial_default_actions"><a class="anchor" href="#_check_initial_default_actions"></a>3.1. Check initial default actions</h3>
+<h3 id="_check_initial_default_actions"><a class="anchor" href="#_check_initial_default_actions"></a>4.1. Check initial default actions</h3>
 <div class="paragraph">
 <p>Verify that by default, no actions are active.<br>
 When <code>forwarding</code> is <code>none</code>, it means "No frame forwarding change."</p>
@@ -1459,7 +1844,7 @@ When <code>forwarding</code> is <code>none</code>, it means "No frame forwarding
 <div id="cg-fetch-req-port-acl" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
-   mchp-velocitysp-acl:acl-port"</code></pre>
+   mchp-velocitysp-acl2:acl-port/actions"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1467,17 +1852,16 @@ When <code>forwarding</code> is <code>none</code>, it means "No frame forwarding
 </div>
 <div id="cg-fetch-res-port-acl" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl2:acl-port/\
+     actions"
   : forwarding: none
-    egress-port-list: []
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    enable: ''
+    policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enable_forwarding_to_a_port_list"><a class="anchor" href="#_enable_forwarding_to_a_port_list"></a>3.2. Enable forwarding to a port list</h3>
+<h3 id="_enable_forwarding_to_a_port_list"><a class="anchor" href="#_enable_forwarding_to_a_port_list"></a>4.2. Enable forwarding to a port list</h3>
 <div class="paragraph">
 <p>Configure the default action to forward to a list of ports.</p>
 </div>
@@ -1491,7 +1875,7 @@ The possible egress ports are '2' and '3'.</p>
 <div id="cg-ipatch-req-port-acl-port" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
-     mchp-velocitysp-acl:acl-port"
+     mchp-velocitysp-acl2:acl-port/actions"
   : forwarding: filter
     egress-port-list:
     - '2'
@@ -1507,7 +1891,7 @@ The possible egress ports are '2' and '3'.</p>
 <div id="cg-fetch-req-port-acl-0" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
-   mchp-velocitysp-acl:acl-port"</code></pre>
+   mchp-velocitysp-acl2:acl-port/actions"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1515,19 +1899,19 @@ The possible egress ports are '2' and '3'.</p>
 </div>
 <div id="cg-fetch-res-port-acl-0" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl2:acl-port/\
+     actions"
   : forwarding: filter
     egress-port-list:
     - '2'
     - '3'
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    enable: ''
+    policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_disable_forwarding"><a class="anchor" href="#_disable_forwarding"></a>3.3. Disable forwarding</h3>
+<h3 id="_disable_forwarding"><a class="anchor" href="#_disable_forwarding"></a>4.3. Disable forwarding</h3>
 <div class="paragraph">
 <p>Configure the default action to disable forwarding from the port.</p>
 </div>
@@ -1541,7 +1925,7 @@ The possible egress ports list is empty.</p>
 <div id="cg-ipatch-req-port-acl-forwarding" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
-     mchp-velocitysp-acl:acl-port"
+     mchp-velocitysp-acl2:acl-port/actions"
   : forwarding: filter
     egress-port-list: []</code></pre>
 </div>
@@ -1555,7 +1939,7 @@ The possible egress ports list is empty.</p>
 <div id="cg-fetch-req-port-acl-1" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
-   mchp-velocitysp-acl:acl-port"</code></pre>
+   mchp-velocitysp-acl2:acl-port/actions"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1563,22 +1947,26 @@ The possible egress ports list is empty.</p>
 </div>
 <div id="cg-fetch-res-port-acl-1" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl2:acl-port/\
+     actions"
   : forwarding: filter
-    egress-port-list: []
-    policer-enable: false
-    policer-index: 0
-    rx-count: 0</code></pre>
+    enable: ''
+    policer-index: 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_enable_policing"><a class="anchor" href="#_enable_policing"></a>3.4. Enable policing</h3>
+<h3 id="_enable_policing"><a class="anchor" href="#_enable_policing"></a>4.4. Enable policing</h3>
 <div class="paragraph">
 <p>Configure the default action to point to a policer.</p>
 </div>
 <div class="paragraph">
-<p>First, the ACL policer instance must be created.<br>
+<p>A port default action names a policer exactly as an ACE does, and the same applies: the reference
+and the policer are configured in any order, and a default action naming a policer that has not
+been created discards every frame that reaches it. See <a href="#acl-policer-reference">[acl-policer-reference]</a>.</p>
+</div>
+<div class="paragraph">
+<p>The example below creates the policer first.<br>
 The policer index is 1.<br>
 The Frame Rate is 1000 frames/s.</p>
 </div>
@@ -1587,7 +1975,7 @@ The Frame Rate is 1000 frames/s.</p>
 </div>
 <div id="cg-ipatch-req-port-acl-policer" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl:acl/acl-policers/policer-list"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-acl2:acl/acl-policers/policer-list"
   : index: 1
     frame-rate: 1000</code></pre>
 </div>
@@ -1606,12 +1994,12 @@ The policer index is 1.<br></p>
 <div id="cg-ipatch-req-port-acl-police" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
-     mchp-velocitysp-acl:acl-port"
+     mchp-velocitysp-acl2:acl-port/actions"
   : forwarding: filter
     egress-port-list:
     - '2'
     - '3'
-    policer-enable: true
+    enable: policer
     policer-index: 1</code></pre>
 </div>
 </div>
@@ -1624,7 +2012,7 @@ The policer index is 1.<br></p>
 <div id="cg-fetch-req-port-acl-2" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
-   mchp-velocitysp-acl:acl-port"</code></pre>
+   mchp-velocitysp-acl2:acl-port/actions"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1632,19 +2020,19 @@ The policer index is 1.<br></p>
 </div>
 <div id="cg-fetch-res-port-acl-2" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port"
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl2:acl-port/\
+     actions"
   : forwarding: filter
     egress-port-list:
     - '2'
     - '3'
-    policer-enable: true
-    policer-index: 1
-    rx-count: 0</code></pre>
+    enable: policer
+    policer-index: 1</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_read_the_rx_counter"><a class="anchor" href="#_read_the_rx_counter"></a>3.5. Read the RX counter</h3>
+<h3 id="_read_the_rx_counter"><a class="anchor" href="#_read_the_rx_counter"></a>4.5. Read the RX counter</h3>
 <div class="paragraph">
 <p>When the default action is used, the related RX counter is incremented.</p>
 </div>
@@ -1654,7 +2042,7 @@ The policer index is 1.<br></p>
 <div id="cg-fetch-req-port-acl-cnt" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/\
-   mchp-velocitysp-acl:acl-port/rx-count"</code></pre>
+   mchp-velocitysp-acl2:acl-port/rx-count"</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1662,14 +2050,14 @@ The policer index is 1.<br></p>
 </div>
 <div id="cg-fetch-res-port-acl-cnt" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl:acl-port/\
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface/mchp-velocitysp-acl2:acl-port/\
      rx-count"
   : 0</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_clear_the_rx_counter"><a class="anchor" href="#_clear_the_rx_counter"></a>3.6. Clear the RX counter</h3>
+<h3 id="_clear_the_rx_counter"><a class="anchor" href="#_clear_the_rx_counter"></a>4.6. Clear the RX counter</h3>
 <div class="paragraph">
 <p>The default action RX counter can be cleared.</p>
 </div>
@@ -1679,16 +2067,8 @@ The policer index is 1.<br></p>
 <div id="cg-post-req-port-acl-cnt-clear" class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/ietf-interfaces:interfaces/interface[name='1']/\
-     mchp-velocitysp-acl:acl-port/clear"
+     mchp-velocitysp-acl2:acl-port/clear"
   :</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p><code>POST</code> response message:</p>
-</div>
-<div id="cg-post-res-port-acl-cnt-clear" class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/ietf-interfaces:interfaces/interface[name='1']/mchp-velocitysp-acl:acl-port/clear":</code></pre>
 </div>
 </div>
 </div>

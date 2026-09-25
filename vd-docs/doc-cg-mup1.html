@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>MUP1 Protocol Configuration :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -323,6 +329,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-cg-mup1.html">latest</a>
+    <a class="version" href="2026.09/doc-cg-mup1.html">2026.09</a>
     <a class="version" href="2026.06/doc-cg-mup1.html">2026.06</a>
     <a class="version" href="2026.03/doc-cg-mup1.html">2026.03</a>
     <a class="version is-missing" href="2025.12/doc-intro.html">2025.12</a>
@@ -851,7 +858,124 @@ When changing the baud rate, ensure the MUP1 client tool (<code>mup1ct</code>, <
 </div>
 </div>
 <div class="sect1">
-<h2 id="_board_configuration_default"><a class="anchor" href="#_board_configuration_default"></a>5. Board Configuration Default</h2>
+<h2 id="mup1-status"><a class="anchor" href="#mup1-status"></a>5. MUP1 Protocol Status</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The MUP1 receive state machine maintains a set of operational counters that can
+be read via the <code>mup1-status</code> container. These counters are useful for
+diagnosing framing, escaping, and checksum problems on the UART link.</p>
+</div>
+<div class="paragraph">
+<p>All counters are read-only (<code>config false</code>) and are reset to zero when the
+device restarts.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 28.5714%;">
+<col style="width: 14.2857%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Counter</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Type</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx-frames</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of valid MUP1 frames accepted into the receive buffer.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx-checksum-err</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of frames dropped because of a checksum mismatch.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx-buffer-full</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of received bytes dropped because the receive buffer was full.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx-unexpected-eof</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of EOF symbols received while the parser was in a state that did not expect an EOF.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx-unexpected-data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of data bytes received while the parser was in a state that did not expect data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx-invalid-esc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of ESC symbols received in a state where escaping is not allowed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx-invalid-escape</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of invalid bytes received immediately after an ESC symbol (not one of the values that may be escaped).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rx-data-overflow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uint32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Number of data bytes received beyond the maximum frame data size; such frames cannot be delivered to the application.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+On a healthy link with no protocol errors, all <code>rx-*</code> error counters
+remain zero while <code>rx-frames</code> increments for every received frame.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_get_mup1_status_counters"><a class="anchor" href="#_get_mup1_status_counters"></a>5.1. Get MUP1 Status Counters</h3>
+<div class="paragraph">
+<p>To retrieve the current MUP1 status counters:</p>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> request message</p>
+</div>
+<div id="cg-fetch-req-mup1-status-get" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- "/mchp-velocitysp-system:mup1-status"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>FETCH</code> response message</p>
+</div>
+<div id="cg-fetch-res-mup1-status-get" class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">- ? "/mchp-velocitysp-system:mup1-status"
+  : rx-frames: 21
+    rx-checksum-err: 0
+    rx-buffer-full: 0
+    rx-unexpected-eof: 0
+    rx-unexpected-data: 0
+    rx-invalid-esc: 0
+    rx-invalid-escape: 0
+    rx-data-overflow: 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Counters that are at their default value (0) may be omitted from the response
+unless the <code>d=a</code> query flag is used.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_board_configuration_default"><a class="anchor" href="#_board_configuration_default"></a>6. Board Configuration Default</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The default MUP1 settings can also be set in the board configuration YAML file.

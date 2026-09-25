@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>SW Variants :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -322,6 +328,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-tailor-sw-variants.html">latest</a>
+    <a class="version" href="2026.09/doc-tailor-sw-variants.html">2026.09</a>
     <a class="version" href="2026.06/doc-tailor-sw-variants.html">2026.06</a>
     <a class="version" href="2026.03/doc-tailor-sw-variants.html">2026.03</a>
     <a class="version" href="2025.12/doc-tailor-sw-variants.html">2025.12</a>
@@ -512,7 +519,9 @@ variants:</p>
 <p>The tables below show what PHY drivers are included in each SW variant.</p>
 </div>
 <div class="paragraph">
-<p>In these tables, the SW-variant has been shorten:</p>
+<p>For PHY drivers, <code>VDSP_BIN_LAN969x</code> and <code>VDSP_BIN_LAN969x_AUTO</code> now share the
+same driver set (the union of what both variants previously supported). The
+tables therefore use a single "LAN969x" column that covers both:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -520,10 +529,7 @@ variants:</p>
 <p>LAN966x: is a reference to <code>VDSP_BIN_LAN966x</code></p>
 </li>
 <li>
-<p>LAN969x: is a reference to <code>VDSP_BIN_LAN969x</code></p>
-</li>
-<li>
-<p>LAN969x AUTO: is a reference to <code>VDSP_BIN_LAN969x_AUTO</code></p>
+<p>LAN969x: is a reference to both <code>VDSP_BIN_LAN969x</code> and <code>VDSP_BIN_LAN969x_AUTO</code></p>
 </li>
 </ul>
 </div>
@@ -531,17 +537,15 @@ variants:</p>
 <h3 id="_lan888x_lan878x_single_pair_1001000base_t1"><a class="anchor" href="#_lan888x_lan878x_single_pair_1001000base_t1"></a>2.1. LAN888x / LAN878x: Single-pair 100/1000BASE-T1</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 52.6315%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7897%;">
+<col style="width: 62.5%;">
+<col style="width: 18.75%;">
+<col style="width: 18.75%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">PHY / SW-Variant</th>
 <th class="tableblock halign-left valign-top">LAN966x</th>
 <th class="tableblock halign-left valign-top">LAN969x</th>
-<th class="tableblock halign-left valign-top">LAN969x AUTO</th>
 </tr>
 </thead>
 <tbody>
@@ -551,14 +555,12 @@ variants:</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8882:  SGMII, 1000BASE-T1</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
@@ -567,14 +569,12 @@ variants:</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8884:  SGMII, 100/1000BASE-T1</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
@@ -583,14 +583,12 @@ variants:</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8881M: RGMII, 1000BASE-T1</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 </tr>
 <tr>
@@ -599,14 +597,12 @@ variants:</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8883M: RGMII, 100/1000BASE-T1</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 </tr>
 <tr>
@@ -615,14 +611,12 @@ variants:</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8781M: RGMII, 100BASE-T1</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 </tr>
 </tbody>
@@ -646,17 +640,15 @@ the PHY (MACsec is supported in the switch SoC, not the PHY).
 <h3 id="_lan881x_quad_port_101001000base_t"><a class="anchor" href="#_lan881x_quad_port_101001000base_t"></a>2.2. LAN881x: Quad-port 10/100/1000BASE-T</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 52.6315%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7897%;">
+<col style="width: 62.5%;">
+<col style="width: 18.75%;">
+<col style="width: 18.75%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">PHY / SW-Variant</th>
 <th class="tableblock halign-left valign-top">LAN966x</th>
 <th class="tableblock halign-left valign-top">LAN969x</th>
-<th class="tableblock halign-left valign-top">LAN969x AUTO</th>
 </tr>
 </thead>
 <tbody>
@@ -666,7 +658,6 @@ the PHY (MACsec is supported in the switch SoC, not the PHY).
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -674,7 +665,6 @@ the PHY (MACsec is supported in the switch SoC, not the PHY).
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -682,7 +672,6 @@ the PHY (MACsec is supported in the switch SoC, not the PHY).
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
@@ -690,7 +679,6 @@ the PHY (MACsec is supported in the switch SoC, not the PHY).
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 </tr>
 </tbody>
 </table>
@@ -699,17 +687,15 @@ the PHY (MACsec is supported in the switch SoC, not the PHY).
 <h3 id="_lan884x_single_port_101001000base_t"><a class="anchor" href="#_lan884x_single_port_101001000base_t"></a>2.3. LAN884x: Single-port 10/100/1000BASE-T</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 52.6315%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7897%;">
+<col style="width: 62.5%;">
+<col style="width: 18.75%;">
+<col style="width: 18.75%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">PHY / SW-Variant</th>
 <th class="tableblock halign-left valign-top">LAN966x</th>
 <th class="tableblock halign-left valign-top">LAN969x</th>
-<th class="tableblock halign-left valign-top">LAN969x AUTO</th>
 </tr>
 </thead>
 <tbody>
@@ -719,14 +705,12 @@ the PHY (MACsec is supported in the switch SoC, not the PHY).
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8830: RGMII, 10/100/1000BASE-T</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
@@ -735,14 +719,12 @@ the PHY (MACsec is supported in the switch SoC, not the PHY).
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8831: MII/GMII/RGMII, 10/100/1000BASE-T</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 </tr>
 </tbody>
@@ -766,17 +748,15 @@ can be used.
 <h3 id="_lan887x_single_pair_1001000base_t1"><a class="anchor" href="#_lan887x_single_pair_1001000base_t1"></a>2.4. LAN887x: Single-pair 100/1000BASE-T1</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 52.6315%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7897%;">
+<col style="width: 62.5%;">
+<col style="width: 18.75%;">
+<col style="width: 18.75%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">PHY / SW-Variant</th>
 <th class="tableblock halign-left valign-top">LAN966x</th>
 <th class="tableblock halign-left valign-top">LAN969x</th>
-<th class="tableblock halign-left valign-top">LAN969x AUTO</th>
 </tr>
 </thead>
 <tbody>
@@ -785,14 +765,12 @@ can be used.
 <p>LAN8870:  RGMII/SGMII, 100/1000BASE-T1</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8870B: RGMII/SGMII, 100/1000BASE-T1</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
@@ -801,14 +779,12 @@ can be used.
 <p>LAN8871:  RGMII, 1000BASE-T1</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8872:  SGMII, 1000BASE-T1</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
@@ -819,17 +795,15 @@ can be used.
 <h3 id="_lan867x_10base_t1s"><a class="anchor" href="#_lan867x_10base_t1s"></a>2.5. LAN867x: 10BASE-T1S</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 52.6315%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7894%;">
-<col style="width: 15.7897%;">
+<col style="width: 62.5%;">
+<col style="width: 18.75%;">
+<col style="width: 18.75%;">
 </colgroup>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">PHY / SW-Variant</th>
 <th class="tableblock halign-left valign-top">LAN966x</th>
 <th class="tableblock halign-left valign-top">LAN969x</th>
-<th class="tableblock halign-left valign-top">LAN969x AUTO</th>
 </tr>
 </thead>
 <tbody>
@@ -838,14 +812,12 @@ can be used.
 <p>LAN8671: RMII, 10BASE-T1S</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>LAN8670: MII/RMII, 10BASE-T1S</p>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
 </tr>
@@ -861,6 +833,64 @@ can be used.
 (1) This PHY supports the MII interface, which is not present in the
 relevant switch SoC. The driver is included, but only the RMII interface
 can be used.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vsc8504_rev_e_quad_port_101001000base_t"><a class="anchor" href="#_vsc8504_rev_e_quad_port_101001000base_t"></a>2.6. VSC8504 Rev. E: Quad-port 10/100/1000BASE-T</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 62.5%;">
+<col style="width: 18.75%;">
+<col style="width: 18.75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">PHY / SW-Variant</th>
+<th class="tableblock halign-left valign-top">LAN966x</th>
+<th class="tableblock halign-left valign-top">LAN969x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>VSC8504: QSGMII (host) / SGMII, 1000BASE-X (line), 4x10/100/1000BASE-T</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>VSC8574: QSGMII (host) / SGMII, 1000BASE-X (line), 4x10/100/1000BASE-T</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Yes (1)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Only silicon Rev-E supported.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+(1) PHY-Time stamping, the main feature added in VSC8574 compared to
+VSC8504 is not supported.
 </td>
 </tr>
 </table>

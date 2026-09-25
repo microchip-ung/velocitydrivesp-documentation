@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Board Configuration :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -322,6 +328,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-tailor-boardconf.html">latest</a>
+    <a class="version" href="2026.09/doc-tailor-boardconf.html">2026.09</a>
     <a class="version" href="2026.06/doc-tailor-boardconf.html">2026.06</a>
     <a class="version" href="2026.03/doc-tailor-boardconf.html">2026.03</a>
     <a class="version" href="2025.12/doc-tailor-boardconf.html">2025.12</a>
@@ -1052,7 +1059,135 @@ handle (typically a FlexCom).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_gpio_restart"><a class="anchor" href="#_gpio_restart"></a>1.11. GPIO-Restart</h3>
+<h3 id="_flash"><a class="anchor" href="#_flash"></a>1.11. Flash</h3>
+<div class="paragraph">
+<p>The SPI-NOR (QSPI) flash holds the bootloader, the firmware images and the file
+system. How fast and how wide it can be driven depends on the board&#8201;&#8212;&#8201;trace
+lengths, layout and the flash part fitted&#8201;&#8212;&#8201;so it is a board setting rather
+than a property of the software.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+LAN969x and LAN966x based designs require a flash part that can erase
+down to 4 KiB pages. The driver issues the 4 KiB sector-erase opcode (<code>0x20</code>)
+and nothing else, so a part whose smallest erasable unit is larger&#8201;&#8212;&#8201;a 64 KiB
+block-erase-only device, for instance&#8201;&#8212;&#8201;cannot be used, regardless of the
+<code>mode</code> and <code>speed</code> selected here.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The definition in the board.tree looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
+  +--rw drivers
+     +--rw flash_static
+        +--rw mode?    enumeration
+        +--rw speed?   uint32</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The container is called <code>flash_static</code> because every value is stated by the
+board, rather than discovered from the flash part itself.</p>
+</div>
+<div class="paragraph">
+<p><code>mode</code> names the read protocol by its command-address-data bus widths:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>single_1_1_1</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">One line throughout, using the low-frequency read opcode (<code>0x03</code>). The
+  default, and what the driver has always used. Most flash parts only rate this
+  opcode to around 50 MHz.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>quad_1_4_4</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quad I/O (<code>0xEB</code>): command on one line, then address and data on four, with a
+  six-cycle dummy phase. The driver sets the flash part&#8217;s quad-enable bit as
+  required for the part fitted.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><code>speed</code> is an upper bound in MHz, not an exact frequency. The achievable
+frequencies are the SoC clock divided by an integer, so the driver picks the
+highest one that does not exceed the bound&#8201;&#8212;&#8201;usually landing below it. A bound
+below the slowest the divider can express is clamped to that slowest rate.</p>
+</div>
+<div class="paragraph">
+<p>The value is taken as given: it is not checked against what the platform or the
+flash part can sustain. Consult the datasheet for the platform and the part
+fitted before raising it&#8201;&#8212;&#8201;what is safe varies by board layout, trace length and
+the part itself.</p>
+</div>
+<div class="paragraph">
+<p>Both settings are applied when the flash is brought up and are fixed for the
+lifetime of the device; there is no runtime reconfiguration and no management
+node reporting them.</p>
+</div>
+<div class="paragraph">
+<p>Omitting the container gives <code>single_1_1_1</code> / 25 MHz, which is what the driver
+used before these settings existed, so a board that says nothing behaves exactly
+as it did. Raising either value is opt-in per board. Note the bootloader runs the
+same flash at 100 MHz quad, so a part sustaining more than the default is the
+normal case rather than the exception&#8201;&#8212;&#8201;but it wants measuring on the board
+before it is declared here.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">board:drivers:
+  flash_static:
+    mode: single_1_1_1
+    speed: 25</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This configures the <strong>application&#8217;s</strong> flash access only. The bootloader reads its
+own device tree and has its own clock and bus width, so a board that cannot
+sustain the defaults needs <strong>both</strong> lowered&#8201;&#8212;&#8201;changing one leaves the other
+running as before. See the bootloader tailoring section in
+<a href="doc-tailor.html" class="xref page">SW Tailoring</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Raise these values only after measuring on the board in question. A setting the
+board cannot sustain shows up as corrupted reads, which can look like almost any
+other fault. The safe order when bringing up a new board is to start at
+<code>single_1_1_1</code> / 25 MHz, confirm the device is stable, and widen or speed up one step
+at a time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gpio_restart"><a class="anchor" href="#_gpio_restart"></a>1.12. GPIO-Restart</h3>
 <div class="paragraph">
 <p>The GPIO for Board restart is defined here. A board restart can e.g. be performed from management.
 The definition looks like this:</p>
@@ -1100,7 +1235,7 @@ The definition looks like this:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_gpio_reset"><a class="anchor" href="#_gpio_reset"></a>1.12. GPIO-Reset</h3>
+<h3 id="_gpio_reset"><a class="anchor" href="#_gpio_reset"></a>1.13. GPIO-Reset</h3>
 <div class="paragraph">
 <p>This reset is an input signal (activated by pressing a button) that indicates a reset-to-default should be performed.
 The SoC will immediately reset and read this signal during startup (state of the reset button).
@@ -1148,29 +1283,47 @@ If active, the configuration is restored to default. The definition looks like t
 </div>
 </div>
 <div class="sect2">
-<h3 id="_status_led"><a class="anchor" href="#_status_led"></a>1.13. Status Led</h3>
+<h3 id="_status_leds"><a class="anchor" href="#_status_leds"></a>1.14. Status Leds</h3>
 <div class="paragraph">
-<p>Initially, the status LED is turned off, and after the initial configuration is applied, it turns green (or blinks) to indicate normal operation.</p>
+<p>A board can define up to four status GPIOs. Each one has a drive state for the
+boot phase and another for normal operation, so the same mechanism covers both a
+blinking LED that shows the system is alive and a steady signal an external host
+can sample to detect that the system has restarted.</p>
+</div>
+<div class="paragraph">
+<p>Defining more than four is a board configuration error and is reported at
+startup.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-txt hljs" data-lang="txt">module: board
   +--rw drivers
-     +--rw status_led
-        +--rw (ref)
-        |  +--:(sgpio)
-        |  |  +--rw sgpio
-        |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
-        |  |     +--rw port              uint8
-        |  |     +--rw bit               uint8
-        |  +--:(gpio)
-        |     +--rw gpio?     uint32
-        +--rw direction       gpio_direction
-        +--rw active_state?   active</code></pre>
+     +--rw status_leds
+        +--rw status_led* [instance_id]
+           +--rw instance_id                    uint8
+           +--rw (ref)
+           |  +--:(sgpio)
+           |  |  +--rw sgpio
+           |  |     +--rw ref_sgpio_bank    dev_sgpio_bank
+           |  |     +--rw port              uint8
+           |  |     +--rw bit               uint8
+           |  +--:(gpio)
+           |     +--rw gpio?                    uint32
+           +--rw direction                      gpio_direction
+           +--rw active_state?                  active
+           +--rw gpio_state_at_init?            status_led_state_init
+           +--rw gpio_state_at_boot_complete?   status_led_state</code></pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
+<li>
+<p><code>instance_id</code> identifies the instance and must be unique. A duplicate is
+reported at startup.</p>
+</li>
+<li>
+<p><code>direction</code> must be <code>GPIO_DIR_OUT</code>.</p>
+</li>
 <li>
 <p><code>sgpio/gpio</code> section defines how the signals are mapped to either SGPIO port/bit or GPIO ID.</p>
 </li>
@@ -1178,24 +1331,112 @@ If active, the configuration is restored to default. The definition looks like t
 <p><code>direction</code> is output.</p>
 </li>
 <li>
-<p><code>active_state</code> defines the signal&#8217;s active state. This is usually documented in schematics.</p>
+<p><code>active_state</code> defines the signal&#8217;s active state. This is usually documented in schematics. It defaults to <code>high</code>.</p>
+</li>
+<li>
+<p><code>gpio_state_at_init</code> is the state held while the system boots. It defaults to <code>tri_state</code>.</p>
+</li>
+<li>
+<p><code>gpio_state_at_boot_complete</code> is the state taken once boot has completed. It defaults to <code>blink</code>.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p>The two state leaves take these values:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 80%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tri_state</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The pin is released and left high impedance, so an external pull resistor determines its level. Not available for a pin behind an SGPIO or an I2C expander, which is always driven.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>active</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The pin is driven to the level given by <code>active_state</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inactive</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The pin is driven to the opposite of <code>active_state</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>blink</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The pin alternates between the active and the inactive level once per second. Only valid for <code>gpio_state_at_boot_complete</code>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Note that <code>active</code> and <code>inactive</code> describe the signal, not the voltage: the
+pin level follows from <code>active_state</code>. To drive a pin high once boot has
+completed, set <code>active_state: high</code> and <code>gpio_state_at_boot_complete: active</code>.</p>
+</div>
+<div class="paragraph">
+<p>Example of a blinking status LED, wired active low:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  status_led:
-    gpio: 61
-    direction: GPIO_DIR_OUT
-    active_state: low</code></pre>
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  status_leds:
+    status_led:
+      - instance_id: 0
+        gpio: 61
+        direction: GPIO_DIR_OUT
+        active_state: low
+        gpio_state_at_init: inactive
+        gpio_state_at_boot_complete: blink</code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Example of a signal for detecting that the system has restarted. The pin is
+pulled low on the board, so it is left released while booting and driven high
+afterwards. A host sampling the pin sees it go low for as long as the system
+is booting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-YAML hljs" data-lang="YAML">  status_leds:
+    status_led:
+      - instance_id: 1
+        gpio: 14
+        direction: GPIO_DIR_OUT
+        active_state: high
+        gpio_state_at_init: tri_state
+        gpio_state_at_boot_complete: active</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>status_leds</code> supersedes the earlier <code>status_led</code> container, which held a
+single LED. That container is deprecated but still honoured: it configures one
+status LED, driven inactive while booting and blinking once boot has
+completed — the behaviour it had before the drive states became configurable.</p>
+</div>
+<div class="paragraph">
+<p>The two are mutually exclusive. A board configuration defining both is
+rejected at startup, so a migration has to be completed rather than left half
+done.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_phy_reset"><a class="anchor" href="#_phy_reset"></a>1.14. PHY Reset</h3>
+<h3 id="_phy_reset"><a class="anchor" href="#_phy_reset"></a>1.15. PHY Reset</h3>
 <div class="paragraph">
 <p>The PHY&#8217;s reset state is controlled through the pin defined here.</p>
 </div>
@@ -1242,7 +1483,7 @@ If active, the configuration is restored to default. The definition looks like t
 </div>
 </div>
 <div class="sect2">
-<h3 id="_watchdog"><a class="anchor" href="#_watchdog"></a>1.15. WatchDog</h3>
+<h3 id="_watchdog"><a class="anchor" href="#_watchdog"></a>1.16. WatchDog</h3>
 <div class="paragraph">
 <p>The watchdog is a hardware timer and helps to ensure the system can recover from unforeseen failures.
 It reboots the system if its timer has not been updated by the CPU within a period that is set here.
@@ -1267,7 +1508,7 @@ If left out, then the watchdog is disabled.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_fs_file_system"><a class="anchor" href="#_fs_file_system"></a>1.16. FS (File System)</h3>
+<h3 id="_fs_file_system"><a class="anchor" href="#_fs_file_system"></a>1.17. FS (File System)</h3>
 <div class="paragraph">
 <p>This section defines the file types that are needed to be stored in the flash.
 The types must be defined in lm_os.h.
@@ -1297,7 +1538,7 @@ If the type is not defined here a storage is not possible. Minimum file/block si
 </div>
 </div>
 <div class="sect2">
-<h3 id="timestamp-props"><a class="anchor" href="#timestamp-props"></a>1.17. TimeStamp properties</h3>
+<h3 id="timestamp-props"><a class="anchor" href="#timestamp-props"></a>1.18. TimeStamp properties</h3>
 <div class="paragraph">
 <p>This container contains timestamping proterties. Currently it has a list of
 time-stamp calibration profiles, which a given port can link to.</p>
@@ -1371,7 +1612,7 @@ The profile will only be used by ports which points to it in the
 </div>
 </div>
 <div class="sect2">
-<h3 id="_port_leds"><a class="anchor" href="#_port_leds"></a>1.18. Port Leds</h3>
+<h3 id="_port_leds"><a class="anchor" href="#_port_leds"></a>1.19. Port Leds</h3>
 <div class="paragraph">
 <p>This section defines how the front port LEDs should be accessed, typically SFP-based LEDs.
 Each switch port typically has two LEDs: green for 'high' speed and a second one (red/yellow/orange, etc.) for 'low' speed.
@@ -1448,7 +1689,7 @@ Example:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="bridge"><a class="anchor" href="#bridge"></a>1.19. Bridge</h3>
+<h3 id="bridge"><a class="anchor" href="#bridge"></a>1.20. Bridge</h3>
 <div class="paragraph">
 <p>The Ethernet bridge interconnects multiple ports to form a LAN.
 This section defines the switch chip and the properties of each of the attached ports and phys.</p>
@@ -1469,17 +1710,28 @@ This section defines the switch chip and the properties of each of the attached 
               +--rw bandwidth?        uint32
               +--rw ts_calibration?   uint32
               +--rw phy
-                 +--rw ref_miim_bus    miim_bus
-                 +--rw miim_addr       uint32
-                 +--rw dummy?          boolean
-                 +--rw base_port?      uint32
-                 +--rw extmod?         boolean
+                 +--rw ref_miim_bus       miim_bus
+                 +--rw miim_addr          uint32
+                 +--rw dummy?             boolean
+                 +--rw base_port?         uint32
+                 +--rw extmod?            boolean
+                 +--rw media_interface?   media_interface
+                 +--rw phy_driver_id?  uint32
+                 +--rw phy_readback* [addr]
+                 |  +--rw addr     uint32
+                 |  +--rw value?   uint16
+                 |  +--rw mask?    uint16
                  +--rw fixed_link
                  |  +--rw speed?   uint32
                  |  +--rw role?    phy_role
                  +--rw led* [id]
-                    +--rw id      phy_led_id
-                    +--rw mode    phy_led_mode</code></pre>
+                 |  +--rw id      phy_led_id
+                 |  +--rw mode    phy_led_mode
+                 +--rw tunables* [link_id]
+                    +--rw link_id    link_id_enum
+                    +--rw tunable* [type]
+                       +--rw type     tunable
+                       +--rw value?   uint32</code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -1563,6 +1815,46 @@ instead of the build-in driver library. <a href="doc-tailor.html#extmod-phy" cla
 this</a> for additional details.</p>
 </li>
 <li>
+<p><code>media_interface</code> configures which media interface the PHY is using. If the
+leaf is missing then the default is <code>cu</code>. Valid values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>cu</code>&#8201;&#8212;&#8201;copper interface</p>
+</li>
+<li>
+<p><code>1000base-x</code>&#8201;&#8212;&#8201;use 1000BASE-X (1G, 8B/10B PCS, Clause-37 in band aneg)</p>
+</li>
+<li>
+<p><code>sgmii</code>&#8201;&#8212;&#8201;SGMII (10/100/1G), 8B/10B PCS encoding supports in-band Cisco SGMII aneg</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>phy_driver_id</code> (optionally) means that the PHY driver with this ID will be used for the device
+instead of what is in registers 2 and 3 of the device. This is used when you
+want to force loading a specific driver for a PHY device. In this way it is
+possible that the same binary file can support future PHY devices.</p>
+</li>
+<li>
+<p><code>phy_readback</code> (optionally) means that the SW will read the registers of the PHYs and
+compare them with the expected value. This is used to check that the expected
+PHY is on the board. This list can contain 0 or up to 4 entries.</p>
+</li>
+<li>
+<p><code>addr</code> the PHY register address. The address is encoded as a single u32, where
+the most significant 16 bits are the page, and the least significant 16 bits
+are the address.</p>
+</li>
+<li>
+<p><code>value</code> the expected value to be found at the PHY register address</p>
+</li>
+<li>
+<p><code>mask</code> both the expected value and the value read from the register will be
+anded with this mask before being compared.</p>
+</li>
+<li>
 <p><code>fixed_link</code> means that the speed is forced as opposed to 'aneg', and is left out when aneg is enabled.</p>
 </li>
 <li>
@@ -1573,6 +1865,43 @@ this</a> for additional details.</p>
 </li>
 <li>
 <p><code>led</code> defines the LED settings for the PHY. Supported for some PHYs.</p>
+</li>
+<li>
+<p><code>tunables</code> configures the tunables on the interface.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>link_id</code> decides which points on the interface to configure. It is possible
+to configure the following points</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>switch</code> which is the switch side</p>
+</li>
+<li>
+<p><code>phy_host</code> which is on the PHY towards the switch</p>
+</li>
+<li>
+<p><code>phy_line</code> which is on the PHY towards the line side</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>tunable</code> contains a list of tunable that are configured on the interface</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>type</code> describes the tunable type. Currently only <code>tx_ampl</code> is supported</p>
+</li>
+<li>
+<p><code>value</code> the value to be set in the register</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -1614,7 +1943,7 @@ this</a> for additional details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ptp"><a class="anchor" href="#_ptp"></a>1.20. PTP</h3>
+<h3 id="_ptp"><a class="anchor" href="#_ptp"></a>1.21. PTP</h3>
 <div class="paragraph">
 <p>Pin configuration of PTP functions. This section defines the GPIO to PTP mapping.</p>
 </div>
@@ -1656,7 +1985,7 @@ this</a> for additional details.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="extmod-drv"><a class="anchor" href="#extmod-drv"></a>1.21. EXTMOD (Driver)</h3>
+<h3 id="extmod-drv"><a class="anchor" href="#extmod-drv"></a>1.22. EXTMOD (Driver)</h3>
 <div class="paragraph">
 <p>A EXTMOD Driver used to claim HW resources and expose the relevant HW to the
 EXTMOD module. The EXTMOD module will have to decide what to do with it.</p>

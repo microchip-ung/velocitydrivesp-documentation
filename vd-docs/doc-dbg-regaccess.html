@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Debug Register Access :: VelocityDRIVE™ Software Package Documentation</title>
-    <meta name="generator" content="Antora 3.1.10">
+    <meta name="generator" content="Antora 3.1.15">
     <link rel="stylesheet" href="../_/css/site.css">
     <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
   </head>
@@ -128,6 +128,9 @@
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mld.html">MLD Snooping</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="doc-cg-igmp.html">IGMP Snooping</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="doc-cg-mgmt-cy.html">CORECONF Yang</a>
@@ -283,6 +286,9 @@
           <a href="doc-intro.html">latest</a>
         </li>
         <li class="version">
+          <a href="2026.09/doc-intro.html">2026.09</a>
+        </li>
+        <li class="version">
           <a href="2026.06/doc-intro.html">2026.06</a>
         </li>
         <li class="version">
@@ -322,6 +328,7 @@
   <button class="version-menu-toggle" title="Show other versions of page">latest</button>
   <div class="version-menu">
     <a class="version is-current" href="doc-dbg-regaccess.html">latest</a>
+    <a class="version" href="2026.09/doc-dbg-regaccess.html">2026.09</a>
     <a class="version" href="2026.06/doc-dbg-regaccess.html">2026.06</a>
     <a class="version" href="2026.03/doc-dbg-regaccess.html">2026.03</a>
     <a class="version" href="2025.12/doc-dbg-regaccess.html">2025.12</a>
@@ -354,19 +361,24 @@
 <div class="paragraph">
 <p>Execute to see the help:</p>
 </div>
-<div class="listingblock">
+<div id="cg-bash-dbgreg-help" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -h
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ dbgreg -h
 dbgreg - Register access debug tool
-
 
 Usage:
   dbgreg [options] miim|sw [c22|c45] (&lt;PORT&gt;[:&lt;MMD&gt;]:&lt;ADDR&gt;[=VAL])...
 
 Options:
   -h --help                  Show this screen.
-  -d --device &lt;URL&gt;          IP based terminal device to connect to.
-                             Ex: termhub://10.0.0.2:4000
+  -d --device &lt;URL&gt;          Device to connect to: a termhub:// URL
+                             (e.g. termhub://10.0.0.2:4000) or a local
+                             serial device (e.g. /dev/ttyACM0).
+  -b --baud &lt;RATE&gt;           Baud rate for a serial device (default
+                             115200). Ignored for a termhub:// URL.
+     --mup1-checksum &lt;TYPE&gt;  MUP1 checksum: internet (default) or
+                             crc32. Must match the firmware's
+                             configuration.
 
 Command details:
   Do a MIIM or Switch read or write request.
@@ -385,6 +397,12 @@ Command details:
 Key word 'sw' means Switch register access.<br>
 If [=VAL] is present it is register write otherwise it is register read.</p>
 </div>
+<div class="paragraph">
+<p>The <code>-d</code> option selects the device to connect to. This can be a <code>termhub://</code>
+URL (as shown in the help above) or a local serial device such as
+<code>/dev/ttyACM0</code>. The examples below use <code>/dev/ttyACM0</code>, which is the most common
+case.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -399,11 +417,9 @@ The register is 0.</p>
 <div class="paragraph">
 <p>Command:</p>
 </div>
-<div class="listingblock">
+<div id="cg-bash-dbgreg-miim-c22" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -d termhub://10.205.27.92:4113 miim c22 rd 1:0
-mup1ct  coap post /dbg/reg --content-type 60 --accept 60
-Status: 0, stderr: RESPONSE-CODE: class 2 detail 5 Success Content, got 14 bytes
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ dbgreg -d /dev/ttyACM0 miim c22 1:0
 
                   Value              Value   Value
 Oper  Port  Addr  15     8.7      0  Hex     Decimal
@@ -473,11 +489,9 @@ The register is '8404992' (DEVCPU_GCB:CHIP_REGS:CHIP_ID).</p>
 <div class="paragraph">
 <p>Command:</p>
 </div>
-<div class="listingblock">
+<div id="cg-bash-dbgreg-sw" class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell hljs" data-lang="shell">$ dbgreg -d termhub://10.205.27.92:4101 sw 8404992
-mup1ct  coap post /dbg/reg --content-type 60 --accept 60
-Status: 0, stderr: RESPONSE-CODE: class 2 detail 5 Success Content, got 18 bytes
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$ dbgreg -d /dev/ttyACM0 sw 8404992
 
                   Value                                Value       Value
 Oper  Address     31    24.23    16.15     8.7      0  Hex         Decimal
@@ -485,7 +499,7 @@ RD    0x00804000  00001001.01101001.10110100.01000101  0x0969B445  157922373</co
 </div>
 </div>
 <div class="paragraph">
-<p>The DEVCPU_GCB:CHIP_REGS:CHIP_I register content is 157922373 or 0x969B445.</p>
+<p>The DEVCPU_GCB:CHIP_REGS:CHIP_ID register content is 157922373 or 0x969B445.</p>
 </div>
 </div>
 </div>
